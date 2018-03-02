@@ -20,7 +20,7 @@ There are two ways you can create a wallet for QRL.
 
 By far the easiest way to generate a wallet is by using the online wallet. Browse over to [wallet.theqrl.org](https://wallet.theqrl.org) to get started.
 
-![QRL Web Wallet](/docs/wallet/img/qrlWallet.jpg)
+![QRL Web Wallet](/assets/qrlWallet.jpg)
 
 We will begin on the left side of the main page with the following options:
 * New Wallet
@@ -50,7 +50,7 @@ You must unlock your wallet with the same tree size in the settings.
 
 Click the create wallet button and the wallet will be generated
 
-![QRL Web Wallet](/docs/wallet/img/qrlWallet-newWallet.jpg)
+![QRL Web Wallet](/assets/qrlWallet-newWallet.jpg)
 
 This will produce a sensitive screen once the wallet is created. Be sure to record the relitive details for the new wallet. Most importantly **Record your private keys** these are in the form of both a mnemonic and a hexseed. These will not be shown again, **do not lose these**
 

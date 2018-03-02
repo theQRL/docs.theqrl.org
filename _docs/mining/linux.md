@@ -4,357 +4,231 @@ categories: mining
 tags: mining
 ---
 
-Any modern PC with Ubuntu (16.04) or Linux/Unix based systems should work 
-running a full QRL node. There are a few requirements that you should take into consideration.
-
-### Minimum Requirements
-
-* Linux / Unix / mac based systems should work *YMMV*
-* Any x86 or x64 based processor
-* Support for AES-NI is required for full nodes
- * You can pool mine with non-AES-NI processors, See the list of [pools](/Pool-List.md) FIX-ME with correct link
-* Windows users using the built in FIX-ME with correct info
-* HDD large enough to store the BlockChain at current size, plus future growth                
-
+Running a full node is easy and helps strenthen thr QRL network. These instructions will get you setup and running.
 
 You should have a basic understanding of the CLI before attempting to set this up, it isn't really all that tough.
- If you have issues please drop into the Discord chat: [discord.gg/RcR9WzX ](discord.gg/RcR9WzX )
- Lots of friendly people over there ready to help.
-              
+
 **Plan for the future!**
 
-Make sure the computer you are using has enough power to handle the load of the 
-mining operation. You will also need enough storage to keep the chain as it grows 
-in the future. Recommend a few hundred gig HDD/SSD to sync the chain on 
-long term to be safe.
+Make sure the computer you are using has enough power to handle the load of the mining operation. You will also need enough storage to keep the chain as it grows in the future. Recommend a few hundred gig HDD/SSD to sync the chain on long term to be safe.
 
-* * *
+> Note if you build on a small VPS or other light weight hardware you may run into issues building the package. Make sure you have enough *RAM* and enable *SWAP* if needed. Also ensure the HDD is large enough!
 
-### Install QRL
+### Minimum Hardware Requirements
 
-It's best to start with a fresh install of Ubuntu 16.04. If you have dependency issues with other software you will need to work through it then come back. You can always boot into a Linux live persistent USB or similar and run the mining node on the computer without modifying the PC (other than the CPU cycles used)
+* Most Linux / Unix based systems
+* Any x86 or x64 based processor
+* Support for AES-NI
+* Enough space for the blockchain growth.
 
-
-#### Update 
+## Update and Dependencies 
 
 ```bash
 # Issue the following command to update software
-
 sudo apt update && sudo apt upgrade -y
 ```
 
-#### Dependencies
+### Dependencies
 
 ```bash
-## Install the required packages for QRL
+# Install the required packages for QRL
+sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
+```
+* * * 
 
-sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential 
+### OSX
 
-sudo apt-get -y cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
+To build in OSX Please install `brew` if you have not already.
+
+```bash
+# Install brew with
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 
 ```
 
-#### pip3
+This will prompt you through a few questions while it installs.
+
+Having Issues? Please follow the instructions found at the brew main page: [https://brew.sh/](https://brew.sh/)
+
+#### Update brew
 
 ```bash
-# Install the QRL Package.
+brew update
+brew install cmake python3 swig boost hwloc
+```
 
+* * * 
+
+
+### Install QRL BETA-NET
+
+```bash
+# Install the qrl Package.
 pip3 install -U qrl
 ```
+If you need to add logging and troubleshoot issues enter:
 
-If your having issues runnning the above command there are a few things to do that will help diagnose the issue. The `pip3` function comes with a logging capibility to see where the issues are happening.  
-```bash
+```
 # Add Logging for pip3 
-
 pip3 install -U qrl --log ~/pip3-Qrl.log
 ```
 
-This will print details of the install to your home directory with the file name pip3-qrl.log. Read it!
-The error should be inside.
-
-#### Git
-
-If you want to run from the repo you can clone it to the local file system with:  
-```bash 
-cd ~/  
-git clone https://github.com/theQRL/QRL.git
-```
-
-
-This allows you to run from a local directory and gives some freedom to change some of the defaults.
-
-Also later if you want to update to get the latest changes from the developers it's a simple `git pull` from inside the QRL directory
-
 * * *
 
-### Setup Wallet
+## Wallet
 
-Before we start there are a few things to know about.
+Create a new wallet using the `qrl` command. After you create a wallet you can create a new `slaves.json` file and use it to mine with.
 
-* The default location for the wallet and the chain is `~/.qrl` unless you specify it on the command line. 
- * Make sure this location has some room for the chain to grow.
-* If you installed with `pip3 install -U qrl` you will use the `qrl` command.
-*   If you installed from source via GitHub you will be invoking the `~/QRL/start_qrl.py` and the `~/QRL/qrl/cli.py` commands.
-
-##### Steps to creating a new wallet:
-
-* Create Wallet
-* Get the recovery seed / phrase and save it somewhaere safe
-
-* * *
-
-#### Create New Wallet
-
-Create a new wallet with:  
-
-**Python Install**
+### Create New Wallet
 
 ```bash
+# Create a new wallet
 qrl wallet_gen
 ```
-
-**From Source**
-
-```bash
-~/QRL/qrl/cli.py wallet_gen
-```
-
-This creates a wallet file in your `~/.qrl/` folder called `wallet.qrl`
-
-* * *
-
-#### Get Mnemonic and hexseed
-
-In order to recover our wallet later or use this wallet in web wallet, you will need our private keys. You can get these keys in two ways, a hexseed, and a mnemonic phrase. The mnemonic is easier for humans to read, however each will work.
-
-**YOU HAVE TO SAVE THIS SOMEWHERE SAFE**
-
-To find your hexseed and recovery information for your wallet you will need to run:
+### Get Mnemonic/hexseed
 
 ```bash
-# Get mnemonic phrase pip3 package
-
+# Get mnemonic phrase and hexseed
 qrl wallet_secret
 ```  
-Or if installed from source 
+### Recover QRL Wallet
 
 ```bash
-# Get mnemonic phrase from sources
+# Options:
+#   --seed-type [hexseed|mnemonic]
+#   --help      Show this message and exit.
 
-~/QRL/qrl/cli.py wallet_secret
+qrl wallet_recover --seed-type mnemonic
 ```
 
-**Fix Me** - Add command to get `hexseed` from wallet 
+### Generate a slaves.json file
 
-This will respond with a question 
+Using the wallet you just created generate the slaves.json file against a know working node. You can switch the ip-address with a trusted open node.
 
 ```
-# Which Wallet to use [0 os default]
+# QRL Nodes
 
-Wallet idx [0]:
-``` 
- 
-**Enter** will select the default wallet shown, if you have more than one wallet select the index that reflects the wallet you are using.
-
-*   This will show you the address and secret mnemonic for the wallet you created, stored in `~/.qrl/`
-*   Save it somewhere safe! Anyone with this info can recover your wallet and steal your coins.
-
-* * *
-
-#### Generate New slaves.json File
-
-Using the wallet we just created lets create some files we can use to mine with. We will generate the file against a know working node. You can switch the ip address with a trusted open node
-
-##### With pip3
+104.237.3.185
+104.237.3.184
+104.251.219.145
+104.251.219.40
+```
 
 ```bash
 # Generate slaves.json file
-
-qrl -r --host 104.251.219.215 slave_tx_generate` 
+qrl -r --host 104.237.3.185 slave_tx_generate 
 ```
-
-##### From Sources
-
-
-```bash
-# If you are running from `git clone`  
-
-./qrl/cli.py -r --host 104.251.219.215 --wallet_dir /home/qrl/QRL/.qrl/ slave_tx_generate
-```
-
 This will prompt with some questions:
 
 ```bash
-Src []:                 # The wallet you generated identified by #ID
-Addr from               # (Leave blank in case same as source) []:`
-Number of slaves [0]:   # How many wallet files do we want to slave?
-Access type [0]:        # Do we want to mine or transfer coins?
+Src []:                 # The wallet you generated by #ID
+Addr from []:           # (Leave blank in case same as source)
+Number of slaves [0]:   # Enter 4
+Access type [0]:        # Mining only or transfer coins [0],[1]
                         # 0 Gives all permissions from the master wallet to slave wallet
-                        # 1 Only mining permissions to slave wallet. 
-                            # This setting allows incoming only transfers (SAFE).
-Fee [0.0]: 0            # How much fee are we paying
+                        # 1 Only mining permissions to slave wallet
+                            # This setting allows incoming only transfers (SAFE)
+Fee [0.0]: 0            # How much fee
 ```
 
-This will generate a `slaves.json` file for you and put into the directory you are in. We need to move it to the `.qrl` folder of whatever computer we plan to mine with. 
+This will generate a `slaves.json` in the directory you are in. If you need to generate another file later, you must use an **Unused** OTS. 
 
-This will allow you to securely make a wallet file and generate a `slaves.json` file on a secure PC that wont let coin transfers happen. You can then move it to a public mining rig and not worry about people stealing your keys.  
-
-Save the Mmneonic to a cold wallet file and when you need to move coins, restore the wallet, generate a new `slaves.json` with the correct privileges and transfer the coins out of the wallet.
-
-
-* * *
-
-### Recover Your Wallet
-
-If you loose your wallet, the mining rig catches fire, or worse... Don't fret! You still have the ability to recover your Quanta as long as you've saved the **hexseed** or **mnemonic phrase** somewhere safe.
-
-To Recover your wallet file:
+To specify an OTS index use the `--otsidx {INDEX#}` flag when you call ``slave_tx_generate` Change the INDEX# to an unused OTS key.
 
 ```bash
-# With pip3
-
-qrl wallet_recover
+# Using index # 1 to generate slaves.json file
+qrl -r --host 104.237.3.185 slave_tx_generate --otsidx 1
 ```
 
-Or
+If you have saved the **Mnemonic** or **hexseed** somewhere safe you can delete the open `wallet.qrl` file and use the `slaves.json` file to mine with. 
 
-```
-# From Sources
+Move this fie into your `~/.qrl` directory. If needed, create the directory.
 
-~/QRL/qrl/cli.py wallet_recover
-```
+* * * 
 
-Without any other flags this will look for the hexseed you generated before.  
+## Start QRL Node
 
-
-We can add the flag `--seed-type [hexseed|mnemonic]` to change the type of recovery method we want to use.
-
+Now that we have a `slaves.json` file in our ~/.qrl folder we can start qrl.
 
 ```bash
-# With pip3
-
-qrl --seed-type mnemonic
-# OR
-qrl --seed-type hexseed
+# start qrl
+start_qrl
 ```
 
-```bash
-# From Sources
+Check out all the options with a simple `start_qrl --help`
 
-~/QRL/qrl/cli.py --seed-type mnemonic
-# OR
-~/QRL/qrl/cli.py --seed-type hexseed
+Using `screen` you can run in the background and reconnect later. You may need to install screen.
+
+```bash
+# run in background
+screen -d -m start_qrl
 ```
-This will prompt up to enter the key or phrase. This should recover the wallet and ask if we want to save it. Enter `y` when prompted.
-
-You can now interact with your quanta as normal. 
-
-* * *
-
-### Start the Node
-
-We need to move the `slaves.json` file we created above to our mining pc, and then start the node. 
-
-If you are using the same pc to mine with, then:
+You can see the progress in the `~/.qrl/qrl.log` file.
 
 ```bash
-mv slaves.json ~/.qrl/
+# watch the action with 
+tail -f ~/.qrl/qrl.log
 ```
 
-To start QRL run :
+* * * 
+
+## Config File
+
+You can alter the default settings of the node by simply adding a file to your `~/.qrl` folder 
 
 ```bash
-#Installed with pip3
-
-qrl
+# Create and edit the config.yml file
+nano ~/.qrl/config.yml
 ```
 
-OR 
+Add the following to the file. These are all default settings, uncomment to edit the parameters.
 
 ```bash
-# Running from source
-
-~/QRL/start_qrl.py
-```
-
-If you placed the `slaves.json` file into the correct 
-directory the node should start up and begin mining. 
-It may take a little while for the slave to become active. 
-
-**Be patient!**
-
-By default QRL begins mining to the wallet defined in the slaves.json file using all cores. You can change some of the default behavior of the node by utilizing a configuration file. 
-
-* * *
-
-### Config File
-
-The default settings for the code are burried inside of the core directory. Instead of changing the settings there where an update would overwrite the changes create your own, add a file to your `~/.qrl` folder titled `config.yml`
-
-#### Download config.yml
-
-You can grab a copy of this file directly from here with:  
-
-FIXME - get right link for file download, get hash from file served as well
-
-`wget https://qrl.co.in/public/config.yml`  
-
-Move it to your ~/.qrl folder  
-`mv config.yml ~/.qrl`  
-
-You can download a copy of this file here as well [config.yml](https://qrl.co.in/public/config.yml)  
-
-FIXME - get right link for file download, get hash from file served as well
-
-#### Edit the config.yml
-
-If you want to you can of course just create the file.  
-`nano ~/.qrl/config.yml`  
-
-Add the settings you want to override to this file. All the settings shown are defaults. 
-
-This file will override the default settings if placed in the ~/.qrl folder. 
-
-**Beware that you can break things if you are not careful**
-
-```bash
-## Default QRL Configuration
+# ====================================== 
+## QRL Configuration File
+# ====================================== 
+## Format must meet the following "{VARIABLE} : {SETTING}, {Boolean} : [True] [False]"
 #
-## Format must meet the following "{VARIABLE} : {SETTING}, boolean must be Caps"
-#  
+## Drop into the Discord chat for help setting this up 
+## https://discord.gg/RcR9WzX
+#
+# ====================================== 
 ## Mining Setup  
+# ====================================== 
 ## Enable mining with True | Disable with False  
-mining_enabled : True  
+#mining_enabled : True 
 #  
-## 0 to auto detect thread count based on CPU/GPU number of processors  
-mining_thread_count : 0 # set to desired processor count  
+## Set to desired CPU count. [0] == auto-detect CPU/threads and use all available 
+#mining_thread_count : 0 
 #  
-## Ephemeral Configuration  
-accept_ephemeral : True  
-outgoing_message_expiry : 90 # Outgoing message expires after 90 seconds  
-p2p_q_size : 1000  
-#  
-## Cache Size  
-lru_state_cache_size : 10  
-max_state_limit : 10  
-#  
-## PEER Configuration  
-## Allows to discover new peers from the connected peers  
-enable_peer_discovery : True  
-#  
-## Allows to ban a peer's IP who is breaking protocol  
-ban_minutes : 20  
-#  
-## Number of allowed peers  
-max_peers_limit : 100  
-#  
-chain_state_timeout : 180  
-chain_state_broadcast_period : 30 # must be less than ping_timeout  
-#  
+# ======================================  
+# Mining Wallet Setup  
+# ======================================  
+## Full path to the slaves.json wallet
+#slaves_filename : '/home/{USER}/.qrl/slaves.json'  
+#
+## Full Path to wallet directory Defaults to ~./qrl/
+#wallet_dir : /home/{USER}/.qrl/wallet  
+#
+# ====================================== 
+## NTP Settings  
+# ======================================
+## Select the NTP server for the node to use. 
+## This must connect and get the correct time for this node to sync the blockchain
+## Here are a few good options. Select a server you can connect to from the node.
+##
+## time.nist.gov
+## pool.ntp.org
+## time.google.com
+## ntp.ubuntu.com
+## mycustomdns.com#
+#ntp_servers: pool.ntp.org
+#
+# ====================================== 
 ## Default Locations  
-## Only change these if you must!  
-## You HAVE to use full path to location.  
+# ====================================== 
 ## This is where the program will look for files  
-## Change the {USER} to your local username to work  
+## Only change these if you must! You HAVE to use full path for location.  
+## Change the {USER} to your local user.  
 #  
 ## The users ~/.qrl/ directory  
 #qrl_dir : /home/{USER}/.qrl  
@@ -367,14 +241,64 @@ chain_state_broadcast_period : 30 # must be less than ping_timeout
 #  
 ## The users ~/.qrl/wallet/ directory  
 #wallet_staking_dir : /home/{USER}/.qrl/wallet  
-#  
-# ======================================  
-# MINING WALLET CONFIGURATION  
-# ======================================  
-#slaves_filename : '/home/{USER}/.qrl/slaves.json'  
-#wallet_dir : /home/{USER}/.qrl/wallet  
 #
+# ======================================  
+## Ephemeral Configuration 
+# ======================================  
+## Change ephemeral messaging settings
+# 
+#accept_ephemeral : True  
+#
+#outgoing_message_expiry : 90 # Outgoing message expires after 90 seconds  
+#
+#p2p_q_size : 1000  
+#  
+## Cache Size  
+#lru_state_cache_size : 10  
+#max_state_limit : 10  
+#
+# ======================================  
+## PEER Configuration  
+# ======================================  
+#
+## Allows to discover new peers from the connected peers  
+#enable_peer_discovery : True  
+#  
+## Allows to ban a peer's IP who is breaking protocol  
+#ban_minutes : 20  
+#  
+## Number of allowed peers  
+#max_peers_limit : 100  
+#  
+#chain_state_timeout : 180  
+#chain_state_broadcast_period : 30 # must be less than ping_timeout  
+#
+# ==================
+## End Configuration
 ```
+
+* * *
+
+Please add any issues found here in GitHub. Thanks for helping run QRL Beta-Net!
+
+If you need help jump into the [Discord Chat](https://discord.gg/RcR9WzX)
+
+* * *
+
+## Windows :seedling:
+
+*Windows support in the current version is limited. An alternative is to use an Ubuntu VM (virtualbox), or install Ubuntu using the Linux Subsystem for Windows.
+
+### Ubuntu on Linux Subsystem for Windows
+
+It is possible to run a QRL node using an Ubuntu Bash shell through the Linux Subsystem for Windows. 
+
+Follow [these instructions](https://msdn.microsoft.com/en-us/commandline/wsl/install-win10) to install Ubuntu using Linux Subsystem, start the Ubuntu bash shell, and then follow the previous instructions on setting up QRL.
+
+*We are working on a solution to native Windows support*
+
+* * *
+
 
 * * *
 
@@ -410,66 +334,66 @@ You can get more detail from a sub catigory by entering
 qrl wallet_seceret --help
 ```
 
-**Note**
-
-If you grabbed the source files from [GitHub](https://github.com/theQRL) the commands will differ a bit. Instead of the `qrl` command we will invoke
-
 ```bash
-# From the QRL directory
+qrl --help
 
-./start_qrl.py # This will start the node up and by default begin mining for us
+Usage: qrl [OPTIONS] COMMAND [ARGS]...
 
-# You can see your options by running 
-./start_qrl.py --help # This will give the following output.
+  QRL Command Line Interface
 
-# usage: start_qrl.py [-h] [--quiet] [--datadir DATA_DIR] [--no-colors] [-l {DEBUG,INFO,WARNING,ERROR,CRITICAL}] [--randomizeSlaveXMSS]
+Options:
+  -r, --remote        connect to remote node
+  --host TEXT         remote host address             [127.0.0.1]
+  --port_pub INTEGER  remote port number (public api) [9009]
+  --port_adm INTEGER  remote port number (admin api)  [9009]* will change
+  --wallet_dir TEXT   local wallet dir
+  --version           Show the version and exit.
+  --help              Show this message and exit.
 
-# optional arguments:
--h, --help                                      # show this help message and exit
---quiet, -q                                     # Avoid writing data to the console
---datadir DATA_DIR, -d DATA_DIR                 # Retrieve data from a different path
---no-colors                                     # Disables color output
--l {DEBUG,INFO,WARNING,ERROR,CRITICAL}          # Set the logging level
---loglevel {DEBUG,INFO,WARNING,ERROR,CRITICAL}  # Set the logging level
---randomizeSlaveXMSS                            # Generates random slaves.json file (Warning: For Integration Test only)
+Commands:
+  collect            Collects and returns the list of encrypted...
+  send_eph_message   Creates & Push Ephemeral Message :param ctx:...
+  slave_tx_generate  Generates Slave Transaction for the wallet
+  token_list         Create Token Transaction, that results into...
+  tx_inspect         Inspected a transaction blob
+  tx_latticepk       Create Lattice Public Keys Transaction
+  tx_prepare         Request a tx blob (unsigned) to transfer from...
+  tx_push
+  tx_sign            Sign a tx blob
+  tx_token           Create Token Transaction, that results into...
+  tx_transfer        Transfer coins from src to dst
+  tx_transfertoken   Create Token Transaction, that results into...
+  wallet_add         Adds an address or generates a new wallet...
+  wallet_gen         Generates a new wallet with one address
+  wallet_ls          Lists available wallets
+  wallet_recover     Recovers a wallet from a hexseed or mnemonic...
+  wallet_secret      Provides the mnemonic/hexseed of the given...
+
+
+
+
 ```
-
-We can access the rest of the tools from the QRL/qrl directory using `cli.py`
-
 ```bash
-# From the QRL directory
+start_qrl --help
 
-./qrl/cli.py                                # gives us some of the other functions like generating a wallet and such.
+usage: start_qrl [-h] [--mining_thread_count] [--quiet] [--datadir DATA_DIR]
+                 [--no-colors] [-l {DEBUG,INFO,WARNING,ERROR,CRITICAL}]
+                 [--randomizeSlaveXMSS]
 
-#Running the command 
-./qrl/cli.py --help # will give you the available options
+QRL node
 
-# Usage: cli.py [OPTIONS] COMMAND [ARGS]...
-# QRL Command Line Interface
-# Options:
-    -r, --remote                                # connect to remote node
-    --host TEXT                                 # remote host address [127.0.0.1]
-    --port_pub INTEGER                          # remote port number (public api) [9009]
-    --port_adm INTEGER                          # remote port number (admin api) [9009]* will change
-    --wallet_dir TEXT                           # local wallet dir
-    --help                                      # Show this message and exit.
-# Commands:
-    slave_tx_generate                           # Generates Slave Transaction for the wallet
-    token_list                                  # Create Token Transaction, that results into...
-    tx_inspect                                  # Inspected a transaction blob
-    tx_prepare                                  # Request a tx blob (unsigned) to transfer from...
-    tx_prepare                                  # Request a tx blob (unsigned) to transfer from...
-    tx_prepare                                  # Request a tx blob (unsigned) to transfer from...
-    tx_push
-    tx_sign                                     # Sign a tx blob
-    tx_token                                    # Create Token Transaction, that results into...
-    tx_transfer                                 # Transfer coins from src to dst
-    tx_transfertoken                            # Create Token Transaction, that results into...
-    wallet_add                                  # Adds an address or generates a new wallet...
-    wallet_gen                                  # Generates a new wallet with one address
-    wallet_ls                                   # Lists available wallets
-    wallet_recover                              # Recovers a wallet from a hexseed or mnemonic...
-    wallet_secret                               # Provides the mnemonic/hexseed of the given...
+optional arguments:
+  -h, --help            show this help message and exit
+  --mining_thread_count, -m
+                        Number of threads for mining
+  --quiet, -q           Avoid writing data to the console
+  --datadir DATA_DIR, -d DATA_DIR
+                        Retrieve data from a different path
+  --no-colors           Disables color output
+  -l {DEBUG,INFO,WARNING,ERROR,CRITICAL}, --loglevel {DEBUG,INFO,WARNING,ERROR,CRITICAL}
+                        Set the logging level
+  --randomizeSlaveXMSS  Generates random slaves.json file (Warning: For
+                        Integration Test only)
 
 ```
 
