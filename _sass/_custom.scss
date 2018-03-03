@@ -4,18 +4,6 @@ body {
 	background:
 		url('/assets/particles/dots-topright.png') no-repeat top -20px right -10px;
 }
-body.homepage {
-	background:
-		url('/assets/particles/dots-topright.png') no-repeat top -20px right -10px,
-		url('/assets/particles/on.png') no-repeat top 200px center;
-
-	@include lg {
-	background:
-		url('/assets/particles/dots-topright.png') no-repeat top -20px right -10px,
-		url('/assets/particles/on.png') no-repeat top 400px center;
-	}
-	
-}
 .overflow {
 	position:relative;
 	// overflow-x:hidden;
