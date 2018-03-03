@@ -6,11 +6,49 @@ tags: wallet
 
 The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your coins safely, while allowing you to mine without the risk of loosing private keys. 
 
-#### How Does QRL do that?
+## OTS Key Usage
 
-(FIXME add details here about XMSS and QTS/trees etc...)
+The OTS index or the **One Time Signature** index is used when you sign a transaction onto the network. 
 
-The OTS index is the index of your one time signature. When you sign a transaction the network requires you to specify which OTS index. The key from this OTS index is what is used to sign the transaction. This keeps the public view completely separate from the private key set.
+You are required to specify which OTS index to use from the wallet file you have created. Depending on the tree height you selected when setting up the wallet you will start with anywhere from 1024 to 4096 OTS indexes. Yo may not re-use any OTS index. The transaction will be rejected. 
+
+#### Important OTS Info
+
+This can not be stressed enough, The OTS key index is limited. Once this index is used you will no longer be able to sign transactions.
+
+What this means:
+* If all OTS index's are used
+	* Funds that are in a wallet with no available OTS index left will not be able to transfer out of the wallet, and will be lost. 
+	* There is nothing to do if all of the QTS indexes are used, you cannot sign a transaction.
+
+#### Best Wallet Practices 
+
+* Do not use all of your OTS index's
+	* Keep track of the index's used in a spreadsheet or ledger
+* Generate a `slaves.json` file to use for signing, do not use the main wallet
+	* This file is generated from your wallet and is approved and authorized by the network.
+	* Depending on how many slaves you have authorized will change the available amount of transactions this slave can preform on the main wallets behalf
+* Generate a slaves.json file and save it as a backup to use when the OTS index is close to being exhausted. 
+	* This will allow you to transfer the remaining Quanta to a new wallet with available OTS index's
+
+#### Slaves.json Explained
+
+When you create a wallet you create a Quantum resistant store based on the way the OTS and trees work together **FIXME - Help explain this** Since the available amount of these index's are limited the slaves.json was created. This allows you to create a slave to the main wallet who, depending on how the slaves.json was set up allows for full signing on the blockchain. 
+
+The main wallet is used to generate the amount of slaves we want and created a magnitude more transactions the main wallet can preform.
+
+Lets work through some math. Assuming the default settings are used throughout. We create a new wallet with a tree height of **10** or **1,024** Signatures. With this wallet alone we can sign 1,024 transactions on the network.
+
+In order to increase that amount we generate a slaves.json file with 10 slaves. this file will then have 10 slaves with 1,24 signatures available or `10 x 1024 = 10240` and will only have used one OTS from the main wallet.
+
+If we create a wallet with tree height of **18** or **262,144** Signatures and generate a slaves.json file with 100 slaves in it i would have 26,214,400 signatures available with this one file, that I can generate 262,143 more times from the main wallet before it runs out of signatures.
+
+
+----------------------------------------------
+each with say 12 xmss tree height. 
+	* Which means each slave will have 4096 keys and so 100 slaves will have total 100*4096 = 409,600. 
+	* So the pool can still use 409,600 to sign blocks. or to make transaction on behalf of master wallet.
+--------------------------
 
 
 There are two ways you can create a wallet for QRL. 
@@ -28,7 +66,7 @@ If you are going to mine QRLneed to generate a `slaves.json` file to mine with, 
 By far the easiest way to generate a wallet is by using the online wallet. Browse over to [wallet.theqrl.org](https://wallet.theqrl.org) to get started.
 
 
-![QRL Web Wallet](/assets/basics/qrlWallet.png)
+![QRL Web Wallet](/assets/wallet/qrlWallet.png)
 
 
 We will begin on the left side of the main page with the following options:
