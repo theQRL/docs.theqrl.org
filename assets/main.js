@@ -25,4 +25,14 @@ $(document).ready(function() {
         }
       });
     });
+
+
+    $('.button-linux').on('click', function() {
+      $('body').removeClass('windows');
+      $('body').addClass('linux');
+    });
+    $('.button-windows').on('click', function() {
+      $('body').removeClass('linux');
+      $('body').addClass('windows');
+    });
 });

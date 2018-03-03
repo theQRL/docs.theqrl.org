@@ -18,12 +18,12 @@ body {
 
 .wrapper {
 	@include lg {
-		padding-top:90px;
-		padding-bottom:90px;
+		padding-top:20px;
+		padding-bottom:20px;
 	}
 }
 a {
-	color:$quantum_burst;
+	color:$quantum_sky;
 }
 
 /* Elements */
