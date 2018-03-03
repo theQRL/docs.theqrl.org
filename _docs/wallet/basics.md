@@ -6,11 +6,19 @@ tags: wallet
 
 The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your coins safely, while allowing you to mine without the risk of loosing private keys. 
 
+This guide will walk you through 
+* Setting up a new wallet
+* Sending a transaction over the network *(Sending Coins)*
+* Receiving a transaction over the network *(Getting Coins)*
+* Checking transaction details on the [Block Explorer](https://explorer.theqrl.org) including your current balance
+
 ## OTS Key Usage
 
 The OTS index or the **One Time Signature** index is used when you sign a transaction onto the network. 
 
 You are required to specify which OTS index to use from the wallet file you have created. Depending on the tree height you selected when setting up the wallet you will start with anywhere from 1,024 to 262,144 OTS indexes. Yo may not re-use any OTS index. The transaction will be rejected. 
+
+* * *
 
 ### Important OTS Info
 
@@ -20,6 +28,8 @@ What this means:
 * If all OTS index's are used
 	* Funds that are in a wallet with no available OTS index left will not be able to transfer out of the wallet, and will be **lost**. 
 	* There is nothing to do if all of the QTS indexes are used, you cannot sign a transaction.
+
+* * *
 
 ### Best Wallet Practices 
 
@@ -34,6 +44,8 @@ What this means:
 	* This will allow you to transfer the remaining Quanta to a new wallet with available OTS index's
 	* This file can be stored on a USB flash drive in a safe place
 
+* * *
+
 ### Slaves.json Explained
 
 When you create a new wallet you create a Quantum resistant store based on the way the OTS and trees work together **FIXME - Help explain this** 
@@ -46,8 +58,9 @@ Lets work through some math. Assuming the default settings are used throughout. 
 
 In order to increase that amount we generate a slaves.json file with 10 slaves. this file will then have 10 slaves with 1,24 signatures available or `10 x 1024 = 10240` and will only have used one OTS from the main wallet.
 
-If we create a wallet with tree height of **18** or **262,144** Signatures and generate a slaves.json file with 100 slaves in it i would have 26,214,400 signatures available with this one file, that I can generate 262,143 more times from the main wallet before it runs out of signatures.
+If we create a wallet with tree height of 18 xmss or 262,144 Signatures and generate a slaves.json file with 100 slaves in it i would have 26,214,400 signatures available with this one file, that I can generate 262,143 more times from the main wallet before it runs out of signatures.
 
+* * *
 
 ## Seting Up a Wallet
 
@@ -60,7 +73,6 @@ In order to create a wallet in the CLI you must first install the `qrl` python p
 
 *There will be the ability to create this file in the web wallet at a later date.*
 
-* * *
 
 ### Online Wallet
 
