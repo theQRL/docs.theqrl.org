@@ -29,7 +29,7 @@ What this means:
 * Generate a `slaves.json` file to use for signing, do not use the main wallet
 	* This file is generated from your main wallet keys and must be approved and authorized by the network.
 	* Depending on the number of slaves you have authorized changes the available amount of transactions this slave can preform on the main wallets behalf.
-	* {TreeHeight}x{SlavesNumber}={Slaves.json-OTS-index}
+	* `{TreeHeight}x{SlavesNumber}={Slaves.json-OTS-index}`
 * Generate a slaves.json file and save it as a backup to use when the OTS index is close to being exhausted. 
 	* This will allow you to transfer the remaining Quanta to a new wallet with available OTS index's
 	* This file can be stored on a USB flash drive in a safe place
@@ -42,24 +42,27 @@ Since the available amount of these index's are limited the slaves.json file was
 
 The main wallet is used to generate the amount of slaves we want and creates a magnitude more transactions the main wallet can preform.
 
-Lets work through some math. Assuming the default settings are used throughout. We create a new wallet with a tree height of **10 xmss** or **1,024** Signatures. With this wallet alone we can sign 1,024 transactions on the network.
+Lets work through some math. Assuming the default settings are used throughout. We create a new wallet with a tree height of 10 xmss or 1,024 Signatures. With this wallet alone we can sign 1,024 transactions on the network.
 
 In order to increase that amount we generate a slaves.json file with 10 slaves. this file will then have 10 slaves with 1,24 signatures available or `10 x 1024 = 10240` and will only have used one OTS from the main wallet.
 
 If we create a wallet with tree height of **18** or **262,144** Signatures and generate a slaves.json file with 100 slaves in it i would have 26,214,400 signatures available with this one file, that I can generate 262,143 more times from the main wallet before it runs out of signatures.
 
 
-There are two ways you can create a wallet for QRL. 
+## Seting Up a Wallet
+
+There are two ways to can create a wallet for QRL. 
 
 * The online wallet served up at [wallet.theqrl.org.](https://wallet.theqrl.org)
 * Using the QRL CLI in a Linux environment. 
-	* You will need to first install the qrl package following this guide [Linux install guide location](/docs/mining/linux)
 
-If you are going to mine QRLneed to generate a `slaves.json` file to mine with, use the `qrl` package in a Linux environment. *There will be the ability to create this file in the web wallet at a later date.*
+In order to create a wallet in the CLI you must first install the `qrl` python package. This will also allow you to create a `slaves.json` to setup and mine QRL as well.
+
+*There will be the ability to create this file in the web wallet at a later date.*
 
 * * *
 
-## Online Wallet
+### Online Wallet
 
 By far the easiest way to generate a wallet is by using the online wallet. Browse over to [wallet.theqrl.org](https://wallet.theqrl.org) to get started.
 
