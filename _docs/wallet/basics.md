@@ -6,13 +6,29 @@ tags: wallet
 
 The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your coins safely, while allowing you to mine without the risk of loosing private keys. 
 
-This guide will walk you through 
+This guide will walk you through:
 * Setting up a new wallet
 * Sending a transaction over the network *(Sending Coins)*
 * Receiving a transaction over the network *(Getting Coins)*
 * Checking transaction details on the [Block Explorer](https://explorer.theqrl.org) including your current balance
 
-## OTS Key Usage
+
+## The QRL Wallet
+
+There are two ways to can create a wallet for QRL. 
+
+* The online wallet served up at [wallet.theqrl.org.](https://wallet.theqrl.org)
+* Using the QRL CLI in a Linux environment. 
+
+In order to create a wallet in the CLI you must first install the `qrl` python package. This will also allow you to create a `slaves.json` to setup and mine QRL as well.
+
+*There will be the ability to create this file in the web wallet at a later date.*
+
+Before we get going on making the new wallet there are a few things you need to know to get started. Being Quantum Resistant does not come with out some challenges. 
+
+* * *
+
+### OTS Key Usage
 
 The OTS index or the **One Time Signature** index is used when you sign a transaction onto the network. 
 
@@ -62,79 +78,91 @@ If we create a wallet with tree height of 18 xmss or 262,144 Signatures and gene
 
 * * *
 
-## Seting Up a Wallet
-
-There are two ways to can create a wallet for QRL. 
-
-* The online wallet served up at [wallet.theqrl.org.](https://wallet.theqrl.org)
-* Using the QRL CLI in a Linux environment. 
-
-In order to create a wallet in the CLI you must first install the `qrl` python package. This will also allow you to create a `slaves.json` to setup and mine QRL as well.
-
-*There will be the ability to create this file in the web wallet at a later date.*
 
 
-### Online Wallet
 
-By far the easiest way to generate a wallet is by using the online wallet. Browse over to [wallet.theqrl.org](https://wallet.theqrl.org) to get started.
+## Create an Online Wallet
 
+By far the easiest way to generate a wallet is by using the online wallet. All secure XMSS operations are run in a web assembly compiled version of qrllib locally in your browser or desktop application. Keys stay in the memory space of the XMSS object, which is destroyed the moment you close the wallet, browser window or desktop application.
+
+Browse over to [wallet.theqrl.org](https://wallet.theqrl.org) to get started.
+
+* * *
+By default you start in the "New Wallet" option to generate a QRL address and private keys for you to interface with the QRL blockchain.
 
 ![QRL Web Wallet](/assets/wallet/qrlWallet.png)
 
-
-We will begin on the left side of the main page with the following options:
+The left side of the main page shows us the following options:
 * New Wallet
 * Open Wallet
 * Verify Transaction
 * Explorer
 
-By default you start in the "New Wallet" option to generate a QRL address and private keys for you to interface with the QRL blockchain.
 
-#### Password for wallet
+###  New Wallet
 
-> **FIXME add details of wallet encryption file**
+#### Password
 
-Enter a secure password into the wallet. 
+The pass-phrase uses **AES-256** encryption to lock up your `wallet.json` file. This adds another layer of protection to your Quanta by requiring the recovery key "Password" every time you load the wallet. 
 
-The pass-phrase uses **AES-256** encryption to lock up your `wallet.json` file. This adds another layer of protection to your Quanta by requiring the recovery key "Password" every time you load this. I recommend saving this somewhere very safe, along with your hexseed and private keys. If these are compromised you lose everything.
+It is recommend to save this somewhere very safe, along with your hexseed and private keys. If any of these are compromised you lose everything.
 
-**The pass-phrase must be at least 8 characters in length, and contains at least 1 number and 1 letter.**
+**The pass-phrase must be at least 8 characters in length, and contains at least 1 number and 1 letter.** *(Recommended over 15 characters mixed case)*
 
 #### Tree Height
 
-> FIXME add screen shot for tree height selections
+![QRL Web Wallet](/assets/wallet/qrlWallet-treeHeight.png)
 
 This option allows you to create a wallet with varying tree size. In other words this controls the amount of signatures your wallet can use for transactions safely on the blockchain. 
 
 By default an XMSS Tree height of 10 provides 1024 One Time Signatures. Larger XMSS Tree heights will take longer to generate, please be patient
 
-You must unlock your wallet with the same tree size in the settings. 
+**You must unlock your wallet with the same tree size used to generate when you unlock your wallet again**
 
 Click the create wallet button and the wallet will be generated
 
 
-![QRL New Wallet](/assets/wallet/qrlWallet.png)
+![QRL New Wallet](/assets/wallet/qrlWallet-details.png)
 
-This will produce a sensitive screen once the wallet is created. Be sure to record the relitive details for the new wallet. Most importantly **Record your private keys** these are in the form of both a mnemonic and a hexseed. These will not be shown again, **do not lose these**
+This will produce a sensitive screen once the wallet is created. Be sure to record the relative details for the new wallet. Most importantly **Record your private keys** these are in the form of both a mnemonic and a hexseed. These will not be shown again, **do not lose these**
 
-Also record the QRL address somewhere convient. This is the address you will have others send coins to. If you are mining with this wallet your mined coins will go here as well.
+Also record the QRL address somewhere convenient. This is the address you will have others send coins to. If you are mining with this wallet your mined coins will go here as well.
 
-There is an option to "save unencrypted wallet file" "save secure wallet file" or "open wallet"
+There is an option to "save unencrypted wallet file" "save secure wallet file" or "open wallet". 
 
-> FIXME add screen shot for each selection "unencrypted" "encrypted" and "open wallet"
+It is recommended to save the file in the AES-256 encrypted file version. This will require your password to unlock.
 
-If you choose to save the unencrypted file it will print the mnemonic and hexseed in plain text. 
-
-**Be careful with an unencrypted file**
+If you choose to save the unencrypted file it will print the mnemonic and hexseed in plain text. **Be careful with an unencrypted file, You can lose your stack**
 
 You will be able to use this file to reconstruct the wallet later, if needed. Also this will allow anyone the ability to rebuild you wallet later.
 
-If you choose the encrypted 
+You now have a QRL wallet that can receive coins, send coins, create `slaves.json` files and begin mining. Welcome to the Quantum Resistance!
 
+* * *
 
 ## Sending Coins
 
-![QRL New Wallet](/assets/wallet/qrlWallet-open.png)
+In order to send coins we will need to unlock our wallet. You can use a wallet file, Hexseed, or Mnemonic phrase to unlock your wallet.
+
+![QRL New Wallet](/assets/wallet/qrlWallet-opened.png)
+
+The drop down on the right allows you to change the type of recovery medium you want to use. 
+
+Once the wallet is opened you will be in the **Send** tab in your open wallet. There are four fields we need to fill in. 
+* Recipient Address - Valid QRL address we are sending to
+* Amount - How much Quanta? 0.00000001 is the smallest
+* Fee - How much fee are we paying to make this transaction
+* OTS Key Index - Enter an unused OTS Key Index. **Keep track of used OTS Keys!**
+
+Once you have these details entered, click the Confirm button. You will be shown the details of the transaction before they are broadcats across the QRL network. Make sure everything is corrct and click 
+ 
+
+
+
+
+
+
+
 
 ## Receiving coins
 
