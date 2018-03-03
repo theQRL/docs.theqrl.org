@@ -162,12 +162,6 @@ Once the wallet is opened you will be in the **Send** tab in your open wallet. T
 Once you have these details entered, click the Confirm button. You will be shown the details of the transaction before they are broadcast across the QRL network. Make sure everything is correct and click 
 
 **FIXME Finish this!**
- 
-
-
-
-
-
 
 
 
