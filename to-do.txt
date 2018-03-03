@@ -8,7 +8,7 @@ To-Do.md
 	* CLI wallet gen /wallet/wallet-cli.md
 	* Restore wallet from hex/mnem - Included in each wallet writeup
 	* Ledger Nano S - /wallet/ledger-nano-s.md
-	* cold wwallet setup via Tails/Tor - /wallet/cole-wallet.md
+	* cold wwallet setup via Tails/Tor - /wallet/cold-wallet.md
 * Node
 	* Setup Linux/OSX/Windows (mostly done) - /mining/full-node.md
 		* Add screen shots and trim down content

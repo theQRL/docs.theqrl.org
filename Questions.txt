@@ -7,24 +7,169 @@ Questions.txt
 
 ## Wallet questions
 * How will one tell how much fee is required to send qrl around the network?
+	* An API will be available for this later. As we need the similar api for exchanges
+
+
 
 * Explain the OTS index and what happens when it runs out?
-	* Visual Representation?
+	* OTS index, is the index of your one time signature. 
+	* Basically while signing a transaction, you need specify which OTS index and the key of the corresponding OTS index is used to sign the transaction. 
+	* For now, if you run out of the OTS index, you cannot move your funds, and your funds will be stuck in that wallet. 
+	* This is very critical and I think needs a discussion in team meeting before mainnet release.
+
+* Visual Representation of this?
 
 * What encryption is used in the password generation using the web wallet?
+	* AES-256 encrypt the hex string and mnemonic
 
-	* Is this only used to load the wallet file later?
+* Is this password only used to load the wallet file later?
+	* Will be added to node and CLI
+
 
 * Ability for wallet to connect to remote node running on external port
 
 
 ## Node Questions
 
-* Is it possible to launch on separate ports? much like 
-	* `monerod --rpc-port` and `--p2p-port` Allowing the ability to connect a node running on a separate pc from the pool/wallet
+* Is it possible to launch on separate ports? much like `monerod --rpc-port` and `--p2p-port` Allowing the ability to connect a node running on a separate pc from the pool/wallet
+	* You are allowed to run the nodes on separate port.
+	* You will still be able to connect to other nodes or any pool.
+	* But for now 9000 port is hardcoded into the code, which means, any other node if wanted to connect to your node it will not be possible for it. But we will fix that before mainnet release.
+
+
 
 
 ## Pool Questions
 
 * Will running out of OTS keys in a pool wallet be an issue? Locked funds?
-* can you estimate the ammount of time before pool runs out of OTS index?
+	* Yes
+
+* Can you estimate the ammount of time before pool runs out of OTS index?
+	* it totally depends upon your xmss tree height.
+	* An xmss tree height of 12 means you have got 2^12 ots keys. which is 4096
+	* and you may use any xmss tree height whatever your PC could manage to handle.
+	* Although if you use randomly any ots index after 1024, they are tracked by incremental counter,  
+		* so in case if you  have used ots index 3000, then you will not be able to use any unused ots index between 1024 to 3000, and you need to go for the higher ots index. 
+		* Although all OTS index below 1024 are being tracked, so you can use any unused ots index below 1024 randomly or in a non sequential manner.
+	
+	* Basically in a mining pool, the signer will be the mining pool operator, 
+	* they can preload pool with 100 slave txn, 
+	* each with say 12 xmss tree height. 
+	* Which means each slave will have 4096 keys and so 100 slaves will have total 100*4096 = 409,600. 
+	* So the pool can still use 409,600 to sign blocks. or to make transaction on behalf of master wallet.
+
+
+* * *
+
+## Convo With Cyyber
+
+
+James
+Cyyber when you say 
+
+"Although if you use randomly any ots index after 1024, they are tracked by incremental counter,  so in case if you  have used ots index 3000, then you will not be able to use any unused ots index between 1024 to 3000, and you need to go for the higher ots index. Although all OTS index below 1024 are being tracked, so you can use any unused ots index below 1024 randomly or in a non sequential manner."
+
+What is the limitation/reason this is not tracked above 1024?
+
+Cyyber
+Fri 10:48 PM
+its because there is no limitation (there is a limitation but its big enough) of how long your tree height could be
+and if we start tracking all the ots indexes
+for each address
+then we will consume a lot of disk space
+
+James
+Fri 10:50 PM
+Could we start with OTS index #3000 and up with any transactions / signatures and once we have used all available indexes, fail back to below 1024 and give a ton of warnings to regenerate a new wallet? 
+This wont keeps funds from being locked up, but may help
+That makes sense for the disk size issue tracking everything
+
+Cyyber
+Fri 10:52 PM
+yes you can start with ots index #3000
+and up with any transaction
+and after that you can fall back to any random ots below 1024
+
+Cyyber
+Fri 10:53 PM
+Its a very grey area. We need best practices so that no one get their funds locked
+
+James
+Fri 10:54 PM
+Yeah, That's why I'm thinking about it. I want to give advice int he guide to help this, but I don't want to scare anyone off.
+
+James
+Fri 10:55 PM
+Can we change the pre-loaded OTS index to something other than [0] and force the user to enter anything below whatever OTS we choose to hard code?
+Once the wallet is locked, create another wallet and use OTS index 0-25 to recover your funds into a new wallet since they have never been used...
+
+Cyyber
+Fri 11:25 PM
+James there is no pre-loaded OTS index..
+User needs to enter what ots index he wants to use. 
+
+Cyyber
+Fri 11:26 PM
+When you provide the wallet file
+it generates the OTS key depending upon what ots index you have entered
+
+Cyyber
+Fri 11:26 PM
+This is why we have introduced slave
+its good that you create multiple slaves
+and use those slaves to move your funds
+instead of using your master wallet
+
+Cyyber
+Fri 11:27 PM
+or better a user can create a backup slave
+so incase he has used all his ots index
+he can use that backup slave to move funds 
+to another master wallet
+
+James
+Fri 11:29 PM
+Ok, so create a backup slave with access type [0] and save somewhere I can use this to recreate a new wallet...
+
+Cyyber
+Fri 11:29 PM
+you can use that slave to move your funds from master wallet to new wallet
+so I will always suggest to keep atleast 1 slave for backup
+and use rest of the slave or master wallet for your purpose
+
+James
+Fri 11:30 PM
+Then only use your master wallet to create slaves.. I get it
+
+Cyyber
+Fri 11:30 PM
+Right
+
+James
+Fri 11:30 PM
+Ok I will add this into the guide. 
+
+Cyyber
+Fri 11:30 PM
+its important that generating just slaves.json file is not going to help
+user needs to register those slaves
+
+Cyyber
+Fri 11:30 PM
+and so he needs to make sure his slave txn has been accepted by the network
+once it has been accepted over the network
+then it means
+that slaves are authorized to sign on behalf of the master wallet
+
+James
+Fri 11:32 PM
+This doesn't cost a fee to be accepted by the network? Hmm...
+
+Ok I will stress this and provide the commands to do this. 
+
+Cyyber
+Fri 11:32 PM
+we don't have any minimum fee
+but
+nodes prioritize txn  on the basis of fee
+
