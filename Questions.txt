@@ -1,0 +1,30 @@
+Questions.txt
+
+
+# Why? How? I ask...
+
+
+
+## Wallet questions
+* How will one tell how much fee is required to send qrl around the network?
+
+* Explain the OTS index and what happens when it runs out?
+	* Visual Representation?
+
+* What encryption is used in the password generation using the web wallet?
+
+	* Is this only used to load the wallet file later?
+
+* Ability for wallet to connect to remote node running on external port
+
+
+## Node Questions
+
+* Is it possible to launch on separate ports? much like 
+	* `monerod --rpc-port` and `--p2p-port` Allowing the ability to connect a node running on a separate pc from the pool/wallet
+
+
+## Pool Questions
+
+* Will running out of OTS keys in a pool wallet be an issue? Locked funds?
+* can you estimate the ammount of time before pool runs out of OTS index?
