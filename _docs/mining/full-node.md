@@ -1,19 +1,38 @@
+---
+title: Running A QRL Full Node
+categories: mining
+tags: mining
+---
 
+Running a full node is easy and helps strengthen the QRL network. You can run QRL on most operating systems, though Ubuntu 16.04 is recommended.
 
-# QRL Testnet (Instructions for beta testers)
+You should have a basic understanding of the CLI before attempting to set this up, it isn't really all that tough. Every answer you need is out there already, search online or drop into the QRL chat for help.
 
-You are welcome to install the beta version and join the testnet. Be aware that work is in progress and there might be frequent breaking changes. It's best to start with a fresh install of Ubuntu 16.04.
+**Plan for the future!**
 
-> Note if you build on a small VPS or other light weight hardware you may run into issues building the package. Make sure you have enough *RAM* and enable *SWAP* if needed.
+Make sure the computer you are using has enough power to handle the load of the mining operation. Low power computers do not run full nodes very well and are not recommended. You will also need enough storage to keep the chain as it grows in the future. A few hundred gig HDD/SSD to sync the chain on long term to be safe.
+
+* * *
+
+**Note**
+
+*If you build on a small VPS or other light weight hardware you may run into issues building the package. Make sure you have enough *RAM* and enable *SWAP* if needed. Also ensure the HDD is large enough!*
+
+* * *
 
 ### Minimum Hardware Requirements
 
-* Most Linux / Unix based systems
+* Most Linux / Unix based systems should work
 * Any x86 or x64 based processor
 * Support for AES-NI
 * Enough space for the blockchain growth.
 
-## Update and Dependencies 
+
+## Ubuntu 16.04
+
+### Update 
+
+Update your system ensuring you have the latest packages.
 
 ```bash
 # Issue the following command to update software
@@ -26,10 +45,50 @@ sudo apt update && sudo apt upgrade -y
 # Install the required packages for QRL
 sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
 ```
+
+Skip ahead to the **Install QRL** section FIXME add link to the section
+
+* * * 
+
+## OSX
+
+To build in OSX Please install `brew` if you have not already.
+
+```bash
+# Install brew with
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 
+```
+
+This will prompt you through a few questions while it installs.
+
+Having Issues? Please follow the instructions found at the brew main page: [https://brew.sh/](https://brew.sh/)
+
+```bash
+# Update brew
+brew update
+brew install cmake python3 swig boost hwloc
+```
+
+The rest of the build is the same for OSX as it is for linux. 
+
+* * * 
+## Windows :seedling:
+
+*Windows support in the current version is limited. An alternative is to use an Ubuntu VM (virtualbox), or install Ubuntu using the Linux Subsystem for Windows.
+
+### Ubuntu on Linux Subsystem for Windows
+
+It is possible to run a QRL node using an Ubuntu Bash shell through the Linux Subsystem for Windows. 
+
+Follow [these instructions](https://msdn.microsoft.com/en-us/commandline/wsl/install-win10) to install Ubuntu using Linux Subsystem, start the Ubuntu bash shell, and then follow the previous instructions on setting up QRL.
+
+*We are working on a solution to native Windows support*
+
+
 * * * 
 
 
-### Install QRL BETA-NET
+## Install QRL 
 
 ```bash
 # Install the qrl Package.
@@ -63,7 +122,6 @@ qrl wallet_secret
 ### Recover QRL Wallet
 
 If you lose your wallet, the mining rig catches fire, or worse, you still have the ability to recover your Quanta as long as you've saved the hexseed or mnemonic phrase. 
-
 
 ```bash
 # Options:

@@ -12,7 +12,7 @@ There are two ways you can create a wallet for QRL.
 * Using the QRL CLI in a Linux environment. 
 	* You will need to first install the qrl package following this guide [Linux install guide location](/docs/mining/linux)
 
-> If you are going to mine QRLneed to generate a `slaves.json` file to mine with, use the `qrl` package in a Linux environment. There will be the ability to create this file in the web wallet at a later date.
+If you are going to mine QRLneed to generate a `slaves.json` file to mine with, use the `qrl` package in a Linux environment. *There will be the ability to create this file in the web wallet at a later date.*
 
 * * *
 

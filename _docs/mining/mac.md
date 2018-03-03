@@ -4,50 +4,30 @@ categories: mining
 tags: mining
 ---
 
+          
+Any modern PC with the latest OS updates should work running a full QRL node. 
 
-![logo](/assets/logo.png)
+## Minimum Hardware Requirements
 
-
-![QRL Logo](assets/QRLnotextPink.png)
-
-# Mac Full Node Guide
-
-* [Home](#node-setup-instructions)
-* [Install QRL](#install-qrl)
-* [Wallet](#setup-wallet)
- * [Create New Wallet](#create-new-wallet)
- * [Get Mnemonic](#mem)
- * [Recover Wallet](#Recwal)
-* [Generate Slaves.json](#slave)
-* [Start Node](#node)
-* [Handy Commands](#commands)
-* [Install From Source](#source)
-* [User config.yml File](#config)
-
-## Node Setup Instructions
-
-Any modern PC with the latest OS updates should work running a full QRL node.
-
-**Minimum Requirements to Run QRL**
-
-* Linux / Unix / mac based systems should work *YMMV*
+* Most Linux / Unix based systems
 * Any x86 or x64 based processor
-* Support for AES-NI is required for full nodes
- * You can pool mine with non-AES-NI processors, See the list of [pools](/Pool-List.md) FIX-ME with correct link
-* Windows users using the built in FIX-ME with correct info
-* HDD large enough to store the BlockChain at current size, plus future growth                
+* Support for AES-NI
+* Enough space for the blockchain growth.
 
-You should have a basic understanding of the CLI before attempting to set this up, it isn't really all that tough. If you have issues please drop into the Discord chat:
 
-[discord.gg/RcR9WzX](https://cnhv.co/1mfxv)
-Lots of friendly people over there ready to help.
+You should have a basic understanding of the CLI before attempting to set this up, it isn't really all that tough. If you have issues please drop into the Discord chat: [QRL discord Chat](discord.gg/RcR9WzX) Lots of friendly people over there ready to help.   
               
+**Plan for the future!**
 
-### Install brew
+Make sure the computer you are using has enough power to handle the load of the mining operation. You will also need enough storage to keep the chain as it grows in the future. Recommend a few hundred gig HDD/SSD to sync the chain on long term to be safe.
 
-If you dont have brew, install it with this command:  
+## Install 
 
-```bash
+### brew
+
+``` bash
+# If you dont have brew already, install it with this command:  
+
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
 ```
 
@@ -58,14 +38,18 @@ You can also follow the instructions found at the [brew main page](https://brew.
 #### Update
 
 Now that you have brew installed, update your package lists:  
-```bash
+
+``` bash
+# Update brew package lists
 brew update
 ```
 
 #### Dependencies
 
-Install the required dependencies:  
+``` bash
+# Install the required dependencies:  
 brew install cmake python3 swig boost hwloc
+```
 
 * * *
 
@@ -73,27 +57,24 @@ brew install cmake python3 swig boost hwloc
 
 We have some options for installing the QRL package. We can either use the package management system for python3 `pip3` **or** we can install from sources getting the files from GitHub.
 
-**Python Packages**
-
-Install the QRL Package with:
-
-```bash  
-pip3 install -U qrl
-```
-**From Git Sources**
-
-If you want to run from the repo you can clone it to the local file system with:  
+#### pip3
 
 ```bash
-cd ~/  
-git clone https://github.com/theQRL/QRL.git
-cd QRL/
-git checkout master
-git pull
-```
-This will clone the QRL repo to the ~/QRL directory found in the users /home/ folder.
+# Install the QRL Package.
 
-Also later if we want to update to get the latest changes from the developers it's a simple `git pull` from inside the QRL directory.
+pip3 install -U qrl
+```
+
+If your having issues runnning the above command there are a few things to do that will help diagnose the issue. The `pip3` function comes with a logging capibility to see where the issues are happening.  
+
+```bash
+# Add Logging for pip3 
+
+pip3 install -U qrl --log ~/pip3-Qrl.log
+```
+
+This will print details of the install to your home directory with the file name pip3-qrl.log.
+The error should be inside.
 
 * * *
 
@@ -101,9 +82,8 @@ Also later if we want to update to get the latest changes from the developers it
 
 Before we create our new wallet there are a few things to know about.
 
-*   The default location for the wallet and the chain is ~/.qrl unless you specify it on the command line. Make sure this location has some room for the chain to grow.
-*   If you installed with pip3 install -U qrl you will use the qrl command.
-*   If you installed from source via GitHub you will be invoking the ~/QRL/start_qrl.py and the ~/QRL/qrl/cli.py commands.
+*   The default location for the wallet and the chain is ~/.qrl unless you specify it on the command line. 
+* Make sure this location has some room for the chain to grow.
 
 ### Create New Wallet
 
@@ -348,11 +328,3 @@ chain_state_broadcast_period : 30 # must be less than ping_timeout
 #slaves_filename : '/home/{USER}/.qrl/slaves.json' 
 #wallet_dir : /home/{USER}/.qrl/wallet 
 #
-
-
-
-All credit goes to the official project team: [The QRL - https://theqrl.org](https://cnhv.co/1lcc8)  
-I have no affiliation with the project. I am **NOT** responsible for your actions.
-
-All credit goes to the official project team. [https://TheQRL.org](https://theqrl.org)  
-I have no affiliation with the project. I am **NOT** responsible for your actions.
