@@ -4,12 +4,19 @@ categories: mining
 tags: mining
 ---
 
-# QRL Testnet (Instructions for beta testers)
+Running a full node is easy and helps strengthen the QRL network. You should have a basic understanding of the CLI before attempting to set this up, it isn't really all that tough. Every answer you need is out there already, search online or drop into the QRL chat for help.
 
-You are welcome to install the beta version and join the testnet. Be aware that work is in progress and there might be frequent breaking changes. It's best to start with a fresh install of Ubuntu 16.04.
+**Plan for the future!**
 
-> Note if you build on a small VPS or other light weight hardware you may run into issues building the package. Make sure you have enough *RAM* and enable *SWAP* if needed.
+Make sure the computer you are using has enough power to handle the load of the mining operation. Low power computers do not run full nodes very well and are not recommended. You will also need enough storage to keep the chain as it grows in the future. A few hundred gig HDD/SSD to sync the chain on long term to be safe.
 
+* * *
+
+**Note**
+
+*If you build on a small VPS or other light weight hardware you may run into issues building the package. Make sure you have enough *RAM* and enable *SWAP* if needed. Also ensure the HDD is large enough!*
+
+* * *
 ### Minimum Hardware Requirements
 
 * Most Linux / Unix based systems
