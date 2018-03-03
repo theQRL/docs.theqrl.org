@@ -1,4 +1,8 @@
-
+---
+title: Linux Full Node
+categories: mining
+tags: mining
+---
 
 # QRL Testnet (Instructions for beta testers)
 
