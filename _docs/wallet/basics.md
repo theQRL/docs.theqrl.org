@@ -62,7 +62,7 @@ You must unlock your wallet with the same tree size in the settings.
 Click the create wallet button and the wallet will be generated
 
 
-![QRL New Wallet](/assets/basics/qrlWallet.png)
+![QRL New Wallet](/assets/wallet/qrlWallet.png)
 
 This will produce a sensitive screen once the wallet is created. Be sure to record the relitive details for the new wallet. Most importantly **Record your private keys** these are in the form of both a mnemonic and a hexseed. These will not be shown again, **do not lose these**
 
@@ -83,15 +83,15 @@ If you choose the encrypted
 
 ## Sending Coins
 
-![QRL New Wallet](/assets/basics/qrlWallet-open.png)
+![QRL New Wallet](/assets/wallet/qrlWallet-open.png)
 
 ## Receiving coins
 
-![QRL New Wallet](/assets/basics/qrlWallet-transfer.png)
+![QRL New Wallet](/assets/wallet/qrlWallet-transfer.png)
 
 ## Tokens
 
-![QRL New Wallet](/assets/basics/qrlWallet.png)
+![QRL New Wallet](/assets/wallet/qrlWallet.png)
 
 Creating a new token is easy. Once you have all of the details figured out and the fee paid the network takes care of the rest. 
 
@@ -102,12 +102,12 @@ FIXME add details here for what the tokens can be used for, and the basic tech b
 Enter the token creation owners QRL address into the form, The Token symbol, the Token name, The amount of Decimals for your token. You need to enter at least one QRL address into the **Initial Token Holders** address fields. You can add as many other addresses as you see fit. Below this we have our QRL fee for processing ths transaction and the OTS key Index we intend to use. Ensure you have not already used this OTS key index.
 
 
-![QRL New Wallet](/assets/basics/qrlWallet-tokenCreate.png)
+![QRL New Wallet](/assets/wallet/qrlWallet-tokenCreate.png)
 
 
 Once you have filled in all of the necessary details, click the create token button at the bottom of the form. THis will broadcast the creation of your token aross the QRL network and send the newly minted tokens to the addresses specified.
 
-![QRL New Wallet](/assets/basics/qrlWallet-tokenCreateSuccess.png)
+![QRL New Wallet](/assets/wallet/qrlWallet-tokenCreateSuccess.png)
 
 
 ## Checking Token Balance
