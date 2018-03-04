@@ -6,7 +6,8 @@ tags: wallet
 
 The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your coins safely, while allowing you to mine without the risk of losing private keys. 
 
-This guide will walk you through:
+This guide will walk you through
+
 * Setting up a new wallet
 * Sending a transaction over the network *(Sending Coins)*
 * Receiving a transaction over the network *(Getting Coins)*
@@ -15,16 +16,14 @@ This guide will walk you through:
 
 ## The QRL Wallet
 
-There are two ways to can create a wallet for QRL. 
+There are two ways you can create a wallet for QRL
 
-* The online wallet served up at [wallet.theqrl.org.](https://wallet.theqrl.org)
-* Using the QRL CLI in a Linux environment. 
+* The online wallet served up at [wallet.theqrl.org](https://wallet.theqrl.org)
+* Use the QRL CLI in a Linux/Unix environment 
 
-In order to create a wallet in the CLI you must first install the `qrl` python package. This will also allow you to create a `slaves.json` to setup and mine QRL as well.
+In order to create a wallet in the CLI you must first install the qrl python package. This will allow you to create a slaves.json to setup and mine QRL as well.
 
-*There will be the ability to create this file in the web wallet at a later date.*
-
-Before we get going on making the new wallet there are a few things you need to know to get started. Being Quantum Resistant does not come with out some challenges. 
+Being Quantum Resistant comes with some inhearent challenges. Before creating your new wallet, there are a few things you need to know to get started.  
 
 * * *
 
