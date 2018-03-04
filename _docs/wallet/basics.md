@@ -21,28 +21,18 @@ There are two ways you can create a wallet for QRL
 * The online wallet served up at [wallet.theqrl.org](https://wallet.theqrl.org)
 * Use the QRL CLI in a Linux/Unix environment 
 
-In order to create a wallet in the CLI you must first install the qrl python package. This will allow you to create a slaves.json to setup and mine QRL as well.
+In order to create a wallet in the CLI you must first install the QRL python package. This will allow you to create a slaves.json to setup and mine QRL as well.
 
-Being Quantum Resistant comes with some inhearent challenges. Before creating your new wallet, there are a few things you need to know to get started.  
+Being Quantum Resistant comes with some inherent challenges. Before creating your new wallet, there are a few things you need to know.  
 
-* * *
+##### OTS Key Index
 
-### OTS Key Usage
+The OTS key index or the **One Time Signature** key index is used when you sign a transaction onto the network. *The OTS key index is **limited**.* Once this index is used you will no longer be able to sign transactions.
 
-The OTS index or the **One Time Signature** index is used when you sign a transaction onto the network. 
+**This can not be stressed enough** 
 
-You are required to specify which OTS index to use from the wallet file you have created. Depending on the tree height you selected when setting up the wallet you will start with anywhere from 1,024 to 262,144 OTS indexes. Yo may not re-use any OTS index. The transaction will be rejected. 
+**IF you use all of your OTS Key Index's with funds in the wallet, these funds will be lost.**
 
-* * *
-
-### Important OTS Info
-
-This can not be stressed enough, The OTS key index is limited. Once this index is used you will no longer be able to sign transactions.
-
-What this means:
-* If all OTS index's are used
-	* Funds that are in a wallet with no available OTS index left will not be able to transfer out of the wallet, and will be **lost**. 
-	* There is nothing to do if all of the OTS indexes are used, you cannot sign a transaction.
 
 * * *
 
@@ -58,6 +48,31 @@ What this means:
 * Generate a slaves.json file and save it as a backup to use when the OTS index is close to being exhausted. 
 	* This will allow you to transfer the remaining Quanta to a new wallet with available OTS index's
 	* This file can be stored on a USB flash drive in a safe place
+
+
+{::comment}
+FIXME - Trim down content here and move this into it's own writeup. 
+{:/comment}
+
+* * *
+
+### OTS Key Usage
+
+The OTS index or the **One Time Signature** index is used when you sign a transaction onto the network. 
+
+You are required to specify which OTS index to use from the wallet file you have created. Depending on the tree height you selected when setting up the wallet you will start with anywhere from 16 to 262,144 OTS indexes. Yo may not re-use any OTS key index. The transaction will be rejected. 
+
+* * *
+
+### Important OTS Info
+
+This can not be stressed enough, The OTS key index is limited. Once this index is used you will no longer be able to sign transactions.
+
+What this means:
+* If all OTS index's are used
+	* Funds that are in a wallet with no available OTS index left will not be able to transfer out of the wallet, and will be **lost**. 
+	* There is nothing to do if all of the OTS indexes are used, you cannot sign a transaction.
+
 
 * * *
 
