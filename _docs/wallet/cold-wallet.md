@@ -4,7 +4,15 @@ categories: wallet
 tags: wallet
 ---
 
-In order to fully secure our QRL we should follow best practice and generate our private keys off line. This will prevent anyone form viewing our private keys while we record and safely save the wallet.
+{::comment}
+
+Last Edit - fr1t2 3/4/18
+
+{:/comment}
+
+
+1984\. It was great
+\- others say that, too! In order to fully secure our QRL we should follow best practice and generate our private keys off line. This will prevent anyone form viewing our private keys while we record and safely save the wallet.
 
  It is a bit more work to set this all up, but in the long run it is worth it. Once tails is setup you can generate cold wallets for all of your other coins that you want to hold in secure cold wallets.
 
@@ -37,11 +45,11 @@ Once you have the basic requirements together, follow the instructions over on t
 3. Reboot into USB 2 with new Tails OS 
 4. Generate QRL wallet
 5. Save Public and Private keys offline and destroy the wallet
-6. Feel good about yourself, go plant a tree or volunteer knowing that your Quanta is safe!
+6. **Feel good**, go plant a tree or volunteer, knowing that your Quanta is safe!
 
 ### Get Tails
 
-You will need a USB drive to burn the OS to. Everything will be wiped from the drive so make sure you backup. I have used a 16G USB drive for Tails, anything above 8G will do. A bigger drive gives you more space to save things to on the persistent volume that we will create.
+You will need a USB drive to burn installer to, and another for the OS to run from. *Everything will be wiped from the USB drives* so make sure you backup. I have used a 16G USB drive for Tails, anything above 8G will do. A bigger drive gives you more space to save things to on the persistent volume that we will create.
 
 Head over to the [Tails Homepage](https://tails.boum.org/install/index.en.html) to get started. They have made he install as painless as possible. Follow the guide there and install from the OS you are using. 
 
