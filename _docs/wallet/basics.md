@@ -6,6 +6,8 @@ tags: wallet
 
 The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your coins safely, while allowing you to mine without the risk of losing private keys. 
 
+When you create a new wallet you create an XMSS tree, which is comprised of many signatures to make a signature scheme. Every signature is referenced as your OTS index.
+
 ##### This guide will walk you through
 
 * Setting up a new wallet
@@ -18,7 +20,7 @@ Being Quantum Resistant comes with some inherent challenges. Before creating you
 
 ##### OTS Key Index
 
-The OTS key index or the **One Time Signature** key index is used when you sign a transaction onto the network. *The OTS key index is **limited**.* Once this index is used you will no longer be able to sign transactions. **This can not be stressed enough!** 
+The OTS key index or the *One Time Signature* key index is used when you sign a transaction onto the network. *The OTS key index is limited.* Once this index is used you will no longer be able to sign transactions. This can not be stressed enough! 
 
 > **IF you use all of your OTS Key Index's with funds in the wallet, these funds will be lost.**
 
@@ -66,7 +68,7 @@ What this means:
 
 ### Slaves.json Explained
 
-When you create a new wallet you create a Quantum resistant store based on the way the OTS and trees work together **FIXME - Help explain this** 
+When you create a new wallet you create an XMSS tree, which is comprised of many signatures to make a signature scheme. Every signature is referenced as your OTS index. 
 
 Since the available amount of these index's are limited the slaves.json file was created. This allows you to create a slave to the main wallet who, depending on how the slaves.json was set up allows for full signing on the blockchain. 
 
