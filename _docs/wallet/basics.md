@@ -26,7 +26,7 @@ The OTS key index or the *One Time Signature* key index is used when you sign a 
 > **IF you use all of your OTS Key Index's with funds in the wallet, these funds will be lost.**
 
 
-* * *
+
 
 ### Best Wallet Practices 
 
@@ -41,7 +41,7 @@ The OTS key index or the *One Time Signature* key index is used when you sign a 
 	* This will allow you to transfer the remaining Quanta to a new wallet with available OTS index's
 	* This file can be stored on a USB flash drive in a safe place
 
-* * *
+
 
 {::comment}
 FIXME - move this into it's own write-ups. Oe for each topic, OTS key index, Slaves.json 
@@ -53,7 +53,7 @@ The OTS index or the **One Time Signature** index is used when you sign a transa
 
 You are required to specify which OTS index to use from the wallet file you have created. Depending on the tree height you selected when setting up the wallet you will start with anywhere from 16 to 262,144 OTS indexes. Yo may not re-use any OTS key index. The transaction will be rejected. 
 
-* * *
+
 
 ### Important OTS Info
 
@@ -65,7 +65,7 @@ What this means:
 	* There is nothing to do if all of the OTS indexes are used, you cannot sign a transaction.
 
 
-* * *
+
 
 ### Slaves.json Explained
 
@@ -81,7 +81,7 @@ In order to increase that amount we generate a slaves.json file with 10 slaves. 
 
 If we create a wallet with tree height of 18 xmss or 262,144 Signatures and generate a slaves.json file with 100 slaves in it i would have 26,214,400 signatures available with this one file, that I can generate 262,143 more times from the main wallet before it runs out of signatures.
 
-* * *
+
 
 {:/comment}
 
@@ -91,7 +91,7 @@ By far the easiest way to generate a wallet is by using the online wallet. All s
 
 Browse over to [wallet.theqrl.org](https://wallet.theqrl.org) to get started.
 
-* * *
+
 By default you start in the "New Wallet" option to generate a QRL address and private keys for you to interface with the QRL blockchain.
 
 ![QRL Web Wallet](/assets/wallet/qrlWallet.png)
@@ -128,7 +128,7 @@ By default an XMSS Tree height of 10 provides 1024 One Time Signatures. Larger X
 
 Click the create wallet button and the wallet will be generated
 
-* * *
+
 
 
 This will produce a sensitive screen once the wallet is created. Be sure to record the relative details for the new wallet. Most importantly **Record your private keys** these are in the form of both a mnemonic and a hexseed. These will not be shown again, **do not lose these**
@@ -147,7 +147,7 @@ You will be able to use this file to reconstruct the wallet later, if needed. Al
 
 You now have a QRL wallet that can receive coins, send coins, create `slaves.json` files and begin mining. Welcome to the Quantum Resistance! Click "open Wallet" and enter your recovery information. 
 
-* * *
+
 
 ## Sending Coins
 
