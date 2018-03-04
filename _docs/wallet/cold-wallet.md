@@ -8,7 +8,7 @@ In order to fully secure our QRL we should follow best practice and generate our
 
  It is a bit more work to set this all up, but in the long run it is worth it. Once tails is setup you can generate cold wallets for all of your other coins that you want to hold in secure cold wallets.
 
-![Tails Logo](/assets/wallet/tails-logo-flat-crop.png)
+![Tails Logo](/assets/wallet/tails-logo-square.png)
 
 This guide will use the [Tails](https://tails.boum.org/)
  operating system to create a safe environment for the generation of a new secure wallet. You will install Tails on a [Live USB drive](https://en.wikipedia.org/wiki/Live_USB) and boot from this usb to create your new QRL wallet. 
