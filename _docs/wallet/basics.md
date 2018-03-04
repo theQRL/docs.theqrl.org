@@ -6,12 +6,12 @@ tags: wallet
 
 The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your coins safely, while allowing you to mine without the risk of losing private keys. 
 
-This guide will walk you through
+##### This guide will walk you through
 
 * Setting up a new wallet
-* Sending a transaction over the network *(Sending Coins)*
-* Receiving a transaction over the network *(Getting Coins)*
-* Checking transaction details on the [Block Explorer](https://explorer.theqrl.org) including your current balance
+* Sending a transaction over the network *(Send Coins)*
+* Receiving a transaction over the network *(Get Coins)*
+* Checking transaction details on the [Block Explorer](https://explorer.theqrl.org) *\*including your current wallet balance*
 
 
 ## The QRL Wallet
@@ -52,7 +52,6 @@ The OTS key index or the **One Time Signature** key index is used when you sign 
 
 {::comment}
 FIXME - Trim down content here and move this into it's own writeup. 
-{:/comment}
 
 * * *
 
@@ -73,6 +72,7 @@ What this means:
 	* Funds that are in a wallet with no available OTS index left will not be able to transfer out of the wallet, and will be **lost**. 
 	* There is nothing to do if all of the OTS indexes are used, you cannot sign a transaction.
 
+{:/comment}
 
 * * *
 
