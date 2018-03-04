@@ -15,7 +15,6 @@ In order to fully secure our QRL we should follow best practice and generate our
 
  It is a bit more work to set this all up, but in the long run it is worth it. Once tails is setup you can generate cold wallets for all of your other coins that you want to hold in secure cold wallets.
 
-* * *
 
 ## Tails
 
