@@ -19,9 +19,9 @@ We will also use the "anonymity" features that come packaged to grab the wallet 
 
 <a href="https://tails.boum.org/about/index.en.html"> ![Tails Logo](/assets/wallet/tails-logo-flat-inverted-med.png)</a>
 
-Tails is a live operating system that you can start on almost any computer from a USB stick or a DVD. It is Free Software and based on Debian GNU/Linux. 
+Tails is a live operating system that you can start on almost any computer from a USB stick or a DVD. It is Free Software and based on Debian GNU/Linux. Tails aims at preserving your privacy and anonymity, and helps you to use the Internet anonymously and circumvent censorship at all cost. 
 
-Tails aims at preserving your privacy and anonymity, and helps you to use the Internet anonymously and circumvent censorship at all cost. All connections to the Internet are forced to go through the [Tor network](https://www.torproject.org/).
+All connections to the Internet are forced to go through the [Tor network](https://www.torproject.org/).
 
 #### Requirements for this guide
 
@@ -29,9 +29,7 @@ From the Tails website, you don't need too much to get started.
 
 ![Tails Logo](/assets/wallet/tailsRequire.png)
 
-Once you have the basic requirements together, follow the instructions over on the Tails website.
-
-[Tails Documentation](https://tails.boum.org/doc/index.en.html)
+Once you have the basic requirements together, follow the instructions over on the Tails website. If you need help you can refer to the [Tails Documentation](https://tails.boum.org/doc/index.en.html) on the main site.
 
 #### Basic Install Overview
 
@@ -39,8 +37,8 @@ Once you have the basic requirements together, follow the instructions over on t
 2. Boot into this install USB and install tails onto USB drive 2
 3. Reboot into USB 2 with new Tails OS 
 4. Generate QRL wallet
-
-
+5. Save Public and Private keys offline and destroy the wallet
+6. Feel good about yourself, go plant a tree or volunteer knowing that your Quanta is safe!
 
 #### Get Tails
 
