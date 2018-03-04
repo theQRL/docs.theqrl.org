@@ -28,10 +28,10 @@ Tails is a complete operating system designed to be used from a USB stick or a D
 #### Requirements For Guide
 
 * Pc to download tails with firefox or chrome installed
-* USB thumb drive with over 8Gb of storage
+* 2 USB thumb drives with over 8Gb of storage
 * About an Hour and a half to set this up
 
-![Tails Logo](/assets/wallet/tailsRequire-med.png)
+![Tails Logo](/assets/wallet/tailsRequire.png)
 
 
 #### Helpful Links
