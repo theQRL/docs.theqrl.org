@@ -12,7 +12,6 @@ In order to fully secure our QRL we should follow best practice and generate our
 
 ## Tails
 
-
 This guide will use the **Tails** operating system to create a safe environment to generate a new secure wallet. You will install Tails on a [Live USB drive](https://en.wikipedia.org/wiki/Live_USB) and boot from this usb to create your new QRL wallet. 
 
 We will also use the "anonymity" features that come packaged to grab the wallet files and check their validity. Using "anonymous" tools makes it much more difficult for someone to find what you are doing or play Man-In-The-Middle and collect the private keys.
@@ -40,13 +39,14 @@ Once you have the basic requirements together, follow the instructions over on t
 5. Save Public and Private keys offline and destroy the wallet
 6. Feel good about yourself, go plant a tree or volunteer knowing that your Quanta is safe!
 
-#### Get Tails
+### Get Tails
 
 You will need a USB drive to burn the OS to. Everything will be wiped from the drive so make sure you backup. I have used a 16G USB drive for Tails, anything above 8G will do. A bigger drive gives you more space to save things to on the persistent volume that we will create.
 
 Head over to the [Tails Homepage](https://tails.boum.org/install/index.en.html) to get started. They have made he install as painless as possible. Follow the guide there and install from the OS you are using. 
 
-**To Get started directly use a link from below based on your operating system**
+#### To Get started directly use a link from below based on your operating system
+
 *   [Install from windows](https://tails.boum.org/install/win/usb-overview/index.en.html)
 *   [Install from macOS](https://tails.boum.org/install/mac/index.en.html)
 *   [Install from Linux (Debian based)](https://tails.boum.org/install/debian/index.en.html)
@@ -65,7 +65,7 @@ Once you have the bios pulled up look for the boot options and allow the PC to b
 Boot into the USB and you should be greeted with a tails screen with 2 selections. Choose the default settings and boot.  
 At the next screen you will see a bunch of options. Leave everything as a default for now and continue. **Welcome to Tails!**
 
-#### Persistent Data
+### Persistent Data
 
 Now start the persistent volume assistant at **Applications ▸ Tails ▸ Configure persistent volume**. You need to select at minimum:
 
