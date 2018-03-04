@@ -20,14 +20,19 @@ We will also use the "anonymity" features that come packaged to grab the wallet 
 
 ## Tails
 
-![Tails Logo](/assets/wallet/tails-logo-flat-crop.png)
 
 Tails is a complete operating system designed to be used from a USB stick or a DVD independently of the computer's original operating system. It is Free Software and based on Debian GNU/Linux.
+
+![Tails Logo](/assets/wallet/tails-logo-flat-crop.png)
 
 #### Requirements For Guide
 
 * Pc to download tails with firefox or chrome installed
 * USB thumb drive with over 8Gb of storage
+* About an Hour and a half to set this up
+
+![Tails Logo](/assets/wallet/tailsCombined.png)
+
 
 #### Helpful Links
 
