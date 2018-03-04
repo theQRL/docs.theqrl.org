@@ -4,37 +4,54 @@ categories: wallet
 tags: wallet
 ---
 
-The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your coins safely, while allowing you to mine without the risk of loosing private keys. 
+The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your coins safely, while allowing you to mine without the risk of losing private keys. 
 
-This guide will walk you through:
+
+##### This guide will walk you through
+
 * Setting up a new wallet
-* Sending a transaction over the network *(Sending Coins)*
-* Receiving a transaction over the network *(Getting Coins)*
-* Checking transaction details on the [Block Explorer](https://explorer.theqrl.org) including your current balance
+* Sending a transaction over the network *(Send Coins)*
+* Receiving a transaction over the network *(Get Coins)*
+* Checking transaction details on the [Block Explorer](https://explorer.theqrl.org) *\*including your current wallet balance*
 
 
-## The QRL Wallet
+Being Quantum Resistant comes with some inherent challenges. Before creating your new wallet, there are a few things you need to know.  
 
-There are two ways to can create a wallet for QRL. 
+##### OTS Key Index
 
-* The online wallet served up at [wallet.theqrl.org.](https://wallet.theqrl.org)
-* Using the QRL CLI in a Linux environment. 
+When you create a new wallet you create an XMSS tree, which is comprised of many signatures to make a signature scheme. Every signature is referenced as your OTS index or *One Time Signature* key index. 
 
-In order to create a wallet in the CLI you must first install the `qrl` python package. This will also allow you to create a `slaves.json` to setup and mine QRL as well.
+*The OTS key index is limited.* Once this index is used you will no longer be able to sign transactions. This can not be stressed enough! 
 
-*There will be the ability to create this file in the web wallet at a later date.*
+> **IF you use all of your OTS Key Index's with funds in the wallet, these funds will be lost.**
 
-Before we get going on making the new wallet there are a few things you need to know to get started. Being Quantum Resistant does not come with out some challenges. 
 
-* * *
+
+
+### Best Wallet Practices 
+
+**FIXME** - create a spreadsheet for users to fill in with key index and TX number and give as a download link here?...
+
+* Do not use all of your OTS key index's
+	* Keep track of the index's already used in a spreadsheet or ledger
+	* Think of this as your checkbook, you can not reuse any check number for your account
+* Store your private keys somewhere safe
+	* Write them on a thick piece of paper with water proof ink
+	* Stamp them into a piece of stainless steel  
+* Create a slaves.json file to use fro transactions or mining QRL 
+
+
+{::comment}
+FIXME - move this into it's own write-ups. Oe for each topic, OTS key index, Slaves.json 
+
 
 ### OTS Key Usage
 
 The OTS index or the **One Time Signature** index is used when you sign a transaction onto the network. 
 
-You are required to specify which OTS index to use from the wallet file you have created. Depending on the tree height you selected when setting up the wallet you will start with anywhere from 1,024 to 262,144 OTS indexes. Yo may not re-use any OTS index. The transaction will be rejected. 
+You are required to specify which OTS index to use from the wallet file you have created. Depending on the tree height you selected when setting up the wallet you will start with anywhere from 16 to 262,144 OTS indexes. Yo may not re-use any OTS key index. The transaction will be rejected. 
 
-* * *
+
 
 ### Important OTS Info
 
@@ -43,15 +60,16 @@ This can not be stressed enough, The OTS key index is limited. Once this index i
 What this means:
 * If all OTS index's are used
 	* Funds that are in a wallet with no available OTS index left will not be able to transfer out of the wallet, and will be **lost**. 
-	* There is nothing to do if all of the QTS indexes are used, you cannot sign a transaction.
+	* There is nothing to do if all of the OTS indexes are used, you cannot sign a transaction.
 
-* * *
 
-### Best Wallet Practices 
 
-* Do not use all of your OTS index's
-	* Keep track of the index's used in a spreadsheet or ledger
-	* Think of this as your checkbook, you can not reuse any check number for your account.
+
+### Slaves.json Explained
+
+
+
+	
 * Generate a `slaves.json` file to use for signing, do not use the main wallet
 	* This file is generated from your main wallet keys and must be approved and authorized by the network.
 	* Depending on the number of slaves you have authorized changes the available amount of transactions this slave can preform on the main wallets behalf.
@@ -60,11 +78,9 @@ What this means:
 	* This will allow you to transfer the remaining Quanta to a new wallet with available OTS index's
 	* This file can be stored on a USB flash drive in a safe place
 
-* * *
 
-### Slaves.json Explained
 
-When you create a new wallet you create a Quantum resistant store based on the way the OTS and trees work together **FIXME - Help explain this** 
+When you create a new wallet you create an XMSS tree, which is comprised of many signatures to make a signature scheme. Every signature is referenced as your OTS index. 
 
 Since the available amount of these index's are limited the slaves.json file was created. This allows you to create a slave to the main wallet who, depending on how the slaves.json was set up allows for full signing on the blockchain. 
 
@@ -76,10 +92,9 @@ In order to increase that amount we generate a slaves.json file with 10 slaves. 
 
 If we create a wallet with tree height of 18 xmss or 262,144 Signatures and generate a slaves.json file with 100 slaves in it i would have 26,214,400 signatures available with this one file, that I can generate 262,143 more times from the main wallet before it runs out of signatures.
 
-* * *
 
 
-
+{:/comment}
 
 ## Create an Online Wallet
 
@@ -87,7 +102,7 @@ By far the easiest way to generate a wallet is by using the online wallet. All s
 
 Browse over to [wallet.theqrl.org](https://wallet.theqrl.org) to get started.
 
-* * *
+
 By default you start in the "New Wallet" option to generate a QRL address and private keys for you to interface with the QRL blockchain.
 
 ![QRL Web Wallet](/assets/wallet/qrlWallet.png)
@@ -124,7 +139,7 @@ By default an XMSS Tree height of 10 provides 1024 One Time Signatures. Larger X
 
 Click the create wallet button and the wallet will be generated
 
-* * *
+
 
 
 This will produce a sensitive screen once the wallet is created. Be sure to record the relative details for the new wallet. Most importantly **Record your private keys** these are in the form of both a mnemonic and a hexseed. These will not be shown again, **do not lose these**
@@ -143,7 +158,7 @@ You will be able to use this file to reconstruct the wallet later, if needed. Al
 
 You now have a QRL wallet that can receive coins, send coins, create `slaves.json` files and begin mining. Welcome to the Quantum Resistance! Click "open Wallet" and enter your recovery information. 
 
-* * *
+
 
 ## Sending Coins
 

@@ -4,49 +4,56 @@ categories: wallet
 tags: wallet
 ---
 
+{::comment}
+
+Last Edit - fr1t2 3/4/18 - 10:20am
+
+{:/comment}
+
+
 In order to fully secure our QRL we should follow best practice and generate our private keys off line. This will prevent anyone form viewing our private keys while we record and safely save the wallet.
 
  It is a bit more work to set this all up, but in the long run it is worth it. Once tails is setup you can generate cold wallets for all of your other coins that you want to hold in secure cold wallets.
-
-
-This guide will use the [Tails](https://tails.boum.org/)
- operating system to create a safe environment for the generation of a new secure wallet. You will install Tails on a [Live USB drive](https://en.wikipedia.org/wiki/Live_USB) and boot from this usb to create your new QRL wallet. 
-
-We will also use the "anonymity" features that come packaged to grab the wallet files and check their validity. Using "anonymous" tools makes it much more difficult for someone to find what you are doing or play Man-In-The-Middle and collect the private keys.
-
-**Safety is a perception afforded to those not aware.**
 
 * * *
 
 ## Tails
 
+This guide will use the **Tails** operating system to create a safe environment to generate a new secure wallet. You will install Tails on a [Live USB drive](https://en.wikipedia.org/wiki/Live_USB) and boot from this usb to create your new QRL wallet. 
 
-Tails is a complete operating system designed to be used from a USB stick or a DVD independently of the computer's original operating system. It is Free Software and based on Debian GNU/Linux.
+We will also use the "anonymity" features that come packaged to grab the wallet files and check their validity. Using "anonymous" tools makes it much more difficult for someone to find what you are doing or play Man-In-The-Middle and collect the private keys.
 
-![Tails Logo](/assets/wallet/tails-logo-flat-crop.png)
+<a href="https://tails.boum.org/about/index.en.html"> ![Tails Logo](/assets/wallet/tails-logo-flat-inverted-med.png)</a>
 
-#### Requirements For Guide
+Tails is a live operating system that you can start on almost any computer from a USB stick or a DVD. It is Free Software and based on Debian GNU/Linux. Tails aims at preserving your privacy and anonymity, and helps you to use the Internet anonymously and circumvent censorship at all cost. 
 
-* Pc to download tails with firefox or chrome installed
-* USB thumb drive with over 8Gb of storage
-* About an Hour and a half to set this up
+All connections to the Internet are forced to go through the [Tor network](https://www.torproject.org/).
 
-![Tails Logo](/assets/wallet/tailsCombined-med.png)
+#### Requirements for this guide
 
+From the Tails website, you don't need too much to get started.
 
-#### Helpful Links
+![Tails Logo](/assets/wallet/tailsRequire.png)
 
-* [Tails Documentation](https://tails.boum.org/doc/index.en.html)
-* [The TorProject.org](https://www.torproject.org/)
-* [QRL GitHub for Wallet Files](https://github.com/theQRL)
+Once you have the basic requirements together, follow the instructions over on the Tails website. If you need help you can refer to the [Tails Documentation](https://tails.boum.org/doc/index.en.html) on the main site.
 
-#### Get Tails
+#### Basic Install Overview
 
-You will need a USB drive to burn the OS to. Everything will be wiped from the drive so make sure you backup. I have used a 16G USB drive for Tails, anything above 8G will do. A bigger drive gives you more space to save things to on the persistent volume that we will create.
+1. Download and install tails installer onto a USB drive
+2. Boot into this install USB and install tails onto USB drive 2
+3. Reboot into USB 2 with new Tails OS 
+4. Generate QRL wallet
+5. Save Public and Private keys offline and destroy the wallet
+6. **Feel good**, go plant a tree or volunteer, knowing that your Quanta is safe!
+
+### Get Tails
+
+You will need a USB drive to burn installer to, and another for the OS to run from. *Everything will be wiped from the USB drives* so make sure you backup. I have used a 16G USB drive for Tails, anything above 8G will do. A bigger drive gives you more space to save things to on the persistent volume that we will create.
 
 Head over to the [Tails Homepage](https://tails.boum.org/install/index.en.html) to get started. They have made he install as painless as possible. Follow the guide there and install from the OS you are using. 
 
-**To Get started directly use a link from below based on your operating system**
+#### To Get started directly use a link from below based on your operating system
+
 *   [Install from windows](https://tails.boum.org/install/win/usb-overview/index.en.html)
 *   [Install from macOS](https://tails.boum.org/install/mac/index.en.html)
 *   [Install from Linux (Debian based)](https://tails.boum.org/install/debian/index.en.html)
@@ -65,7 +72,7 @@ Once you have the bios pulled up look for the boot options and allow the PC to b
 Boot into the USB and you should be greeted with a tails screen with 2 selections. Choose the default settings and boot.  
 At the next screen you will see a bunch of options. Leave everything as a default for now and continue. **Welcome to Tails!**
 
-#### Persistent Data
+### Persistent Data
 
 Now start the persistent volume assistant at **Applications ▸ Tails ▸ Configure persistent volume**. You need to select at minimum:
 

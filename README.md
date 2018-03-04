@@ -10,6 +10,7 @@ Add to this list as needed to create a working list of documentation and topics 
 	- [x] Setup new via wallet.theqrl.org /wallet/basic.md
 	- [x] Restore wallet from hex or mnemnonic
 	- [x] OTS Key Index Explination and Warning
+	- [ ] create a spreadsheet for users to fill in with key index and TX number and serve as download?
 	- [ ] Sending Coins
 	- [ ] Recieveing coins
 	- [ ] Token creation
