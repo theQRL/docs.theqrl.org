@@ -4,7 +4,7 @@ categories: wallet
 tags: wallet
 ---
 
-The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your coins safely, while allowing you to mine without the risk of loosing private keys. 
+The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your coins safely, while allowing you to mine without the risk of losing private keys. 
 
 This guide will walk you through:
 * Setting up a new wallet
@@ -43,7 +43,7 @@ This can not be stressed enough, The OTS key index is limited. Once this index i
 What this means:
 * If all OTS index's are used
 	* Funds that are in a wallet with no available OTS index left will not be able to transfer out of the wallet, and will be **lost**. 
-	* There is nothing to do if all of the QTS indexes are used, you cannot sign a transaction.
+	* There is nothing to do if all of the OTS indexes are used, you cannot sign a transaction.
 
 * * *
 
