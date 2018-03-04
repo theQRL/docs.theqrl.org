@@ -21,7 +21,7 @@ We will also use the "anonymity" features that come packaged to grab the wallet 
 ## Tails
 
 
-![Tails Logo](/assets/wallet/tails-logo-square.png) Tails is a complete operating system designed to be used from a USB stick or a DVD independently of the computer's original operating system. It is Free Software and based on Debian GNU/Linux.
+![Tails Logo](/assets/wallet/tails-logo-square-med.png) Tails is a complete operating system designed to be used from a USB stick or a DVD independently of the computer's original operating system. It is Free Software and based on Debian GNU/Linux.
 
 
 
