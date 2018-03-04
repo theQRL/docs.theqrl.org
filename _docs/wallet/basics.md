@@ -30,7 +30,7 @@ When you create a new wallet you create an XMSS tree, which is comprised of many
 
 ### Best Wallet Practices 
 
-**FIXME** - Rework this list, create a spreadsheet for users to fill in with key index and TX number...
+**FIXME** - create a spreadsheet for users to fill in with key index and TX number and give as a download link here?...
 
 * Do not use all of your OTS key index's
 	* Keep track of the index's already used in a spreadsheet or ledger
