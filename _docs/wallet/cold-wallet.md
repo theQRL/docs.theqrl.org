@@ -31,7 +31,7 @@ Tails is a complete operating system designed to be used from a USB stick or a D
 * USB thumb drive with over 8Gb of storage
 * About an Hour and a half to set this up
 
-![Tails Logo](/assets/wallet/tailsCombined.png)
+![Tails Logo](/assets/wallet/tailsCombined-med.png)
 
 
 #### Helpful Links
