@@ -7,13 +7,8 @@ tags: mining
           
 Running a full node is easy and helps strengthen the QRL network. You should have a basic understanding of the CLI before attempting to set this up, it isn't really all that tough. Every answer you need is out there already, search online or drop into the QRL chat for help.
 
-#### Minimum Hardware Requirements
 
-* x86 or x64 based processor
-* Support for AES-NI
-* Enough space for the blockchain growth.
-            
-**Plan for the future!**
+#### Plan For The Future
 
 Make sure the computer you are using has enough power to handle the load of the mining operation. You will also need enough storage to keep the chain as it grows in the future. Recommend a few hundred gig HDD/SSD to sync the chain on long term to be safe.
 
@@ -23,7 +18,17 @@ You will be able to use your GPU to mine with a pool. There are many options for
 
 You will need ot select the pool you want to mine with for the list of community pools available. Read the details of the pool carefully as they all are run a bit differently. Things to pay attention to are pool fees, payout amount, and hash rate of the pool. You can find a list of pools here [FIXME WITH A LINK](#)
 
-## Install 
+* * *
+
+### Minimum Hardware Requirements
+
+* x86 or x64 based processor
+* Support for AES-NI
+* Enough space for the blockchain growth.
+            
+* * *
+
+## Update and Dependencies 
 
 Although MAC's run very similar to Ubuntu in the way things work, we still require some special dependencies and brew makes it very easy to install. You can follow the instructions found at the [brew main page](https://brew.sh/) or simply enter the following into your terminal.
 
@@ -79,7 +84,7 @@ Create a new wallet using the `qrl` command. After you create a wallet you can c
 
 For a full list of `qrl` options run `qrl --help`
 
-#### Create New Wallet
+### Create New Wallet
 
 ```bash
 # Create a new wallet with:  
@@ -87,7 +92,7 @@ qrl wallet_gen
 ```
 This will generate a new wallet in the directory you are in. 
 
-#### Get the Mnemonic and hexseed
+### Get the Mnemonic and hexseed
 
 To find your hexseed and recovery information for your wallet you will need to run:  
 ```bash

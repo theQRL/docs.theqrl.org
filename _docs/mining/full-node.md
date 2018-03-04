@@ -8,7 +8,7 @@ Running a full node is easy and helps strengthen the QRL network. You can run QR
 
 You should have a basic understanding of the CLI before attempting to set this up, it isn't really all that tough. Every answer you need is out there already, search online or drop into the QRL chat for help.
 
-**Plan for the future!**
+#### Plan For The Future
 
 Make sure the computer you are using has enough power to handle the load of the mining operation. Low power computers do not run full nodes very well and are not recommended. You will also need enough storage to keep the chain as it grows in the future. A few hundred gig HDD/SSD to sync the chain on long term to be safe.
 
@@ -26,7 +26,6 @@ Make sure the computer you are using has enough power to handle the load of the 
 * Any x86 or x64 based processor
 * Support for AES-NI
 * Enough space for the blockchain growth.
-
 
 ## Ubuntu 16.04
 

@@ -25,6 +25,8 @@ The procedure to installing the qrl full node in WSL is the exact same as it is 
 
 Once you have the WSL system setup and running ubuntu proceed to the linux guide and begin running the full node. 
 
+[FIXME Add Link To Linux / Full-Node guide]()
+
 * * *
 
 ## GPU Mining
