@@ -31,7 +31,6 @@ Add to this list as needed to create a working list of documentation and topics 
 	- [ ] Explain everything on screen
 	- [ ] Looking up transaction
 	- [ ] Checking wallet
-	- [ ] 
 - [ ] Coin usage 
 	- [ ] Sending
 	- [ ] Receiving
