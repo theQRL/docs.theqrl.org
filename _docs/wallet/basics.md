@@ -13,13 +13,7 @@ The QRL wallet is your portal into the provably secure quantum store that makes 
 * Receiving a transaction over the network *(Get Coins)*
 * Checking transaction details on the [Block Explorer](https://explorer.theqrl.org) *\*including your current wallet balance*
 
-
-## The QRL Wallet
-
-There are two ways you can create a wallet for QRL
-
-* The online wallet served up at [wallet.theqrl.org](https://wallet.theqrl.org)
-* Use the QRL CLI in a Linux/Unix environment 
+* * *
 
 In order to create a wallet in the CLI you must first install the QRL python package. This will allow you to create a slaves.json to setup and mine QRL as well.
 
