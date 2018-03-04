@@ -12,12 +12,12 @@ To-Do.md
 - [ ] Node
 	- [ ] Setup Linux/OSX/Windows (mostly done) - /mining/full-node.md
 		- [ ] Add screen shots and trim down content
-			- [ ] Need to boot into windows somewhere and install/screen shot...
-			- [ ] Have someone setup in osx from scratch and screen shot...
-		- [ ] More in depth details about slaves.json, ots keys, and tree height /allowed transactions
-	- [ ] linux setup - /mining/linux.md
-	- [ ] Windows setup /mining/windows.md
-	- [ ] Mac setup - /mining/mac.md
+		- [ ] Need to boot into windows somewhere and install/screen shot...
+		- [ ] Have someone setup in osx from scratch and screen shot...
+		- [x] More in depth details about slaves.json, ots keys, and tree height /allowed transactions
+	- [x] linux setup - /mining/linux.md
+	- [x] Windows setup /mining/windows.md
+	- [x] Mac setup - /mining/mac.md
 	- [ ] Mining
 		- [ ] Mining Setup
 		- [ ] Pool Mining
@@ -31,8 +31,8 @@ To-Do.md
 	- [ ] Receiving
 	- [ ] Token Creation
 - [ ] Token Swap
-	- [ ] ICO investors instructions
-	- [ ] Instructions for ERC-20 to QRL swap
+	- [x] ICO investors instructions
+	- [x] Instructions for ERC-20 to QRL swap
 	- [ ] Test Instructions
 - [ ] Error message explanations
 	- [ ] Node errors syncing the chain
