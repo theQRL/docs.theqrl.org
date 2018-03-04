@@ -17,11 +17,11 @@ The QRL wallet is your portal into the provably secure quantum store that makes 
 
 Being Quantum Resistant comes with some inherent challenges. Before creating your new wallet, there are a few things you need to know.  
 
-When you create a new wallet you create an XMSS tree, which is comprised of many signatures to make a signature scheme. Every signature is referenced as your OTS index.
-
 ##### OTS Key Index
 
-The OTS key index or the *One Time Signature* key index is used when you sign a transaction onto the network. *The OTS key index is limited.* Once this index is used you will no longer be able to sign transactions. This can not be stressed enough! 
+When you create a new wallet you create an XMSS tree, which is comprised of many signatures to make a signature scheme. Every signature is referenced as your OTS index or *One Time Signature* key index. 
+
+*The OTS key index is limited.* Once this index is used you will no longer be able to sign transactions. This can not be stressed enough! 
 
 > **IF you use all of your OTS Key Index's with funds in the wallet, these funds will be lost.**
 
