@@ -30,17 +30,15 @@ When you create a new wallet you create an XMSS tree, which is comprised of many
 
 ### Best Wallet Practices 
 
-* Do not use all of your OTS index's
-	* Keep track of the index's used in a spreadsheet or ledger
-	* Think of this as your checkbook, you can not reuse any check number for your account.
-* Generate a `slaves.json` file to use for signing, do not use the main wallet
-	* This file is generated from your main wallet keys and must be approved and authorized by the network.
-	* Depending on the number of slaves you have authorized changes the available amount of transactions this slave can preform on the main wallets behalf.
-	* `{TreeHeight}x{SlavesNumber}={Slaves.json-OTS-index}`
-* Generate a slaves.json file and save it as a backup to use when the OTS index is close to being exhausted. 
-	* This will allow you to transfer the remaining Quanta to a new wallet with available OTS index's
-	* This file can be stored on a USB flash drive in a safe place
+**FIXME** - Rework this list, create a spreadsheet for users to fill in with key index and TX number...
 
+* Do not use all of your OTS key index's
+	* Keep track of the index's already used in a spreadsheet or ledger
+	* Think of this as your checkbook, you can not reuse any check number for your account
+* Store your private keys somewhere safe
+	* Write them on a thick piece of paper with water proof ink
+	* Stamp them into a piece of stainless steel  
+* Create a slaves.json file to use fro transactions or mining QRL 
 
 
 {::comment}
@@ -68,6 +66,19 @@ What this means:
 
 
 ### Slaves.json Explained
+
+
+
+	
+* Generate a `slaves.json` file to use for signing, do not use the main wallet
+	* This file is generated from your main wallet keys and must be approved and authorized by the network.
+	* Depending on the number of slaves you have authorized changes the available amount of transactions this slave can preform on the main wallets behalf.
+	* `{TreeHeight}x{SlavesNumber}={Slaves.json-OTS-index}`
+* Generate a slaves.json file and save it as a backup to use when the OTS index is close to being exhausted. 
+	* This will allow you to transfer the remaining Quanta to a new wallet with available OTS index's
+	* This file can be stored on a USB flash drive in a safe place
+
+
 
 When you create a new wallet you create an XMSS tree, which is comprised of many signatures to make a signature scheme. Every signature is referenced as your OTS index. 
 
