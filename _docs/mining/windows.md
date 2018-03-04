@@ -4,43 +4,39 @@ categories: mining
 tags: mining
 ---
 
+You can run a full node in Windows utilizing the Windows Subsystytem for Linux. There are a ton of guides out there on setting this up. Here are a few links to get you going.
 
-Proof Of Work Setup Instructions Windows
-Make sure the computer you are using has enough power to handle the load of the mining operation. You will also need enough storage to keep the chain as it grows in the future. You can attach storage in the cloud to your VPS and that's exactly what I did. I would recommend a couple hundred gig HDD/SSD to sync the chain on long term to be safe.
+**The Windows Subsystem for Linux (WSL)** is a new Windows 10 feature that enables you to run native Linux command-line tools directly on Windows, alongside your traditional Windows desktop and modern store apps.
 
-I do not expect to make any profit running this server mining coins and I am simply using it for testing. You really want to run this on a multi-processor setup with a good amount of ram. Add a few GPU's and you will be making a decent return.
+* * *
 
-Install
-Get your computer ready. The best situation is a fresh, brand new install of Ubuntu 16.04. If you have dependency issues with other software you will need to work through it then come back. You can always boot into a Linux live persistent USB or similar and run the mining node on the computer without modifying the PC (other than the CPU cycles used)
+## Links
 
-Update software
+* [Windows Subsystem for Linux Documentation](https://docs.microsoft.com/en-us/windows/wsl/about)
+* [Google Is Your Friend](https://www.google.com/search?hl=en&as_q=install+ubuntu+in+windows+10&as_epq=)
+* [WSL Blog](https://blogs.msdn.microsoft.com/wsl/)
+* [Run Bash on Ubuntu on Windows](https://blogs.windows.com/buildingapps/2016/03/30/run-bash-on-ubuntu-on-windows/)
 
-```
-sudo apt update && sudo apt upgrade -y
-```
+* * *
 
-Add Dependencies
-Install the required packages for QRL.
-sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
+## WSL - QRL Install
 
+The procedure to installing the qrl full node in WSL is the exact same as it is in ubuntu or mac osx. For full documentation and how-to please see the guide located at [Linux Full Node](/docs/mining/linux).
 
-Install QRL
-Python Packages
-Install the QRL Package.
-pip3 install -U qrl
+Once you have the WSL system setup and running ubuntu proceed to the linux guide and begin running the full node. 
 
-Trouble with pip3
-If your having issues runnning the above command there are a few things to do that will help diagnose the issue.
-the pip3 function comes with a logging capibility to see where the issues are happening.
-Run the command again with 
-pip3 install -U qrl --log ~/pip3-Qrl.log 
-This will print the output of the install to your home directory with the file name pip3-qrl.log. Read it!
+[FIXME Add Link To Linux / Full-Node guide]()
 
+* * *
 
-Git Sources
-If you want to run from the repo you can clone it to the local file system with:
-cd ~/
-git clone https://github.com/theQRL/QRL.git
+## GPU Mining
 
-This allows us to run from a local directory and gives some freedom to change some of the defaults.
-Also later if we want to update to get the latest changes from the developers it's a simple git pull from inside the QRL directory
+**FIXME Add details about GPU mining and pool mining on windows here.**
+
+* What programs work
+* How to run them
+* Where to find pools
+* Creating a wallet
+
+* * *
+

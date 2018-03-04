@@ -163,6 +163,11 @@ Once you have these details entered, click the Confirm button. You will be shown
 
 **FIXME Finish this!**
 
+## Receiving coins
+
+Click the receive tab in the wallet and you will see your wallet address and QR code. Use this to send to where ever you are receiving coins from..
+
+
 
 
 ## Receiving coins

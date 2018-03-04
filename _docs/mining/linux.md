@@ -6,23 +6,26 @@ tags: mining
 
 Running a full node is easy and helps strengthen the QRL network. You should have a basic understanding of the CLI before attempting to set this up, it isn't really all that tough. Every answer you need is out there already, search online or drop into the QRL chat for help.
 
-**Plan for the future!**
+#### Plan For The Future
 
 Make sure the computer you are using has enough power to handle the load of the mining operation. Low power computers do not run full nodes very well and are not recommended. You will also need enough storage to keep the chain as it grows in the future. A few hundred gig HDD/SSD to sync the chain on long term to be safe.
 
 * * *
 
-**Note**
+**Note** 
 
-*If you build on a small VPS or other light weight hardware you may run into issues building the package. Make sure you have enough *RAM* and enable *SWAP* if needed. Also ensure the HDD is large enough!*
+> *If you build on a small VPS or other light weight hardware you may run into issues building the package. Make sure you have enough *RAM* and enable *SWAP* if needed. Also ensure the HDD is large enough!*
 
 * * *
+
 ### Minimum Hardware Requirements
 
 * Most Linux / Unix based systems
 * Any x86 or x64 based processor
 * Support for AES-NI
 * Enough space for the blockchain growth.
+
+* * *
 
 ## Update and Dependencies 
 
@@ -40,7 +43,7 @@ sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pk
 * * * 
 
 
-### Install QRL BETA-NET
+### Install QRL
 
 ```bash
 # Install the qrl Package.
@@ -52,6 +55,7 @@ If you need to add logging and troubleshoot issues enter:
 # Add Logging for pip3 
 pip3 install -U qrl --log ~/pip3-Qrl.log
 ```
+This will print details of the install to your home directory with the file name pip3-qrl.log. The error may be inside.
 
 * * *
 
@@ -71,7 +75,10 @@ qrl wallet_gen
 # Get mnemonic phrase and hexseed
 qrl wallet_secret
 ```  
-### Recover QRL Wallet
+
+* * *
+
+## Recover QRL Wallet
 
 If you lose your wallet, the mining rig catches fire, or worse, you still have the ability to recover your Quanta as long as you've saved the hexseed or mnemonic phrase. 
 
@@ -84,13 +91,14 @@ If you lose your wallet, the mining rig catches fire, or worse, you still have t
 qrl wallet_recover --seed-type mnemonic
 ```
 
-### Generate a slaves.json file
+* * *
+
+## Generate a slaves.json file
 
 Using the wallet you just created generate the slaves.json file against a know working node. You can switch the ip-address with a trusted open node.
 
 ```
 # QRL Nodes
-
 104.237.3.185
 104.237.3.184
 104.251.219.145
@@ -276,16 +284,18 @@ If you need help jump into the [Discord Chat](https://discord.gg/RcR9WzX)
 Some Handy Commands to query against your node. 
 
 ``` bash
-screen -d -m ~/QRL/start_qrl # This will start QRL in a screen session.
-    screen -r                # To reattach the screen
-    ctl+a d                  # Exit the screen without quitting the program
-tail -f ~/.qrl/qrl.log       # Show activity in qrl.log
+screen -d -m ~/QRL/start_qrl    # This will start QRL in a screen session.
+screen -r                       # To reattach the screen
+ctl+a d                         # Exit the screen without quitting the program
+tail -f ~/.qrl/qrl.log          # Show activity in qrl.log
 
 # Print found blocks. If empty your node has not found anything yet.
 grep Solution Found ~/.qrl/qrl.log
+
 # Prints how many blocks you have found (count of won blocks)
-grep Solution Found ~/.qrl/qrl.log |wc -l   
+grep `Solution Found` ~/.qrl/qrl.log |wc -l   
 ```
+
 
 * * *
 
@@ -365,7 +375,3 @@ optional arguments:
                         Integration Test only)
 
 ```
-
-
-
-
