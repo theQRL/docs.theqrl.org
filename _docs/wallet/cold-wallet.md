@@ -6,13 +6,12 @@ tags: wallet
 
 {::comment}
 
-Last Edit - fr1t2 3/4/18
+Last Edit - fr1t2 3/4/18 - 10:20am
 
 {:/comment}
 
 
-1984\. It was great
-\- others say that, too! In order to fully secure our QRL we should follow best practice and generate our private keys off line. This will prevent anyone form viewing our private keys while we record and safely save the wallet.
+In order to fully secure our QRL we should follow best practice and generate our private keys off line. This will prevent anyone form viewing our private keys while we record and safely save the wallet.
 
  It is a bit more work to set this all up, but in the long run it is worth it. Once tails is setup you can generate cold wallets for all of your other coins that you want to hold in secure cold wallets.
 
