@@ -12,7 +12,7 @@ In order to fully secure our QRL we should follow best practice and generate our
 
 ## Tails
 
-![Tails Logo](/assets/wallet/tailsRequire.png)
+![Tails Logo](/assets/wallet/tails-logo-flat-inverted-med.png)
 
 This guide will use the [Tails](https://tails.boum.org/)
  operating system to create a safe environment for the generation of a new secure wallet. You will install Tails on a [Live USB drive](https://en.wikipedia.org/wiki/Live_USB) and boot from this usb to create your new QRL wallet. 
