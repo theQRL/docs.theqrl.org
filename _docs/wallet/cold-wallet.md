@@ -17,25 +17,29 @@ This guide will use the **Tails** operating system to create a safe environment 
 
 We will also use the "anonymity" features that come packaged to grab the wallet files and check their validity. Using "anonymous" tools makes it much more difficult for someone to find what you are doing or play Man-In-The-Middle and collect the private keys.
 
-
 <a href="https://tails.boum.org/"> ![Tails Logo](/assets/wallet/tails-logo-flat-inverted-med.png)</a>
 
-> Privacy for anyone anywhere
-
-* * *
+Tails is a live operating system that you can start on almost any computer from a USB stick or a DVD.
 
 Tails is a complete operating system designed to be used from a USB stick or a DVD independently of the computer's original operating system. It is Free Software and based on Debian GNU/Linux.
 
 
-#### Requirements For Guide
+#### Requirements for this guide
 
 ![Tails Logo](/assets/wallet/tailsRequire.png)
 
-#### Helpful Links
+#### Basic Install Guide
+
+1. Download and install tails installer onto a USB drive
+2. Boot into this install USB and install tails onto USB drive 2
+3. Reboot into USB 2 with new Tails OS 
+4. Generate QRL wallet
+
+#### Links
 
 * [Tails Documentation](https://tails.boum.org/doc/index.en.html)
 * [The TorProject.org](https://www.torproject.org/)
-* [QRL GitHub for Wallet Files](https://github.com/theQRL)
+
 
 #### Get Tails
 
