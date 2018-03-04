@@ -38,11 +38,11 @@ The OTS key index or the **One Time Signature** key index is used when you sign 
 	* This will allow you to transfer the remaining Quanta to a new wallet with available OTS index's
 	* This file can be stored on a USB flash drive in a safe place
 
+* * *
 
 {::comment}
-FIXME - Trim down content here and move this into it's own writeup. 
+FIXME - move this into it's own write-ups. Oe for each topic, OTS key index, Slaves.json 
 
-* * *
 
 ### OTS Key Usage
 
@@ -61,7 +61,6 @@ What this means:
 	* Funds that are in a wallet with no available OTS index left will not be able to transfer out of the wallet, and will be **lost**. 
 	* There is nothing to do if all of the OTS indexes are used, you cannot sign a transaction.
 
-{:/comment}
 
 * * *
 
@@ -81,8 +80,7 @@ If we create a wallet with tree height of 18 xmss or 262,144 Signatures and gene
 
 * * *
 
-
-
+{:/comment}
 
 ## Create an Online Wallet
 
