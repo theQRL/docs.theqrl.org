@@ -6,7 +6,6 @@ tags: wallet
 
 The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your coins safely, while allowing you to mine without the risk of losing private keys. 
 
-When you create a new wallet you create an XMSS tree, which is comprised of many signatures to make a signature scheme. Every signature is referenced as your OTS index.
 
 ##### This guide will walk you through
 
@@ -17,6 +16,8 @@ When you create a new wallet you create an XMSS tree, which is comprised of many
 
 
 Being Quantum Resistant comes with some inherent challenges. Before creating your new wallet, there are a few things you need to know.  
+
+When you create a new wallet you create an XMSS tree, which is comprised of many signatures to make a signature scheme. Every signature is referenced as your OTS index.
 
 ##### OTS Key Index
 
