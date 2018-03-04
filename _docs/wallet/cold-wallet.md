@@ -26,9 +26,11 @@ Tails is a complete operating system designed to be used from a USB stick or a D
 
 #### Requirements for this guide
 
+From the Tails website, you don't need too much to get started.
+
 ![Tails Logo](/assets/wallet/tailsRequire.png)
 
-#### Basic Install Guide
+#### Basic Install Overview
 
 1. Download and install tails installer onto a USB drive
 2. Boot into this install USB and install tails onto USB drive 2
