@@ -24,4 +24,6 @@ Get stated with mining guide
 
 <blockquote>Pool VS Solo<cite> Mining solo or using a pool</cite></blockquote>
 
-<blockquote>Hash Rate<cite> What will my PC hash?</cite></blockquote>
+<blockquote>What can i mine on<cite> What Processor will work?</cite></blockquote>
+
+s
