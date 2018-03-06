@@ -20,6 +20,10 @@ Get stated with mining guide
 
 ## Topics to discuss
 
+| Topic | Discussion | 
+|-------|------------|
+|  |  |
+
 <blockquote>Hash Rate<cite> What will my PC hash?</cite></blockquote>
 
 <blockquote>Pool VS Solo<cite> Mining solo or using a pool</cite></blockquote>
