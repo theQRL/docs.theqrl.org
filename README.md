@@ -27,7 +27,7 @@ Add to this list as needed to create a working list of documentation and topics 
 	- [x] Windows setup /mining/windows.md
 	- [x] Mac setup - /mining/mac.md
 	- [ ] Mining
-		- [ ] Mining Setup
+		- [ ] Mining Setup - gpu/cpu
 		- [ ] Pool Mining
 - [ ] Block explorer use
 	- [ ] Explain everything on screen

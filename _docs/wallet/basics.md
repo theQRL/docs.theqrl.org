@@ -29,32 +29,15 @@ When you create a new wallet you create an XMSS tree, which is comprised of many
 **FIXME** - create a spreadsheet for users to fill in with key index and TX number and give as a download link here?...
 
 #### Best Wallet Practices 
-* Do not use all of your OTS key index's
-	* Keep track of the index's already used in a spreadsheet or ledger
-	* Think of this as your checkbook, you can not reuse any check number for your account
+* Track OTS Keys Used in a spreadsheet or ledger
 * Store your private keys somewhere safe
 	* Write them on a thick piece of paper with water proof ink
 	* Stamp them into a piece of stainless steel  
-* Create a slaves.json file to use fro transactions or mining QRL 
+* Create a slaves.json file to use for transactions or mining QRL 
 
 {::comment}
 FIXME - move this into it's own write-ups. Oe for each topic, OTS key index, Slaves.json 
 
-
-### OTS Key Usage
-
-The OTS index or the **One Time Signature** index is used when you sign a transaction onto the network. 
-
-You are required to specify which OTS index to use from the wallet file you have created. Depending on the tree height you selected when setting up the wallet you will start with anywhere from 16 to 262,144 OTS indexes. Yo may not re-use any OTS key index. The transaction will be rejected. 
-
-### Important OTS Info
-
-This can not be stressed enough, The OTS key index is limited. Once this index is used you will no longer be able to sign transactions.
-
-What this means:
-* If all OTS index's are used
-	* Funds that are in a wallet with no available OTS index left will not be able to transfer out of the wallet, and will be **lost**. 
-	* There is nothing to do if all of the OTS indexes are used, you cannot sign a transaction.
 
 ### Slaves.json Explained
 
