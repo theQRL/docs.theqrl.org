@@ -26,7 +26,10 @@ You will also need enough storage to keep the chain as it grows in the future. A
 * Support for AES-NI
 * Enough space for the blockchain growth.
 
-## Install on Ubuntu 16.04
+## Install on Linux
+
+
+#### Ubuntu 16.04
 
 ##### Update 
 
@@ -43,8 +46,27 @@ sudo apt update && sudo apt upgrade -y
 # Install the required packages for QRL
 sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
 ```
+{::comment}
 
-Skip ahead to the **Install QRL** section FIXME add link to the section
+Add these to the guide as they come. If there is different or special instructions for installing on various distros.
+
+#### Debian
+
+
+#### Redhat/fedora
+
+
+#### BSD
+
+
+#### OpenSUSE
+
+
+#### ArchLinux
+
+{:/comment}
+
+
 
 ## Install on OSX
 
@@ -83,7 +105,7 @@ Follow [these instructions](https://msdn.microsoft.com/en-us/commandline/wsl/ins
 
 ## Install QRL 
 
-Once you have followed the instructions above for your OS, the installation of QRL is the same for each. QRL uses python3 to install.
+Now that we have freshly updated systems, the installation of QRL is a breeze, QRL uses python3 to install. Using Python3's package installer pip3 we will install qrl.
 
 ```bash
 # Install the qrl Package.
