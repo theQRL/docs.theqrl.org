@@ -19,7 +19,7 @@ You will also need enough storage to keep the chain as it grows in the future. A
 > *If you build on a small VPS or other light weight hardware you may run into issues building the package. Make sure you have enough *RAM* and enable *SWAP* if needed. Also ensure the HDD is large enough!*
 
 
-## Minimum Hardware Requirements
+## Minimum Requirements
 
 * Most Linux / Unix based systems should work
 * Any x86 or x64 based processor
@@ -100,7 +100,7 @@ This will print details of the install to your home directory with the file name
 
 * * *
 
-## Wallet
+## Creating a Wallet
 
 Create a new wallet using the `qrl` command. After you create a wallet you can create a new `slaves.json` file and use it to mine with.
 
