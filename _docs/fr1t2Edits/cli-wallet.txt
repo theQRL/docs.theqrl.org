@@ -1,8 +1,55 @@
----
-title: Create Wallet From CLI
-categories: wallet
-tags: wallet
----
+-------
+From full-node
+
+## Creating a Wallet
+
+Create a new wallet using the `qrl` command. After you create a wallet you can use it to generate a new `slaves.json` file and use it to mine with, or use as a slave wallet to make transactions with.
+
+For a full list of options run 
+
+```bash
+qrl --help
+```
+
+#### Create New Wallet
+
+```bash
+# Create a new wallet
+qrl wallet_gen
+```
+#### Get Mnemonic/hexseed
+
+```bash
+# Get mnemonic phrase and hexseed
+qrl wallet_secret
+```  
+
+------
+from linux.md
+
+## Wallet
+
+Create a new wallet using the `qrl` command. After you create a wallet you can create a new `slaves.json` file and use it to mine with.
+
+### Create New Wallet
+
+```bash
+# Create a new wallet
+qrl wallet_gen
+```
+### Get Mnemonic/hexseed
+
+```bash
+# Get mnemonic phrase and hexseed
+qrl wallet_secret
+```  
+
+
+--------
+
+From wallet-cli.md
+
+--------
 
 The QRL wallet can be generated from a full node. 
 
@@ -68,12 +115,3 @@ Wallet idx [0]:
 *   Save it somewhere safe! Anyone with this info can recover your wallet and steal your coins.
 
 
-## Generate hexseed
-
-FIXME With some details!
-
- 
-
-## Recover Wallet
-
-FIXME With some details!

@@ -105,7 +105,7 @@ Follow [these instructions](https://msdn.microsoft.com/en-us/commandline/wsl/ins
 
 ## Install QRL 
 
-Now that we have freshly updated systems, the installation of QRL is a breeze, QRL uses python3 to install. Using Python3's package installer pip3 we will install qrl.
+Now that we have a freshly updated system, the installation of QRL is a breeze, QRL uses python3 to install. Using the Python3 package installer *pip3* we will install qrl.
 
 ```bash
 # Install the qrl Package.
@@ -124,9 +124,13 @@ This will print details of the install to your home directory with the file name
 
 ## Creating a Wallet
 
-Create a new wallet using the `qrl` command. After you create a wallet you can create a new `slaves.json` file and use it to mine with.
+Create a new wallet using the `qrl` command. After you create a wallet you can use it to generate a new `slaves.json` file and use it to mine with, or use as a slave wallet to make transactions with.
 
-For a full list of `qrl` options run `qrl --help`
+For a full list of options run 
+
+```bash
+qrl --help
+```
 
 #### Create New Wallet
 
