@@ -10,26 +10,25 @@ You should have a basic understanding of the CLI before attempting to set this u
 
 #### Plan For The Future
 
-Make sure the computer you are using has enough power to handle the load of the mining operation. Low power computers do not run full nodes very well and are not recommended. You will also need enough storage to keep the chain as it grows in the future. A few hundred gig HDD/SSD to sync the chain on long term to be safe.
+Make sure the computer you are using has enough power to handle the load of the mining operation. Low power computers do not run full nodes very well and are not recommended. 
 
-* * *
+You will also need enough storage to keep the chain as it grows in the future. A few hundred gig HDD/SSD to sync the chain on long term to be safe.
 
 **Note**
 
-*If you build on a small VPS or other light weight hardware you may run into issues building the package. Make sure you have enough *RAM* and enable *SWAP* if needed. Also ensure the HDD is large enough!*
+> *If you build on a small VPS or other light weight hardware you may run into issues building the package. Make sure you have enough *RAM* and enable *SWAP* if needed. Also ensure the HDD is large enough!*
 
-* * *
 
-### Minimum Hardware Requirements
+## Minimum Hardware Requirements
 
 * Most Linux / Unix based systems should work
 * Any x86 or x64 based processor
 * Support for AES-NI
 * Enough space for the blockchain growth.
 
-## Ubuntu 16.04
+## Install on Ubuntu 16.04
 
-### Update 
+##### Update 
 
 Update your system ensuring you have the latest packages.
 
@@ -38,7 +37,7 @@ Update your system ensuring you have the latest packages.
 sudo apt update && sudo apt upgrade -y
 ```
 
-### Dependencies
+#### Dependencies
 
 ```bash
 # Install the required packages for QRL
@@ -47,9 +46,7 @@ sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pk
 
 Skip ahead to the **Install QRL** section FIXME add link to the section
 
-* * * 
-
-## OSX
+## Install on OSX
 
 To build in OSX Please install `brew` if you have not already.
 
@@ -70,12 +67,12 @@ brew install cmake python3 swig boost hwloc
 
 The rest of the build is the same for OSX as it is for linux. 
 
-* * * 
-## Windows :seedling:
+
+## Install on Windows 10
 
 *Windows support in the current version is limited. An alternative is to use an Ubuntu VM (virtualbox), or install Ubuntu using the Linux Subsystem for Windows.
 
-### Ubuntu on Linux Subsystem for Windows
+#### Ubuntu on Linux Subsystem for Windows
 
 It is possible to run a QRL node using an Ubuntu Bash shell through the Linux Subsystem for Windows. 
 
@@ -84,16 +81,15 @@ Follow [these instructions](https://msdn.microsoft.com/en-us/commandline/wsl/ins
 *We are working on a solution to native Windows support*
 
 
-* * * 
-
-
 ## Install QRL 
+
+Once you have followed the instructions above for your OS, the installation of QRL is the same for each. QRL uses python3 to install.
 
 ```bash
 # Install the qrl Package.
 pip3 install -U qrl
 ```
-If you need to add logging and troubleshoot issues enter:
+You can add logging to the pip3 command with: `--log {LOG_FILE}`
 
 ```bash
 # Add Logging for pip3 
