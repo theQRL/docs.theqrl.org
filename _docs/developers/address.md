@@ -4,9 +4,10 @@ categories: developers
 tags: developers
 ---
 
+''
 This is a breakdown of the QRL address structure. 
 
-## Structure
+## QRL Address Structure
 
 QRL addresses are structured in the following way:
 
