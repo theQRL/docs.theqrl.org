@@ -7,6 +7,7 @@ tags: wallet
 The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your coins safely, while allowing you to mine without the risk of losing private keys. 
 
 
+
 ##### This guide will walk you through
 
 * Setting up a new wallet
@@ -26,50 +27,22 @@ When you create a new wallet you create an XMSS tree, which is comprised of many
 > **IF you use all of your OTS Key Index's with funds in the wallet, these funds will be lost.**
 
 
-
-
-### Best Wallet Practices 
-
 **FIXME** - create a spreadsheet for users to fill in with key index and TX number and give as a download link here?...
 
-* Do not use all of your OTS key index's
-	* Keep track of the index's already used in a spreadsheet or ledger
-	* Think of this as your checkbook, you can not reuse any check number for your account
+#### Best Wallet Practices 
+* Track OTS Keys Used in a spreadsheet or ledger
 * Store your private keys somewhere safe
 	* Write them on a thick piece of paper with water proof ink
 	* Stamp them into a piece of stainless steel  
-* Create a slaves.json file to use fro transactions or mining QRL 
+* Create a slaves.json file to use for transactions or mining QRL 
 
 
 {::comment}
 FIXME - move this into it's own write-ups. Oe for each topic, OTS key index, Slaves.json 
 
 
-### OTS Key Usage
-
-The OTS index or the **One Time Signature** index is used when you sign a transaction onto the network. 
-
-You are required to specify which OTS index to use from the wallet file you have created. Depending on the tree height you selected when setting up the wallet you will start with anywhere from 16 to 262,144 OTS indexes. Yo may not re-use any OTS key index. The transaction will be rejected. 
-
-
-
-### Important OTS Info
-
-This can not be stressed enough, The OTS key index is limited. Once this index is used you will no longer be able to sign transactions.
-
-What this means:
-* If all OTS index's are used
-	* Funds that are in a wallet with no available OTS index left will not be able to transfer out of the wallet, and will be **lost**. 
-	* There is nothing to do if all of the OTS indexes are used, you cannot sign a transaction.
-
-
-
-
 ### Slaves.json Explained
 
-
-
-	
 * Generate a `slaves.json` file to use for signing, do not use the main wallet
 	* This file is generated from your main wallet keys and must be approved and authorized by the network.
 	* Depending on the number of slaves you have authorized changes the available amount of transactions this slave can preform on the main wallets behalf.
@@ -77,8 +50,6 @@ What this means:
 * Generate a slaves.json file and save it as a backup to use when the OTS index is close to being exhausted. 
 	* This will allow you to transfer the remaining Quanta to a new wallet with available OTS index's
 	* This file can be stored on a USB flash drive in a safe place
-
-
 
 When you create a new wallet you create an XMSS tree, which is comprised of many signatures to make a signature scheme. Every signature is referenced as your OTS index. 
 
@@ -91,8 +62,6 @@ Lets work through some math. Assuming the default settings are used throughout. 
 In order to increase that amount we generate a slaves.json file with 10 slaves. this file will then have 10 slaves with 1,24 signatures available or `10 x 1024 = 10240` and will only have used one OTS from the main wallet.
 
 If we create a wallet with tree height of 18 xmss or 262,144 Signatures and generate a slaves.json file with 100 slaves in it i would have 26,214,400 signatures available with this one file, that I can generate 262,143 more times from the main wallet before it runs out of signatures.
-
-
 
 {:/comment}
 
@@ -124,7 +93,6 @@ It is recommend to save this somewhere very safe, along with your hexseed and pr
 
 ![QRL Web Wallet](/assets/wallet/CreateWallet.png)
 
-
 **The pass-phrase must be at least 8 characters in length, and contains at least 1 number and 1 letter.** *(Recommended over 15 characters mixed case)*
 
 #### Tree Height
@@ -138,9 +106,6 @@ By default an XMSS Tree height of 10 provides 1024 One Time Signatures. Larger X
 **You must unlock your wallet with the same tree size used to generate when you unlock your wallet again**
 
 Click the create wallet button and the wallet will be generated
-
-
-
 
 This will produce a sensitive screen once the wallet is created. Be sure to record the relative details for the new wallet. Most importantly **Record your private keys** these are in the form of both a mnemonic and a hexseed. These will not be shown again, **do not lose these**
 
@@ -157,8 +122,6 @@ If you choose to save the unencrypted file it will print the mnemonic and hexsee
 You will be able to use this file to reconstruct the wallet later, if needed. Also this will allow anyone the ability to rebuild you wallet later.
 
 You now have a QRL wallet that can receive coins, send coins, create `slaves.json` files and begin mining. Welcome to the Quantum Resistance! Click "open Wallet" and enter your recovery information. 
-
-
 
 ## Sending Coins
 
@@ -182,9 +145,6 @@ Once you have these details entered, click the Confirm button. You will be shown
 
 Click the receive tab in the wallet and you will see your wallet address and QR code. Use this to send to where ever you are receiving coins from..
 
-
-
-
 ## Receiving coins
 
 ![QRL New Wallet](/assets/wallet/qrlWallet-transfer.png)
@@ -201,14 +161,11 @@ FIXME add details here for what the tokens can be used for, and the basic tech b
 
 Enter the token creation owners QRL address into the form, The Token symbol, the Token name, The amount of Decimals for your token. You need to enter at least one QRL address into the **Initial Token Holders** address fields. You can add as many other addresses as you see fit. Below this we have our QRL fee for processing ths transaction and the OTS key Index we intend to use. Ensure you have not already used this OTS key index.
 
-
 ![QRL New Wallet](/assets/wallet/qrlWallet-tokenCreate.png)
-
 
 Once you have filled in all of the necessary details, click the create token button at the bottom of the form. THis will broadcast the creation of your token aross the QRL network and send the newly minted tokens to the addresses specified.
 
 ![QRL New Wallet](/assets/wallet/qrlWallet-tokenCreateSuccess.png)
-
 
 ## Checking Token Balance
 
