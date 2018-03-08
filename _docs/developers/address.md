@@ -1,13 +1,10 @@
 ---
-title: QRL Addresses
+title: QRL Address Structure
 categories: developers
 tags: developers
 ---
 
-''
 This is a breakdown of the QRL address structure. 
-
-## QRL Address Structure
 
 QRL addresses are structured in the following way:
 
@@ -53,7 +50,7 @@ The address descriptor determines the address format, signature scheme, hash fun
 
 ## Address Format
 
-### Format: SHA256_2X
+#### Format: SHA256_2X
 
 | Name | Bytes         | Count  |      Description      |
 |------| ------------- |:------:|-----------------------| 
@@ -72,7 +69,7 @@ The address descriptor determines the address format, signature scheme, hash fun
 
 ## Signature Schemes
 
-### XMSS
+#### XMSS
 
 In the case of using XMSS. The parameters are used as follows:
 
