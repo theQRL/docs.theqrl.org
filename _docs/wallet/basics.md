@@ -7,6 +7,7 @@ tags: wallet
 The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your coins safely, while allowing you to mine without the risk of losing private keys. 
 
 
+
 ##### This guide will walk you through
 
 * Setting up a new wallet
@@ -34,6 +35,7 @@ When you create a new wallet you create an XMSS tree, which is comprised of many
 	* Write them on a thick piece of paper with water proof ink
 	* Stamp them into a piece of stainless steel  
 * Create a slaves.json file to use for transactions or mining QRL 
+
 
 {::comment}
 FIXME - move this into it's own write-ups. Oe for each topic, OTS key index, Slaves.json 
