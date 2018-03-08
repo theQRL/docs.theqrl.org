@@ -4,8 +4,6 @@ categories: developers
 tags: developers
 ---
 
-This is a breakdown of the QRL address structure. 
-
 QRL addresses are structured in the following way:
 
 | Name | Bytes         | Count  |      Description      |
