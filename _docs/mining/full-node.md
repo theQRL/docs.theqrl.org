@@ -62,6 +62,7 @@ dnf install swig cmake gcc gcc-c++ redhat-rpm-config python3-devel python-devel 
 ```
 
 {::comment}
+
 -----------------------------------------------------------
 Add these to the guide as they come. If there is different or special instructions for installing on various distros.
 
@@ -78,6 +79,7 @@ Add these to the guide as they come. If there is different or special instructio
 
 #### ArchLinux
 ----------------------------------------------------------
+
 {:/comment}
 
 
