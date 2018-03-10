@@ -13,7 +13,7 @@ body {
 }
 .header .grid,
 .footernav .grid {
-	grid-template-columns: 138px 1fr min-content;
+	grid-template-columns: 180px 1fr min-content;
 }
 
 .wrapper {
@@ -24,7 +24,11 @@ body {
 }
 a {
 	color:$quantum_sky;
+	&:hover {
+		color:$quantum_burst;
+	}
 }
+
 img {
 	max-width: 100%;
 }
@@ -147,13 +151,14 @@ nav a {
 .header {
 	// position:relative;
 	padding-bottom: 0;
-	z-index: 10;
+	position:relative;
+	z-index: 9;
 
 	.grid {
 		max-width: 1300px;
 	}
 	@include md {
-		padding-top:20px;
+		padding-top:10px;
 	}
 
 	.logo img {
@@ -167,6 +172,7 @@ nav a {
 
 	}
 	.menu nav {
+		padding-top: 18px;
 		// Hamburger on small menus
 		#nav-icon {
 			display:none;
@@ -270,25 +276,25 @@ nav a {
 				font-size:13px;
 			}
 		}
-		padding-top: 20px;
 
 		@include sm {	padding-left:0px; }
-		@include md {	padding-left:20px; }
-		@include lg {	padding-left:50px; }
+		@include md {	padding-left:10px; }
+		@include lg {	padding-left:20px; }
 	}
 	.whitepaper nav {
-		padding-top: 10px;
+		padding-top: 13px;
 	}
 	nav a {
 		font-family: 'Quicksand';
 		font-weight: 500;
 		font-size:13px;
 		text-transform: uppercase;
+
 		@include md {
-			padding:5px 20px;
+			padding:5px 25px;
 		}
 		@include lg {
-			padding:5px 30px;
+			padding:5px 40px;
 		}
 
 	}
@@ -362,9 +368,28 @@ nav a {
 		// Firefox: https://bugzilla.mozilla.org/show_bug.cgi?id=1418727
 		min-width: -moz-available;
 	}
-	h2 a {
-		text-decoration: none;
-		color:#000;
+	h2, h3 {
+		a {
+			text-decoration: none;
+			color:#000;
+			display: inline-block;
+			position:relative;
+
+			&:hover:before {
+				display:block;
+				content: url('https://icons.simplesvg.com/mdi-link-variant.svg?color=%23626262&height=18');
+				vertical-align: -0.125em;
+				height:18px; width:18px;
+				position:absolute;
+				right:-24px;
+				top:-2px;
+
+			}
+			&:hover:before {
+				content: url('https://icons.simplesvg.com/mdi-link-variant.svg?color=%23dc255d&height=18');				
+			}
+		}
+
 	}
 	@include md-max {
 		.docgrid {
@@ -438,9 +463,15 @@ nav a {
 				transform: rotate(180deg);
 
 			}
-		}
-		&.active > ul {
-			display:flex;
+			> a {
+							border-color:$quantum_burst;
+			}
+
+
+			> ul {
+				display:flex;
+				border-color:$quantum_burst;
+			}
 		}
 	}
 	svg {
@@ -451,11 +482,13 @@ nav a {
 			font-family: 'Roboto';
 			background-color:#F3F3F3;
 			text-decoration: none;
-			color: #000;
-
+			color: #111;
+			font-weight: 400;
+			letter-spacing: 2px;
 
 			&:hover {
-				background-color:#EEE;
+				background-color:$quantum_burst;
+				color:#FFF;
 			}
 		}
 		> a {
@@ -580,6 +613,11 @@ nav a {
 	padding-top:10px; padding-bottom:10px;
 	background-color:#0F031C;
 	color:#FFF;
+	.footer-logo img {
+		color:#FFF;
+		fill:#FFF;
+		max-width: 35px;
+	}
 
 	@include md-max {
 		.grid > div {
@@ -590,9 +628,11 @@ nav a {
 		}
 	}
 	h3 {
+		font-size: 20px;
 		color:#FFF;
 	}
 	ul {
+		margin-top:0;
 		padding-left:0;
 	}
 	ul li {
