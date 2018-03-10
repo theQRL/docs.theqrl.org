@@ -16,15 +16,15 @@ You will also need enough storage to keep the chain as it grows in the future. A
 
 **Note**
 
-> *If you build on a small VPS or other light weight hardware you may run into issues building the package. Make sure you have enough *RAM* and enable *SWAP* if needed. Also ensure the HDD is large enough!*
+*If you build on a small VPS or other light weight hardware you may run into issues building the package. Make sure you have enough *RAM* and enable *SWAP* if needed. AES-NI is required for cryptographic functions.*
 
 
 ## Minimum Requirements
 
-* Most Linux / Unix based systems should work
+* \*Most Linux / Unix based systems
 * Any x86 or x64 based processor
 * Support for AES-NI
-* Enough space for the blockchain growth.
+* Enough HDD space for the blockchain growth.
 
 ## Install on Linux
 
@@ -46,14 +46,29 @@ sudo apt update && sudo apt upgrade -y
 # Install the required packages for QRL
 sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
 ```
+
+#### Redhat/fedora
+
+Fedora 27 install instructions 
+
+```bash
+Update
+dnf update 
+```
+
+```bash
+# Install required packages
+dnf install swig cmake gcc gcc-c++ redhat-rpm-config python3-devel python-devel hwloc-devel boost-devel
+```
+
 {::comment}
 
+-----------------------------------------------------------
 Add these to the guide as they come. If there is different or special instructions for installing on various distros.
 
 #### Debian
 
 
-#### Redhat/fedora
 
 
 #### BSD
@@ -63,12 +78,13 @@ Add these to the guide as they come. If there is different or special instructio
 
 
 #### ArchLinux
+----------------------------------------------------------
 
 {:/comment}
 
 
 
-## Install on OSX
+## Install on MacOS
 
 To build in OSX Please install `brew` if you have not already.
 
@@ -87,21 +103,37 @@ brew update
 brew install cmake python3 swig boost hwloc
 ```
 
-The rest of the build is the same for OSX as it is for linux. 
+#### Install QRL
+
+The procedure to installing the qrl full node for a Mac is the exact same as it is in Linux. Once you have the Brew Packages installed proceed through the guide 
 
 
 ## Install on Windows 10
 
 *Windows support in the current version is limited. An alternative is to use an Ubuntu VM (virtualbox), or install Ubuntu using the Linux Subsystem for Windows.
 
-#### Ubuntu on Linux Subsystem for Windows
+#### Ubuntu on Linux Subsystem for Windows (WSL)
 
-It is possible to run a QRL node using an Ubuntu Bash shell through the Linux Subsystem for Windows. 
+You can run a full node in Windows utilizing the Windows Subsystytem for Linux. There are a ton of guides out there on setting this up. Here are a few links to get you going.
 
-Follow [these instructions](https://msdn.microsoft.com/en-us/commandline/wsl/install-win10) to install Ubuntu using Linux Subsystem, start the Ubuntu bash shell, and then follow the previous instructions on setting up QRL.
+The Windows Subsystem for Linux (WSL) is a new Windows 10 feature that enables you to run native Linux command-line tools directly on Windows, alongside your traditional Windows desktop and modern store apps.
 
-*We are working on a solution to native Windows support*
+You can follow [these instructions](https://msdn.microsoft.com/en-us/commandline/wsl/install-win10) to install Ubuntu using Linux Subsystem, 
 
+
+#### Links
+
+##### Installing Ubuntu in Windows 10
+* [Windows Subsystem for Linux Documentation](https://docs.microsoft.com/en-us/windows/wsl/about)
+* [Google Is Your Friend (install+ubuntu+in+windows+10)](https://www.google.com/search?hl=en&as_q=install+ubuntu+in+windows+10&as_epq=)
+* [WSL Blog](https://blogs.msdn.microsoft.com/wsl/)
+* [Run Bash on Ubuntu on Windows](https://blogs.windows.com/buildingapps/2016/03/30/run-bash-on-ubuntu-on-windows/)
+
+#### Install QRL
+
+The procedure to installing the qrl full node in WSL is the exact same as it is in Linux or MacOS. Once you have the WSL system setup and running Ubuntu proceed through the guide 
+
+*A native Windows solution is in the works*
 
 ## Install QRL 
 
@@ -111,16 +143,7 @@ Now that we have a freshly updated system, the installation of QRL is a breeze, 
 # Install the qrl Package.
 pip3 install -U qrl
 ```
-You can add logging to the pip3 command with: `--log {LOG_FILE}`
-
-```bash
-# Add Logging for pip3 
-pip3 install -U qrl --log ~/pip3-Qrl.log
-```
-
-This will print details of the install to your home directory with the file name pip3-qrl.log. The error may be inside.
-
-* * *
+This will install the qrl package and any required dependencies. Once this is done you can create a new wallet.
 
 ## Creating a Wallet
 
@@ -145,7 +168,7 @@ qrl wallet_gen
 qrl wallet_secret
 ```  
 
-* * *
+
 
 ## Recover QRL Wallet
 
@@ -159,7 +182,7 @@ If you lose your wallet, the mining rig catches fire, or worse, you still have t
 qrl wallet_recover --seed-type mnemonic
 ```
 
-* * * 
+ 
 
 ## Generate a slaves.json file
 
@@ -204,7 +227,7 @@ If you have saved the **Mnemonic** or **hexseed** somewhere safe you can delete 
 
 Move this fie into your `~/.qrl` directory. If needed, create the directory.
 
-* * * 
+ 
 
 ## Start QRL Node
 
@@ -230,7 +253,7 @@ You can see the progress in the `~/.qrl/qrl.log` file.
 tail -f ~/.qrl/qrl.log
 ```
 
-* * * 
+ 
 
 ## Config File
 
@@ -331,6 +354,9 @@ Add the following to the file. These are all default settings, uncomment to edit
 ## Number of allowed peers  
 #max_peers_limit : 100  
 #  
+## Max Number of messages per minute per peer
+#peer_rate_limit : 500  
+#
 #chain_state_timeout : 180  
 #chain_state_broadcast_period : 30 # must be less than ping_timeout  
 #
@@ -338,14 +364,14 @@ Add the following to the file. These are all default settings, uncomment to edit
 ## End Configuration
 ```
 
-* * *
+
 
 Please add any issues found here in GitHub. Thanks for helping run QRL Beta-Net!
 
 If you need help jump into the [Discord Chat](https://discord.gg/RcR9WzX)
 
 
-* * *
+
 
 
 ### Node Commands
@@ -366,7 +392,7 @@ grep `Solution Found` ~/.qrl/qrl.log |wc -l
 ```
 
 
-* * *
+
 
 ### QRL Help
 
