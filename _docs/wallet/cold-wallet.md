@@ -7,7 +7,20 @@ tags: wallet
 {::comment}
 
 Need to finish with details for offline generation
+
+Waiting for work to complete on web wallet and final code base to finish this document.  
+
+
 {:/comment}
+
+
+**IMPORTANT**
+
+*This document is not complete yet!*
+
+We are waiting for work to complete on web wallet and final code base to be released to finish this document. It \*should work as is. 
+
+This guide will create a wallet routed through the **TOR** network which should add a level of security when generating on the web wallet. It will also remove the worry of having a virus or key-logger installed on your local computer. This guide will give you a brand new OS to run the wallet in.
 
 
 In order to fully secure our QRL we should follow best practice and generate our private keys off line. This will prevent anyone form viewing our private keys while we record and safely save the wallet.
@@ -22,7 +35,7 @@ This guide will use the **Tails** operating system to create a safe environment 
 We will also use the "anonymity" features that come packaged to grab the wallet files and check their validity. Using "anonymous" tools makes it much more difficult for someone to find what you are doing or play Man-In-The-Middle and collect the private keys.
 
 <a href="https://tails.boum.org/about/index.en.html"> 
-![Tails Logo](/assets/wallet/cold/tails-logo-strech.png)
+![Tails Logo](/assets/wallet/cold/tailsLogo-strech.png)
 </a>
 
 Tails is a live operating system that you can start on almost any computer from a USB stick or a DVD. It is Free Software and based on Debian GNU/Linux. Tails aims at preserving your privacy and anonymity, and helps you to use the Internet anonymously and circumvent censorship at all cost. 
@@ -33,7 +46,7 @@ All connections to the Internet are forced to go through the [Tor network](https
 
 From the Tails website, you don't need too much to get started.
 
-![Tails Logo](/assets/wallet/cold/tailsCombine.png)
+![Tails Logo](/assets/wallet/cold/tailsCombined.png)
 
 Once you have the basic requirements together, follow the instructions over on the Tails website. If you need help you can refer to the [Tails Documentation](https://tails.boum.org/doc/index.en.html) on the main site.
 

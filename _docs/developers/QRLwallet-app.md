@@ -1,5 +1,5 @@
 ---
-title: Wallet Advanced
+title: QRL Wallet App
 categories: wallet
 tags: wallet
 ---
