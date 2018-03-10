@@ -6,8 +6,7 @@ tags: wallet
 
 {::comment}
 
-Last Edit - fr1t2 3/4/18 - 10:20am
-
+Need to finish with details for offline generation
 {:/comment}
 
 
@@ -22,7 +21,9 @@ This guide will use the **Tails** operating system to create a safe environment 
 
 We will also use the "anonymity" features that come packaged to grab the wallet files and check their validity. Using "anonymous" tools makes it much more difficult for someone to find what you are doing or play Man-In-The-Middle and collect the private keys.
 
-<a href="https://tails.boum.org/about/index.en.html"> ![Tails Logo](/assets/wallet/tails-logo-flat-inverted-med.png)</a>
+<a href="https://tails.boum.org/about/index.en.html"> 
+![Tails Logo](/assets/wallet/cold/tails-logo-strech.png)
+</a>
 
 Tails is a live operating system that you can start on almost any computer from a USB stick or a DVD. It is Free Software and based on Debian GNU/Linux. Tails aims at preserving your privacy and anonymity, and helps you to use the Internet anonymously and circumvent censorship at all cost. 
 
@@ -32,7 +33,7 @@ All connections to the Internet are forced to go through the [Tor network](https
 
 From the Tails website, you don't need too much to get started.
 
-![Tails Logo](/assets/wallet/tailsRequire.png)
+![Tails Logo](/assets/wallet/cold/tailsCombine.png)
 
 Once you have the basic requirements together, follow the instructions over on the Tails website. If you need help you can refer to the [Tails Documentation](https://tails.boum.org/doc/index.en.html) on the main site.
 
@@ -87,7 +88,26 @@ I recommend selecting a few others as well
 
 For our use I don't recommend loading email or chat clients or installing any other software than what you need. The great people over at tails are doing the best to keep your digital life safe, no need to make it harder.
 
-Follow along and add the remaining drive space to the encrypted volume. You must remember the password you setup here, and make it tough. This can not be recovered. I squish the words from my favorite song together and add some random punctuation. You will have to restart for the persistent changes to take effect.
+Follow along and add the remaining drive space to the encrypted volume. You must remember the password you setup here, and make it tough. This can not be recovered. 
+
+I squish the words from my favorite song together and add some random punctuation. You will have to restart for the persistent changes to take effect.
+
+Once created you will select this persistent option and enter your password any time you want to access this data. Feel good about encrypting your files!
+
+### Create a QRL Wallet
+
+Connect to a network and allow Tails to run through connecting over tor to the onion network. Once this is dine you will be prompted that you may now browse the Internet.
+
+Open the browser and drive over to [https://wallet.theqrl.org](https://wallet.theqrl.org) to create a new wallet.
+
+When prompted to save a wallet file, choose the "Save a Secure Copy" option and download it into the persistent drive you created earlier.
+
+It's recommended to write down the mnemonic and hexseed on a piece of paper to later recover the wallet. Store this in a safe place.
+
+
+{::comment}
+
+Once there is a clean way to install from offline files continue this
 
 ### Get the Wallet Files
 
@@ -113,3 +133,4 @@ Generate an address like you would normally and write the details down in a note
 We can look up the public address to check the balance and see if transfers are going into the wallet at [QRL Block Explorer](https://explorer.theqrl.org/). Until mainnet releases and the token burn happens you can use the ETH block explorer to check your balance.
 
 
+{:/comment}

@@ -16,7 +16,7 @@ You will also need enough storage to keep the chain as it grows in the future. A
 
 **Note**
 
-> *If you build on a small VPS or other light weight hardware you may run into issues building the package. Make sure you have enough *RAM* and enable *SWAP* if needed. Also ensure the HDD is large enough!*
+*If you build on a small VPS or other light weight hardware you may run into issues building the package. Make sure you have enough *RAM* and enable *SWAP* if needed. AES-NI is required for cryptographic functions.*
 
 
 ## Minimum Requirements
@@ -89,7 +89,6 @@ brew install cmake python3 swig boost hwloc
 
 The rest of the build is the same for OSX as it is for linux. 
 
-
 ## Install on Windows 10
 
 *Windows support in the current version is limited. An alternative is to use an Ubuntu VM (virtualbox), or install Ubuntu using the Linux Subsystem for Windows.
@@ -100,8 +99,7 @@ It is possible to run a QRL node using an Ubuntu Bash shell through the Linux Su
 
 Follow [these instructions](https://msdn.microsoft.com/en-us/commandline/wsl/install-win10) to install Ubuntu using Linux Subsystem, start the Ubuntu bash shell, and then follow the previous instructions on setting up QRL.
 
-*We are working on a solution to native Windows support*
-
+*A native Windows solution is in the works*
 
 ## Install QRL 
 
@@ -111,16 +109,7 @@ Now that we have a freshly updated system, the installation of QRL is a breeze, 
 # Install the qrl Package.
 pip3 install -U qrl
 ```
-You can add logging to the pip3 command with: `--log {LOG_FILE}`
-
-```bash
-# Add Logging for pip3 
-pip3 install -U qrl --log ~/pip3-Qrl.log
-```
-
-This will print details of the install to your home directory with the file name pip3-qrl.log. The error may be inside.
-
-* * *
+This will install the qrl package and any required dependencies. Once this is done you can create a new wallet.
 
 ## Creating a Wallet
 
@@ -145,7 +134,7 @@ qrl wallet_gen
 qrl wallet_secret
 ```  
 
-* * *
+
 
 ## Recover QRL Wallet
 
@@ -159,7 +148,7 @@ If you lose your wallet, the mining rig catches fire, or worse, you still have t
 qrl wallet_recover --seed-type mnemonic
 ```
 
-* * * 
+ 
 
 ## Generate a slaves.json file
 
@@ -204,7 +193,7 @@ If you have saved the **Mnemonic** or **hexseed** somewhere safe you can delete 
 
 Move this fie into your `~/.qrl` directory. If needed, create the directory.
 
-* * * 
+ 
 
 ## Start QRL Node
 
@@ -230,7 +219,7 @@ You can see the progress in the `~/.qrl/qrl.log` file.
 tail -f ~/.qrl/qrl.log
 ```
 
-* * * 
+ 
 
 ## Config File
 
@@ -331,6 +320,9 @@ Add the following to the file. These are all default settings, uncomment to edit
 ## Number of allowed peers  
 #max_peers_limit : 100  
 #  
+## Max Number of messages per minute per peer
+#peer_rate_limit : 500  
+#
 #chain_state_timeout : 180  
 #chain_state_broadcast_period : 30 # must be less than ping_timeout  
 #
@@ -338,14 +330,14 @@ Add the following to the file. These are all default settings, uncomment to edit
 ## End Configuration
 ```
 
-* * *
+
 
 Please add any issues found here in GitHub. Thanks for helping run QRL Beta-Net!
 
 If you need help jump into the [Discord Chat](https://discord.gg/RcR9WzX)
 
 
-* * *
+
 
 
 ### Node Commands
@@ -366,7 +358,7 @@ grep `Solution Found` ~/.qrl/qrl.log |wc -l
 ```
 
 
-* * *
+
 
 ### QRL Help
 
