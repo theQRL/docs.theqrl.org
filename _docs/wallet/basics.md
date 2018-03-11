@@ -23,7 +23,7 @@ The QRL wallet is your portal into the provably secure quantum store that makes 
 * Setting up a new wallet
 * Sending a transaction over the network - *(Send QRL)*
 * Receiving a transaction over the network - *(Get QRL)*
-* Checking transaction details on the, including your current wallet balance
+* Checking transaction details on the QRL Explorer, including your current wallet balance
 
 Being Quantum Resistant comes with some inherent challenges. Before creating your new wallet, there are a few quirks worth noting about QRL.  
 
