@@ -56,7 +56,7 @@ My ROPSTEN ADDRESS: {0x3cad8671b32bD14aCE060E12859Ce91D190dBa0B}
 
 Please use your own address, not the one I generated...
 
-### Test QRL
+#### Test QRL
 
 When the team is ready to start the test they will send you TEST-QRL to this address. This will pretend to be your hard earned QRL-ERC-20 tokens that you have stashed for real. 
 
