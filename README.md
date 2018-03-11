@@ -11,36 +11,39 @@ Add to this list as needed to create a working list of documentation and topics 
 	- [x] Restore wallet from hex or mnemnonic
 	- [x] OTS Key Index Explination and Warning
 	- [ ] create a spreadsheet for users to fill in with key index and TX number and serve as download?
-	- [ ] Sending Coins
-	- [ ] Recieveing coins
-	- [ ] Token creation
-	- [ ] CLI wallet gen /wallet/wallet-cli.md
+	- [x] Sending Coins
+	- [x] Recieveing coins
+	- [x] Token creation
+	- [x] CLI wallet gen /wallet/wallet-cli.md
 	- [ ] Ledger Nano S - /wallet/ledger-nano-s.md
-	- [ ] cold wallet setup via Tails/Tor - /wallet/cold-wallet.md
+	- [x] cold wallet setup via Tails/Tor - /wallet/cold-wallet.md
+		-[ ] Finish with offline wallet when done
 - [ ] Node
-	- [ ] Setup Linux/OSX/Windows (mostly done) - /mining/full-node.md
-		- [ ] Add screen shots and trim down content
-		- [ ] Need to boot into windows somewhere and install/screen shot...
-		- [ ] Have someone setup in osx from scratch and screen shot...
-		- [x] More in depth details about slaves.json, ots keys, and tree height /allowed transactions
-	- [x] linux setup - /mining/linux.md
-	- [x] Windows setup /mining/windows.md
-	- [x] Mac setup - /mining/mac.md
+	- [x] Setup Linux/OSX/Windows - /mining/full-node.md
+		- [ ] Add screen shots and trim down content (once CLI is finished)
+		- [ ] More in depth details about slaves.json, ots keys, and tree height /allowed transactions
 	- [ ] Mining
 		- [ ] Mining Setup - gpu/cpu
 		- [ ] Pool Mining
+
+
 - [ ] Block explorer use
 	- [ ] Explain everything on screen
 	- [ ] Looking up transaction
 	- [ ] Checking wallet
+
+
 - [ ] Coin usage 
 	- [ ] Sending
 	- [ ] Receiving
 	- [ ] Token Creation
+
+
 - [ ] Token Swap
-	- [x] ICO investors instructions
+	- [ ] ICO investors instructions
 	- [x] Instructions for ERC-20 to QRL swap
-	- [ ] Test Instructions
+	- [x] Test Instructions
+
 - [ ] Error message explanations
 	- [ ] Node errors syncing the chain
 	- [ ] Wallet errors transferring coins
