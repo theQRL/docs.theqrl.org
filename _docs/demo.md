@@ -20,6 +20,16 @@ yum apt sudo koodo
 ```
 </div>
 
+
+> Danger
+{: .danger }
+
+> Warning
+{: .warning }
+
+> Info
+{: .info }
+
 <div class="windows" markdown="1">
 You're using windows. It's suggested to first install linux or get a mac
 

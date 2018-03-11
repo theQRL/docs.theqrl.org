@@ -269,6 +269,43 @@ nav a {
 			}
 		}
 	}
+	blockquote {
+		margin:12px 0; padding:5px 20px;
+		border-left-width: 3px;
+		border-left-style: solid;
+
+		p {
+
+		}
+
+		&.information, &.info {
+			border-left-color: #4A90E2;
+			background-color: adjust-color(#4A90E2, $lightness: 40%);
+
+			p {
+				color: #4A90E2;
+			}
+		}		
+		&.warning {
+			border-left-color: #8a6d3b;
+			background-color: #faf2cc;
+
+			p {
+				color: #8a6d3b;
+			}
+		}		
+		&.danger {
+			border-left-color: $quantum_warning;
+			background-color: adjust-color(#FF3E3E, $lightness: 37%);
+
+			p {
+				color: $quantum_warning;
+				font-weight: 500;
+				font-size: 20px;
+				line-height: 28px;
+			}
+		}
+	}
 
 }
 .grid.conference {
