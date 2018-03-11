@@ -35,7 +35,7 @@ FIXME add a link to the guide for slaves.json? or write here duplicated?
 
 ### New Wallet
 
-To create a new wallet we will need to open a terminal and connected to the computer with qrl installed. 
+To create a new wallet we need to open a terminal and connect to the computer with qrl installed. 
 
 Once you are connected simply enter the following command to create a new wallet:
 
@@ -67,7 +67,8 @@ Wallet index not found
 
 ### Add an Address
 
-With a wallet file created we can add new addresses to the wallet. 
+You can add new addresses to the wallet after the wallet file is created.
+
 
 ```bash
 # Adds an address or generates a new wallet (working directory)
@@ -83,7 +84,7 @@ To view all available addresses in the wallet index use:
 qrl wallet_ls
 ```
 
-The wallet_idx is the number to the left
+The wallet_idx is the number to the left in the output of the terminal.
 
 
 ### Print HexSeed & Mnemonic 
@@ -119,7 +120,7 @@ Save this information somewhere safe, this is how you will recover and open your
 
 ### Recover Wallet
 
-In order to recover or "open" a QRL wallet we require some recovery information. This will be either your mnemonic phrase or hexseed. 
+Some recovery information is needed in order to recover or open a QRL wallet. You will use either your mnemonic phrase or hexseed.
 
 ```bash
 Usage: qrl wallet_recover [OPTIONS]
@@ -136,9 +137,9 @@ To recover a wallet enter:
 ```bash
 qrl wallet_recover --seed-type 
 ```
-If you don't give any options it expects a `hexseed`
+A hexseed is expected. Specify other options if you're using anything else.
 
-enter the seed and recover the wallet. You will be prompted to save the wallet once it has been recovered.
+Enter the seed and recover the wallet. You will be prompted to save the wallet once it has been recovered.
 
 
 {::comment}
@@ -150,7 +151,7 @@ In order to protect the wallet we can generate a slaves.json file and give minin
 
 ### Check Wallet Balance
 
-To check the wallet balances browse to the [QRL explorer](https://explorer.theqrl.org) and enter your wallet address
+Browse to the [QRL explorer](https://explorer.theqrl.org) and enter your wallet address to check your balance.
 
 
 {::comment}
