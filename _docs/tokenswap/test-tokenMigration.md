@@ -98,14 +98,14 @@ There are a few things you should know about:
  Using an unlocked MyEtherWallet add the QRL token contract details into the "Add Custom Token" Field.
 
 #### Details to enter in the test ETH wallet 
- * **ERC-20 contract:**  0xcee7820f25bd1852b65d6d7fd8b28f3fe6794dbc
+ * **ERC20 contract:**  0xcee7820f25bd1852b65d6d7fd8b28f3fe6794dbc
  * **Token Name:** QRL
  * **Token Decimals:** 8
 
 ![QRL Test-Token Token Balance Check](/assets/tokenswap/test/MEW-AddToken.png)
 
 
-After you enter the details and click the "save" button, you will see the amount of ERC-20 Test-QRL you have in your wallet from the QRL team.
+After you enter the details and click the "save" button, you will see the amount of Test QRL ERC20 you have in your wallet from the QRL team.
 
 ![QRL Test-Token Token Balance Check](/assets/tokenswap/test/MEW-QRL.png)
 
