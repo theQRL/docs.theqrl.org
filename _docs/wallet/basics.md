@@ -13,13 +13,12 @@ tags: wallet
 	- Give basic info here with link
 - Place OTS Key Index explanation somewhere else
 
-
 {:/comment}
-
 
 The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your QRL safely, while allowing you to mine without the risk of losing private keys. 
 
 ##### This guide will walk you through
+
 
 * Setting up a new wallet
 * Sending a transaction over the network - *(Send QRL)*
@@ -196,14 +195,14 @@ Creating a new token is easy. Once you have all of the pertinent details entered
 ### Token Creation
 
 To create a token you will need to provide the following information:
-* The token Creation owners QRL address
+* The token creation owners QRL address
 * The token symbol
 * the token name
 * The amount of decimals for your token
 * Initial Token Holder Address
 	* Enter at least one QRL address and the amount of tokens to create and send to this address
 
-The "Initial Token Holders" field allows you to select the addresses that will receive the initial tokens. You can add as many addresses as you see fit. Below this we have our QRL fee for processing the transaction and the OTS key Index we intend to use. Ensure this is an unused OTS Key.
+The "Initial Token Holders" field allows you to select the addresses that will receive the initial tokens. You can add as many addresses as you see fit. Below is an example showing the QRL fee for processing the transaction and the OTS key index we intend to use. Ensure this is an unused OTS Key.
 
 ![QRL token Create](/assets/wallet/web/createToken.png)
 
@@ -214,6 +213,7 @@ You will get a confirmation page that shows the details of the transaction. Veri
 ![QRL Token Success](/assets/wallet/web/createToken-Confirm.png)
 
 The confirmation screen will print the details of the transaction.
+
 
 ![QRL Token Success](/assets/wallet/web/createToken-Result.png)
 
@@ -229,10 +229,15 @@ You can receive tokens at your main QRL address, no need for anything special to
 
 ### Sending Tokens
 
+
+
+
 Using the web wallet we can send tokens to another QRL address. From the "Send and Receive" screen, select the drop down to the right of the "Amount" field.
 
 ![QRL Token Success](/assets/wallet/web/tokenSendDropdown.png)
 
-Enter the details to send the tokens, and select "Confirm" to send the tokens. Progress through the following screens and wait for the confirmation.
+
+Enter the details to send the tokens, and select "Confirm". Progress through the following screens and wait for the confirmation.
+
 
 ![QRL Token Success](/assets/wallet/web/tokenSend-sm.png)
