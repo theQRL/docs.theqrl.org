@@ -539,5 +539,7 @@ nav a {
         background: url("/assets/play.png") no-repeat;
         cursor: pointer;
     }
-
+.wrapper .grid .get-involved {
+	grid-column: span 12;
+}
 @import "components/header";
