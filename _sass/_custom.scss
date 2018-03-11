@@ -173,6 +173,39 @@ nav a {
 	}
 	.menu nav {
 		padding-top: 18px;
+		
+		ul li {
+			position: relative;
+			
+			&:hover {
+				> a {
+					color:$quantum_burst;
+				}
+				> ul {
+					display: flex;
+					border:1px solid $quantum_burst;
+
+					a:hover {
+						background-color: $quantum_burst;
+						color:#FFF;
+					}
+
+				} 
+			}
+			ul {
+				display:none;
+				border:1px solid #000;
+				position: absolute;
+				left:0;
+				flex-direction: column;
+				text-align: center;
+				background-color: #F3F3F3;
+				a {
+					padding:5px;
+				}
+			}
+		}
+
 		// Hamburger on small menus
 		#nav-icon {
 			display:none;
@@ -336,6 +369,22 @@ nav a {
 	background-color:#F3F3F3;
 }
 .docs {
+	table {
+		border-collapse: collapse;
+		border:1px solid $quantum_deep;
+		border-top:2px solid $quantum_deep;
+
+	}
+	tbody tr:hover {
+		background-color: #F3F3F3;
+	}
+	thead tr {
+		background-color: $quantum_deep;
+		color:#FFF;		
+	}
+	td, th {
+		padding:5px;
+	}
 	.floatmenu {
 		position:sticky;
 		top:0;

@@ -13,13 +13,12 @@ tags: wallet
 	- Give basic info here with link
 - Place OTS Key Index explanation somewhere else
 
-
 {:/comment}
-
 
 The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your QRL safely, while allowing you to mine without the risk of losing private keys. 
 
 ##### This guide will walk you through
+
 
 * Setting up a new wallet
 * Sending a transaction over the network - *(Send QRL)*
@@ -215,6 +214,7 @@ You will get a confirmation page that shows the details of the transaction. Veri
 
 The confirmation screen will print the details of the transaction.
 
+
 ![QRL Token Success](/assets/wallet/web/createToken-Result.png)
 
 ### Checking Token Balance
@@ -231,10 +231,13 @@ You can receive tokens at your main QRL address, no need for anything special to
 
 
 
+
 Using the web wallet we can send tokens to another QRL address. From the "Send and Receive" screen, select the drop down to the right of the "Amount" field.
 
 ![QRL Token Success](/assets/wallet/web/tokenSendDropdown.png)
 
+
 Enter the details to send the tokens, and select "Confirm". Progress through the following screens and wait for the confirmation.
+
 
 ![QRL Token Success](/assets/wallet/web/tokenSend-sm.png)

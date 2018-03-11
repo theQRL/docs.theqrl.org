@@ -24,6 +24,7 @@ Follow the [Running a Full Node](/mining/full-node) instructions if you have not
 
 {::comment}
 
+
 * Check our balance
 * Send QRL 
 
@@ -36,6 +37,7 @@ FIXME add a link to the guide for slaves.json? or write here duplicated?
 ### New Wallet
 
 To create a new wallet we need to open a terminal and connect to the computer with qrl installed. 
+
 
 Once you are connected simply enter the following command to create a new wallet:
 
@@ -65,6 +67,7 @@ This will create a wallet file in your current working directory called `wallet.
 Wallet index not found
 ```
 
+
 ### Add an Address
 
 You can add new addresses to the wallet after the wallet file is created.
@@ -83,6 +86,7 @@ To view all available addresses in the wallet index use:
 ```bash
 qrl wallet_ls
 ```
+
 
 The wallet_idx is the number to the left in the output of the terminal.
 
@@ -137,10 +141,10 @@ To recover a wallet enter:
 ```bash
 qrl wallet_recover --seed-type 
 ```
+
 A hexseed is expected. Specify other options if you're using anything else.
 
 Enter the seed and recover the wallet. You will be prompted to save the wallet once it has been recovered.
-
 
 {::comment}
 In order to protect the wallet we can generate a slaves.json file and give mining only permissions.
@@ -150,6 +154,7 @@ In order to protect the wallet we can generate a slaves.json file and give minin
 
 
 ### Check Wallet Balance
+
 
 Browse to the [QRL explorer](https://explorer.theqrl.org) and enter your wallet address to check your balance.
 
