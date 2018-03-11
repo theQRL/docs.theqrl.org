@@ -83,6 +83,7 @@ You can enter an email address here as well *\*optional*
 
 This will generate a personal burn address for you to use. Anytime you send QRL ERC20 to the reusable Ethereum Burn Address, QRL Coins are deposited 1:1 into the QRL Wallet from Step 2.
 
+![QRL Test-Token ETH Wallet](/assets/tokenswap/test/tokenSwap.png)
 
 
 ## Test Requirements
