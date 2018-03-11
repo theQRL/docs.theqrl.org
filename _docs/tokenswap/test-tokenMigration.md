@@ -7,7 +7,7 @@ tags: Token Swap
 
 The QRL Team put out a call to participate in a test token swap happening on the ROPSTEN Ethereum network.
 
-These instructions are meant for the participants of the #Test-Migration group from the [Discord Chat](). 
+These instructions are meant for the participants of the #Test-Migration group from the <a href="https://discord.gg/E9PWvbG" target="_blank">Discord Chat</a>. 
 
 If you were not specifically told to follow these instructions, **DON'T!**
 
@@ -67,7 +67,7 @@ The amount won't really matter and the team will divvy up the tokens as they see
 
 Make your QRL Wallet and QRL Address (from the web wallet, or your QRL node via CLI).
 
-Browse to [https://wallet.theqrl.org](https://wallet.theqrl.org) and create a new QRL wallet. You will be required to enter a password.
+Browse to <a href="https://wallet.theqrl.org" target="_blank">https://wallet.theqrl.org</a> and create a new QRL wallet. You will be required to enter a password.
 
 Record all of the details for your new QRL wallet somewhere you won't lose them.
 
@@ -88,7 +88,7 @@ This will generate a personal burn address for you to use. Anytime you send Test
 
 There are a few things you should know about:
 
-* You will need some test Ethereum to use as gas. Enter your address into the [ROPSTEN faucet](https://faucet.bitfwd.xyz) to get ETH
+* You will need some test Ethereum to use as gas. Enter your address into the <a href="https://faucet.bitfwd.xyz" target="_blank">ROPSTEN faucet</a> to get ETH
 * This is only a test. **DO NOT SEND REAL QRL HERE!**
 * If you have any issues Please use the QRL Discord chat to communicate 
 
