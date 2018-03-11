@@ -15,7 +15,7 @@
    version="1.1"
    id="svg158"
    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
-   sodipodi:docname="logo-horizontal4b.svg">
+   sodipodi:docname="logo-horizontal4a.svg">
   <defs
      id="defs152">
     <clipPath
@@ -77,9 +77,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="594.55387"
-     inkscape:cy="-183.64037"
+     inkscape:zoom="0.7"
+     inkscape:cx="471.70431"
+     inkscape:cy="-51.046609"
      inkscape:document-units="px"
      inkscape:current-layer="flowRoot690-1-9"
      showgrid="false"
@@ -123,7 +123,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-26.689163,-55.946215)">
+     transform="translate(-26.689163,-55.946214)">
     <g
        id="g300"
        transform="translate(-3.4017857,1.0232219)">
@@ -184,36 +184,18 @@
        transform="matrix(0.97182722,0,0,0.97182722,-71.243271,-134.80099)"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#1d2951;fill-opacity:1;stroke:none"
        id="flowRoot690-1-9">
-      <flowRoot
-         xml:space="preserve"
-         id="flowRoot372"
-         style="fill:black;fill-opacity:1;stroke:none;font-family:'Titillium Web';font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'Titillium Web';font-stretch:normal;font-variant:normal;"><flowRegion
-           id="flowRegion374"
-           style="-inkscape-font-specification:'Titillium Web';font-family:'Titillium Web';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;"><rect
-             id="rect376"
-             width="1165.7161"
-             height="563.6651"
-             x="62.629459"
-             y="476.44971"
-             style="-inkscape-font-specification:'Titillium Web';font-family:'Titillium Web';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;" /></flowRegion><flowPara
-           id="flowPara378"></flowPara></flowRoot>      <g
-         aria-label="QRL"
-         transform="matrix(0.49944311,0,0,0.49944311,170.78361,-38.179035)"
-         style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#1d2951;fill-opacity:1;stroke:none"
-         id="flowRoot380">
-        <path
-           d="m 109.8268,607.00615 q -29.760003,0 -41.088003,-16.32 -11.328,-16.32 -11.328,-51.264 0,-35.136 11.52,-52.032 11.52,-17.088 40.896003,-17.088 29.376,0 40.896,16.896 11.712,16.896 11.712,52.032 0,24.384 -4.992,39.168 -4.992,14.592 -17.088,21.696 l 16.32,26.304 -13.824,6.528 -16.896,-27.648 q -6.336,1.728 -16.128,1.728 z m -37.248003,-67.776 q 0,29.184 7.68,42.048 7.68,12.672 29.568003,12.672 22.08,0 29.568,-12.288 7.68,-12.48 7.68,-41.856 0,-29.568 -7.872,-43.008 -7.872,-13.44 -29.568,-13.44 -21.504003,0 -29.376003,13.44 -7.68,13.248 -7.68,42.432 z"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web';fill:#1d2951;fill-opacity:1"
-           id="path388" />
-        <path
-           d="m 204.3208,554.20615 v 50.88 h -14.784 v -132.864 h 49.152 q 21.12,0 31.68,9.792 10.752,9.792 10.752,30.528 0,30.72 -24.384,38.592 l 25.536,53.952 h -16.32 l -24,-50.88 z m 34.56,-13.056 q 27.072,0 27.072,-27.84 0,-28.032 -27.264,-28.032 h -34.368 v 55.872 z"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web';fill:#1d2951;fill-opacity:1"
-           id="path390" />
-        <path
-           d="m 380.8138,605.08615 h -73.152 v -132.864 h 14.784 v 119.616 h 58.368 z"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web';fill:#1d2951;fill-opacity:1"
-           id="path392" />
-      </g>
+      <path
+         d="m 222.20284,264.14888 q -14.976,0 -20.928,-8.064 -5.856,-8.064 -5.856,-25.44 0,-17.472 5.952,-25.92 6.048,-8.448 20.832,-8.448 14.784,0 20.736,8.448 5.952,8.352 5.952,25.824 0,11.52 -2.496,18.624 -2.4,7.104 -7.968,10.848 l 8.064,12.96 -9.888,4.608 -8.544,-14.016 q -1.824,0.576 -5.856,0.576 z m -12.48,-14.88 q 3.264,5.568 12.48,5.568 9.216,0 12.384,-5.472 3.264,-5.568 3.264,-18.72 0,-13.152 -3.36,-19.104 -3.264,-5.952 -12.288,-5.952 -9.024,0 -12.384,5.952 -3.36,5.952 -3.36,19.008 0,13.056 3.264,18.72 z"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:96px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Semi-Bold';text-align:start;letter-spacing:1.7614553px;text-anchor:start;fill:#1d2951;fill-opacity:1"
+         id="path336" />
+      <path
+         d="m 273.7163,239.66888 v 23.424 h -10.656 v -65.76 h 24.96 q 22.272,0 22.272,20.928 0,14.016 -10.752,19.008 l 10.848,25.824 h -11.712 l -9.504,-23.424 z m 25.632,-21.312 q 0,-11.808 -11.328,-11.808 h -14.304 v 23.904 h 14.496 q 5.76,0 8.448,-3.264 2.688,-3.36 2.688,-8.832 z"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:96px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Semi-Bold';text-align:start;letter-spacing:1.7614553px;text-anchor:start;fill:#1d2951;fill-opacity:1"
+         id="path338" />
+      <path
+         d="m 360.93575,263.09288 h -36.864 v -65.76 h 10.656 v 56.256 h 26.208 z"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:96px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Semi-Bold';text-align:start;letter-spacing:1.7614553px;text-anchor:start;fill:#1d2951;fill-opacity:1"
+         id="path340" />
     </g>
   </g>
 </svg>

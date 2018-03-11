@@ -4,7 +4,7 @@
     <div class="grid collapse">
       <div class="logo">
         <a href="/">
-          <img src="/assets/logo-new.svg" alt="">
+          <img src="/assets/logo-horizontal4b.svg" alt="">
         </a>
       </div>
       <div class="menu">
@@ -16,8 +16,16 @@
             <span></span>
           </div>
           <ul>
-            <li><a href="/">Wallet</a></li>
-            <li><a href="/">Mining</a>
+            <li class="dropdown">
+              <a href="/">Wallet</a>
+              <ul>
+                <li><a href="/wallet/basics">Basics</a></li>
+                <li><a href="/wallet/cold-wallet">Cold-Wallet</a></li>
+                <li><a href="/wallet/ledger-nano-s">Ledger Nano S</a></li>
+                <li><a href="/wallet/wallet-cli">&lt;CLI&gt;</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="/">Mining</a>
               <ul>
                 <li><a href="/tokenswap/presale">Getting Started</a></li>
                 <li><a href="/tokenswap/erc20">QRL Full Node</a></li>
@@ -25,14 +33,14 @@
                 <li><a href="/tokenswap/erc20">Windows</a></li>
               </ul>
             </li>
-            <li>
+            <li class="dropdown">
               <a href="/">Developers</a>
               <ul>
                 <li><a href="/api">API Docs</a></li>
                 <li><a href="/api">Address Format</a></li>
               </ul>
             </li>
-            <li>
+            <li class="dropdown">
               <a href="/">Token Swap</a>
 
               <ul>
@@ -48,7 +56,7 @@
           <ul>
             <li class="has-child"><a href="">QRL Network <svg class="svg-inline--fa fa-angle-down fa-w-10" aria-hidden="true" data-prefix="fas" data-icon="angle-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></svg></a>
               <ul>
-                <li><a href="http://qrl.jackalyst.com">Main Website</a></li>
+                <li><a href="https://theqrl.org">Main Website</a></li>
                 <li><a href="https://explorer.theqrl.org">Explorer</a></li>
                 <li><a href="https://wallet.theqrl.org">Web Wallet</a></li>
               </ul>
@@ -58,16 +66,15 @@
       </div>
     </div>
   </div>
-<!--   <div class="wrapper selectlogo">
+
+
+<!--   <div class="wrapper">
     <div class="grid w12">
       <div>
-      <h2>Logo selection</h2>
-      <ul>
-        <li><a href="#" onclick="javascript:document.querySelector('.logo img').src='/assets/logo-new.svg'">Logo 4a</a></li>
-        <li><a href="#" onclick="javascript:document.querySelector('.logo img').src='/assets/logo-horizontal4b.svg'">Logo 4b</a></li>
-        <li><a href="#" onclick="javascript:document.querySelector('.logo img').src='/assets/logo-horizontal4c.svg'">Logo 4c</a></li>
-      </ul>        
+        <h3>Logos</h3>
+        <a href="#" class="cta" onclick="javascript:document.querySelector('.logo img').src='/assets/logo-horizontal4a.svg'">Horizontal 4a</a>
+        <a href="#" class="cta" onclick="javascript:document.querySelector('.logo img').src='/assets/logo-horizontal4b.svg'">Horizontal 4b</a>
+        <a href="#" class="cta" onclick="javascript:document.querySelector('.logo img').src='/assets/logo-horizontal4c.svg'">Horizontal 4c</a>
       </div>
-
     </div>
   </div> -->
