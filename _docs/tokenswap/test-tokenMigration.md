@@ -11,8 +11,8 @@ These instructions are meant for the participants of the #Test-Migration group f
 
 If you were not specifically told to follow these instructions, **DON'T!**
 
-**THIS TEST IS JUST A TEST. NO REAL QUANTA WILL BE BURNED OR TRANSFERRED DURING THIS TEST. THIS IS FOR TESTING PURPOSES ONLY.**
-
+> THIS TEST IS JUST A TEST. NO REAL QUANTA WILL BE BURNED OR TRANSFERRED DURING THIS TEST. THIS IS FOR TESTING PURPOSES ONLY.
+{: title="Warning"}
 
 
 
