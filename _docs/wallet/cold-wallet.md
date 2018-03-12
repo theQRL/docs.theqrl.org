@@ -4,16 +4,6 @@ categories: wallet
 tags: wallet
 ---
 
-{::comment}
-
-Need to finish with details for offline generation
-
-Waiting for work to complete on web wallet and final code base to finish this document.  
-
-
-{:/comment}
-
-
 **IMPORTANT**
 
 *This document is not complete yet!*
@@ -21,7 +11,6 @@ Waiting for work to complete on web wallet and final code base to finish this do
 We are waiting for work to complete on web wallet and final code base to be released to finish this document. It \*should work as is. 
 
 This guide will create a wallet routed through the **TOR** network which should add a level of security when generating on the web wallet. It will also remove the worry of having a virus or key-logger installed on your local computer. This guide will give you a brand new OS to run the wallet in.
-
 
 In order to fully secure your QRL, follow best practices and generate your private keys off-line. This will prevent anyone from viewing your private keys while you record and safely save the wallet.
 
@@ -122,33 +111,3 @@ When prompted to save a wallet file, choose the "Save a Secure Copy" option and 
 
 
 It's recommended to write down the mnemonic and hexseed on a piece of paper to later recover the wallet. Store this in a safe place.
-
-
-{::comment}
-
-Once there is a clean way to install from offline files continue this
-
-### Get the Wallet Files
-
-There are a few ways you can do this. If your ultra paranoid you can leave the persistent drive locked when you boot, connect to github through the TOR network and download to an external USB. Then reboot and unlock the persistent drive and copy the files over.
-
-If not simply grab the offline generators from github or the official source and verify the hash matches what you downloaded. Then simply copy this over to the unlocked persistent drive and generate the wallet offline.
-
-Never boot with a decrypted drive and connect to the internet. One or the other. If you leave it locked there is little to no chance for someone to install nasty things there.
-
-Links to QRL wallet files:
-
-*   [Github Wallet File](https://github.com/theQRL/qrl-wallet)
-*   [My-Ether-Wallet](https://github.com/kvhnuke/etherwallet/releases/tag/v3.11.3.2)
-
-
-### Create the Wallet offline
-
-Making sure the computer is not connected to the internet, open the file with your offline wallet generator in it. You will need to place them in the tor browser allowed folder in order for the browser to run the files.
-
-Generate an address like you would normally and write the details down in a notebook. This will never be seen by another computer until you are ready to move your coins. Make sure you get everything right here, CasE mattErs!
-
-You can look up the public address to check the balance and see if transfers are going into the wallet at [QRL Block Explorer](https://explorer.theqrl.org/). 
-
-
-{:/comment}

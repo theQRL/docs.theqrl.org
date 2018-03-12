@@ -69,8 +69,6 @@ Add these to the guide as they come. If there is different or special instructio
 #### Debian
 
 
-
-
 #### BSD
 
 
@@ -78,6 +76,9 @@ Add these to the guide as they come. If there is different or special instructio
 
 
 #### ArchLinux
+
+
+#### Any Other Linux
 ----------------------------------------------------------
 
 {:/comment}

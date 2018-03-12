@@ -4,16 +4,6 @@ categories: wallet
 tags: wallet
 ---
 
-{::comment}
-
-
-- create a spreadsheet for users to fill in with key index and TX number and give as a download link. Helps keep track of Used OTS Key Indexes
-
-- Place slaves.json information in another writeup
-	- Give basic info here with link
-- Place OTS Key Index explanation somewhere else
-
-{:/comment}
 
 The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your QRL safely, while allowing you to mine without the risk of losing private keys. 
 
@@ -33,21 +23,13 @@ When you create a new wallet you create an XMSS tree, which is comprised of many
 
 *The OTS key index is limited.* You can only use each key once. When you've used your last key, you will no longer be able to sign transactions. This can not be stressed enough! 
 
-**Your last key MUST EITHER empty your wallet OR activate a slave.json file that holds more keys. If you use all of your OTS Key Indexes with funds in the wallet, these funds will be lost FOREVER**
-
+> Your last key **MUST EITHER** empty your wallet **OR** activate a slave.json file that holds more keys. If you use all of your OTS Key Indexes with funds in the wallet, these funds will be lost **FOREVER**
+{: .danger}
 
 #### Best Wallet Practices 
 * Track all OTS Keys used in a spreadsheet *(ledger)*
 * Store your private keys somewhere safe  
 * Create a slaves.json file to use for transactions or mining QRL 
-
-{::comment}
-FIXME create this guide!
-
-* The best way to store your QRL is to use a [Ledger Nano S](https://www.ledgerwallet.com/products/ledger-nano-s). You can find instructions for setting up a QRL wallet [here](/documentation/ledger-nano-s)
-* You may also 
-
-{:/comment}
 
 ## Create a QRL Wallet
 
@@ -137,9 +119,7 @@ Once the wallet is opened you will be in the **Send** tab in your open wallet. T
 **Keep track of used OTS Keys!**
 	*The webwallet will keep track of your OTS key index for you from the blockchain, but it is good practice to write this number down after each use.
 
-{::comment}
 
-{:/comment}
 
 ![QRL Send](/assets/wallet/web/send-sm.png)
 

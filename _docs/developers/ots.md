@@ -12,11 +12,8 @@ When you create a new wallet you create an XMSS tree, which is comprised of many
 
 *The OTS key index is limited.* Once this index is used you will no longer be able to sign transactions. This can not be stressed enough! 
 
-> **IF you use all of your OTS Key Index's with funds in the wallet, these funds will be lost.**
-
-
-* * * 
-
+> IF you use all of your OTS Key Index's with funds in the wallet, these funds will be lost.
+{: .danger}
 
 The OTS index or the **One Time Signature** index is used when you sign a transaction onto the network. 
 
