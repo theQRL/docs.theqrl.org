@@ -364,14 +364,7 @@ Add the following to the file. These are all default settings, uncomment to edit
 ## End Configuration
 ```
 
-
-
-Please add any issues found here in GitHub. Thanks for helping run QRL Beta-Net!
-
-If you need help jump into the [Discord Chat](https://discord.gg/RcR9WzX)
-
-
-
+Please add any issues found in <a href="https://github.com/theqrl/qrl" target="_blank">GitHub</a> If you need help jump into the <a href="https://discord.gg/RcR9WzX" target="_blank"> Discord Chat </a>
 
 
 ### Node Commands
@@ -390,9 +383,6 @@ grep Solution Found ~/.qrl/qrl.log
 # Prints how many blocks you have found (count of won blocks)
 grep `Solution Found` ~/.qrl/qrl.log |wc -l   
 ```
-
-
-
 
 ### QRL Help
 

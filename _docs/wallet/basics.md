@@ -32,7 +32,8 @@ Being Quantum Resistant comes with some inherent challenges. Before creating you
 When you create a new wallet you create an XMSS tree, which is comprised of many signatures to make a signature scheme. Every signature is referenced as your OTS index or *One Time Signature* key index. 
 
 *The OTS key index is limited.* You can only use each key once. When you've used your last key, you will no longer be able to sign transactions. This can not be stressed enough! 
-**Your last key *MUST EITHER* empty your wallet *OR* activate a slave.json file that holds more keys. If you use all of your OTS Key Indexes with funds in the wallet, these funds will be lost *FOREVER* **
+
+**Your last key MUST EITHER empty your wallet OR activate a slave.json file that holds more keys. If you use all of your OTS Key Indexes with funds in the wallet, these funds will be lost FOREVER**
 
 
 #### Best Wallet Practices 
@@ -118,7 +119,7 @@ Welcome to the Quantum Resistance! Click "Open Wallet" and enter your recovery i
 
 By using the recovery method you have created, you can access your wallet to send or receive QRL.
 
-![QRL open Wallet](/assets/wallet/web/qrlWallet-open.png)
+![QRL open Wallet](/assets/wallet/web/qrlWallet.png)
 
 Enter your information into the "Wallet Seed / File" field. Make sure the drop down on the right matches the data you chose (Mnemonic, Hexphrase, or wallet file).
 
@@ -132,7 +133,9 @@ Once the wallet is opened you will be in the **Send** tab in your open wallet. T
 * Recipient Address - A valid QRL address
 * Amount - How much QRL
 * Fee - How much you are paying to make this transaction
-* OTS Key Index - Enter an unused OTS Key. **Keep track of used OTS Keys!**
+* OTS Key Index - Enter an unused OTS Key. 
+**Keep track of used OTS Keys!**
+	*The webwallet will keep track of your OTS key index for you from the blockchain, but it is good practice to write this number down after each use.
 
 {::comment}
 
@@ -185,9 +188,9 @@ At the bottom left there is a **meta** button. This will give fine grain details
 
 ## QRT Tokens
 
-The QRL supports QRT or Quantum Resistant Ledger Tokens. These tokens share the same encryption and QC resistance as the main blockchain. If used properly they will provide... **FIXME!**
+The QRL supports QRT or Quantum Resistant Ledger Tokens. These tokens share the same encryption and QC resistance as the main QRL blockchain.
 
-![QRL New Token](/assets/wallet/web/tokenCreate.png)
+![QRL New Token](/assets/wallet/web/createToken-Blank.png)
 
 Creating a new token is easy. Once you have all of the pertinent details entered and the fee paid, the network takes care of the rest. 
 
