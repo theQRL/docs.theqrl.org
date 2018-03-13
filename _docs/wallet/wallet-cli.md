@@ -4,14 +4,6 @@ categories: wallet
 tags: wallet
 ---
 
-{::comment}
-
-- need details for sending and receiving QRL via cli
-- move slaves.json info to its own guide
-- Add pictures when the CI updates are out
-{:/comment}
-
-
 The QRL wallet can be generated via the command line using the qrl python3 package. It's actually quite easy once you have QRL installed to create and manage your wallet. 
 
 Follow the [Running a Full Node](/mining/full-node) instructions if you have not installed qrl yet. You will need QRL installed to proceed with this guide.
@@ -21,18 +13,6 @@ Follow the [Running a Full Node](/mining/full-node) instructions if you have not
 * Print your Mnemonic phrase and Hexseed
 * Recover wallet from hexseed/mnemonic
 * Generate a slaves.json file
-
-{::comment}
-
-
-* Check our balance
-* Send QRL 
-
-FIXME add a link to the guide for slaves.json? or write here duplicated?
-
-* Generate a slaves.json file 
-* Using the slaves.jason file
-{:/comment}
 
 ### New Wallet
 
@@ -45,15 +25,7 @@ Once you are connected simply enter the following command to create a new wallet
 qrl wallet_gen
 ```
 
-{::comment}
-![QRL CLI Wallet](/assets/mining/walletGen.png)
-{:/comment}
-
 This will create a wallet file in your current working directory called `wallet.qrl`. Protect this file with your life. This is an unprotected wallet file. Anyone can use this to open your funds.
-
-{::comment}
-![QRL Wallet_gen Output](/assets/mining/walletGenOut.png)
-{:/comment}
 
  You will see the address that was created. All QRL addresses begin with a "Q".
 
@@ -146,12 +118,6 @@ A hexseed is expected. Specify other options if you're using anything else.
 
 Enter the seed and recover the wallet. You will be prompted to save the wallet once it has been recovered.
 
-{::comment}
-In order to protect the wallet we can generate a slaves.json file and give mining only permissions.
-
-{:/comment}
-
-
 
 ### Check Wallet Balance
 
@@ -179,7 +145,6 @@ Options:
   --help                   Show this message and exit.
 ```
 
-FIXME With some details!
 
 {:/comment}
 
