@@ -6,7 +6,7 @@ tags: Token Swap
 
 This guide will outline, in a step-by-step guide, how to migrate your QRL ERC20 tokens, using our web app, and end up with Main Network QRL coins (Quanta).
 
-> Note: Those with unclaimed ERC20s from the pre-sale in April/May 2017 will be contacted separately in order to assist them receiving Mainnet Quanta (We ❤ Our HODLers)
+> Note: Those with unclaimed ERC20 tokens will be contacted separately in order to assist them in receiving MainNet Quanta (We ❤ Our HODLers)
 {: .info}
 
 
@@ -83,6 +83,6 @@ Once you have deposited QRL into the burn address, you will also see the balance
 
 If you have any questions, we are available on Discord (Channel #Migration_Support, or send an email to info@theqrl.org
 
-> Reminder: Those with unclaimed ERC20s from the pre-sale will be contacted separately in order to assist them in receiving MainNet Quanta.
+> Reminder: Those with unclaimed ERC20 tokens will be contacted separately in order to assist them in receiving MainNet Quanta.
 {: .info}
 
