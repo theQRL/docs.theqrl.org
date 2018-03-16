@@ -34,11 +34,15 @@ Once you have a valid QRL wallet generated via one of the above steps continue w
 
 Once you have a QRL Address of your own, you can open the [Token Migration App](#) This will be the interface between the ERC20Tokens and the real QRL coins.
 
-Paste in your QRL Address you generated in step 1. This will be the new address your QRL coins will be sent to after swap
+Paste in your QRL Address you generated in *Step 1*. This will be the new address your QRL coins will be sent to after swap
+
+![Filled In Token App](/assets/tokenswap/swap/migrationPageFilled.png)
 
 Enter an email address into the next field if you want to receive updates when tokens are swapped. All QRL ERC20 Burn Addresses are monitored and emails will be sent periodically when new transactions are detected to confirm QRL MainNet Wallet balance.
 
 Hit “Submit” and an Ethereum address will be generated and displayed to you:
+
+![Test ETH address](/assets/tokenswap/swap/migrationPageAddress.png)
 
 This is your Burn Address. Each QRL ERC20 token sent to this address will be credited in a 1:1 ratio with QRL coins (Quanta) credited to the QRL Wallet address you entered on MainNet launch.
 
@@ -54,7 +58,13 @@ Every time you send your QRL ERC20 tokens from anywhere (exchange, myetherwallet
 
 #### Burn Instructions
 
-Open the ETH wallet that contains your QRL ERC20 tokens and send them to the new burn address you created. It's recommended to send a small amount of QRL tokens first to make sure you have followed the steps throughly.
+Open the ETH wallet that contains your QRL ERC20 tokens and send them to the new burn address you created. 
+
+![Sending to burn address](/assets/tokenswap/swap/SendToBurn-first.png)
+
+It's recommended to send a small amount of QRL tokens first to make sure you have followed the steps throughly.
+
+![Sending to burn address](/assets/tokenswap/swap/SendToBurnComplete.png)
 
 
 ## Other/FAQ
@@ -62,6 +72,20 @@ Open the ETH wallet that contains your QRL ERC20 tokens and send them to the new
 Once you have your QRL ERC20 Burn Address, you can send QRL ERC20 tokens to that address, and they will be credited as Main Network QRL coins (Quanta) at launch.
 
 If launch has already occured, then they will be deposited into the QRL Wallet address you provided via a normal transaction on the QRL Network.
+
+#### Check Burn Address
+
+Using the address you setup check the burn address for transaction details. There is a button on the QRL Token Migration page to check the burn address. Enter your burn address into the search field and it will print the details of the address. 
+
+![Check Burn Address](/assets/tokenswap/swap/BurnAddressCheck.png)
+
+
+You see the address that the burn address will send to. Make sure that it is the same as the wallet you created. This is where your real QRL will go.
+
+Once you have deposited QRL into the burn address, you will also see the balance awaiting mainnet release. Once live the address shown will be credited with QRL.
+
+![Check Burn Address](/assets/tokenswap/swap/BurnAddressBal.png)
+
 
 If you have any questions, we are available for support on Discord (Channel #Migration_Support), or send an email to info@theqrl.org
 
