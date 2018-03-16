@@ -1,28 +1,36 @@
 ---
-title: TEST-Token Migration
+title: TEST-Token Setup
 categories: Token Swap
 tags: Token Swap
 ---
-
-
-The QRL Team put out a call to participate in a test token swap happening on the ROPSTEN Ethereum network.
+The test token swap is happening on the ROPSTEN Ethereum test network. You will need to create a new wallet on the testnet and aquire some test-ETH
 
 These instructions are meant for the participants of the #Test-Migration group from the <a href="https://discord.gg/E9PWvbG" target="_blank">Discord Chat</a>. 
 
-If you were not specifically told to follow these instructions, **DON'T!**
 
 > THIS TEST IS JUST A TEST. NO REAL QUANTA WILL BE BURNED OR TRANSFERRED DURING THIS TEST. THIS IS FOR TESTING PURPOSES ONLY.
-{: .danger}
+{: .warning}
 
+#### Test Requirements
+
+Before you get started, there are a few things you should know about:
+
+* You will need some TEST-Ethereum to use as gas. 
+	* Enter your ROPSTEN address into a ROPSTEN faucet to get ETH to use for GAS
+		* <a href="https://faucet.bitfwd.xyz" target="_blank">bitfwd faucet</a>
+		* * <a href="http://faucet.ropsten.be:3001/" target="_blank">ropsten faucet</a> 
+
+* This is only a test. **DO NOT SEND REAL QRL HERE!**
+* If you have any issues Please use the QRL Discord channel to discuss. The developers are available to answer any questions.
 
 
 ## Test-Token Swap Instructions
 
 Here are the three easy steps to participate in the test-token migration:
 
-## Step 1
+### Step 1
 
-Generate \*TEST\* Ethereum Burn Address.
+#### Generate TEST Ethereum Burn Address.
 
 Use "My Ether Wallet" to setup a test ether address. Once this address is setup the team will send you test-QRL to play with in the Test-Token swap process. Grab some test-Ethereum to use for gas to process the transactions.
 
@@ -32,6 +40,9 @@ Go to <a href="https://myetherwallet.com" target="_blank" >https://myetherwallet
 
 Make sure you select the correct network in the top right.
 
+
+
+ On the next screen you will have the oppertunity to save a wallet
 You will be asked to save a `.json` file. You can skip if you want, and simply save the private key that is printed on the following screen.
 
 
@@ -58,42 +69,15 @@ Please use your own address, not the one I generated...
 
 #### Test QRL
 
+Tag @developer in the chat once you have posted the address and they will send you some test quanta to your new address
+
 When the team is ready to start the test they will send you TEST-QRL to this address. This will pretend to be your hard earned Test-QRL ERC-20 tokens that you have stashed for real. 
 
 The amount won't really matter and the team will divvy up the tokens as they see fit.
 
 
-## Step 2 
 
-Make your QRL Wallet and QRL Address (from the web wallet, or your QRL node via CLI).
-
-Browse to <a href="https://wallet.theqrl.org" target="_blank">https://wallet.theqrl.org</a> and create a new QRL wallet. You will be required to enter a password.
-
-Record all of the details for your new QRL wallet somewhere you won't lose them.
-
-
-
-## Step 3
-
-Go to The QRL Token Migration Page and put in your fresh, backed-up QRL address into the QRL address field.
-
-You can enter an email address here as well *(optional).*
-
-This will generate a personal burn address for you to use. Anytime you send Test-QRL ERC20 to the reusable Ethereum Burn Address, Test-QRL Coins will be deposited 1:1 into the QRL Wallet created in Step 2.
-
-![QRL Test-Token ETH Wallet](/assets/tokenswap/test/tokenSwap.png)
-
-
-## Test Requirements
-
-There are a few things you should know about:
-
-* You will need some test Ethereum to use as gas. Enter your address into the <a href="https://faucet.bitfwd.xyz" target="_blank">ROPSTEN faucet</a> to get ETH
-* This is only a test. **DO NOT SEND REAL QRL HERE!**
-* If you have any issues Please use the QRL Discord chat to communicate 
-
-
-## Checking Test-Token balance
+## Checking Token balance
 
  Using an unlocked MyEtherWallet add the QRL token contract details into the "Add Custom Token" Field.
 
