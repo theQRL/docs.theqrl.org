@@ -17,18 +17,15 @@ Before you get started, there are a few things you should know about:
 
 * You will need some TEST-Ethereum to use as gas. 
 	* Enter your ROPSTEN address into a ROPSTEN faucet to get ETH to use for GAS
-		* <a href="https://faucet.bitfwd.xyz" target="_blank">bitfwd faucet</a>
-		* * <a href="http://faucet.ropsten.be:3001/" target="_blank">ropsten faucet</a> 
-
+	* <a href="https://faucet.bitfwd.xyz" target="_blank">bitfwd faucet</a>
+	* <a href="http://faucet.ropsten.be:3001/" target="_blank">ropsten faucet</a> 
 * This is only a test. **DO NOT SEND REAL QRL HERE!**
 * If you have any issues Please use the QRL Discord channel to discuss. The developers are available to answer any questions.
 
 
-## Test-Token Swap Instructions
+## Test-Token Wallet Setup
 
-Here are the three easy steps to participate in the test-token migration:
-
-### Step 1
+Here are the basic instructions to get you started with a test ETH wallet. 
 
 #### Generate TEST Ethereum Burn Address.
 
@@ -40,23 +37,22 @@ Go to <a href="https://myetherwallet.com" target="_blank" >https://myetherwallet
 
 Make sure you select the correct network in the top right.
 
-
-
  On the next screen you will have the oppertunity to save a wallet
-You will be asked to save a `.json` file. You can skip if you want, and simply save the private key that is printed on the following screen.
+You will be asked to save a json wallet file. You can skip if you want, and simply save the private key that is printed on the following screen.
 
 
-![QRL Test-Token ETH](/assets/tokenswap/test/MEW-KEY.png)
+![QRL Test-Token ETH](/assets/tokenswap/test/MEW-SaveKey.png)
+
+The following screen will ask you to save the private key. This is not required if you have saved your wallet file.
 
 
-With the new private key, unlock the test wallet. Select the private key option and enter your key in the box.
+With the new wallet file, unlock the test wallet. Select the *Keystore / JSON file* option and upload your wallet file. MEW will ask you to enter your password used to setup the wallet.
 
+![QRL Test-Token ETH unlock](/assets/tokenswap/test/MEW-UseKey.png)
 
-![QRL Test-Token ETH unlock](/assets/tokenswap/test/MEW-unlock.png)
+With the wallet unlocked, you can see your new TestNet address in the top rightand side. 
 
-With the wallet unlocked, you can see your new TestNet address. 
-
-![QRL Test-Token ETH unlock](/assets/tokenswap/test/MEW-unlock.png)
+![QRL Test-Token ETH unlock](/assets/tokenswap/test/MEW-unlocked.png)
 
 
 #### PASTE YOUR ADDRESS INTO DISCORD:
@@ -67,14 +63,11 @@ My ROPSTEN ADDRESS: {0x3cad8671b32bD14aCE060E12859Ce91D190dBa0B}
 
 Please use your own address, not the one I generated...
 
-#### Test QRL
+## Getting Test QRL
 
 Tag @developer in the chat once you have posted the address and they will send you some test quanta to your new address
 
-When the team is ready to start the test they will send you TEST-QRL to this address. This will pretend to be your hard earned Test-QRL ERC-20 tokens that you have stashed for real. 
-
-The amount won't really matter and the team will divvy up the tokens as they see fit.
-
+When the team is ready to start the test migration, they will make an announcment in discord notifying the #Migration-Testers where to generate a new burn address and get started.
 
 
 ## Checking Token balance
