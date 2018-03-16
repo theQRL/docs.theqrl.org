@@ -12,7 +12,7 @@ This guide will outline, in a step-by-step guide, how to migrate your QRL ERC20 
 
 ## Step 1 — Make Your QRL Wallet
 
-![QRLWeb Wallet](/assets/wallet/qrlWallet.png)
+![QRLWeb Wallet](/assets/web/wallet/qrlWallet.png)
 
 The ways that one can make a QRL address are
 
