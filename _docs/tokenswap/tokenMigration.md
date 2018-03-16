@@ -81,7 +81,7 @@ Once you have deposited QRL into the burn address, you will also see the balance
 
 ![Check Burn Address](/assets/tokenswap/swap/BurnAddressBal.png)
 
-If you have any questions, we are available on Discord (Channel #Migration_Support), or send an email to info@theqrl.org
+If you have any questions, we are available on Discord (Channel #Migration_Support, or send an email to info@theqrl.org
 
 > Reminder: Those with unclaimed ERC20s from the pre-sale will be contacted separately in order to assist them in receiving MainNet Quanta.
 {: .info}
