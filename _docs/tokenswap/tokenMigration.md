@@ -6,7 +6,7 @@ tags: Token Swap
 
 This guide will outline, in a step-by-step guide, how to migrate your QRL ERC20 tokens, using our web app, and end up with Main Network QRL coins (Quanta).
 
-> Note: Those with unclaimed ERC20s from the pre-sale in April/May 2017 will be contacted separately in order to assist them receiving Mainnet Quanta (We ❤ Our Hodlers)
+> Note: Those with unclaimed ERC20s from the pre-sale in April/May 2017 will be contacted separately in order to assist them receiving Mainnet Quanta (We ❤ Our HODLers)
 {: .info}
 
 
@@ -14,14 +14,10 @@ This guide will outline, in a step-by-step guide, how to migrate your QRL ERC20 
 
 ![QRLWeb Wallet](/assets/wallet/web/qrlWallet.png)
 
-The ways that one can make a QRL address are
-
-* Web Wallet
-	* *(easiest)* Use a QRL wallet service to generate a wallet using your browser (such as the <a href="https://wallet.theqrl.org" target="_blank">QRL Web Wallet</a>)
-* Run your own node
-	* Grab the [Full Node]() files and setup a full QRL node to create a wallet. Follow our [Full Node Setup Guide](/mining/full-node)
-* Run the QRL Wallet App
-	* Download and run our QRL wallet software from [GitHub](#)
+Make a new QRL address using one of these three methods:
+* The **Web Wallet** is the easiest way to generate a new wallet simply using your browser See the <a href="https://wallet.theqrl.org" target="_blank">QRL Web Wallet</a> to get started.
+* Running a **Full QRL Node** you can generate a new wallet. This is a bit more advanced, grab the [Full Node]() files and follow our [Full Node Setup Guide](/mining/full-node) to setup a new wallet.
+* Run the **QRL Wallet App** in a local environment. You can download and run our QRL wallet software from [GitHub](https://github.com/theQRL/qrl-wallet)
 
 
 Once you have a valid QRL wallet generated via one of the above steps continue with the guide. You need to generate a new QRL address on the **Main QRL Network**, not the *test-Network*
@@ -32,7 +28,7 @@ Once you have a valid QRL wallet generated via one of the above steps continue w
 ![QRL Token Swap Page](/assets/tokenswap/swap/migrationPage.png)
 
 
-Once you have a QRL Address of your own, you can open the [Token Migration App](#) This will be the interface between the ERC20Tokens and the real QRL coins.
+Once you have a QRL Address of your own, you can open the [Token Migration App #FIXME](#FIXME) This will be the interface between the ERC20Tokens and the real QRL coins.
 
 Paste in your QRL Address you generated in *Step 1*. This will be the new address your QRL coins will be sent to after swap
 
@@ -71,7 +67,7 @@ It's recommended to send a small amount of QRL tokens first to make sure you hav
 
 Once you have your QRL ERC20 Burn Address, you can send QRL ERC20 tokens to that address, and they will be credited as Main Network QRL coins (Quanta) at launch.
 
-If launch has already occured, then they will be deposited into the QRL Wallet address you provided via a normal transaction on the QRL Network.
+If launch has already occurred, then they will be deposited into the QRL Wallet address you provided via a normal transaction on the QRL Network.
 
 #### Check Burn Address
 
@@ -82,7 +78,7 @@ Using the address you setup check the burn address for transaction details. Ther
 
 You see the address that the burn address will send to. Make sure that it is the same as the wallet you created. This is where your real QRL will go.
 
-Once you have deposited QRL into the burn address, you will also see the balance awaiting mainnet release. Once live the address shown will be credited with QRL.
+Once you have deposited QRL into the burn address, you will also see the balance awaiting MainNet release. Once live the address shown will be credited with QRL.
 
 ![Check Burn Address](/assets/tokenswap/swap/BurnAddressBal.png)
 
