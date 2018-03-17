@@ -6,7 +6,7 @@ tags: Token Swap
 
 This guide will outline, in a step-by-step guide, how to migrate your QRL ERC20 tokens, using our web app, and end up with Main Network QRL coins (Quanta).
 
-> Note: Those with unclaimed ERC20 tokens will be contacted separately in order to assist them in receiving MainNet Quanta (We ❤ Our HODLers)
+> Those with unclaimed ERC20 tokens will be contacted separately in order to assist them in receiving MainNet Quanta (We ❤ Our HODLers)
 {: .info}
 
 
@@ -21,6 +21,12 @@ Make a new QRL address on the **Main QRL Network** (not the test network) using 
 
 
 Once you have a valid QRL wallet generated via one of the above steps continue with the steps below. 
+
+
+> Make sure to back up and secure your new QRL wallet.
+{: .warning}
+
+Funds will not be recoverable if you loose the mnemonic or hex seed of the QRL wallet.
 
 
 ## Step 2 — QRL Token Migration Page
