@@ -26,7 +26,7 @@ Once you have a valid QRL wallet generated via one of the above steps continue w
 > Make sure to back up and secure your new QRL wallet.
 {: .warning}
 
-Funds will not be recoverable if you loose the mnemonic or hex seed of the QRL wallet.
+Funds will not be recoverable if you lose the mnemonic or hex seed of the QRL wallet.
 
 
 ## Step 2 — QRL Token Migration Page
