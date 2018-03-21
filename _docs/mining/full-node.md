@@ -111,7 +111,7 @@ The procedure to installing the qrl full node for a Mac is the exact same as it 
 
 ## Install on Windows 10
 
-*Windows support in the current version is limited. An alternative is to use an Ubuntu VM (virtualbox), or install Ubuntu using the Linux Subsystem for Windows.
+\*Windows support in the current version is limited. An alternative is to use an Ubuntu VM (virtualbox), or install Ubuntu using the Linux Subsystem for Windows.
 
 #### Ubuntu on Linux Subsystem for Windows (WSL)
 
@@ -217,7 +217,7 @@ Fee [0.0]: 0            # How much fee
 
 This will generate a `slaves.json` in the directory you are in. If you need to generate another file later, you must use an **Unused** OTS. 
 
-To specify an OTS index use the `--otsidx {INDEX#}` flag when you call ``slave_tx_generate` Change the INDEX# to an unused OTS key.
+To specify an OTS index use the `--otsidx {INDEX#}` flag when you call `slave_tx_generate` Change the INDEX# to an unused OTS key.
 
 ```bash
 # Using index # 1 to generate slaves.json file
