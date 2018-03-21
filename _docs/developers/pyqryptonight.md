@@ -37,7 +37,7 @@ sudo apt -y install swig3.0 python3-dev build-essential cmake libhwloc-dev libbo
 pip3 install pyqryptonight
 ````
 
-#### OSX
+### OSX
 
 If you dont have brew yet, we think you should :) Install brew:
 
@@ -62,7 +62,7 @@ TBD
 
 ## Building from Source
 
-#### Windows
+### Windows
 For the purposes of these instructions the following were used:
 
 * Build Tools for Visual Studio 2017
@@ -90,7 +90,7 @@ However if you choose to install the `pyqrllib` package Python setuptools curren
 | Visual Studio |  [Build Tools for Visual Studio](https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2017) | select the *'Visual C++ build tools'*	option |	
 |	|	[Visual Studio Community Edition](https://www.visualstudio.com/vs/community/)	| select the *'Desktop Development for C++ workload'*	|
 |	Git	|	[Git for Windows](https://gitforwindows.org/)	|	keep the default option to use git from the command prompt	|
-|	CMake	|	CMake x64 for Windows](https://cmake.org/download/)	|	Make sure to add CMake to system or user PATH	|
+|	CMake	|	[CMake x64 for Windows](https://cmake.org/download/)	|	Make sure to add CMake to system or user PATH	|
 |	Python 3	|	[Python 3 Windows x86-64](https://www.python.org/downloads/)	|	Add Python 3.x to PATH Optionally change the install location to `c:\python36`, install the debugging symbols/binaries, Disable the path length limit.	| 
 |	SWIG 	|	[SWIG](http://swig.org/)	|	*(download swigwin)* and extract archive to `c:\opt`	|
 |	Ninja Build 	| [Ninja Build](https://github.com/ninja-build/ninja/releases)	|	extract `ninja.exe` to `c:\opt\bin`	|
@@ -128,7 +128,7 @@ python setup.py test
 python setup.py install
 ```
 
-#### License
+## License
 
 *This library is distributed under the GPL3 software license*
 

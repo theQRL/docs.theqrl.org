@@ -11,7 +11,7 @@ tags: developers
 [![Build status](https://ci.appveyor.com/api/projects/status/mrpo1u5cw2f5d0eb?svg=true)](https://ci.appveyor.com/project/jleni/qrllib-oy5qa)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/theQRL/qrllib/master/LICENSE)
 
-> **WARNING:** This is work in progress, changes might not be backward compatible.*
+> **WARNING:** This is work in progress, changes might not be backward compatible.
 {: .warning}
 
 
@@ -26,14 +26,14 @@ This library currently exposes the following functionality:
 
 |           | Linux |     OSX<br>10.12     |  Windows<br>10 | Raspbian<br>? | 
 |-----------|:------------:|:-----------:|:--------:|:--------:|
-|Python 3   | &#10004 | &#10004 |    &#10004     |     :&#10004    |
-|Webassembly (JS) |      &#10004       |     &#10004       |    :&#10004     |     &#10004    |
-|Golang     | &#127793 |     -       |    -     |     -    |
+|Python 3   | YES | YES |    YES     |     YES    |
+|Webassembly (JS) |      YES       |     YES       |    YES     |     &#10004    |
+|Golang     | MAYBE |     -       |    -     |     -    |
 |Java       |      -       |     -       |    -     |     -    |
 
 ## Installing
 
-#### Ubuntu
+### Ubuntu
 ```bash
 # Install Dependencies
 sudo apt -y install swig3.0 python3-dev build-essential cmake ninja-build pkg-config
@@ -42,7 +42,7 @@ sudo apt -y install swig3.0 python3-dev build-essential cmake ninja-build pkg-co
 pip3 install pyqrllib
 ```
 
-#### OSX
+### OSX
 
 If you dont have brew yet, we think you should :) Install brew:
 
@@ -90,7 +90,7 @@ brew install go --cross-compile-common
 
 ## Building from Source
 
-#### Windows
+### Windows
 For the purposes of these instructions the following were used:
 
 * Build Tools for Visual Studio 2017
@@ -118,13 +118,14 @@ However if you choose to install the `pyqrllib` package Python setuptools curren
 | Visual Studio |  [Build Tools for Visual Studio](https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2017) | select the *'Visual C++ build tools'*	option |	
 |	|	[Visual Studio Community Edition](https://www.visualstudio.com/vs/community/)	| select the *'Desktop Development for C++ workload'*	|
 |	Git	|	[Git for Windows](https://gitforwindows.org/)	|	keep the default option to use git from the command prompt	|
-|	CMake	|	CMake x64 for Windows](https://cmake.org/download/)	|	Make sure to add CMake to system or user PATH	|
+|	CMake	|	[CMake x64 for Windows](https://cmake.org/download/)	|	Make sure to add CMake to system or user PATH	|
 |	Python 3	|	[Python 3 Windows x86-64](https://www.python.org/downloads/)	|	Add Python 3.x to PATH Optionally change the install location to `c:\python36`, install the debugging symbols/binaries, Disable the path length limit.	| 
 |	SWIG 	|	[SWIG](http://swig.org/)	|	*(download swigwin)* and extract archive to `c:\opt`	|
 |	Ninja Build 	| [Ninja Build](https://github.com/ninja-build/ninja/releases)	|	extract `ninja.exe` to `c:\opt\bin`	|
 
 
 **Build Qrllib:**
+
 ```bash
 git clone https://github.com/theQRL/qrllib.git c:\src\qrllib
 cd \src\qrllib
@@ -141,7 +142,7 @@ python setup.py test
 python setup.py install
 ```
 
-#### License
+## License
 
 *This library is distributed under the MIT software license, see the accompanying file LICENSE or http://www.opensource.org/licenses/mit-license.php.*
 

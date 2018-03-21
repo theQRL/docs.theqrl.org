@@ -118,13 +118,11 @@ tags: developers
 <a name="qrl.proto"/>
 <p align="right"><a href="#top">Top</a></p>
 
-## qrl.proto
-
-
+## Addresses
 
 <a name="qrl.AddressList"/>
 
-### AddressList
+#### AddressList
 
 
 
@@ -139,7 +137,7 @@ tags: developers
 
 <a name="qrl.AddressState"/>
 
-### AddressState
+#### AddressState
 
 
 
@@ -154,11 +152,11 @@ tags: developers
 
 
 
-
+## Blocks
 
 <a name="qrl.Block"/>
 
-### Block
+#### Block
 
 
 
@@ -177,7 +175,7 @@ tags: developers
 
 <a name="qrl.BlockExtended"/>
 
-### BlockExtended
+#### BlockExtended
 
 
 
@@ -194,7 +192,7 @@ tags: developers
 
 <a name="qrl.BlockHeader"/>
 
-### BlockHeader
+#### BlockHeader
 
 
 
@@ -218,7 +216,7 @@ tags: developers
 
 <a name="qrl.BlockHeaderExtended"/>
 
-### BlockHeaderExtended
+#### BlockHeaderExtended
 
 
 
@@ -236,7 +234,7 @@ tags: developers
 
 <a name="qrl.BlockMetaData"/>
 
-### BlockMetaData
+#### BlockMetaData
 
 
 
@@ -252,7 +250,7 @@ tags: developers
 
 <a name="qrl.BlockMetaDataList"/>
 
-### BlockMetaDataList
+#### BlockMetaDataList
 
 
 
@@ -262,12 +260,12 @@ tags: developers
 
 
 
-
+## Ephemeral Messaging
 
 
 <a name="qrl.EphemeralMessage"/>
 
-### EphemeralMessage
+#### EphemeralMessage
 
 
 
@@ -284,7 +282,7 @@ tags: developers
 
 <a name="qrl.EphemeralMessage.Data"/>
 
-### EphemeralMessage.Data
+#### EphemeralMessage.Data
 
 
 
@@ -298,11 +296,11 @@ tags: developers
 
 
 
-
+## Genesis
 
 <a name="qrl.GenesisBalance"/>
 
-### GenesisBalance
+#### GenesisBalance
 
 
 
@@ -314,11 +312,11 @@ tags: developers
 
 
 
-
+## Get
 
 <a name="qrl.GetAddressStateReq"/>
 
-### GetAddressStateReq
+#### GetAddressStateReq
 
 
 
@@ -333,7 +331,7 @@ tags: developers
 
 <a name="qrl.GetAddressStateResp"/>
 
-### GetAddressStateResp
+#### GetAddressStateResp
 
 
 
@@ -348,7 +346,7 @@ tags: developers
 
 <a name="qrl.GetBlockReq"/>
 
-### GetBlockReq
+#### GetBlockReq
 
 
 
@@ -364,7 +362,7 @@ tags: developers
 
 <a name="qrl.GetBlockResp"/>
 
-### GetBlockResp
+#### GetBlockResp
 
 
 
@@ -380,7 +378,7 @@ tags: developers
 
 <a name="qrl.GetKnownPeersReq"/>
 
-### GetKnownPeersReq
+#### GetKnownPeersReq
 
 
 
@@ -390,7 +388,7 @@ tags: developers
 
 <a name="qrl.GetKnownPeersResp"/>
 
-### GetKnownPeersResp
+#### GetKnownPeersResp
 
 
 
@@ -406,7 +404,7 @@ tags: developers
 
 <a name="qrl.GetLatestDataReq"/>
 
-### GetLatestDataReq
+#### GetLatestDataReq
 
 
 
@@ -423,7 +421,7 @@ tags: developers
 
 <a name="qrl.GetLatestDataResp"/>
 
-### GetLatestDataResp
+#### GetLatestDataResp
 
 
 
@@ -440,7 +438,7 @@ tags: developers
 
 <a name="qrl.GetLocalAddressesReq"/>
 
-### GetLocalAddressesReq
+#### GetLocalAddressesReq
 
 
 
@@ -450,7 +448,7 @@ tags: developers
 
 <a name="qrl.GetLocalAddressesResp"/>
 
-### GetLocalAddressesResp
+#### GetLocalAddressesResp
 
 
 
@@ -465,7 +463,7 @@ tags: developers
 
 <a name="qrl.GetNodeStateReq"/>
 
-### GetNodeStateReq
+#### GetNodeStateReq
 
 
 
@@ -475,7 +473,7 @@ tags: developers
 
 <a name="qrl.GetNodeStateResp"/>
 
-### GetNodeStateResp
+#### GetNodeStateResp
 
 
 
@@ -490,7 +488,7 @@ tags: developers
 
 <a name="qrl.GetObjectReq"/>
 
-### GetObjectReq
+#### GetObjectReq
 
 
 
@@ -505,7 +503,7 @@ tags: developers
 
 <a name="qrl.GetObjectResp"/>
 
-### GetObjectResp
+#### GetObjectResp
 
 
 
@@ -523,7 +521,7 @@ tags: developers
 
 <a name="qrl.GetStakersReq"/>
 
-### GetStakersReq
+#### GetStakersReq
 
 
 
@@ -540,7 +538,7 @@ tags: developers
 
 <a name="qrl.GetStakersResp"/>
 
-### GetStakersResp
+#### GetStakersResp
 
 
 
@@ -555,7 +553,7 @@ tags: developers
 
 <a name="qrl.GetStatsReq"/>
 
-### GetStatsReq
+#### GetStatsReq
 
 
 
@@ -565,7 +563,7 @@ tags: developers
 
 <a name="qrl.GetStatsResp"/>
 
-### GetStatsResp
+#### GetStatsResp
 
 
 
@@ -589,7 +587,7 @@ tags: developers
 
 <a name="qrl.GetWalletReq"/>
 
-### GetWalletReq
+#### GetWalletReq
 
 
 
@@ -604,7 +602,7 @@ tags: developers
 
 <a name="qrl.GetWalletResp"/>
 
-### GetWalletResp
+#### GetWalletResp
 
 
 
@@ -614,12 +612,12 @@ tags: developers
 
 
 
-
+## Lattice Public Key
 
 
 <a name="qrl.LatticePublicKeyTxnReq"/>
 
-### LatticePublicKeyTxnReq
+#### LatticePublicKeyTxnReq
 
 
 
@@ -638,7 +636,7 @@ tags: developers
 
 <a name="qrl.MR"/>
 
-### MR
+#### MR
 FIXME: This is legacy. Plan removal
 
 
@@ -658,7 +656,7 @@ FIXME: This is legacy. Plan removal
 
 <a name="qrl.MsgObject"/>
 
-### MsgObject
+#### MsgObject
 
 
 
@@ -673,7 +671,7 @@ FIXME: This is legacy. Plan removal
 
 <a name="qrl.NodeInfo"/>
 
-### NodeInfo
+#### NodeInfo
 
 
 
@@ -756,12 +754,12 @@ FIXME: This is legacy. Plan removal
 
 
 
-
+## Stake
 
 
 <a name="qrl.StakeValidator"/>
 
-### StakeValidator
+#### StakeValidator
 
 
 
@@ -783,7 +781,7 @@ FIXME: This is legacy. Plan removal
 
 <a name="qrl.StakeValidatorsList"/>
 
-### StakeValidatorsList
+#### StakeValidatorsList
 
 
 
@@ -798,7 +796,7 @@ FIXME: This is legacy. Plan removal
 
 <a name="qrl.StakeValidatorsTracker"/>
 
-### StakeValidatorsTracker
+#### StakeValidatorsTracker
 
 
 
@@ -817,7 +815,7 @@ FIXME: This is legacy. Plan removal
 
 <a name="qrl.StakeValidatorsTracker.ExpiryEntry"/>
 
-### StakeValidatorsTracker.ExpiryEntry
+#### StakeValidatorsTracker.ExpiryEntry
 
 
 
@@ -833,7 +831,7 @@ FIXME: This is legacy. Plan removal
 
 <a name="qrl.StakeValidatorsTracker.FutureStakeAddressesEntry"/>
 
-### StakeValidatorsTracker.FutureStakeAddressesEntry
+#### StakeValidatorsTracker.FutureStakeAddressesEntry
 
 
 
@@ -849,7 +847,7 @@ FIXME: This is legacy. Plan removal
 
 <a name="qrl.StakeValidatorsTracker.FutureSvDictEntry"/>
 
-### StakeValidatorsTracker.FutureSvDictEntry
+#### StakeValidatorsTracker.FutureSvDictEntry
 
 
 
@@ -865,7 +863,7 @@ FIXME: This is legacy. Plan removal
 
 <a name="qrl.StakeValidatorsTracker.SvDictEntry"/>
 
-### StakeValidatorsTracker.SvDictEntry
+#### StakeValidatorsTracker.SvDictEntry
 
 
 
@@ -881,7 +879,7 @@ FIXME: This is legacy. Plan removal
 
 <a name="qrl.StakerData"/>
 
-### StakerData
+#### StakerData
 
 
 
@@ -924,12 +922,12 @@ import &#34;google/protobuf/timestamp.proto&#34;;
 
 
 
-
+## Transaction
 
 
 <a name="qrl.Transaction"/>
 
-### Transaction
+#### Transaction
 
 
 
@@ -956,7 +954,7 @@ import &#34;google/protobuf/timestamp.proto&#34;;
 
 <a name="qrl.Transaction.CoinBase"/>
 
-### Transaction.CoinBase
+#### Transaction.CoinBase
 
 
 
@@ -972,7 +970,7 @@ import &#34;google/protobuf/timestamp.proto&#34;;
 
 <a name="qrl.Transaction.Destake"/>
 
-### Transaction.Destake
+#### Transaction.Destake
 
 
 
@@ -982,7 +980,7 @@ import &#34;google/protobuf/timestamp.proto&#34;;
 
 <a name="qrl.Transaction.Duplicate"/>
 
-### Transaction.Duplicate
+#### Transaction.Duplicate
 
 
 
@@ -1002,7 +1000,7 @@ import &#34;google/protobuf/timestamp.proto&#34;;
 
 <a name="qrl.Transaction.LatticePublicKey"/>
 
-### Transaction.LatticePublicKey
+#### Transaction.LatticePublicKey
 
 
 
@@ -1018,7 +1016,7 @@ import &#34;google/protobuf/timestamp.proto&#34;;
 
 <a name="qrl.Transaction.Stake"/>
 
-### Transaction.Stake
+#### Transaction.Stake
 
 
 
@@ -1035,7 +1033,7 @@ import &#34;google/protobuf/timestamp.proto&#34;;
 
 <a name="qrl.Transaction.Transfer"/>
 
-### Transaction.Transfer
+#### Transaction.Transfer
 
 
 
@@ -1052,7 +1050,7 @@ import &#34;google/protobuf/timestamp.proto&#34;;
 
 <a name="qrl.Transaction.Vote"/>
 
-### Transaction.Vote
+#### Transaction.Vote
 
 
 
@@ -1068,7 +1066,7 @@ import &#34;google/protobuf/timestamp.proto&#34;;
 
 <a name="qrl.TransactionCount"/>
 
-### TransactionCount
+#### TransactionCount
 
 
 
@@ -1083,7 +1081,7 @@ import &#34;google/protobuf/timestamp.proto&#34;;
 
 <a name="qrl.TransactionCount.CountEntry"/>
 
-### TransactionCount.CountEntry
+#### TransactionCount.CountEntry
 
 
 
@@ -1099,7 +1097,7 @@ import &#34;google/protobuf/timestamp.proto&#34;;
 
 <a name="qrl.TransactionExtended"/>
 
-### TransactionExtended
+#### TransactionExtended
 
 
 
@@ -1111,11 +1109,11 @@ import &#34;google/protobuf/timestamp.proto&#34;;
 
 
 
-
+## Transfer
 
 <a name="qrl.TransferCoinsReq"/>
 
-### TransferCoinsReq
+#### TransferCoinsReq
 
 
 
@@ -1135,7 +1133,7 @@ import &#34;google/protobuf/timestamp.proto&#34;;
 
 <a name="qrl.TransferCoinsResp"/>
 
-### TransferCoinsResp
+#### TransferCoinsResp
 
 
 
@@ -1145,12 +1143,12 @@ import &#34;google/protobuf/timestamp.proto&#34;;
 
 
 
-
+## Wallet
 
 
 <a name="qrl.Wallet"/>
 
-### Wallet
+#### Wallet
 
 
 
@@ -1167,7 +1165,7 @@ import &#34;google/protobuf/timestamp.proto&#34;;
 
 <a name="qrl.WalletStore"/>
 
-### WalletStore
+#### WalletStore
 
 
 
@@ -1299,7 +1297,7 @@ This service describes the Public API used by clients (wallet/cli/etc)
 
 <a name="qrl.GetNodeInfoReq"/>
 
-### GetNodeInfoReq
+#### GetNodeInfoReq
 
 
 
@@ -1309,7 +1307,7 @@ This service describes the Public API used by clients (wallet/cli/etc)
 
 <a name="qrl.GetNodeInfoResp"/>
 
-### GetNodeInfoResp
+#### GetNodeInfoResp
 
 
 
@@ -1331,7 +1329,7 @@ This service describes the Public API used by clients (wallet/cli/etc)
 
 <a name="qrl.Base"/>
 
-### Base
+#### Base
 
 
 | Method Name | Request Type | Response Type | Description |
@@ -1351,7 +1349,7 @@ This service describes the Public API used by clients (wallet/cli/etc)
 
 <a name="qrl.BKData"/>
 
-### BKData
+#### BKData
 
 
 
@@ -1367,7 +1365,7 @@ This service describes the Public API used by clients (wallet/cli/etc)
 
 <a name="qrl.FBData"/>
 
-### FBData
+#### FBData
 
 
 
@@ -1382,7 +1380,7 @@ This service describes the Public API used by clients (wallet/cli/etc)
 
 <a name="qrl.LegacyMessage"/>
 
-### LegacyMessage
+#### LegacyMessage
 Adding old code to refactor while keeping things working
 
 
@@ -1407,7 +1405,7 @@ Adding old code to refactor while keeping things working
 
 <a name="qrl.MRData"/>
 
-### MRData
+#### MRData
 
 
 
@@ -1427,7 +1425,7 @@ Adding old code to refactor while keeping things working
 
 <a name="qrl.NoData"/>
 
-### NoData
+#### NoData
 
 
 
@@ -1437,7 +1435,7 @@ Adding old code to refactor while keeping things working
 
 <a name="qrl.PBData"/>
 
-### PBData
+#### PBData
 
 
 
@@ -1453,7 +1451,7 @@ Adding old code to refactor while keeping things working
 
 <a name="qrl.PLData"/>
 
-### PLData
+#### PLData
 
 
 
@@ -1468,7 +1466,7 @@ Adding old code to refactor while keeping things working
 
 <a name="qrl.PONGData"/>
 
-### PONGData
+#### PONGData
 
 
 
@@ -1478,7 +1476,7 @@ Adding old code to refactor while keeping things working
 
 <a name="qrl.SYNCData"/>
 
-### SYNCData
+#### SYNCData
 
 
 
@@ -1488,7 +1486,7 @@ Adding old code to refactor while keeping things working
 
 <a name="qrl.VEData"/>
 
-### VEData
+#### VEData
 
 
 
@@ -1506,7 +1504,7 @@ Adding old code to refactor while keeping things working
 
 <a name="qrl.LegacyMessage.FuncName"/>
 
-### LegacyMessage.FuncName
+#### LegacyMessage.FuncName
 
 
 | Name | Number | Description |

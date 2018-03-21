@@ -22,7 +22,7 @@ Currently running at: [https://explorer.theqrl.org/](https://explorer.theqrl.org
 	meteor npm install
 	meteor npm install --save babel-runtime meteor-node-stubs
 
-## (Optional) Configuration
+#### (Optional) Configuration
 
 Edit `development.json`
 

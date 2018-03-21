@@ -21,7 +21,7 @@ You will need at least python 3.5
 
 Follow the corresponding instructions:
 
-|   |   |
+| OS  | 	Link	|
 |---|---|
 |Windows | https://docs.docker.com/docker-for-windows/install/   |
 |Linux   | https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/ |
