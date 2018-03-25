@@ -43,7 +43,7 @@ The basics of setting up a pool.
 - 2.) Install Pool
 	- a.) Dependencies, including node v0.10.48 using nvm
 	- b.) Install Redis-server and configure
-	- c.)
+	- c.) Install Apache2 and configure web server
 
 ## QRL Install
 Follow the instructions found at [docs.theqrl.org/mining/full-node/](https://docs.theqrl.org/mining/full-node/) to get the node started.
@@ -171,7 +171,7 @@ Copy the config_example.json file to config.json then overview each options and 
 
 Here is the config file with comments:
 
-```json
+```bash
 {
 /* Used for storage in redis so multiple coins can share the same redis instance. */
     "coin": "quantum resistant ledger",
@@ -439,10 +439,16 @@ Once the slaves.json file is created, move it to the ~/.qrl folder and rename to
 
 ```bash
 sudo mkdir /home/.qrl
-mv slaves.json /home/.qrl/payments.slaves.json
+sudo mv slaves.json /home/.qrl/payment_slaves.json
 ```
 
 This will allow the pool the ability to send the payments out to miners and won't use all of the available OTS keys for the wallet. I generated a slaves file with 100 slaves, which took awhile. this will give me a factor of 1024\*100 signatures before I need to generate another slaves.json file and set it in the ~/.qrl directory.
+
+Make the proxy executable with 
+
+```bash
+sudo chmod +x ~/qrl/qrl/grpcProxy.py
+```
 
 run the proxy with the following:
 
@@ -454,9 +460,187 @@ python3.5 ~/qrl/qrl/grpcProxy.py
 You may want to daemonize this, or run this in a screen session. This will connect the grpc QRL functions with the rpc functions the pool is looking for. the proxy will look for connections at 127.0.0.1:18081
 
 
-## Secure Firewall
 
-Using ufw enable openssh and disable any access to redis ports. 
+## Install Web Server
+
+You can serve the web site up on any typical web server. This guide is using the apache2 web server to serve up the site.
+
+You should have a Domain name to point to the server and have setup the relitive DNS entries. This is outside of the scop of this document. Obce you have your DNS pointing at the correct place change the hostname of the server
+
+```bash
+sudo nano /etc/hostname
+```
+
+Enter your hostname without the fqdn part
+```bash
+pool
+```
+
+Now edit the /etc/hosts file
+```bash
+sudo nano /etc/hosts
+``` 
+
+here you will find a few lines, change the file from this:
+
+```bash
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+```
+
+ to this with your details entered. 
+
+```bash  
+ IP.ADD.RE.SS hostname.fqdn hostname
+``` 
+
+```bash
+127.0.0.1       localhost
+xxx.xxx.xxx.xxx   pool.theqrl.org  pool
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+
+```
+
+Use the public IP address of your server in the hosts file.
+
+Find your IP by
+```bash
+curl -4 icanhazip.com
+```
+This will spit put your public IP
+
+#### apache2
+
+```bash
+sudo apt install apache2
+```
+
+This will install apache2 and creates a few interesting directories
+
+You will find config files in */etc/apache2/*
+
+```console
+qrl@qrlpool:~/qrl$ ls -al /etc/apache2/
+total 88
+drwxr-xr-x  8 root root  4096 Mar 25 05:54 .
+drwxr-xr-x 94 root root  4096 Mar 25 05:54 ..
+-rw-r--r--  1 root root  7115 Mar 19  2016 apache2.conf
+drwxr-xr-x  2 root root  4096 Mar 25 05:54 conf-available
+drwxr-xr-x  2 root root  4096 Mar 25 05:54 conf-enabled
+-rw-r--r--  1 root root  1782 Mar 19  2016 envvars
+-rw-r--r--  1 root root 31063 Mar 19  2016 magic
+drwxr-xr-x  2 root root 12288 Mar 25 05:54 mods-available
+drwxr-xr-x  2 root root  4096 Mar 25 05:54 mods-enabled
+-rw-r--r--  1 root root   320 Mar 19  2016 ports.conf
+drwxr-xr-x  2 root root  4096 Mar 25 05:54 sites-available
+drwxr-xr-x  2 root root  4096 Mar 25 05:54 sites-enabled
+```
+
+The Web Root is in /var/www/html/
+
+```console
+qrl@qrlpool:~/qrl$ ls -al /var/www/html/
+total 20
+drwxr-xr-x 2 root root  4096 Mar 25 05:54 .
+drwxr-xr-x 3 root root  4096 Mar 25 05:54 ..
+-rw-r--r-- 1 root root 11321 Mar 25 05:54 index.html
+```
+
+
+#### Configure apache2
+
+edit the default apache2 config
+
+```bash
+sudo nano /etc/apache2/apache2.conf
+```
+
+Add the ServerName directive into the file somewhere
+```
+ServerName {YOUR-FQDN or IP address}
+```
+
+Exit and edit the default sites config
+
+```
+nano /etc/apache2/sites-available/000-default.conf
+```
+
+
+Add ServerAlias and change the ServerName *not nessasary but helps connect sometimes*
+```bash
+ServerName {FQDN or IP}
+ServerAlias *.{FQDN}
+```
+
+
+restart apache2 to pickup changes
+```
+sudo service apache2 restart
+```
+
+If you see errors check the log files and Googl for help.
+
+
+
+
+
+
+
+#### Create Website
+
+Copy the files found in the pool directory into the web root. This is assuming you are not hosting any other sites on the server you are using for the web front end.
+
+```bash
+# remove the web root contents
+sudo rm -r /var/www/html/*
+
+# Copy the web file into the Web Root
+sudo cp -r ~/QRL_pool/* /var/www/html/ 
+```
+
+Change permissions to weberver user
+
+```bash
+sudo chown www-data:www-data -R /var/www/html/
+```
+
+Now edit the config.js file found in the web root
+
+```bash
+sudo nano /var/www/html/config.js
+```
+
+Change the details to meet your needs
+
+
+## Secure The Server
+
+#### SSH Connections
+
+Edit the ssh config file:
+
+```bash
+sudo nano /etc/ssh/sshd.conf
+```
+
+change the following parameters
+
+
+
+#### Firewall
+
+Using ufw enable openssh, Apache2, pool ports, API port, and disable any access to redis ports. 
 
 > **Note** You need to make sure and enable OpenSSH or the port you have configured for SSH connections.
 {: .info}
@@ -466,13 +650,20 @@ Using ufw enable openssh and disable any access to redis ports.
 sudo ufw enable openssh
 
 # now block external redis connections
-sudo ufw deny 6379, 16379, 26379
+sudo ufw deny 6379
+sudo ufw deny 16379
+sudo ufw deny 26379
 
 # enable mining ports in the firewall
-sudo ufw allow 3333, 5555, 7777
+sudo ufw allow 3333
+sudo ufw allow 5555
+sudo ufw allow 7777
 
-# Open the API port for web front end
+# Open the API port for web front end if hosting remotely
 sudo ufw allow 8117
+
+# enable apache2 port 80 and 443
+sudo ufw allow "Apache Full"
 
 # Enable UFW
 sudo ufw enable 
@@ -482,6 +673,26 @@ sudo ufw status
 ```
 
 
+#### LetsEncrypt setup
+
+Follow the guide found at [certbot.eff.org](https://certbot.eff.org/lets-encrypt/ubuntuxenial-apache)
+
+Setup and configure the server to run https by default
+
+```bash
+# install ppa and package certbot
+sudo apt-get update
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install python-certbot-apache
+
+# run certbot auto apache2 setup
+sudo certbot --apache
+```
+Enter default settings and agree to all of the terms and conditions.
+
+Now you have a secure web server for connections. 
 
 ## Start The Pool
 
@@ -501,3 +712,9 @@ You should see the pool connect, and when miners connect you will see addresses 
 ## Troubleshooting
 
 Make sure you create a slaves.json file large enough to continue to payout. Once you run out you will have to create another slave.json file and move/rename it into the `/home/.qrl/` dir.
+
+## To-Do
+
+* Configure to run forever - CRON jobs and daemons
+* Harden server
+* .....
