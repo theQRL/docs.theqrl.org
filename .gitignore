@@ -3,6 +3,6 @@ _site/
 .jekyll-metadata
 Gemfile.lock
 /.ruby-version
-.working/*
+.working/
 To-Do.md
 

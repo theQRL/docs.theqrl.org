@@ -6,7 +6,7 @@ tags: wallet
 
 {% comment %} 
 
-FIXME Finish this writeup with nes details from finished wallet
+FIXME Finish this writeup with details from finished wallet
 
 {% endcomment %}
 

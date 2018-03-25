@@ -5,12 +5,18 @@ tags: developers
 ---
 
 
+When you create a new wallet you create an XMSS tree, which is comprised of many public-private keypairs below a merkle tree to make a signature scheme. Every signature is referenced as your OTS index or *One Time Signature* key index. 
 
-##### OTS Key Index
+> One-time signatures (OTS) are called one-time, because the accom-
+panying security reductions only guarantee security under single-message attacks.
+{: .info}
 
-When you create a new wallet you create an XMSS tree, which is comprised of many signatures to make a signature scheme. Every signature is referenced as your OTS index or *One Time Signature* key index. 
+The first post-quantum signature schemes considered for standardization are hash-based Merkle Signature Schemes [13,9]. These schemes form the most confidence-inspiring post-quantum solution for digital signatures as their security only relies on some mild assumptions about properties of cryptographic hash-functions.
 
-*The OTS key index is limited.* Once this index is used you will no longer be able to sign transactions. This can not be stressed enough! 
+The QRL blockchain will reject any duplicated OTS key use automaticlaly. This is done by design. *The OTS key index is limited.* Once this index is used you will no longer be able to sign transactions. This can not be stressed enough! 
+
+
+
 
 > IF you use all of your OTS Key Index's with funds in the wallet, these funds will be lost.
 {: .danger}
@@ -58,3 +64,9 @@ use of the bitmask XOR allows the collision resistant hash function family to be
 The leaves of the tree are also not OTS keypair hashes but the root of child L-trees which hold the OTS
 public keys with, l pieces forming the base leaves. Winternitz OTS+ is used for the one-time signatures
 (though 2011 variant was first described).
+
+
+
+> **References**
+[Oops, I did it again – Security of One-Time Signatures under Two-Message Attacks](https://eprint.iacr.org/2016/1042.pdf) Leon Groot Bruinderink and Andreas Hülsing 
+{: .info}
