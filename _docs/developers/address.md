@@ -4,6 +4,32 @@ categories: developers
 tags: developers
 ---
 
+{% comment %} 
+
+FIXME add a breif description of the address format.
+
+An address is created by performing a SHA-256 upon the merkle root of the highest XMSS certification
+tree. A four byte checksum is appended to this (formed from the first four bytes of a double SHA-256 hash of the merkle root) and the letter ’Q’ prepended.
+
+ i.e. in pythonic pseudocode:
+
+> Q + sha256(merkle root) + sha256(sha256(merkle root))[: 4]
+
+A typical account address:
+
+> Qcea29b1402248d53469e352de662923986f3a94cf0f51522bedd08f b5e64948af479
+
+Each account has a balance denominated in quanta divisible down to a single Shor unit.
+
+Addresses are stateful with each transaction using a fresh OTS keypair and the QRL storing every public
+key ever used (this could be pruned as it can be regenerated on-the-fly from the transaction signature and message but would be operationally intensive) for each account. A transaction counter called a nonce is incremented with each transaction sent from an account. This allows wallets which do not store the entire blockchain to keep track of their location in the stateful merkle hypertree signature scheme.
+
+
+{% endcomment %} 
+
+
+## Structure
+
 QRL addresses are structured in the following way:
 
 | Name | Bytes         | Count  |      Description      |
@@ -48,7 +74,7 @@ The address descriptor determines the address format, signature scheme, hash fun
 
 ## Address Format
 
-#### Format: SHA256_2X
+### Format: SHA256_2X
 
 | Name | Bytes         | Count  |      Description      |
 |------| ------------- |:------:|-----------------------| 
@@ -67,7 +93,7 @@ The address descriptor determines the address format, signature scheme, hash fun
 
 ## Signature Schemes
 
-#### XMSS
+### XMSS
 
 In the case of using XMSS. The parameters are used as follows:
 

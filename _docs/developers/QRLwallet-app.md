@@ -4,6 +4,13 @@ categories: wallet
 tags: wallet
 ---
 
+{% comment %} 
+
+FIXME Finish this writeup with details from finished wallet
+
+{% endcomment %}
+
+
 
 This is the QRL wallet application developed by The QRL team, and hosted on wallet.theqrl.org
 
