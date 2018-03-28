@@ -1,5 +1,5 @@
 ---
-title: Mining QRL
+title: Mining QRL Quick Start
 categories: mining
 tags: mining
 ---
