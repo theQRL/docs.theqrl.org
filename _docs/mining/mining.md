@@ -16,56 +16,124 @@ There are a few key things to know before you get started. Nothing too complicat
 
 #### Definitions
 
-| Term			  	| Definition 								|
-|:-----------------:|:------------------------------------------|
-| Blockchain 		| The public ledger of all transactions stored in a cryptographic way	|
-| CPU Mining 		| Using the CPU of a computer to mine with	|
-| GPU Mining 		| Using a Graphic Processing Unit(s) to mine with	|
-| Hash Rate (HR/s) 	| The amount of computational hashes a processor can process in a second	|
-| Mining 			|	The process that verifies transactions on the ledger or Blockchain, also the process in which new QRL are made and distributed into the world. 	|
-| Mining Software	| Software that is run on a local computer. Used to process hashes on the blockchain and stay in sync with current work 	|
-| Pool Software		| Software that shares the work, and rewards from mining between all workers in the pool 	|
-| Pool worker 		| The address or user name associated with the computer running the mining software. (For QRL this will be your wallet address)		|
-| Stratum server	| Server using the stratum mining protocol to allow multiple miners to join together and increase hashrate
-| Full Node 		| The main project software running on a PC fully synced with a local copy of the blockchain. This helps support the network however is not required to mine QRL 	|
-| 
+ASIC (Application Specific Integrated Circuit)
 
+> An integrated circuit customized for a specific task, in our case hashing cryptographic signatures
+
+* * *
+
+Blockchain
+
+> The public ledger of all transactions stored in a cryptographic way
+
+CPU Mining
+
+> Using the CPU of a computer to mine with
+
+GPU Mining
+
+> Using a Graphic Processing Unit(s) to mine with
+
+Hash Rate (HR/s)
+
+> The amount of computational hashes a processor can process in a second
+
+Mining
+
+> The process that verifies transactions on the ledger or Blockchain, also the process in which new QRL are made and distributed into the world
+
+Mining Software
+
+> Software that is run on a local computer. Used to process hashes on the blockchain and stay in sync with current work.
+
+Pool Software
+
+> Software that shares the work, and rewards from mining between all workers in the pool
+
+Pool Worker
+
+> The address or user name associated with the computer running the mining software. (For QRL this will be your wallet address)	
+
+Stratum server
+
+> Server using the stratum mining protocol to allow multiple miners to join together and increase hashrate
+
+Full Node
+
+> The main project software running on a PC fully synced with a local copy of the blockchain. This helps support the network however is not required to mine QRL
+
+PoS (Proof of Stake)
+
+> Proof Of Stake
+
+PoW (Proof of Work) 	
+
+> Proof Of Work
+
+Fork
+
+> A piece of code that, at some point in the code history, made significant changes or changed direction and a new project is born from the first.	|
 
 #### Requirements
 
 There are not too many requirements for mining QRL. Most current processors will run some form of mining software. There are lots of choices for every operating system. Keep in mind that the power (energy) consumption makes most devices impractical to mine with, costing more to power than the rewards earned.
 
+* PC that is turned on 24/7, or close to it
+* Network connection
+* Mining software for your PC's operating system
+
+> **Note:** It is not recommended to mine on a laptop. They are not made to run full capacity 100% of the time. There is not enough cooling and damage may occur.
+{: .warning}
 
 #### QRL Mining basics
 
-QRL uses the [CryptoNight](#) protocol as the backbone to the mining process. This allows QRL to take advantage of the ASIC resistant features and benefits of CryptoNight. 
+QRL uses the Monero fork of [CryptoNight](http://cryptonite.info), a fork of the [CryptoNote](https://cryptonote.org/) protocol as the backbone to the mining process. Forking, forking, forking... 
 
-Any software that pool mines for XMR will work with QRL. You can find something that is compatible with your OS and setup following the guide found with the project you choose. There are too many potential configurations to list here. Please ask for help in the QRL Discord or in the reddit forum if you need help. When configuring your software, set everything up to mine Monero, **Instead** of using a Monero address, enter your QRL address into the "Worker" or "Address" field in the mining software.
+By using this algorithm allows QRL to take advantage of the ASIC resistant features and benefits of CryptoNight and Monero. Since we are using the Monero fork, we can share in the same ASIC resistant benefits that Monero promotes. (*Privacy features of Monero are specific to that project, and do not carry over to QRL.*)
 
-QRL uses PQ secure encryption. No joke this stuff is the best there is right now. If you follow instructions, and don't compromise your private keys in any way your funds are safe.
+The QRL mining period will last until a stable PoS chain is ready and fully tested. After this happens a hard fork will occur switching the QRL blockchain over to a proof of stake model
 
-#### Using your processor as a working class miner. 
-CryptoNight runs well on most processors. In fact there have been cases of this working on cell [phones](https://play.google.com/store/apps/details?id=com.ethics.path.tonymonero). You name it basically everything will mine cryptonight, if you work for it. 
+Any software that pool mines for XMR will work with QRL. You can find something that is compatible with your OS and setup following the guide found with the project you choose. There are too many potential configurations to list here. Please ask for help in the QRL Discord or in the Reddit forum if you need help. 
 
-Chances are good you have a computer around that is running and not being used, even the PC you are reading this on can be used to mine with.
+> When configuring your software, set everything up to mine Monero, **Instead** of using a Monero address, enter your **QRL** address into the "Worker" or "Address" field in the mining software.
+{: .info}
 
-Why not use the spare CPU cycles your PC has to offer
-
-> **Note:** It is not recommended to mine on a laptop. They are not made to run full capacity 100% of the time. there is not enough cooling and damage may occur.
-{: .warning}
+QRL uses PQ secure encryption. No joke this stuff is the best there is right now. If you follow instructions, and don't compromise your private keys in any way your funds are safe from current processors ads well as advanced quantum computers that are on the horizon.
 
 ## Mining Software
 
-| Software      |  Arch | Windows     | Linux |  OSX   |  Links |
-| :------------:|:-----:|:-----------:|:-----:|:------:|:------:|
-|   XMR-stak    | CPU, GPU (Nvidia and AMD) |  YES     |  YES     |  YES      | [Download](https://github.com/fireice-uk/xmr-stak/releases) |
-|   Cast XMR    |  GPU (Nvidia and AMD) |    YES  |  NO   |  NO    | [gandalph3000.com](http://www.gandalph3000.com/cast_xmr/cast-xmr-optimized-cryptonight-miner-for-rx-vega/) |
-|   CPUMiner |  CPU  |    YES     |  YES   |  YES   | [GitHub](https://github.com/tpruvot/cpuminer-multi) |
-|   ccminer (forked by tsiv)   | CUDA (Nvidia) |  YES       |  YES   |   YES   | [github](https://github.com/tsiv/ccminer-cryptonight) |
+| Software      | GUI or CLI | Arch | Windows     | Linux |  OSX   |  Links | Notes	|
+|:-------------:|:--:|:-----:|:-----------:|:-----:|:------:|:------:|:-------:|
+|   XMR-stak    | 	|	CPU, GPU (Nvidia & AMD) |  YES     |  YES     |  YES      | [Github](https://github.com/fireice-uk/xmr-stak/releases) | guided start, Open Source, TLS support, HTML statistics page, JSON API	|
+|   Cast XMR    |  	|	GPU (Nvidia & AMD) |    YES  |  NO   |  NO    | [gandalph3000.com](http://www.gandalph3000.com/cast_xmr/cast-xmr-optimized-cryptonight-miner-for-rx-vega/) | 	|
+|   CPUMiner |  	|	CPU  |    YES     |  YES   |  YES   | [GitHub](https://github.com/tpruvot/cpuminer-multi) | 	|
+|   ccminer (forked by tsiv)   | 	|	CUDA (Nvidia) |  YES       |  YES   |   YES   | [Github](https://github.com/tsiv/ccminer-cryptonight) | 	|
 
+
+
+> **Note** This list is not inclusive, and is not a promotion or endorsement for a project. Any cryptonight mining software \*should work. *YMMV*
+
+
+## CPU Mining
+
+Fixme with content for CPU mining
+
+CPU mining utilizes a users PC CPU(s) to calculate the cryptographic equation and compute a valid block. Unlike Bitcoin and other cryptocurrencies, QRL and it's upstream cousin Monero are ASIC resistant
+
+
+## GPU Mining
+
+Mining QRL using GPU's is possible utilizing a community run pool server working with other miners to pool the hashrate submitted to find solutions. 
+
+
+## CPU and GPU
+
+Being that QRL is mineable on both GPU and CPU there is nothing stopping you from running 2 instances of software for your system. One running instance will mine using the GPU(s) attached to the PCIE slot, another instance can be setup to mine using the CPU only. This gives more HR towards finding a block and squeezes the last drops of usage from the power already spent.
+
+This is a bit more advanced and may require editing some of the software configuration files to connect on different/separate ports. Reference the user manual for the software for information, or drop into our Discord chat or Reddit for help.
 
 ## Examples
-Here are some basic examples to get started
+Here are some basic examples to get started. These are found in the config files or used to issue the mining software command in the command line.
 
 | Software      | Command |
 | :------------:|:-------:|
