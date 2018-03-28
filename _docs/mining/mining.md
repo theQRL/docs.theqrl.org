@@ -14,50 +14,62 @@ Anyone can get started mining, seriously it's way too easy to set this up and ma
 
 There are a few key things to know before you get started. Nothing too complicated. Let's start with a few definitions.
 
-#### Definitions
 
-**ASIC** (Application Specific Integrated Circuit)
-: An integrated circuit customized for a specific task, in our case hashing cryptographic signatures
+ASIC (Application Specific Integrated Circuit)
+: An integrated circuit customized for a specific task, in our case hashing cryptographic signatures.
 
 
-**Blockchain**
-: The public ledger of all transactions stored in a cryptographic way
+Blockchain
+: The public ledger of all transactions stored in a cryptographic way.
 
-**CPU Mining**
-: Using the CPU of a computer to mine with
 
-**GPU Mining**
-: Using a Graphic Processing Unit(s) to mine with
+CPU Mining
+: Using the CPU of a computer to mine with.
 
-**Hash Rate** (HR/s)
-: The amount of computational hashes a processor can process in a second
 
-**Mining**
-: The process that verifies transactions on the ledger or Blockchain, also the process in which new QRL are made and distributed into the world
+Fork
+: A piece of code that, at some point in the code history, made significant changes or changed direction and a new project is born from the first.
 
-**Mining Software**
+
+Full Node
+: The main project software running on a PC fully synced with a local copy of the blockchain. This helps to support the network.
+
+
+GPU Mining
+: Using a Graphic Processing Unit(s) to mine with.
+
+
+Hash Rate (HR/s)
+: The amount of computational hashes a processor can process in a second.
+
+
+Mining
+: The process that verifies transactions on the ledger or Blockchain, also the process in which new QRL are made and distributed into the world.
+
+
+Mining Software
 : Software that is run on a local computer. Used to process hashes on the blockchain and stay in sync with current work.
 
-**Pool Software**
-: Software that shares the work, and rewards from mining between all workers in the pool
 
-**Pool Worker**
-: The address or user name associated with the computer running the mining software. (For QRL this will be your wallet address)	
+Pool Software
+: Software that shares the work, and rewards from mining between all workers in the pool.
 
-**Stratum Server**
-: Server using the stratum mining protocol to allow multiple miners to join together and increase hashrate
 
-**Full Node**
-: The main project software running on a PC fully synced with a local copy of the blockchain. This helps support the network however is not required to mine QRL
+Pool Worker
+: The address or user name associated with the computer running the mining software.	
 
-**PoS** (Proof of Stake)
-: Proof Of Stake
 
-**PoW** (Proof of Work)
-: Proof Of Work
+PoS (Proof of Stake)
+: Proof Of Stake.
 
-**Fork**
-: A piece of code that, at some point in the code history, made significant changes or changed direction and a new project is born from the first.
+
+PoW (Proof of Work)
+: Proof Of Work.
+
+
+Stratum Server
+: Server using the stratum mining protocol to allow multiple miners to join together and increase hashrate.
+
 
 #### Requirements
 
