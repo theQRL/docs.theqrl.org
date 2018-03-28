@@ -58,7 +58,6 @@ This is your Burn Address. Each QRL ERC20 token sent to this address will be cre
 
 ![Sending to burn address](/assets/tokenswap/swap/tokenSwap.png)
 
-
 Every time you send your QRL ERC20 tokens from anywhere (exchange, myetherwallet, etc.) to the burn address, your QRL wallet balance will be updated. If you entered an email address, you will receive a confirmation message.
 
 #### Burn Instructions

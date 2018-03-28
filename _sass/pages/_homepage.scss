@@ -1,0 +1,25 @@
+.homepage {
+	.support div {
+		ul {
+			padding-left: 0;
+			display:flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			li {
+				list-style:none;
+				flex:1;
+					margin:5px 5px;
+				a {
+					display:inline-block;
+					text-decoration: none;
+					background-color:$quantum_sky;
+					color:#FFF;
+					padding:5px 10px;
+
+					width:100%;
+				}
+			}
+		}
+	}
+}
