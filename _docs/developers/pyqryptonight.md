@@ -39,7 +39,7 @@ pip3 install pyqryptonight
 
 ### OSX
 
-If you dont have brew yet, we think you should :) Install brew:
+If you don't have brew yet, we think you should :) Install brew:
 
 ```bash
 # Install brew

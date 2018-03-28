@@ -65,7 +65,7 @@ The qrlnet directory contains all the scripts to start a qrl network from scratc
 ```bash
 REPO_XXX # allow for launching this local testnet using source code from a different repo/branch
 LOCAL_NET_ONLY # option indicates that nodes should be isolated and should not connect outside the integration test.
-INTEGRATION_TESTINPLACE # Indicates that source code should not be retrived. This is used to run the integration tests locally. In particular as a submodule as it is done in https://github.com/theQRL/QRL
+INTEGRATION_TESTINPLACE # Indicates that source code should not be retrieved. This is used to run the integration tests locally. In particular as a submodule as it is done in https://github.com/theQRL/QRL
 ```
 
 When the script is executed, it will launch several docker-compose nodes/containers. 

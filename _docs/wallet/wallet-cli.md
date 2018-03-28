@@ -4,9 +4,9 @@ categories: wallet
 tags: wallet
 ---
 
-The QRL wallet can be generated via the command line using the qrl python3 package. It's actually quite easy once you have QRL installed to create and manage your wallet. 
+The QRL wallet can be generated via the command line using the QRL python3 package. It's actually quite easy once you have QRL installed to create and manage your wallet. 
 
-Follow the [Running a Full Node](/mining/full-node) instructions if you have not installed qrl yet. You will need QRL installed to proceed with this guide.
+Follow the [Running a Full Node](/mining/full-node) instructions if you have not installed QRL yet. You will need QRL installed to proceed with this guide.
 
 ##### Using the QRL command line utility we will show you how to:
 * Create a new wallet 
@@ -16,7 +16,7 @@ Follow the [Running a Full Node](/mining/full-node) instructions if you have not
 
 ### New Wallet
 
-To create a new wallet we need to open a terminal and connect to the computer with qrl installed. 
+To create a new wallet we need to open a terminal and connect to the computer with QRL installed. 
 
 
 Once you are connected simply enter the following command to create a new wallet:
@@ -129,7 +129,7 @@ Browse to the [QRL explorer](https://explorer.theqrl.org) and enter your wallet 
 
 ### Transfer Coins
 
-To transfer QRL via the CLI we will ues the "tx_transfer" command
+To transfer QRL via the CLI we will use the "tx_transfer" command
 
 ```bash
 Usage: qrl tx_transfer [OPTIONS]

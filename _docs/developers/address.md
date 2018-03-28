@@ -6,7 +6,7 @@ tags: developers
 
 {% comment %} 
 
-FIXME add a breif description of the address format.
+FIXME add a brief description of the address format.
 
 An address is created by performing a SHA-256 upon the merkle root of the highest XMSS certification
 tree. A four byte checksum is appended to this (formed from the first four bytes of a double SHA-256 hash of the merkle root) and the letter ’Q’ prepended.

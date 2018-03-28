@@ -395,11 +395,11 @@ This section will allow you to adjust the amount where the pool pays out. Change
         "password": "your_password"
 ```
 
-You can adjust what port the pool api runs on, as well as setting a password. Please set a password.
+You can adjust what port the pool API runs on, as well as setting a password. Please set a password.
 
 
 All of the connection details are found at the bottom of the config file. 
-port 18081 is where the qrl proxy will be running.
+port 18081 is where the QRL proxy will be running.
 
 
 ```json
@@ -457,7 +457,7 @@ screen -R proxy
 python3.5 ~/qrl/qrl/grpcProxy.py
 ```
 
-You may want to daemonize this, or run this in a screen session. This will connect the grpc QRL functions with the rpc functions the pool is looking for. the proxy will look for connections at 127.0.0.1:18081
+You may want to daemonize this, or run this in a screen session. This will connect the gRPC QRL functions with the rpc functions the pool is looking for. the proxy will look for connections at 127.0.0.1:18081
 
 
 
@@ -465,7 +465,7 @@ You may want to daemonize this, or run this in a screen session. This will conne
 
 You can serve the web site up on any typical web server. This guide is using the apache2 web server to serve up the site.
 
-You should have a Domain name to point to the server and have setup the relitive DNS entries. This is outside of the scop of this document. Obce you have your DNS pointing at the correct place change the hostname of the server
+You should have a Domain name to point to the server and have setup the relative DNS entries. This is outside of the scope of this document. Once you have your DNS pointing at the correct place change the hostname of the server
 
 ```bash
 sudo nano /etc/hostname
@@ -589,7 +589,7 @@ restart apache2 to pickup changes
 sudo service apache2 restart
 ```
 
-If you see errors check the log files and Googl for help.
+If you see errors check the log files and Google for help.
 
 
 
@@ -609,7 +609,7 @@ sudo rm -r /var/www/html/*
 sudo cp -r ~/QRL_pool/* /var/www/html/ 
 ```
 
-Change permissions to weberver user
+Change permissions to the webserver user
 
 ```bash
 sudo chown www-data:www-data -R /var/www/html/
@@ -646,7 +646,7 @@ Using ufw enable openssh, Apache2, pool ports, API port, and disable any access 
 {: .info}
 
 ```bash
-# first, dont lock your self out
+# first, don't lock your self out
 sudo ufw enable openssh
 
 # now block external redis connections
@@ -673,7 +673,7 @@ sudo ufw status
 ```
 
 
-#### LetsEncrypt setup
+#### Let's Encrypt setup
 
 Follow the guide found at [certbot.eff.org](https://certbot.eff.org/lets-encrypt/ubuntuxenial-apache)
 

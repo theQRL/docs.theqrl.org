@@ -2,16 +2,16 @@
 
 > Quantum Resistant Ledger
 
-This is hte Documentation for the QRL project. The main project can be found at [https://theQRL.org](https://theqrl.org)
+This is the Documentation for the QRL project. The main project can be found at [https://theQRL.org](https://theqrl.org)
 
 This Github project is hosted at [https://docs.theqrl.org](https://docs.theqrl.org)
 
 ## Contribute
 
-> We welcome contributers and believe in **Open Source**
+> We welcome contributors and believe in **Open Source**
 
 If you have good information to add to the documentation, please submit a PR.
-Anything from a typo to creating a complete writeup, the project and community will be better for it.
+Anything from a typo to creating a complete write up, the project and community will be better for it.
 
 
 * * * 
@@ -261,7 +261,7 @@ Add the following to the file. These are all default settings, uncomment to edit
 ## The users ~/.qrl/data/ directory  
 #data_dir : /home/{USER}/.qrl/data  
 #  
-## QRL Loging location ~/.qrl/qrl.log  
+## QRL Logging location ~/.qrl/qrl.log  
 #log_path : /home/{USER}/.qrl/qrl.log  
 #  
 ## The users ~/.qrl/wallet/ directory  

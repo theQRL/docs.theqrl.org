@@ -141,7 +141,7 @@ Click the receive tab in the wallet and you will see your wallet address and QR 
 
 ![QRL Receive](/assets/wallet/web/recieve.png)
 
-Use this address to recieve QRL.
+Use this address to receive QRL.
 
 ## Check Wallet Balance
 
