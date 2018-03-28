@@ -2,16 +2,16 @@
 
 > Quantum Resistant Ledger
 
-This is hte Documentation for the QRL project. The main project can be found at [https://theQRL.org](https://theqrl.org)
+This is the documentation for the QRL project. The main project can be found at [https://theQRL.org](https://theqrl.org)
 
 This Github project is hosted at [https://docs.theqrl.org](https://docs.theqrl.org)
 
 ## Contribute
 
-> We welcome contributers and believe in **Open Source**
+> We welcome contributors and believe in **open source development**
 
 If you have good information to add to the documentation, please submit a PR.
-Anything from a typo to creating a complete writeup, the project and community will be better for it.
+Anything from a typo to creating a complete write-up, the project and community will be better for it.
 
 
 * * * 
@@ -28,7 +28,7 @@ Anything from a typo to creating a complete writeup, the project and community w
 
 > Python-based blockchain ledger utilizing hash-based one-time merkle tree signature scheme (XMSS) instead of ECDSA. Proof-of-work block selection via the cryptonight algorithm. Late 2018 planned transition to POS with signed iterative hash chain reveal scheme which is both probabilistic and random (https://github.com/theQRL/pos).
 >
-> Hash-based signatures means larger transactions (6kb per tx, binary), longer keypair generation times and the need to record 'state' of transactions as each keypair can only be used once safely. Merkle tree usage enables a single address to be used for signing numerous transactions (up to 2^13 computationally easily enough). Transactions have an incremented nonce to allow wallets to know which MSS keypair to use - currently XMSS/W-OTS+ are natively supported.
+> Hash-based signatures means larger transactions (2.4Kb per tx, binary), longer keypair generation times and the need to record 'state' of transactions as each keypair can only be used once safely. Merkle tree usage enables a single address to be used for signing numerous transactions (up to 2^14 computationally easily enough). Transactions have an incremented nonce to allow wallets to know which MSS keypair to use - currently XMSS/W-OTS+ are natively supported.
 
 More information:
  * [theqrl.org](https://theqrl.org)
