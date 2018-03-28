@@ -16,19 +16,18 @@ There are a few key things to know before you get started. Nothing too complicat
 
 #### Definitions
 
-ASIC (Application Specific Integrated Circuit)
+**ASIC** (Application Specific Integrated Circuit)
 
-> An integrated circuit customized for a specific task, in our case hashing cryptographic signatures
+: An integrated circuit customized for a specific task, in our case hashing cryptographic signatures
 
-* * *
 
-Blockchain
+**Blockchain**
 
-> The public ledger of all transactions stored in a cryptographic way
+: The public ledger of all transactions stored in a cryptographic way
 
-CPU Mining
+##### CPU Mining
 
-> Using the CPU of a computer to mine with
+: Using the CPU of a computer to mine with
 
 GPU Mining
 
