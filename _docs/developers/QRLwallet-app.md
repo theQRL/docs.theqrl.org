@@ -28,7 +28,7 @@ The following dependencies are required for a functional local development envir
 * [qrl-electrify](https://www.npmjs.com/package/qrl-electrify)
 * [chimp](https://github.com/xolvio/chimp)
 
-If you are using windows you will need to instal a few extra packages.
+If you are using windows you will need to install a few extra packages.
 
 **Windows Only**
 * [Build Tools for Visual Studio 2017](https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2017)

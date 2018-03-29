@@ -252,8 +252,7 @@ Add the following to the file. These are all default settings, uncomment to edit
 ## The users ~/.qrl/data/ directory  
 #data_dir : /home/{USER}/.qrl/data  
 #  
-# 
-## QRL Loging location ~/.qrl/qrl.log  
+## QRL Logging location ~/.qrl/qrl.log  
 #log_path : /home/{USER}/.qrl/qrl.log  
 #  
 ## The users ~/.qrl/wallet/ directory  

@@ -13,7 +13,7 @@ panying security reductions only guarantee security under single-message attacks
 
 The first post-quantum signature schemes considered for standardization are hash-based Merkle Signature Schemes [13,9]. These schemes form the most confidence-inspiring post-quantum solution for digital signatures as their security only relies on some mild assumptions about properties of cryptographic hash-functions.
 
-The QRL blockchain will reject any duplicated OTS key use automaticlaly. This is done by design. *The OTS key index is limited.* Once this index is used you will no longer be able to sign transactions. This can not be stressed enough! 
+The QRL blockchain will reject any duplicated OTS key use automatically. This is done by design. *The OTS key index is limited.* Once this index is used you will no longer be able to sign transactions. This can not be stressed enough! 
 
 
 
