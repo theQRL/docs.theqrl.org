@@ -188,9 +188,12 @@ qrl wallet_recover --seed-type mnemonic
 
 Now that we have a QRL wallet address, we can `start_qrl`. This will begin the qrl node and start mining. If you have passed any command line options they will override the default settings. *you can set the mining threads etc.*
 
+> You must give the node an address to begin mining on.
+{: .info}
+
 ```bash
 # start qrl
-start_qrl
+start_qrl --miningCreditWallet YOUR_QRL_ADDRESS
 ```
 
 Check out all the options with a simple `start_qrl --help`
@@ -199,7 +202,7 @@ Using `screen` you can run in the background and reconnect later. You may need t
 
 ```bash
 # run in background
-screen -d -m start_qrl
+screen -d -m start_qrl --miningCreditWallet YOUR_QRL_ADDRESS
 ```
 You can see the progress in the `~/.qrl/qrl.log` file.
 
@@ -222,49 +225,42 @@ nano ~/.qrl/config.yml
 Add the following to the file. These are all default settings, uncomment to edit the parameters.
 
 ```bash
-# ====================================== 
-## QRL Configuration File
-# ====================================== 
-## Format must meet the following "{VARIABLE} : {SETTING}, {Boolean} : [True] [False]"
-#
-## Drop into the Discord chat for help setting this up 
-## https://discord.gg/RcR9WzX
-#
-# ====================================== 
-## Mining Setup  
-# ====================================== 
-## Enable mining with True | Disable with False  
-#mining_enabled : True 
-#  
-## Set to desired CPU count. [0] == auto-detect CPU/threads and use all available 
-#mining_thread_count : 0 
-#  
-# ======================================  
-# Mining Wallet Setup  
-# ======================================  
-## Full Path to wallet directory Defaults to ~./qrl/
-#wallet_dir : /home/{USER}/.qrl/wallet  
-#
-# ====================================== 
-## NTP Settings  
 # ======================================
-## Select the NTP server for the node to use. 
-## This must connect and get the correct time for this node to sync the blockchain
-## Here are a few good options. Select a server you can connect to from the node.
-##
-## time.nist.gov
-## pool.ntp.org
-## time.google.com
-## ntp.ubuntu.com
-## mycustomdns.com#
-#ntp_servers: pool.ntp.org
-#
-# ====================================== 
-## Default Locations  
-# ====================================== 
-## This is where the program will look for files  
-## Only change these if you must! You HAVE to use full path for location.  
-## Change the {USER} to your local user.  
+#    Mining Configuration
+# ======================================
+# mining_enabled: True
+# mining_thread_count: 0  # 0 to auto detect thread count based on CPU/GPU number of processors
+
+# ======================================
+#    Ephemeral Configuration
+# ======================================
+
+# accept_ephemeral: True
+# outgoing_message_expiry: 90 
+
+# Cache Size
+# lru_state_cache_size: 10
+# max_state_limit: 10
+
+
+# ======================================
+#    P2P Configuration
+# ======================================
+# enable_peer_discovery: True  # Allows to discover new peers from the connected peers
+# peer_rate_limit: 500  # Max Number of messages per minute per peer
+
+# ntp_servers: pool.ntp.org
+# ban_minutes: 20              # Allows to ban a peer's IP who is breaking protocol
+
+# max_peers_limit: 100  # Number of allowed peers
+# chain_state_timeout: 180
+# must be less than ping_timeout
+# chain_state_broadcast_period: 30
+
+
+# ======================================
+#    Directory Configuration
+# ======================================
 #  
 ## The users ~/.qrl/ directory  
 #qrl_dir : /home/{USER}/.qrl  
@@ -272,48 +268,28 @@ Add the following to the file. These are all default settings, uncomment to edit
 ## The users ~/.qrl/data/ directory  
 #data_dir : /home/{USER}/.qrl/data  
 #  
+# 
 ## QRL Loging location ~/.qrl/qrl.log  
 #log_path : /home/{USER}/.qrl/qrl.log  
 #  
 ## The users ~/.qrl/wallet/ directory  
-#wallet_staking_dir : /home/{USER}/.qrl/wallet  
-#
-# ======================================  
-## Ephemeral Configuration 
-# ======================================  
-## Change ephemeral messaging settings
-# 
-#accept_ephemeral : True  
-#
-#outgoing_message_expiry : 90 # Outgoing message expires after 90 seconds  
-#
-#p2p_q_size : 1000  
-#  
-## Cache Size  
-#lru_state_cache_size : 10  
-#max_state_limit : 10  
-#
-# ======================================  
-## PEER Configuration  
-# ======================================  
-#
-## Allows to discover new peers from the connected peers  
-#enable_peer_discovery : True  
-#  
-## Allows to ban a peer's IP who is breaking protocol  
-#ban_minutes : 20  
-#  
-## Number of allowed peers  
-#max_peers_limit : 100  
-#  
-## Max Number of messages per minute per peer
-#peer_rate_limit : 500  
-#
-#chain_state_timeout : 180  
-#chain_state_broadcast_period : 30 # must be less than ping_timeout  
-#
-# ==================
-## End Configuration
+#wallet_staking_dir : /home/{USER}/.qrl/wallet 
+
+# qrl_dir: os.path.join(expanduser("~"), ".qrl")
+# data_dir: os.path.join(qrl_dir, "data")
+# config_path: os.path.join(qrl_dir, "config.yml")
+# log_path: os.path.join(qrl_dir, "qrl.log")
+# wallet_staking_dir: os.path.join(qrl_dir, "wallet")
+
+# mining_pool_payment_wallet_path: os.path.join(qrl_dir, 'payment_slaves.json')  # Only for mining Pool
+
+# ======================================
+#    MINING WALLET CONFIGURATION
+# ======================================
+# slaves_filename: 'slaves.json'
+
+# wallet_dir: os.path.join(qrl_dir)
+
 ```
 
 Please add any issues found in <a href="https://github.com/theqrl/qrl" target="_blank">GitHub</a> If you need help jump into the <a href="https://discord.gg/RcR9WzX" target="_blank"> Discord Chat </a>
@@ -324,9 +300,7 @@ Please add any issues found in <a href="https://github.com/theqrl/qrl" target="_
 Some Handy Commands to query against your node. 
 
 ``` bash
-screen -d -m ~/QRL/start_qrl    # This will start QRL in a screen session.
-screen -r                       # To reattach the screen
-ctl+a d                         # Exit the screen without quitting the program
+screen -d -m start_qrl --miningCreditWallet YOUR_QRL_ADDRESS   # This will start QRL in a screen session.
 tail -f ~/.qrl/qrl.log          # Show activity in qrl.log
 
 # Print found blocks. If empty your node has not found anything yet.
@@ -352,7 +326,6 @@ qrl wallet_seceret --help
 
 ```bash
 qrl --help
-
 
 Usage: cli.py [OPTIONS] COMMAND [ARGS]...
 
@@ -387,7 +360,6 @@ Commands:
   wallet_ls          Lists available wallets
   wallet_recover     Recovers a wallet from a hexseed or mnemonic...
   wallet_secret      Provides the mnemonic/hexseed of the given...
-
 ```
 
 ```bash
@@ -411,9 +383,11 @@ optional arguments:
   --no-colors           Disables color output
   -l {DEBUG,INFO,WARNING,ERROR,CRITICAL}, --loglevel {DEBUG,INFO,WARNING,ERROR,CRITICAL}
                         Set the logging level
+required arguments:                        
   --miningCreditWallet MINING_CREDIT_WALLET
                         QRL Wallet address on which mining reward has to be
                         credited.
+
 ```
 
 
