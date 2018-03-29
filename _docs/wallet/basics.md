@@ -5,6 +5,15 @@ tags: wallet
 ---
 
 
+
+- create a spreadsheet for users to fill in with key index and TX number and give as a download link. Helps keep track of Used OTS Key Indexes
+
+- Place slaves.json information in another writeup
+	- Give basic info here with link
+- Place OTS Key Index explanation somewhere else
+
+{:/comment}
+
 The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your QRL safely, while allowing you to mine without the risk of losing private keys. 
 
 ##### This guide will walk you through

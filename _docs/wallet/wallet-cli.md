@@ -14,6 +14,18 @@ Follow the [Running a Full Node](/mining/full-node) instructions if you have not
 * Recover wallet from hexseed/mnemonic
 * Generate a slaves.json file
 
+{::comment}
+
+
+* Check our balance
+* Send QRL 
+
+FIXME add a link to the guide for slaves.json? or write here duplicated?
+
+* Generate a slaves.json file 
+* Using the slaves.jason file
+{:/comment}
+
 ### New Wallet
 
 To create a new wallet we need to open a terminal and connect to the computer with qrl installed. 
