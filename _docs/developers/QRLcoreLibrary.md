@@ -8,11 +8,9 @@ tags: developers
 [![npm version](https://badge.fury.io/js/qrllib.svg)](https://badge.fury.io/js/qrllib)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4b34f51616d94362b3447bb2f4df765a)](https://www.codacy.com/app/jleni/qrllib_QRL?utm_source=github.com&utm_medium=referral&utm_content=theQRL/qrllib&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/theQRL/qrllib.svg?branch=master)](https://travis-ci.org/theQRL/qrllib)
-[![Build status](https://ci.appveyor.com/api/projects/status/mrpo1u5cw2f5d0eb?svg=true)](https://ci.appveyor.com/project/jleni/qrllib-oy5qa)
+<!--[![Build status](https://ci.appveyor.com/api/projects/status/mrpo1u5cw2f5d0eb?svg=true)](https://ci.appveyor.com/project/jleni/qrllib-oy5qa)-->
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/theQRL/qrllib/master/LICENSE)
 
-> **WARNING:** This is work in progress, changes might not be backward compatible.
-{: .warning}
 
 
 This library currently exposes the following functionality:  
@@ -24,12 +22,12 @@ This library currently exposes the following functionality:
 
 **Platform support**
 
-|           | Linux |     OSX<br>10.12     |  Windows<br>10 | Raspbian<br>? | 
-|-----------|:------------:|:-----------:|:--------:|:--------:|
-|Python 3   | YES | YES |    YES     |     YES    |
-|Webassembly (JS) |      YES       |     YES       |    YES     |     &#10004    |
-|Golang     | MAYBE |     -       |    -     |     -    |
-|Java       |      -       |     -       |    -     |     -    |
+|           | Linux |     OSX<br>10.12     |  Windows<br>10 |
+|-----------|:------------:|:-----------:|:--------:|
+|Python 3   | &#10004; | &#10004; |    &#10004;     | 
+|Webassembly (JS) | &#10004; |  &#10004;  | &#10004; 
+| Golang	|	-	|	-	|	-	|
+
 
 ## Installing
 
@@ -44,7 +42,7 @@ pip3 install pyqrllib
 
 ### OSX
 
-If you dont have brew yet, we think you should :) Install brew:
+OSX requires some additional dependencies. These are much easier to get by installing brew.
 
 ```bash
 # Install brew with
@@ -67,19 +65,6 @@ brew install go --cross-compile-common
 ```
 
 
-#### Windows
-```bash
-TBD
-```
-
-#### Raspbian
-
-```bash
-sudo apt -y install swig3.0 python3-dev build-essential cmake ninja-build
-sudo pip3 install -U setuptools
-sudo pip3 install -U pyqrllib
-```
-
 #### Miscellaneous
 
 Golang and Java wrappers are currently experimental (By default they are disabled in cmake)
@@ -90,7 +75,10 @@ brew install go --cross-compile-common
 
 ## Building from Source
 
-### Windows
+#### Ubuntu
+
+
+#### Windows
 For the purposes of these instructions the following were used:
 
 * Build Tools for Visual Studio 2017
@@ -101,8 +89,8 @@ For the purposes of these instructions the following were used:
 
 Also `c:\src` was used for source files and `c:\opt` for other dependencies, adjust accordingly if choosing differently.
 
-**Note:** You can use Microsoft MSBuild instead of Ninja Build by setting environment variable 
-{: .info}
+> **Note:** You can use Microsoft MSBuild instead of Ninja Build by setting environment variable 
+
 
 ```bash
 CMAKE_VS_GENERATOR=Visual Studio 15 2017 Win64
@@ -141,11 +129,3 @@ If the build succeeded you can perform further steps, issue the command ```pytho
 python setup.py test
 python setup.py install
 ```
-
-## License
-
-*This library is distributed under the MIT software license, see the accompanying file LICENSE or http://www.opensource.org/licenses/mit-license.php.*
-
-Some of the code is based on the xmss-reference implementation that has been released in the public domain by their respective authors.
-
-Most of third party code has been included as git submodules for future reference.
