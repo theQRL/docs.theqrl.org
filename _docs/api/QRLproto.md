@@ -6,144 +6,8 @@ tags: api
 
 <a name="top"/>
 
-## Table of Contents
-
-- [qrl.proto](#qrl.proto)
-    - [AddressAmount](#qrl.AddressAmount)
-    - [AddressList](#qrl.AddressList)
-    - [AddressState](#qrl.AddressState)
-    - [AddressState.SlavePksAccessTypeEntry](#qrl.AddressState.SlavePksAccessTypeEntry)
-    - [AddressState.TokensEntry](#qrl.AddressState.TokensEntry)
-    - [Block](#qrl.Block)
-    - [BlockDataPoint](#qrl.BlockDataPoint)
-    - [BlockExtended](#qrl.BlockExtended)
-    - [BlockHeader](#qrl.BlockHeader)
-    - [BlockHeaderExtended](#qrl.BlockHeaderExtended)
-    - [BlockHeightData](#qrl.BlockHeightData)
-    - [BlockMetaData](#qrl.BlockMetaData)
-    - [BlockMetaDataList](#qrl.BlockMetaDataList)
-    - [BlockNumberMapping](#qrl.BlockNumberMapping)
-    - [CollectEphemeralMessageReq](#qrl.CollectEphemeralMessageReq)
-    - [CollectEphemeralMessageResp](#qrl.CollectEphemeralMessageResp)
-    - [Empty](#qrl.Empty)
-    - [EncryptedEphemeralMessage](#qrl.EncryptedEphemeralMessage)
-    - [EncryptedEphemeralMessage.Channel](#qrl.EncryptedEphemeralMessage.Channel)
-    - [EphemeralChannelPayload](#qrl.EphemeralChannelPayload)
-    - [EphemeralMessagePayload](#qrl.EphemeralMessagePayload)
-    - [EphemeralMetadata](#qrl.EphemeralMetadata)
-    - [GenesisBalance](#qrl.GenesisBalance)
-    - [GetAddressFromPKReq](#qrl.GetAddressFromPKReq)
-    - [GetAddressFromPKResp](#qrl.GetAddressFromPKResp)
-    - [GetAddressStateReq](#qrl.GetAddressStateReq)
-    - [GetAddressStateResp](#qrl.GetAddressStateResp)
-    - [GetBlockReq](#qrl.GetBlockReq)
-    - [GetBlockResp](#qrl.GetBlockResp)
-    - [GetKnownPeersReq](#qrl.GetKnownPeersReq)
-    - [GetKnownPeersResp](#qrl.GetKnownPeersResp)
-    - [GetLatestDataReq](#qrl.GetLatestDataReq)
-    - [GetLatestDataResp](#qrl.GetLatestDataResp)
-    - [GetLocalAddressesReq](#qrl.GetLocalAddressesReq)
-    - [GetLocalAddressesResp](#qrl.GetLocalAddressesResp)
-    - [GetNodeStateReq](#qrl.GetNodeStateReq)
-    - [GetNodeStateResp](#qrl.GetNodeStateResp)
-    - [GetObjectReq](#qrl.GetObjectReq)
-    - [GetObjectResp](#qrl.GetObjectResp)
-    - [GetStatsReq](#qrl.GetStatsReq)
-    - [GetStatsResp](#qrl.GetStatsResp)
-    - [LRUStateCache](#qrl.LRUStateCache)
-    - [LatticePK](#qrl.LatticePK)
-    - [LatticePublicKeyTxnReq](#qrl.LatticePublicKeyTxnReq)
-    - [LatticePublicKeys](#qrl.LatticePublicKeys)
-    - [NodeChainState](#qrl.NodeChainState)
-    - [NodeHeaderHash](#qrl.NodeHeaderHash)
-    - [NodeInfo](#qrl.NodeInfo)
-    - [P2PAcknowledgement](#qrl.P2PAcknowledgement)
-    - [Peer](#qrl.Peer)
-    - [PeerInfo](#qrl.PeerInfo)
-    - [Peers](#qrl.Peers)
-    - [PushEphemeralMessageReq](#qrl.PushEphemeralMessageReq)
-    - [PushTransactionReq](#qrl.PushTransactionReq)
-    - [PushTransactionResp](#qrl.PushTransactionResp)
-    - [SlaveTxnReq](#qrl.SlaveTxnReq)
-    - [StateLoader](#qrl.StateLoader)
-    - [StateObjects](#qrl.StateObjects)
-    - [StoredPeers](#qrl.StoredPeers)
-    - [TokenDetailedList](#qrl.TokenDetailedList)
-    - [TokenList](#qrl.TokenList)
-    - [TokenMetadata](#qrl.TokenMetadata)
-    - [TokenTxnReq](#qrl.TokenTxnReq)
-    - [Transaction](#qrl.Transaction)
-    - [Transaction.CoinBase](#qrl.Transaction.CoinBase)
-    - [Transaction.LatticePublicKey](#qrl.Transaction.LatticePublicKey)
-    - [Transaction.Message](#qrl.Transaction.Message)
-    - [Transaction.Slave](#qrl.Transaction.Slave)
-    - [Transaction.Token](#qrl.Transaction.Token)
-    - [Transaction.Transfer](#qrl.Transaction.Transfer)
-    - [Transaction.TransferToken](#qrl.Transaction.TransferToken)
-    - [TransactionCount](#qrl.TransactionCount)
-    - [TransactionCount.CountEntry](#qrl.TransactionCount.CountEntry)
-    - [TransactionExtended](#qrl.TransactionExtended)
-    - [TransferCoinsReq](#qrl.TransferCoinsReq)
-    - [TransferCoinsResp](#qrl.TransferCoinsResp)
-    - [TransferTokenTxnReq](#qrl.TransferTokenTxnReq)
-  
-    - [GetLatestDataReq.Filter](#qrl.GetLatestDataReq.Filter)
-    - [NodeInfo.State](#qrl.NodeInfo.State)
-    - [PushTransactionResp.ResponseCode](#qrl.PushTransactionResp.ResponseCode)
-  
-  
-    - [AdminAPI](#qrl.AdminAPI)
-    - [PublicAPI](#qrl.PublicAPI)
-  
-
-- [qrlbase.proto](#qrlbase.proto)
-    - [GetNodeInfoReq](#qrl.GetNodeInfoReq)
-    - [GetNodeInfoResp](#qrl.GetNodeInfoResp)
-  
-  
-  
-    - [Base](#qrl.Base)
-  
-
-- [qrllegacy.proto](#qrllegacy.proto)
-    - [BKData](#qrl.BKData)
-    - [FBData](#qrl.FBData)
-    - [LegacyMessage](#qrl.LegacyMessage)
-    - [MRData](#qrl.MRData)
-    - [NoData](#qrl.NoData)
-    - [PBData](#qrl.PBData)
-    - [PLData](#qrl.PLData)
-    - [PONGData](#qrl.PONGData)
-    - [SYNCData](#qrl.SYNCData)
-    - [VEData](#qrl.VEData)
-  
-    - [LegacyMessage.FuncName](#qrl.LegacyMessage.FuncName)
-  
-  
-  
-
-- [qrlmining.proto](#qrlmining.proto)
-    - [GetBlockMiningCompatibleReq](#qrl.GetBlockMiningCompatibleReq)
-    - [GetBlockMiningCompatibleResp](#qrl.GetBlockMiningCompatibleResp)
-    - [GetBlockToMineReq](#qrl.GetBlockToMineReq)
-    - [GetBlockToMineResp](#qrl.GetBlockToMineResp)
-    - [GetLastBlockHeaderReq](#qrl.GetLastBlockHeaderReq)
-    - [GetLastBlockHeaderResp](#qrl.GetLastBlockHeaderResp)
-    - [SubmitMinedBlockReq](#qrl.SubmitMinedBlockReq)
-    - [SubmitMinedBlockResp](#qrl.SubmitMinedBlockResp)
-  
-  
-  
-    - [MiningAPI](#qrl.MiningAPI)
-  
-
-- [Scalar Value Types](#scalar-value-types)
-
-
-
 <a name="qrl.proto"/>
 <p align="right"><a href="#top">Top</a></p>
-
 ## qrl.proto
 
 
@@ -160,30 +24,17 @@ tags: api
 | amount | [uint64](#uint64) |  | QRL wallet amount |
 
 
-
-
-
-
 <a name="qrl.AddressList"/>
 
 ### AddressList
-
-
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | addresses | [bytes](#bytes) | repeated |  |
 
-
-
-
-
-
 <a name="qrl.AddressState"/>
 
 ### AddressState
-
-
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
