@@ -5,19 +5,29 @@
 			display:flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
-
+			
+			// Bordered outlines
 			li {
 				list-style:none;
 				flex:1;
-					margin:5px 5px;
-				a {
+				margin:5px 5px;
+
+
+				> a {
 					display:inline-block;
 					text-decoration: none;
-					background-color:$quantum_sky;
-					color:#FFF;
+					border:2px solid $quantum_sky;
+					color:$quantum_sky;
 					padding:5px 10px;
-
 					width:100%;
+				}
+			}
+			// Solid
+			&:first-of-type,
+			li:hover {
+				a {
+					background-color:$quantum_sky;
+					color:#FFF;					
 				}
 			}
 		}
