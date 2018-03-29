@@ -84,7 +84,7 @@ There are not too many requirements for mining QRL. Most current processors will
 
 #### QRL Mining basics
 
-QRL uses the Monero fork of [CryptoNight](http://cryptonite.info), a fork of the [CryptoNote](https://cryptonote.org/) protocol as the backbone to the mining process. Forking, forking, forking... 
+QRL uses the Monero fork of [CryptoNight](http://cryptonite.info), a fork of the [CryptoNote](https://cryptonote.org/) protocol as the backbone to the mining process.  
 
 By using this algorithm allows QRL to take advantage of the ASIC resistant features and benefits of CryptoNight and Monero. Since we are using the Monero fork, we can share in the same ASIC resistant benefits that Monero promotes. (*Privacy features of Monero are specific to that project, and do not carry over to QRL.*)
 
@@ -95,7 +95,7 @@ Any software that pool mines for XMR will work with QRL. You can find something 
 > When configuring your software, set everything up to mine Monero, *instead* of using a Monero address, enter your *QRL* address into the "Worker" or "Address" field in the mining software.
 {: .info}
 
-QRL uses PQ secure encryption. No joke this stuff is the best there is right now. If you follow instructions, and don't compromise your private keys in any way your funds are safe from current processors ads well as advanced quantum computers that are on the horizon.
+QRL uses PQ secure cryptography. No joke this stuff is the best there is right now. If you follow instructions, and don't compromise your private keys in any way your funds are safe from current processors as well as general-purpose error-corrected quantum computers that are on the horizon.
 
 ## Mining Software
 
@@ -108,7 +108,7 @@ QRL uses PQ secure encryption. No joke this stuff is the best there is right now
 
 
 
-> **Note** This list is not inclusive, and is not a promotion or endorsement for a project. Any cryptonight mining software \*should work. *YMMV*
+> **Note** This list is not exhaustive, and is not a promotion or endorsement for a project. Any cryptonight mining software \*should work. *YMMV*
 {: .info}
 
 ## CPU Mining
