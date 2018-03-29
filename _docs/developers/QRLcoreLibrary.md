@@ -22,11 +22,11 @@ This library currently exposes the following functionality:
 
 **Platform support**
 
-|           | Linux |     OSX<br>10.12     |  Windows<br>10 |
+|           | Linux |     OSX 10.12     |  Windows 10 |
 |-----------|:------------:|:-----------:|:--------:|
 |Python 3   | &#10004; | &#10004; |    &#10004;     | 
 |Webassembly (JS) | &#10004; |  &#10004;  | &#10004; 
-| Golang	|	-	|	-	|	-	|
+| Golang	|	&#127793;	|	-	|	-	|
 
 
 ## Installing

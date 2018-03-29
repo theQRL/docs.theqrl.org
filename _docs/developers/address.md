@@ -4,11 +4,8 @@ categories: developers
 tags: developers
 ---
 
-{% comment %} 
 
-FIXME add a brief description of the address format.
-
-An address is created by performing a SHA-256 upon the merkle root of the highest XMSS certification
+A QRL address is created by performing a SHA-256 upon the merkle root of the highest XMSS certification
 tree. A four byte checksum is appended to this (formed from the first four bytes of a double SHA-256 hash of the merkle root) and the letter ’Q’ prepended.
 
  i.e. in pythonic pseudocode:
@@ -24,8 +21,6 @@ Each account has a balance denominated in quanta divisible down to a single Shor
 Addresses are stateful with each transaction using a fresh OTS keypair and the QRL storing every public
 key ever used (this could be pruned as it can be regenerated on-the-fly from the transaction signature and message but would be operationally intensive) for each account. A transaction counter called a nonce is incremented with each transaction sent from an account. This allows wallets which do not store the entire blockchain to keep track of their location in the stateful merkle hypertree signature scheme.
 
-
-{% endcomment %} 
 
 
 ## Structure
@@ -107,12 +102,17 @@ In the case of using XMSS. The parameters are used as follows:
 
 ## Seed / Extended Seed
 
-**Seed** (48 bytes): Not presented to users. Users instead have access to the _extended seed_.
+#### Seed (48 bytes): 
+Not presented to users. Users instead have access to the _extended seed_.
 
-_Important_: The seed is not enough to reconstruct an address because it does not include information about the signature scheme and corresponding parameters.
+> **Important:** The seed is not enough to reconstruct an address because it does not include information about the signature scheme and corresponding parameters.
+{: .info}
 
-**Extended Seed** (51 bytes): User typically have access to a composed seed that include the descriptor as a prefix.
+#### Extended Seed (51 bytes): 
+User typically have access to a composed seed that include the descriptor as a prefix.
 
-**HexSeed** (102 bytes): Extended seed represented as a hexadecimal number in ASCII characters. This is used for representational purposes and never used in the code or API.
+#### HexSeed (102 bytes): 
+Extended seed represented as a hexadecimal number in ASCII characters. This is used for representational purposes and never used in the code or API.
 
-**Mnemonic** (34 words): Each word represents 12-bits. A mnemonic can be converted to an **Extended Seed**
+#### Mnemonic (34 words): 
+Each word represents 12-bits. A mnemonic can be converted to an **Extended Seed**

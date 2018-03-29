@@ -4,11 +4,11 @@ categories: introduction
 tags: introduction
 ---
 
-The Quantum Resistant Ledger (QRL) is a future-proof post-quantum value store and decentralized communication layer which tackles the threat Quantum Computing will pose to cryptocurrencies. 
+The Quantum Resistant Ledger (QRL) is a future-proof post-quantum value store and decentralized communication layer that tackles the threat Quantum Computing will pose to cryptocurrencies. 
 
 QRL accomplishes this by focusing on the cryptographic security of the signature scheme and by keeping it secure against classical and quantum computing attack both in the present day and also future decades. 
 
-####  Quantum Computing Attack Vectors
+##  Quantum Computing Attack Vectors
 
 Cryptocurrency is based on the same basic principles; using cryptography as a means to validate and secure transactions, providing an immutable means of exchange, and control the creation of new units. This is the base of all valid cryptocurrency in the market today
 
@@ -26,7 +26,7 @@ It is unclear how advanced quantum computing may be presently or that any breakt
 
 
 
-#### Quantum-resistant signatures
+## Quantum-resistant signatures
 
 There are several important cryptographic systems which are believed to be quantum-resistant:
 
@@ -43,14 +43,14 @@ Forward secure hash-based digital signature schemes exist with minimal security 
 Changing the chosen hash function produces a new hash-based digital signature scheme. Hash-based digital signatures are well studied and represent the primary candidate for post-quantum signatures in the future. As such they are the chosen class of post-quantum signature for the QRL.
 
 
-#### Merkle tree signature schemes
+## Merkle tree signature schemes
 
 Whilst one-time signatures provide satisfactory cryptographic security for signing and verifying transactions they have a major drawback that they may only be used once safely. If a ledger address is based upon some transformation of the public key of a single OTS key pair then this would lead to an extremely restrictive blockchain ledger where all funds from a sending address would need to move with every single transaction performed - or those funds would be at risk of theft. 
 
 A solution is to extend the signature scheme to incorporate more than one valid OTS signature for each ledger address allowing as many signatures as OTS key pairs are pre-generated. A binary hash tree known as a merkle tree is a logical way to achieve this.
 
 
-#### Binary hash tree
+### Binary hash tree
 
 The general idea behind a [merkle tree](https://en.wikipedia.org/wiki/Merkle_tree) is an inverted tree composed of parent nodes computed by hashing the concatenation of child sibling nodes upwards in layers to the root. The existence of any node or leaf can be cryptographically proven by computing the root.
 

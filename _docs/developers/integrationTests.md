@@ -23,7 +23,7 @@ Follow the corresponding instructions:
 
 | OS  | 	Link	|
 |---|---|
-|Windows | https://docs.docker.com/docker-for-windows/install/   |
+|Windows | [Docker for Windows](https://docs.docker.com/docker-for-windows/install/)   |
 |Linux   | https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/ |
 |OSX     | https://docs.docker.com/docker-for-mac/install/ |
 |||
