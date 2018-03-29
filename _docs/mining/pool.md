@@ -4,7 +4,7 @@ categories: mining
 tags: mining
 ---
 
-To fully utilize the benefits of multiple devices or GPU mining rigs one can setup a stratum pool and use multiple machines to mine as the same device, effectively raising the hashrate of the mining efforts and increasing the odds of finding blocks. 
+To fully utilize the benefits of multiple devices or GPU mining rigs, one can setup a stratum pool and use multiple machines to mine as the same device, effectively raising the hashrate of the mining efforts and increasing the odds of finding blocks. 
 
 Running a pool will also increase the redundancy and decentralization of the blockchain. A mining pool is required to run a full QRL node, syncing and verifying transactions on the network by default.
 
@@ -463,15 +463,15 @@ You may want to daemonize this, or run this in a screen session. This will conne
 
 ## Install Web Server
 
-You can serve the web site up on any typical web server. This guide is using the apache2 web server to serve up the site.
+You can serve the web site up on any typical web server. This guide is using the apache2 web server for the pool site.
 
-You should have a Domain name to point to the server and have setup the relitive DNS entries. This is outside of the scop of this document. Obce you have your DNS pointing at the correct place change the hostname of the server
+You should have a Domain name to point to the server, and have setup the relative DNS entries. This is outside of the scope of this document. Once you have your DNS pointing at the correct place change the hostname of the server
 
 ```bash
 sudo nano /etc/hostname
 ```
 
-Enter your hostname without the fqdn part
+Enter your hostname without the FQDN part
 ```bash
 pool
 ```
