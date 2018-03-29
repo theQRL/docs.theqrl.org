@@ -20,12 +20,16 @@ A node is should be placed on a separate machine from the rest of your API. For 
 
 ### Install Dependencies 
 
+As **root**, install your dependencies 
+
 ```bash
-sudo apt update && sudo apt upgrade -y
-sudo reboot
-sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
+apt update && sudo apt upgrade -y
+reboot
+apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
+
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt-get install -y nodejs
+apt-get install -y nodejs
+
 pip3 install --upgrade setuptools
 ```
 
@@ -80,21 +84,9 @@ ssh qrldemo@156.27.112.2 -i ~/.ssh/id_rsa
 
 ### Install QRL
 
-The proper way
-
 ```bash
-pip3 install --upgrade pip
+pip3 install --upgrade --user pip
 pip3 install --upgrade --user qrl
-```
-
-Alternatively, install from the github repo
-
-```bash 
-git clone --depth 1 https://github.com/theQRL/QRL.git
-cd QRL
-pip3 install --user -r requirements.txt
-pip3 install --user -U cryptography service_identity
-pip3 install --user -e .
 ```
 
 ### Start the QRL node
@@ -114,98 +106,11 @@ You should receive this
 This runs a mining node. If you want to run a non-mining node, you'll need to create and edit the `~/.qrl/config.yml` file and set `mining_enabled` to `false`. Reset your node after.
 
 ```yaml
-# ====================================== 
-## QRL Configuration File
-# ====================================== 
-## Format must meet the following "{VARIABLE} : {SETTING}, {Boolean} : [True] [False]"
-#
-## Drop into the Discord chat for help setting this up 
-## https://discord.gg/RcR9WzX
-#
-# ====================================== 
-## Mining Setup  
-# ====================================== 
-## Enable mining with True | Disable with False  
-mining_enabled : False 
-#  
-## Set to desired CPU count. [0] == auto-detect CPU/threads and use all available 
-#mining_thread_count : 0 
-#  
-# ======================================  
-# Mining Wallet Setup  
-# ======================================  
-## Full Path to wallet directory Defaults to ~./qrl/
-#wallet_dir : /home/{USER}/.qrl/wallet  
-#
-# ====================================== 
-## NTP Settings  
 # ======================================
-## Select the NTP server for the node to use. 
-## This must connect and get the correct time for this node to sync the blockchain
-## Here are a few good options. Select a server you can connect to from the node.
-##
-## time.nist.gov
-## pool.ntp.org
-## time.google.com
-## ntp.ubuntu.com
-## mycustomdns.com#
-#ntp_servers: pool.ntp.org
-#
-# ====================================== 
-## Default Locations  
-# ====================================== 
-## This is where the program will look for files  
-## Only change these if you must! You HAVE to use full path for location.  
-## Change the {USER} to your local user.  
-#  
-## The users ~/.qrl/ directory  
-#qrl_dir : /home/{USER}/.qrl  
-#  
-## The users ~/.qrl/data/ directory  
-#data_dir : /home/{USER}/.qrl/data  
-#  
-## QRL Loging location ~/.qrl/qrl.log  
-#log_path : /home/{USER}/.qrl/qrl.log  
-#  
-## The users ~/.qrl/wallet/ directory  
-#wallet_staking_dir : /home/{USER}/.qrl/wallet  
-#
-# ======================================  
-## Ephemeral Configuration 
-# ======================================  
-## Change ephemeral messaging settings
-# 
-#accept_ephemeral : True  
-#
-#outgoing_message_expiry : 90 # Outgoing message expires after 90 seconds  
-#
-#p2p_q_size : 1000  
-#  
-## Cache Size  
-#lru_state_cache_size : 10  
-#max_state_limit : 10  
-#
-# ======================================  
-## PEER Configuration  
-# ======================================  
-#
-## Allows to discover new peers from the connected peers  
-#enable_peer_discovery : True  
-#  
-## Allows to ban a peer's IP who is breaking protocol  
-#ban_minutes : 20  
-#  
-## Number of allowed peers  
-#max_peers_limit : 100  
-#  
-## Max Number of messages per minute per peer
-#peer_rate_limit : 500  
-#
-#chain_state_timeout : 180  
-#chain_state_broadcast_period : 30 # must be less than ping_timeout  
-#
-# ==================
-## End Configuration
+#    Mining Configuration
+# ======================================
+mining_enabled: False
+# mining_thread_count: 0  # 0 to auto detect thread count based on CPU/GPU number of processors
 ```
 
 Reset your node by pressing `ctrl+c` and invoking `start_qrl` again to initialize the configuration file.
