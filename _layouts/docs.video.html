@@ -1,0 +1,78 @@
+---
+layout: default
+---
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-tubeplayer/2.1.0/jquery.tubeplayer.min.js"></script>
+
+<div class="wrapper docs">
+	<div class="grid w12">
+		<div class="w12">
+			<p>Head back to <a href="/">Documentation</a></p>
+			<h1>Documentation</h1>
+
+		  {% if page.title %}
+		    <h2 class="page-heading">{{ page.title }}</h2>
+		  {% endif %}
+
+		  <div class="grid no-padding docgrid">
+		  		<div class="w8 document-page">
+				  {{ content }}		  			
+		  		</div>
+		  		<div class="w4">
+		  			<div class="floatmenu">
+						<nav>
+						<ul id="stickymenu">
+						</ul>
+						</nav>
+						<p>Still stuck? There's help over on <a class="cta" href="https://discord.gg/zcGhKpy" target="_blank">Discord! <simple-svg data-icon="mdi-discord"></simple-svg></a></p>	
+		  			</div>
+		  		</div>
+		
+		  </div>
+		</div>		
+	</div>
+</div>
+
+<script>
+$(function() {
+	function loadyoutube() {
+
+	}
+
+	$('.document-page h2').each(function(el, i) {
+		var title = this.innerHTML;
+
+
+		$(this).html('<a href="#'+el.id+'">'+title + '</a>');
+		$('#stickymenu').append('<li><a data-video='+$(this).data("video")+' data-time='+$(this).data("time")+' href="#'+el.id+'">'+title +'</a></li>');
+	});
+
+	$('.ytvideo').each(function() {
+		var videoid = $(this).data('video');
+
+		var player = $(this).tubeplayer({
+			initialVideo: videoid
+		});
+		console.log(player.tubeplayer("data"));
+
+		var previous = null;
+
+		$('h2[data-video='+videoid+']').each(function() {
+			console.log(previous);
+			
+			previous = this;
+		});
+
+		setInterval(function() {
+			var currentTime = player.tubeplayer("data").currentTime;
+		},5000);
+
+		// Run through all videos with id...
+		$('[data-video='+videoid+']').on('click', function() {
+			player.tubeplayer("seek",$(this).data('time'));
+		});
+
+
+
+	});
+});
+</script>

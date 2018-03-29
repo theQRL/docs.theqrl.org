@@ -190,6 +190,11 @@ nav a {
 	background-color:#F3F3F3;
 }
 .docs {
+	.grid {
+		max-width: 1140px;
+	}
+
+
 	table {
 		border-collapse: collapse;
 		border:1px solid $quantum_deep;
@@ -552,3 +557,4 @@ nav a {
 	grid-column: span 12;
 }
 @import "components/header";
+@import "pages/homepage";
