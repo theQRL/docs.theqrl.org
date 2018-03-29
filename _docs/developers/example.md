@@ -24,6 +24,8 @@ A node is should be placed on a separate machine from the rest of your API. For 
 sudo apt update && sudo apt upgrade -y
 sudo reboot
 sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
 pip3 install --upgrade setuptools
 ```
 
@@ -101,7 +103,7 @@ pip3 install --user -e .
 start_qrl --miningCreditWallet Q010500ef97a9abf15e65252a22391992823bc9529f552f1fa9c555f32d9174ae050ef83290a21e
 ```
 
-You should recieve this
+You should receive this
 
 ```bash
 2018-03-29 05:45:06,558|0.0.post0.dev1+g887b428|unsynced| INFO : grpc public service - started !
@@ -284,17 +286,16 @@ optional arguments:
                         credited.
 ```
 
-#### Look at the config
-
-```bash
-vi ~/.qrl/config.yml
-```
-
 ## Step 2. Hello world
 
-Start a new project
+Start a new project in a fresh directory
 
-For this you will need a QRL proto file. Downlaod it [here](https://github.com/theQRL/QRL/blob/master/src/qrl/protos/qrlbase.proto)
+```bash
+mkdir ~/qrldemo/
+cd qrldemo/
+```
+
+For this you will need a QRL proto file. Download it [here](https://github.com/theQRL/QRL/blob/master/src/qrl/protos/qrlbase.proto)
 
 #### package.json
 
@@ -302,37 +303,78 @@ As we're working with nodejs it's common to have a package.json, lets define it.
 
 ```json
 {
-  "name": "My Demo App",
-  "version": "1.0.0",
+  "name": "QRL-Hello",
+  "version": "0.1.0",
   "description": "NodeJS Demo Application",
   "main": "index.js",
-  "scripts": {
-    "test": "./node_modules/.bin/mocha"
-  },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "fs-extra": "^5.0.0",
     "grpc": "^1.9.1",
     "qrllib": "^0.8.9",
-    "temp": "^0.8.3"
+    "temp": "^0.8.3",
+    "validate-qrl-address":"^1.1.0"
   }
 }
 ```
 
-#### index.js - head
+Then install it
 
-As we're working with nodejs it's common to have a package.json, lets define it.
+```bash
+npm install
+```
+
+
+#### Initialize 
 
 ```js
 let grpc = require('grpc');
 let temp = require('temp').track();
 let fs = require("fs-extra");
 let qrllib = require('./node_modules/qrllib/build/libjsqrl.js');
+let qrlClient = getQRLClient('104.237.3.185:9009');
+
+async function fetchRemoteProto(nodeAddr) {
+    let protoDescriptor = grpc.load('qrlbase.proto');
+    let client = new protoDescriptor.qrl.Base(nodeAddr, grpc.credentials.createInsecure());
+
+    return new Promise( (resolve) => {
+        client.getNodeInfo({}, function (err, nodeInfo) {
+            if (err) {
+                throw err;
+            }
+            let requiredFile = '/tmp/google/protobuf/timestamp.proto';
+            if (!fs.existsSync(requiredFile))
+            {
+                fs.ensureDirSync('/tmp/google/protobuf');
+                fs.copySync('timestamp.proto', requiredFile, { overwrite : true });
+            }
+            temp.open('proto', (err, info) => {
+                if (!err) {
+                    fs.write(info.fd, nodeInfo.grpcProto);
+                    fs.close(info.fd, function () {
+                        let remoteProtoDescriptor = grpc.load(info.path);
+                        resolve(remoteProtoDescriptor);
+                    });
+                }
+            });
+        });
+    });
+}
+
+async function getQRLClient(nodeAddr) {
+    return new Promise(resolve => {
+        const remoteProto = fetchRemoteProto(nodeAddr);
+        remoteProto.then(function (remoteProto) {
+            let client = new remoteProto.qrl.PublicAPI(nodeAddr, grpc.credentials.createInsecure());
+            resolve(client);
+        });
+    });
+}
+
+console.log(qrlClient);
 ```
-
-#### index.js - body 
-
 
 
 ## Step 3. Creating a wallet file
@@ -340,3 +382,4 @@ let qrllib = require('./node_modules/qrllib/build/libjsqrl.js');
 ## Step 5. Moving funds
 ### 5a. One to one
 ### 5b. One to many
+
