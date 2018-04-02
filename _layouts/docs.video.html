@@ -13,11 +13,13 @@ layout: default
 		    <h2 class="page-heading">{{ page.title }}</h2>
 		  {% endif %}
 
-		  <div class="grid no-padding docgrid">
+		  <div class="grid no-padding docgrid" id="watch">
 		  		<div class="w8 document-page">
+
 				  {{ content }}		  			
 		  		</div>
 		  		<div class="w4">
+		  			<h3>Token Migration</h3>
 		  			<div class="floatmenu">
 						<nav>
 						<ul id="stickymenu">
@@ -34,45 +36,104 @@ layout: default
 
 <script>
 $(function() {
-	function loadyoutube() {
 
-	}
-
-	$('.document-page h2').each(function(el, i) {
-		var title = this.innerHTML;
-
-
-		$(this).html('<a href="#'+el.id+'">'+title + '</a>');
-		$('#stickymenu').append('<li><a data-video='+$(this).data("video")+' data-time='+$(this).data("time")+' href="#'+el.id+'">'+title +'</a></li>');
-	});
-
+	// For each .ytvideo...
 	$('.ytvideo').each(function() {
+		// Grab the video ID
 		var videoid = $(this).data('video');
+		var video_duration = 0;
+
+
+
 
 		var player = $(this).tubeplayer({
-			initialVideo: videoid
+			initialVideo: videoid,
+	        onPlayerLoaded: function(){
+				var ratio = this.find('iframe').outerWidth() / this.find('iframe').outerHeight();
+				var video = this;
+
+				video.find('iframe').width(video.outerWidth());
+				video.find('iframe').height(video.outerWidth() / ratio);
+				video.css({'opacity':'1'});
+
+				$(window).on('resize', function() {
+					video.find('iframe').width(video.outerWidth());
+					video.find('iframe').height(video.outerWidth() / ratio);
+					video.show();
+				});
+
+
+
+
+				video_duration = this.tubeplayer("data").duration;
+
+				var time = []; 
+				$('h2[data-video='+videoid+']').each(function(i, el) {
+					time.push($(this).data('time'));
+				});
+
+				$('h2[data-video='+videoid+']').each(function(i, el) {
+					var time_end = 0;
+
+					if($(this).siblings('h2[data-video='+videoid+']').length==i) {
+						time_end = video_duration;
+					} else {
+						time_end = time[i+1];
+
+					}
+					this.setAttribute("data-timeend", time_end);
+				});
+
+				$('[data-time]').on('click', function(e) {
+					e.preventDefault();
+					window.location.hash = '#watch';
+					window.location.hash = '#watch:'+$(this).data('time');
+					video.tubeplayer("seek",$(this).data('time'));
+				});
+				setInterval(function() {
+					var currentTime = player.tubeplayer("data").currentTime.toFixed(2);
+
+					$('h2[data-video='+videoid+']').each(function(i, el) {
+						if(currentTime>$(this).data('time') && currentTime<$(this).data('timeend')) {
+							$(this).addClass('active');
+						} else {
+							$(this).removeClass('active');
+						}
+					});
+
+					// window.location.hash = '#watch:'+currentTime;
+				},500);
+				if(window.location.hash) {
+					var hash = window.location.hash;
+					var video_start = parseInt(window.location.hash.split(':')[1]);
+					video.tubeplayer("seek",video_start);
+					window.location.hash=window.location.hash.split(':')[0];
+					window.location.hash=hash;
+				}
+	        }
 		});
-		console.log(player.tubeplayer("data"));
-
-		var previous = null;
-
-		$('h2[data-video='+videoid+']').each(function() {
-			console.log(previous);
-			
-			previous = this;
-		});
-
-		setInterval(function() {
-			var currentTime = player.tubeplayer("data").currentTime;
-		},5000);
-
-		// Run through all videos with id...
-		$('[data-video='+videoid+']').on('click', function() {
-			player.tubeplayer("seek",$(this).data('time'));
-		});
-
-
-
 	});
+
+
+	$('.document-page h2').each(function(i, el) {
+		var title = this.innerHTML;
+
+		$(this).html('<a href="#watch">'+title + '</a>');
+		$('#stickymenu').append('<li><a data-video='+$(this).data("video")+' data-time='+$(this).data("time")+' data-timeend='+$(this).data("timeend")+' href="#watch">'+title +'</a></li>');
+	});
+
+
 });
 </script>
+<style>
+.ytvideo {
+	opacity:0;
+	/*display: none;*/
+}
+h2 + div {
+	display:none;
+}
+h2.active + div {
+	display:block;
+}
+</style>
