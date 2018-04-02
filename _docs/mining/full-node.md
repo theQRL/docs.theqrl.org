@@ -250,6 +250,9 @@ Add the following to the file. These are all default settings, uncomment to edit
 # peer_rate_limit: 500  # Max Number of messages per minute per peer
 
 # ntp_servers: pool.ntp.org
+# ntp_servers:
+#   - pool.ntp.org
+#   - ntp.ubuntu.com
 # ban_minutes: 20              # Allows to ban a peer's IP who is breaking protocol
 
 # max_peers_limit: 100  # Number of allowed peers
