@@ -35,7 +35,7 @@ $(document).ready(function() {
 
     });
  
-    var sections = $('.document-page h2, .document-page h3'), nav = $('.floatmenu nav ul'), nav_height = nav.outerHeight();
+    var sections = $('.docs-single .document-page h2, .docs-single .document-page h3'), nav = $('.floatmenu nav ul'), nav_height = nav.outerHeight();
      
     $(window).on('scroll load', function () {
       var cur_pos = $(this).scrollTop();

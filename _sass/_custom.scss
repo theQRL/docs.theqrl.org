@@ -243,6 +243,9 @@ nav a {
 				border-left:2px solid $quantum_burst;
 			}
 		}
+		a {
+			transition:all 0.4s;
+		}
 		ul li {
 			list-style:none;
 		}

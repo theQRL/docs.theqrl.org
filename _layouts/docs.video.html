@@ -19,7 +19,6 @@ layout: default
 				  {{ content }}		  			
 		  		</div>
 		  		<div class="w4">
-		  			<h3>Token Migration</h3>
 		  			<div class="floatmenu">
 						<nav>
 						<ul id="stickymenu">
@@ -84,22 +83,24 @@ $(function() {
 					this.setAttribute("data-timeend", time_end);
 				});
 
-				$('[data-time]').on('click', function(e) {
-					e.preventDefault();
-					window.location.hash = '#watch';
-					window.location.hash = '#watch:'+$(this).data('time');
-					video.tubeplayer("seek",$(this).data('time'));
-				});
+
 				setInterval(function() {
 					var currentTime = player.tubeplayer("data").currentTime.toFixed(2);
 
-					$('h2[data-video='+videoid+']').each(function(i, el) {
+					$('[data-video='+videoid+']').each(function(i, el) {
 						if(currentTime>$(this).data('time') && currentTime<$(this).data('timeend')) {
 							$(this).addClass('active');
 						} else {
 							$(this).removeClass('active');
 						}
 					});
+					// $('a[data-video='+videoid+']').each(function(i, el) {
+					// 	if(currentTime>$(this).data('time') && currentTime<$(this).data('timeend')) {
+					// 		$(this).addClass('active');
+					// 	} else {
+					// 		$(this).removeClass('active');
+					// 	}
+					// });
 
 					// window.location.hash = '#watch:'+currentTime;
 				},500);
@@ -110,17 +111,24 @@ $(function() {
 					window.location.hash=window.location.hash.split(':')[0];
 					window.location.hash=hash;
 				}
+				$('.document-page h2').each(function(i, el) {
+					var title = this.innerHTML;
+
+					$(this).html('<a href="#watch">'+title + '</a>');
+					$('#stickymenu').append('<li><a data-video='+$(this).data("video")+' data-time='+$(this).data("time")+' data-timeend='+$(this).data("timeend")+' href="#watch:'+$(this).data("time")+'">'+title +'</a></li>');
+				});
+				$('[data-time]').on('click', function(e) {
+					e.preventDefault();
+					window.location.hash = '#watch';
+					window.location.hash = '#watch:'+$(this).data('time');
+					video.tubeplayer("seek",$(this).data('time'));
+				});
 	        }
 		});
 	});
 
 
-	$('.document-page h2').each(function(i, el) {
-		var title = this.innerHTML;
 
-		$(this).html('<a href="#watch">'+title + '</a>');
-		$('#stickymenu').append('<li><a data-video='+$(this).data("video")+' data-time='+$(this).data("time")+' data-timeend='+$(this).data("timeend")+' href="#watch">'+title +'</a></li>');
-	});
 
 
 });
