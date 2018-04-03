@@ -5,8 +5,6 @@ tags: Token Swap
 ---
 ![QRL Token Migration Flowchart](/assets/tokenswap/swap/migration_flowchart_improved.png)
 
-migration_flowchart_improved.png
-
 Token Migration marks the first step in launching our main QRL network. The token migration process will run through Mainnet allowing everyone the chance to migrate their tokens. 
 
 Those with unclaimed ERC20 tokens from the pre-sale will be contacted separately with specific instructions for claiming their Mainnet QRL. You will be contacted at the email you used during pre-sale. 
