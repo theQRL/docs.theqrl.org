@@ -3,7 +3,7 @@ title: QRL Token Migration
 categories: Token Swap
 tags: Token Swap
 ---
-![QRL Token Migration Flowchart](/assets/wallet/web/migration_flowchart_improved.png)
+![QRL Token Migration Flowchart](/assets/tokenswap/swap/migration_flowchart_improved.png)
 
 migration_flowchart_improved.png
 
