@@ -66,7 +66,7 @@ There are a few other ways to create a wallet as well:
 
 
 
-Go to the [Token Migration App](https://www.youtube.com/watch?v=oHg5SJYRHA0). From there you will want to enter in our QRL address you copied from step 1.
+Go to [https://migration.theqrl.org/](https://migration.theqrl.org/). From there you will want to enter in our QRL address you copied from step 1.
 
 ![QRL Token Swap Page](/assets/tokenswap/swap/migrationPage.png)
 

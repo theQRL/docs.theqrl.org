@@ -5,62 +5,62 @@ layout: docs.video
 
 >
 {:.ytvideo}
-{:data-video="JXXJIVI3Oeo"}
+{:data-video="3YxjMZGxm7A"}
 
-## Introduction
+## Token Migration: Introduction
 {:data-time="0"}
-{:data-video="JXXJIVI3Oeo"}
+{:data-video="3YxjMZGxm7A"}
 
 <div markdown="1">
-Basic introduction
+The token migration takes place in 3 steps.
+* Getting a QRL Address and saving it.
+* Using the QRL Address from step 1, generate an ERC20 Burn Address.
+* Send your QRL ERC20 token to that burn address, where it will be exchanged 1:1 for Quanta and deposited at Genesis (which is block 0 of mainnet).
 </div>
 
-## Part 1 - Create a Wallet
-{:data-time="30"}
-{:data-video="JXXJIVI3Oeo"}
+## Step 1: Create a QRL Wallet
+{:data-time="136"}
+{:data-video="3YxjMZGxm7A"}
 
 <div markdown="1">
-1. Make a new QRL address using the <a href="https://wallet.theqrl.org" target="_blank">QRL Web Wallet</a>.
-2. Close and open your wallet file to make sure the credientials you have, work.
-3. Copy and set aside your QRL Address
+Go to <a href="https://wallet.theqrl.org" target="_blank">https://wallet.theqrl.org</a>
+
+* Create a new QRL wallet and save it
+* Save a wallet recovery method
+* Open your wallet
+* Copy your NEW QRL Address
 </div>
 
-
-## Part 2 - Token Migration App
-{:data-time="50"}
-{:data-video="JXXJIVI3Oeo"}
+## Step 2: Generate Burn Address
+{:data-time="226"}
+{:data-video="3YxjMZGxm7A"}
 
 <div markdown="1">
-Once you have a QRL Address of your own, you can open the [Token Migration App](https://migration.theqrl.org). 
+Using the QRL address generated, create a new burn address.
+Go to <a href="https://migration.theqrl.org" target="_blank"> migration.theqrl.org</a>
 
-1. Paste in the QRL address generated in *Part 1*. 
-2. Optionally, enter an email address into the next field if you want to receive periodic updates when tokens are staged for being swapped at Genesis. 
-3. Click “Submit” to get **Ethereum Burn Address**. Save this address for Part 3.
+You can optionally enter an email address to receive periodic notifications confirming your cumulative transactions.
 
-Each QRL ERC20 token sent to this address will be credited in a 1:1 ratio with QRL coins (Quanta) to the QRL Wallet address you entered on MainNet launch.
-
-> If you should lose, forget, or for whatever reason need to re-generate your QRL ERC20 Burn Address, re-enter your QRL Wallet address into the token migration app.
-{: .info}
+After hitting submit you will get an ethereum burn address, save it.
+This is the address you will send your QRL tokens to.
 </div>
 
-## Part 3 - Burn
-{:data-time="100"}
-{:data-video="JXXJIVI3Oeo"}
+## Step 3: Burn QRL ERC20 Tokens
+{:data-time="302"}
+{:data-video="3YxjMZGxm7A"}
 
 <div markdown="1">
-1. Go to to where you store your QRL whether it's [MEW](https://myetherwallet.com), [Bittrex](https://bittrex.com), or somewhere else.
-2. Send your QRL to that **Ethereum Burn Address** 
-</div>
 
-## Part 4 - Other
-{:data-time="120"}
-{:data-video="JXXJIVI3Oeo"}
 
-<div markdown="1">
-1. Those who participated in the token sale will be contacted separately.
+Send a few tokens to test the newly created burn address from step 2. 
+
+Anytime you send QRL ERC20 tokens from anywhere to the unique, reusable ERC20 burn address, it is converted 1 for 1 and held until Genesis
+
+You can verify your test transaction and check on the pending migration balance by clicking on the check burn address and entering in your QRL ERC20 burn address
+
 </div>
 
 ---
 
-> Funds will not be recoverable if you lose the mnemonic or hex seed of the QRL wallet. You are the bank.
+> Each ERC20 Burn Address is unique. You must create your own individual burn address.
 {: .danger}
