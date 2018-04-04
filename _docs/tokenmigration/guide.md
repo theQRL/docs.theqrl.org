@@ -9,7 +9,7 @@ Token Migration marks the first step in launching our main QRL network. The toke
 
 Those with unclaimed ERC20 tokens from the pre-sale will be contacted separately with specific instructions for claiming their Mainnet QRL. You will be contacted at the email you used during pre-sale. 
 
-Check your spam folder to verify support@theqrl.org is not blacklisted.
+Check your spam folder to verify info@theqrl.org is not blacklisted.
 
 In this guide, we will show you how to create a personally unique burn address which you will use to send all of your ERC20 tokens to. 
 
@@ -18,7 +18,7 @@ In this guide, we will show you how to create a personally unique burn address w
 
 There will be **NO** single official universal burn address.  Anyone posting a burn address is trying to steal your coins - if you see this publicly, point it out, and immediately contact a team member so we can contact the relevant authorities.
 
-If you have any questions, we are available for support on Discord in the TokenMigration channel, as well as support@theqrl.org
+If you have any questions, we are available for support on Discord in the TokenMigration channel, as well as our dedicated support email address: support@theqrl.org
 
 The token migration takes place in 3 steps.
 
@@ -80,11 +80,11 @@ After hitting submit you will get an Ethereum ERC20 burn address. Save it! This 
 
 We want to reiterate both the burn address and the qrl address are **unique** to you. Do not share this information, or use someone else's burn address posted online. 
 
-You can come back to this page at anytime to create another burn address using your QRL address from step 1, or to check your pending migration balance.
+You can come back to this page at anytime to create another burn address using a new QRL address from step 1, or to check your pending migration balance.
 
 If you lose your burn address, simply follow the same steps previously mentioned using the address from step 1 to create another burn address. 
 
-The migration app will take the newly created QRL address you enter to generate a new ERC20 address. This ERC20 address is connected to the QRL address you just created. 
+The migration app will take the newly created QRL address you enter to generate a new ERC20 address. This ERC20 address is cryptographically connected to the QRL address you just created. 
 
 We call this the **burn** address. Any ERC20 QRL sent to the ETH address the migration app spits out will be automatically converted into QRL upon genesis block and the beginning of the QRL network.
 
