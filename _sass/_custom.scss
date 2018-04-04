@@ -1,4 +1,5 @@
 body {
+	font-weight: 300;
 	font-family: $body_font;
 	position:relative;
 	background:
@@ -190,10 +191,21 @@ nav a {
 	background-color:#F3F3F3;
 }
 .docs {
+	.grid {
+		max-width: 1140px;
+	}
+
+
 	table {
 		border-collapse: collapse;
 		border:1px solid $quantum_deep;
 		border-top:2px solid $quantum_deep;
+		font-size: 90%;
+  width: fit-content;
+  max-width: 100%;
+    display: block;
+      overflow-x: auto;
+
 
 	}
 	tbody tr:hover {
@@ -214,6 +226,9 @@ nav a {
 		border-top: 3px solid $quantum_burst;
 		background-color:rgba(255,255,255,0.8);
 		box-shadow: $shadow;
+		max-height: 100vh;
+		overflow-y:auto;
+
 
 
 		.cta {
@@ -228,6 +243,9 @@ nav a {
 			a {
 				border-left:2px solid $quantum_burst;
 			}
+		}
+		a {
+			transition:all 0.4s;
 		}
 		ul li {
 			list-style:none;
@@ -273,7 +291,11 @@ nav a {
 		margin:12px 0; padding:5px 20px;
 		border-left-width: 3px;
 		border-left-style: solid;
-
+		&.ytvideo {
+			border:0;
+			padding:0;
+			margin-top:0;
+		}
 		p {
 
 		}
@@ -543,3 +565,4 @@ nav a {
 	grid-column: span 12;
 }
 @import "components/header";
+@import "pages/homepage";

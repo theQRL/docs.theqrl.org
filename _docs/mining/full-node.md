@@ -106,7 +106,7 @@ brew install cmake python3 swig boost hwloc
 
 #### Install QRL
 
-The procedure to installing the qrl full node for a Mac is the exact same as it is in Linux. Once you have the Brew Packages installed proceed through the guide 
+The procedure to installing the QRL full node for a Mac is the exact same as it is in Linux. Once you have the Brew Packages installed proceed through the guide 
 
 
 ## Install on Windows 10
@@ -115,7 +115,7 @@ The procedure to installing the qrl full node for a Mac is the exact same as it 
 
 #### Ubuntu on Linux Subsystem for Windows (WSL)
 
-You can run a full node in Windows utilizing the Windows Subsystytem for Linux. There are a ton of guides out there on setting this up. Here are a few links to get you going.
+You can run a full node in Windows utilizing the Windows Subsystem for Linux. There are a ton of guides out there on setting this up. Here are a few links to get you going.
 
 The Windows Subsystem for Linux (WSL) is a new Windows 10 feature that enables you to run native Linux command-line tools directly on Windows, alongside your traditional Windows desktop and modern store apps.
 
@@ -132,19 +132,19 @@ You can follow [these instructions](https://msdn.microsoft.com/en-us/commandline
 
 #### Install QRL
 
-The procedure to installing the qrl full node in WSL is the exact same as it is in Linux or MacOS. Once you have the WSL system setup and running Ubuntu proceed through the guide 
+The procedure to installing the QRL full node in WSL is the exact same as it is in Linux or MacOS. Once you have the WSL system setup and running Ubuntu proceed through the guide 
 
 *A native Windows solution is in the works*
 
 ## Install QRL 
 
-Now that we have a freshly updated system, the installation of QRL is a breeze, QRL uses python3 to install. Using the Python3 package installer *pip3* we will install qrl.
+Now that we have a freshly updated system, the installation of QRL is a breeze, QRL uses python3 to install. Using the Python3 package installer *pip3* we will install QRL.
 
 ```bash
 # Install the qrl Package.
 pip3 install -U qrl
 ```
-This will install the qrl package and any required dependencies. Once this is done you can create a new wallet.
+This will install the QRL package and any required dependencies. Once this is done you can create a new wallet.
 
 ## Creating a Wallet
 
@@ -250,6 +250,9 @@ Add the following to the file. These are all default settings, uncomment to edit
 # peer_rate_limit: 500  # Max Number of messages per minute per peer
 
 # ntp_servers: pool.ntp.org
+# ntp_servers:
+#   - pool.ntp.org
+#   - ntp.ubuntu.com
 # ban_minutes: 20              # Allows to ban a peer's IP who is breaking protocol
 
 # max_peers_limit: 100  # Number of allowed peers

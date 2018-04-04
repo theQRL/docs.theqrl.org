@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="wrapper docs">
+<div class="wrapper docs docs-single">
 	<div class="grid w12">
 		<div class="w12">
 			<p>Head back to <a href="/">Documentation</a></p>
@@ -32,22 +32,15 @@ layout: default
 </div>
 
 <script>
-var elements = document.querySelectorAll('.document-page h2, .document-page h3');
+$(function() {
 
-Array.prototype.forEach.call(elements, function(el, i){
+	$('.document-page h2, .document-page h3').each(function(el, i) {
+		var title = this.innerHTML;
 
-	var linode = document.createElement("li");                 
-	var anode = document.createElement("a");
-	anode.setAttribute('href', '#'+el.id);
-	var text = document.createTextNode(el.innerHTML);
-	anode.appendChild(text);
-	linode.appendChild(anode);  
-	
-	// Add new menu item
-	document.getElementById('stickymenu').appendChild(linode);
+		$(this).html('<a href="#'+this.id+'">'+title + '</a>');
 
-	// Make each element linkable
-	el.innerHTML='<a href="#'+el.id+'">' + el.innerHTML + '</a>';
-
-});
+		$('#stickymenu').append('<li><a href="#'+this.id+'">'+title +'</a>');
+		$('#stickymenu').append('</li>');
+	});
+})
 </script>
