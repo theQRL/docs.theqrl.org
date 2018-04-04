@@ -68,7 +68,9 @@ Download a mining software package for your operating system and follow the soft
 
 
 
+
 #### Pool 101
+
 
 A few things to know about QRL pools:
 
@@ -90,7 +92,8 @@ To connect to a pool you will need a QRL address that will collect the rewards o
 |   ccminer (forked by tsiv)   | 	|	CUDA (Nvidia) |  YES       |  YES   |   YES   | [Github](https://github.com/tsiv/ccminer-cryptonight) | 	|
 
 
-> **Note** This list is not inclusive, and is not a promotion or endorsement for a project. Any cryptonight mining software \*should work. *YMMV*
+> **Note** This list is not exhaustive, and is not a promotion or endorsement for a project. Any cryptonight mining software \*should work. *YMMV*
+
 {: .info}
 
 ## Examples
