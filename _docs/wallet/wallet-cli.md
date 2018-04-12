@@ -4,31 +4,20 @@ categories: wallet
 tags: wallet
 ---
 
-The QRL wallet can be generated via the command line using the QRL python3 package. It's actually quite easy once you have QRL installed to create and manage your wallet. 
+The QRL wallet can be generated via the command line using the QRL python3 package. It's actually quite easy once you have QRL installed to create and manage your wallet.
 
 Follow the [Running a Full Node](/mining/full-node) instructions if you have not installed QRL yet. You will need QRL installed to proceed with this guide.
 
 ##### Using the QRL command line utility we will show you how to:
-* Create a new wallet 
+* Create a new wallet
 * Print your Mnemonic phrase and Hexseed
 * Recover wallet from hexseed/mnemonic
 * Generate a slaves.json file
 
-{::comment}
-
-
-* Check our balance
-* Send QRL 
-
-FIXME add a link to the guide for slaves.json? or write here duplicated?
-
-* Generate a slaves.json file 
-* Using the slaves.jason file
-{:/comment}
 
 ### New Wallet
 
-To create a new wallet we need to open a terminal and connect to the computer with QRL installed. 
+To create a new wallet we need to open a terminal and connect to the computer with QRL installed.
 
 
 Once you are connected simply enter the following command to create a new wallet:
@@ -42,8 +31,8 @@ This will create a wallet file in your current working directory called `wallet.
  You will see the address that was created. All QRL addresses begin with a "Q".
 
 ** Note**
- 
- *The following instructions assume you are in the same directory as the wallet file you generated.* 
+
+ *The following instructions assume you are in the same directory as the wallet file you generated.*
 
  You can add the "--wallet_dir {Path to wallet}" to any of the commands below if you get the error:
 
@@ -63,7 +52,7 @@ You can add new addresses to the wallet after the wallet file is created.
 qrl wallet_add
 ```
 
-This will increment the wallet_idx by one every time you enter this command. 
+This will increment the wallet_idx by one every time you enter this command.
 
 To view all available addresses in the wallet index use:
 
@@ -75,7 +64,7 @@ qrl wallet_ls
 The wallet_idx is the number to the left in the output of the terminal.
 
 
-### Print HexSeed & Mnemonic 
+### Print HexSeed & Mnemonic
 
 Once you have created a new wallet you will need a way to open and recover the wallet later. We can print the mnemonic and hexseed to the terminal with:
 
@@ -93,7 +82,7 @@ Enter the following to view the private details of the wallet file with `wallet-
 
 ```bash
 qrl wallet_secret --wallet-idx 0
-``` 
+```
 
 This will print the sensitive information to the terminal.
 ```bash
@@ -123,7 +112,7 @@ Options:
 To recover a wallet enter:
 
 ```bash
-qrl wallet_recover --seed-type 
+qrl wallet_recover --seed-type
 ```
 
 A hexseed is expected. Specify other options if you're using anything else.
@@ -135,28 +124,3 @@ Enter the seed and recover the wallet. You will be prompted to save the wallet o
 
 
 Browse to the [QRL explorer](https://explorer.theqrl.org) and enter your wallet address to check your balance.
-
-
-{::comment}
-
-### Transfer Coins
-
-To transfer QRL via the CLI we will use the "tx_transfer" command
-
-```bash
-Usage: qrl tx_transfer [OPTIONS]
-
-  Transfer coins from src to dst
-
-Options:
-  --src TEXT               source QRL address
-  --dst TEXT               destination QRL address
-  --amount FLOAT           amount to transfer in Quanta
-  --fee FLOAT              fee in Quanta
-  --ots_key_index INTEGER  OTS key Index
-  --help                   Show this message and exit.
-```
-
-
-{:/comment}
-

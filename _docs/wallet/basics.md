@@ -4,20 +4,9 @@ categories: wallet
 tags: wallet
 ---
 
-
-
-- create a spreadsheet for users to fill in with key index and TX number and give as a download link. Helps keep track of Used OTS Key Indexes
-
-- Place slaves.json information in another writeup
-	- Give basic info here with link
-- Place OTS Key Index explanation somewhere else
-
-{:/comment}
-
-The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your QRL safely, while allowing you to mine without the risk of losing private keys. 
+The QRL wallet is your portal into the provably secure quantum store that makes QRL what it is. This wallet will store your QRL safely, while allowing you to mine without the risk of losing private keys.
 
 ##### This guide will walk you through
-
 
 * Setting up a new wallet
 * Sending a transaction over the network - *(Send QRL)*
@@ -28,17 +17,17 @@ Being Quantum Resistant comes with some inherent challenges. Before creating you
 
 #### OTS Key Index
 
-When you create a new wallet you create an XMSS tree, which is comprised of many signatures to make a signature scheme. Every signature is referenced as your OTS index or *One Time Signature* key index. 
+When you create a new wallet you create an XMSS tree, which is comprised of many signatures to make a signature scheme. Every signature is referenced as your OTS index or *One Time Signature* key index.
 
-*The OTS key index is limited.* You can only use each key once. When you've used your last key, you will no longer be able to sign transactions. This can not be stressed enough! 
+*The OTS key index is limited.* You can only use each key once. When you've used your last key, you will no longer be able to sign transactions. This can not be stressed enough!
 
 > Your last key **MUST EITHER** empty your wallet **OR** activate a slave.json file that holds more keys. If you use all of your OTS Key Indexes with funds in the wallet, these funds will be lost **FOREVER**
 {: .danger}
 
-#### Best Wallet Practices 
+#### Best Wallet Practices
 * Track all OTS Keys used in a spreadsheet *(ledger)*
 * Store your private keys somewhere safe  
-* Create a slaves.json file to use for transactions or mining QRL 
+* Create a slaves.json file to use for transactions or mining QRL
 
 ## Create a QRL Wallet
 
@@ -60,7 +49,7 @@ The left side of the main page shows the following options:
 
 #### Password
 
-The pass-phrase uses **AES-256** encryption to lock up your *wallet.json* file. This adds another layer of protection to your Quanta by requiring the recovery key "Password" every time you load the wallet. 
+The pass-phrase uses **AES-256** encryption to lock up your *wallet.json* file. This adds another layer of protection to your Quanta by requiring the recovery key "Password" every time you load the wallet.
 
 ![Create Wallet](/assets/wallet/web/CreateWallet.png)
 
@@ -72,7 +61,7 @@ It is recommend to save this somewhere very safe, along with your hexseed and pr
 
 #### Tree Height
 
-This option allows you to create a wallet with varying tree size. In other words this controls the amount of signatures your wallet can use for transactions safely on the blockchain. 
+This option allows you to create a wallet with varying tree size. In other words this controls the amount of signatures your wallet can use for transactions safely on the blockchain.
 
 ![QRL Tree Height](/assets/wallet/web/treeHeight.png)
 
@@ -86,25 +75,25 @@ Click the create wallet button and the wallet will be generated.
 
 ![QRL New Address](/assets/wallet/web/yourNewAddressDetails.png)
 
-This will produce a sensitive screen once the wallet is created. 
+This will produce a sensitive screen once the wallet is created.
 
 ![QRL New address](/assets/wallet/web/yourNewAddressDetails-options.png)
 
 There are a few options to save your wallet file. Record the QRL address somewhere convenient. This is the address where you will send QRL. If you are mining with this wallet, your mined QRL will go here as well. All QRL addresses start with a "Q".
 
-**Important: Record Your Private Keys!** 
+**Important: Record Your Private Keys!**
 
-You can save the private key in the form of a mnemonic phrase, hexseed, and a wallet file. The keys will not be shown again and you need them to open your wallet every time. 
+You can save the private key in the form of a mnemonic phrase, hexseed, and a wallet file. The keys will not be shown again and you need them to open your wallet every time.
 
-**Do Not Lose These Keys!** 
+**Do Not Lose These Keys!**
 
 It's recommended to Save a Secure file in the AES-256 encrypted version. You will need your password to unlock this file anytime it is loaded into the wallet **Don't Forget This Password!**
 
 Also please don't save your wallet and your password in the same place. That would be like leaving your house key in the door lock...
 
-You now have a QRL wallet that can receive QRL, send QRL, create a [slaves.json file](/wallet/Slaves-json) without sending permissions, and begin securely mining QRL. 
+You now have a QRL wallet that can receive QRL, send QRL, create a [slaves.json file](/wallet/Slaves-json) without sending permissions, and begin securely mining QRL.
 
-Welcome to the Quantum Resistance! Click "Open Wallet" and enter your recovery information. 
+Welcome to the Quantum Resistance! Click "Open Wallet" and enter your recovery information.
 
 ## Open QRL Wallet
 
@@ -120,11 +109,11 @@ With the wallet unlocked, you can now send QRL to another QRL address.
 
 ![QRL opened Wallet](/assets/wallet/web/qrlWallet-opened.png)
 
-Once the wallet is opened you will be in the **Send** tab in your open wallet. There are four fields you need to fill in: 
+Once the wallet is opened you will be in the **Send** tab in your open wallet. There are four fields you need to fill in:
 * Recipient Address - A valid QRL address
 * Amount - How much QRL
 * Fee - How much you are paying to make this transaction
-* OTS Key Index - Enter an unused OTS Key. 
+* OTS Key Index - Enter an unused OTS Key.
 **Keep track of used OTS Keys!**
 	*The webwallet will keep track of your OTS key index for you from the blockchain, but it is good practice to write this number down after each use.
 
@@ -132,18 +121,18 @@ Once the wallet is opened you will be in the **Send** tab in your open wallet. T
 
 ![QRL Send](/assets/wallet/web/send-sm.png)
 
-Once you have these details entered, click the Confirm button. You will be shown the details of the transaction before they are broadcast across the QRL network. 
+Once you have these details entered, click the Confirm button. You will be shown the details of the transaction before they are broadcast across the QRL network.
 
 ![QRL Send](/assets/wallet/web/clickToSend-sm.png)
 
-Make sure everything is correct and click the send button. The transaction will be propagated across the QRL network and deposited into the address you entered. Your screen will show the confirmation details as the transaction is sent. 
+Make sure everything is correct and click the send button. The transaction will be propagated across the QRL network and deposited into the address you entered. Your screen will show the confirmation details as the transaction is sent.
 
 Once the transaction has been confirmed you will get a screen similar to this:
 
 ![QRL Send](/assets/wallet/web/sent-sm.png)
 
 You can verify the transaction in the QRL Explorer. Copy the transaction number in the "Transaction Status" box and enter it into the search field in the [QRL Explorer](https://explorer.theqrl.org).
- 
+
 ## Receiving coins
 
 Click the receive tab in the wallet and you will see your wallet address and QR code. Send this to whoever you are receiving coins from.
@@ -181,7 +170,7 @@ The QRL supports QRT or Quantum Resistant Ledger Tokens. These tokens share the 
 
 ![QRL New Token](/assets/wallet/web/createToken-Blank.png)
 
-Creating a new token is easy. Once you have all of the pertinent details entered and the fee paid, the network takes care of the rest. 
+Creating a new token is easy. Once you have all of the pertinent details entered and the fee paid, the network takes care of the rest.
 
 
 ### Token Creation
