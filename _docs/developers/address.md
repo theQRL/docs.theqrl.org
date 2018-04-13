@@ -3,25 +3,17 @@ title: QRL Address Structure
 categories: developers
 tags: developers
 ---
+A QRL address is designed to be extensible and supports a wide range of formats. 
 
+The first three bytes of any address (descriptor) encode information to describe the format type, signature scheme, etc. At the moment, only one address format is supported: SHA256_2X
 
-A QRL address is created by performing a SHA-256 upon the merkle root of the highest XMSS certification
-tree. A four byte checksum is appended to this (formed from the first four bytes of a double SHA-256 hash of the merkle root) and the letter ’Q’ prepended.
+As an example, when using SHA256_2X, a QRL address is composed of 39 _bytes_. This is the internal format used in any API or module. For representational purposes (i.e. user interface, debugging, logs), it is possible that the address is represented as a hexstring prefixed with Q (79 ascii characters). This is appropriate for user related purposes but will be rejected by the API.
 
- i.e. in pythonic pseudocode:
+A typical account address, as displayed to the user:
 
-> Q + sha256(merkle root) + sha256(sha256(merkle root))[: 4]
+> Q01070050d31c7f123995f097bc98209e9231d663dc26e06085df55dc2f6afe3c2cd62e8271a6bd
 
-A typical account address:
-
-> Qcea29b1402248d53469e352de662923986f3a94cf0f51522bedd08f b5e64948af479
-
-Each account has a balance denominated in quanta divisible down to a single Shor unit.
-
-Addresses are stateful with each transaction using a fresh OTS keypair and the QRL storing every public
-key ever used (this could be pruned as it can be regenerated on-the-fly from the transaction signature and message but would be operationally intensive) for each account. A transaction counter called a nonce is incremented with each transaction sent from an account. This allows wallets which do not store the entire blockchain to keep track of their location in the stateful merkle hypertree signature scheme.
-
-
+The structure and address formats are explain in detail in the following sections/tables.
 
 ## Structure
 
@@ -67,7 +59,7 @@ The address descriptor determines the address format, signature scheme, hash fun
 | 0    | SHA256_2X     |
 | 1 .. 15    | Reserved - Future expansion        |
 
-## Address Format
+## Address Formats
 
 ### Format: SHA256_2X
 
@@ -77,13 +69,14 @@ The address descriptor determines the address format, signature scheme, hash fun
 | HASH | 3 .. 35       |  32    | SHA2-256(DESC+PK)      |
 | VERH | 36 .. 40      |   4    | SHA2-256(HASH) (only last 4 bytes)   |
 
-- `PK` (32 bytes) is public key
-- `ePK` (35 bytes) is the extended public key, i.e. DESC+PK
+- `PK` (64 bytes) is public key
+- `ePK` (67 bytes) is the extended public key, i.e. DESC+PK
+- `SHA256(ePK)` (32 bytes) is used as described in the table
 
 **Important**: 
 - Addresses are composed by 39 _bytes_. This is the internal format used in any API or module.
 - For representational purposes (i.e. user interface, debugging, logs), it is possible that the address is represented as a hexstring prefixed with Q (79 ascii characters). This is appropriate for user related purposes but will be rejected by the API.
-- It is recommended that block explorer, web-wallet and other components show addresses with the Q prefix to users. 
+- It is recommended that where addresses are shown to users (block explorer, web-wallet and other components) they are displayed with the Q prefix for identification purposes. 
 - It is possible to determine valid addresses by checking the descriptor and VERH bytes. 
 
 ## Signature Schemes
@@ -116,3 +109,5 @@ Extended seed represented as a hexadecimal number in ASCII characters. This is u
 
 #### Mnemonic (34 words): 
 Each word represents 12-bits. A mnemonic can be converted to an **Extended Seed**
+
+A npm module is available to perform validation of and extract descriptive data from QRL addresses: [https://github.com/theQRL/validate-qrl-address](https://github.com/theQRL/validate-qrl-address)
