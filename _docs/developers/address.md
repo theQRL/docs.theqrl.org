@@ -69,8 +69,9 @@ The address descriptor determines the address format, signature scheme, hash fun
 | HASH | 3 .. 35       |  32    | SHA2-256(DESC+PK)      |
 | VERH | 36 .. 40      |   4    | SHA2-256(HASH) (only last 4 bytes)   |
 
-- `PK` (32 bytes) is public key
-- `ePK` (35 bytes) is the extended public key, i.e. DESC+PK
+- `PK` (64 bytes) is public key
+- `ePK` (67 bytes) is the extended public key, i.e. DESC+PK
+- `SHA256(ePK)` (32 bytes) is used as described in the table
 
 **Important**: 
 - Addresses are composed by 39 _bytes_. This is the internal format used in any API or module.
