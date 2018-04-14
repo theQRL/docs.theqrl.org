@@ -3,17 +3,17 @@ title: QRL Address Structure
 categories: developers
 tags: developers
 ---
-A QRL address is designed to be extensible and supports a wide range of formats. 
+A QRL address is designed to be extensible and supports a wide range of formats.
 
 The first three bytes of any address (descriptor) encode information to describe the format type, signature scheme, etc. At the moment, only one address format is supported: SHA256_2X
 
-As an example, when using SHA256_2X, a QRL address is composed of 39 _bytes_. This is the internal format used in any API or module. For representational purposes (i.e. user interface, debugging, logs), it is possible that the address is represented as a hexstring prefixed with Q (79 ascii characters). This is appropriate for user related purposes but will be rejected by the API.
+As an example, when using SHA256_2X, a QRL address is composed of 39 _bytes_. This is the internal format used by any API or module in the project. For representational purposes (i.e. user interface, debugging, logs), it is possible that the address is represented as a hexstring prefixed with Q (79 ascii characters). This is appropriate for user related purposes but will be rejected by the API.
 
-A typical account address, as displayed to the user:
+A typical account address should look similar to this when exposed to users:
 
 > Q01070050d31c7f123995f097bc98209e9231d663dc26e06085df55dc2f6afe3c2cd62e8271a6bd
 
-The structure and address formats are explain in detail in the following sections/tables.
+The structure and address formats are explained in detail in the following sections/tables.
 
 ## Structure
 

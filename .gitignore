@@ -5,6 +5,6 @@ Gemfile.lock
 /.ruby-version
 .working/
 To-Do.md
-
+node_modules/
 
 \.idea/
