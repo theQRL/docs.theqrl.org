@@ -15,7 +15,7 @@ Anyone can run a pool with some basic Linux knowledge and a will to google for t
 Here are the basic requirements for the pool. Depending on the amount of miners connected you may need to upgrade the servers to handle the load. 
 
 #### Hardware Requirements
-You will need a server to host the Pool, QRL Node, and Wallet files. you will also need to serve up some web files for miners to interact with the pool.The Web Front end server can be the same server *This guide will use a separate server for web serving.*
+You will need a server to host the Pool, QRL Node, and Wallet files. You will also need to serve up some web files for miners to interact with the pool.The Web Front end server can be the same server *This guide will use a separate server for web serving.*
 
 **Node Server**
 * 4GB RAM 
