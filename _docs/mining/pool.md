@@ -15,7 +15,7 @@ Anyone can run a pool with some basic Linux knowledge and a will to google for t
 Here are the basic requirements for the pool. Depending on the amount of miners connected you may need to upgrade the servers to handle the load. 
 
 #### Hardware Requirements
-You will need a server to host the Pool, QRL Node and Wallet files. you will also need to serve up some web files for miners to interact with the pool.The Web Front end server can be the same server *This guide will use a separate server for web serving.*
+You will need a server to host the Pool, QRL Node, and Wallet files. You will also need to serve up some web files for miners to interact with the pool.The Web Front end server can be the same server *This guide will use a separate server for web serving.*
 
 **Node Server**
 * 4GB RAM 
@@ -23,7 +23,7 @@ You will need a server to host the Pool, QRL Node and Wallet files. you will als
 * Support for AES-NI
 * HDD large enough to support the blockchain over time ( > 120GB )
 
-This guide is using {Linode's 4GB}(https://www.linode.com/pricing) server to run the pool and node on. There's also a 120GB drive mounted as the user `qrl` /home/qrl/ dir.
+This guide is using [Linode's 4GB](https://www.linode.com/pricing) server to run the pool and node on. There's also a 120GB drive mounted as the user `qrl` /home/qrl/ dir.
 For a guide on how to do this see [here](https://linode.com/docs/platform/how-to-use-block-storage-with-your-linode/)
 
 Feel free to use any hosting provider as long as the server meets the above requirements you should be OK.
@@ -34,6 +34,10 @@ Feel free to use any hosting provider as long as the server meets the above requ
 * python3.5 or greater is required
 * node 0.10.48
 
+
+
+
+
 ## Overview
 
 The basics of setting up a pool.
@@ -41,35 +45,51 @@ The basics of setting up a pool.
 - 0.) Setup, connect, update, and upgrade your server.
 - 1.) Install qrl on the server.
 - 2.) Install Pool
-	- a.) Dependencies, including node v0.10.48 using nvm
-	- b.) Install Redis-server and configure
-	- c.) Install Apache2 and configure web server
+    - a.) Dependencies, including node v0.10.48 using nvm
+    - b.) Install Redis-server and configure
+    - c.) Install Apache2 and configure web server
+
+
+
+
 
 ## QRL Install
-Follow the instructions found at [docs.theqrl.org/mining/full-node/](https://docs.theqrl.org/mining/full-node/) to get the node started.
+Follow the instructions found [here]](https://docs.theqrl.org/mining/full-node/) to get the node started.
 
-#### From Sources
-If you want to get the latest changes and run from cli get the latest files here. *!Advanced!*
+An abridged version can be found below
 
 ```bash
-git clone https://github.com/theqrl/qrl --branch v0.62
-cd ~/qrl
-pip3 install -r requirements.txt # didn’t work, permission issues...
-sudo -H pip3 install -r requirements.txt
-pip3 install -e . # didn’t work, permission issues...
-sudo -H pip3 install -e .
-# Now I can see all options when I run
-~/qrl/start_qrl --help
-# and 
-~/qrl/qrl/cli.py --help
+# update
+sudo apt update && sudo apt upgrade -y
+
+# Dependencies
+sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
+
+# Install the qrl Package.
+pip3 install -U qrl
 ```
+
+This will install qrl and create the ~/.qrl directory.
+
+### Start QRL and Sync
+
+Now that you have qrl installed go ahead and start the node up, and sync the blockchain. Create a ~/.qrl/config.yml file and add any configuration settings you may need. Make sure the node is not trying to mine while you sync.
+
+```bash
+start_qrl --miningCreditWallet Q010900978071f5817ece4164123a5b83f80af957a9935876329bb1f015410e4542ed291ee7022f
+```
+
+
+
+
 
 
 ## Pool Install
 
-Pool Configuration Instructions for QRL. most of this comes from the source repo found at [Node-JS-Pool Link FIXME](#). Some changes have been made to the source to allow for QRL mining. 
+Before you get the pool software, you can install all of the required packages and dependencies. You will need a synced qrl node before the pool will run correctly.  
 
 #### Dependencies
+
 ```bash
 sudo apt-get install libssl-dev libboost-all-dev git screen 
 ```
@@ -147,13 +167,17 @@ sudo nano /etc/init.d/redis_6379
 {: .info}
 
 
-## Pool Config
+## Node-Cryptonote-Pool
 
-Clone the repo found at [Github](https://github.com/cyyber/node-cryptonote-pool.git)
+Grab the slightly modified software found in [This Repository](https://github.com/cyyber/node-cryptonote-pool.git). 
+
+This is a fork form the popular *zone117x node-cryptonote-pool*. Some changes have been made to the source to allow for QRL mining. Please use Cyybers modified version.
 
 ```bash
 git clone https://github.com/cyyber/node-cryptonote-pool.git QRL_Pool
+```
 
+```bash
 cd qrlPool
 npm update
 ```
@@ -166,10 +190,10 @@ This will take awhile to run. Grab a coffee.
 Copy the config_example.json file to config.json then overview each options and change any to match your preferred setup. 
 
 > *Do not copy the file shown below, use the one in your local directory*
-{: .info}
+{: .warning}
 
 
-Here is the config file with comments:
+Here is a sample config file with comments:
 
 ```bash
 {
@@ -289,7 +313,7 @@ Here is the config file with comments:
         "denomination": 100000000000 //truncate to this precision and store remainder
     },
 
- /* Module that monitors the submitted block maturities and manages rounds. Confirmed blocks mark the end of a round where workers' balances are increased in proportion to their shares. */
+ /* Module that monitors the submitted block maturities and manages rounds. Confirmed blocks mark the end of a round where workers balances are increased in proportion to their shares. */
     "blockUnlocker": {
         "enabled": true,
         "interval": 30, //how often to check block statuses in seconds
@@ -328,160 +352,104 @@ Here is the config file with comments:
 }
 ```
 
-#### Interesting config.json Sections
-
-**Pool Wallet**
-```json
-        "poolAddress": "Q01060036ea9340ab68df7f8a3c4c4e9a1d3fd30c3dcd0492f1ae2eb07fc2b15ef4c72216d9c5a5",
-```        
-
-Edit the *poolAddress* field. Change to the address you want to mine with. This is where you will pool the rewards and pay out the the other miners.
-
-**Ports**
-```json
-        "ports": [
-            {
-                "port": 3333,
-                "difficulty": 100,
-                "desc": "Low end hardware"
-            },
-            {
-                "port": 5555,
-                "difficulty": 2000,
-                "desc": "Mid range hardware"
-            },
-            {
-                "port": 7777,
-                "difficulty": 10000,
-                "desc": "High end hardware"
-            },
-            {
-                "port": 8888,
-                "difficulty": 10000,
-                "desc": "Hidden port",
-                "hidden": true
-            }
-
-```
-
-Change the ports above if you are running another pool on the same server, or if you need to adjust your configuration. Make sure to enable the firewall for these ports as well.
-
-
-**Payments**
-```json
- "payments": {
-        "enabled": true,
-        "interval": 600,
-        "maxAddresses": 50,
-        "mixin": 3,
-        "transferFee": 500000000,
-        "minPayment": 100000000000,
-        "denomination": 100000000000
-    },
-
-```
-
-This section will allow you to adjust the amount where the pool pays out. Change this to allow lower threshold payments or larger depending on your needs. More often TX may equal more TX fees. 
-
-**api**
-```json
-"api": {
-        "enabled": true,
-        "hashrateWindow": 600,
-        "updateInterval": 5,
-        "port": 8117,
-        "blocks": 30,
-        "payments": 30,
-        "password": "your_password"
-```
-
-You can adjust what port the pool API runs on, as well as setting a password. Please set a password.
-
-
-All of the connection details are found at the bottom of the config file. 
-port 18081 is where the QRL proxy will be running.
-
-
-```json
-    "daemon": {
-        "host": "127.0.0.1",
-        "port": 18081
-    },
-
-    "wallet": {
-        "host": "127.0.0.1",
-        "port": 18081
-    },
-
-    "redis": {
-        "host": "127.0.0.1",
-        "port": 6379,
-        "auth": null
-    }
-```
-
-
 
 ## grpcProxy
 
-You need to run a grpcProxy via python in order to connect the pool to the node. they run on separate ports and use different you will find this piece of code
+You need to run a grpcProxy via python in order to connect the pool to the node. This is required since the QRL node uses [gRPC](https://grpc.io/) and runs on port 9000, the pool software runs [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) and is expecting to find the node at port 18081.
 
 
-in order to run the proxy you will need to generate a slaves.json file. Use the cli tools and generate a file with 
+To run the proxy you will need to get the sources from the github repo. You will find this piece of code in the repository at */src/qrl/grpcProxy.py*. Get the files [here](https://github.com/theQRL/QRL.git)
+
+#### Slaves.json File
+
+in order to run the proxy you will need to generate a slaves.json file. Give the file authority to make transactions with enough OTS keys to last awhile.  
+
+To generate a slaves.json file you will need to be connected to an active and synced node. This can be a local node, as well as most of the peers shown in the peer list. You also need a wallet to use for the slaves file.
+
+
+You can see all of the options for generating the file using 
 
 ```bash
-./cli.py -r --host {ActiveNode Open To Port:9009} --port_pub 9000 --port_adm 9000 --wallet_dir . slave_tx_generate
+qrl -r slave_tx_generate --help
 ```
-This will ask you a few questions. Make sure you run this in a directory with a valid wallet file. You may need to restore the wallet first.
 
+Assuming you have a synced node running on the local computer and a wallet.json file in the local directory you can simply enter:
+
+```bash
+qrl slave_tx_generate
+
+Usage: qrl slave_tx_generate [OPTIONS]
+
+  Generates Slave Transaction for the wallet
+
+Options:
+  --src TEXT                  source address or index
+  --master TEXT               master QRL address
+  --number_of_slaves INTEGER  Number of slaves addresses
+  --access_type INTEGER       0 - All Permission, 1 - Only Mining Permission
+  --fee FLOAT                 fee (Quanta)
+  --pk INTEGER                public key (when local wallet is missing)
+  --otsidx INTEGER            OTS index (when local wallet is missing)
+  --help                      Show this message and exit.
+
+```
+
+To connect to a remote node, find an IP address of a peer and enter the following;
+
+```bash
+qrl -r --host {ActiveNode Open To Port:9009}  --wallet_dir {Location of wallet.json} --otsidx {UNUSED OTS key} slave_tx_generate
+```
+
+This will ask you a few questions. 
+
+```bash
+Src []: 0 # Which address to use in the wallet file. 0 is the first address.
+Master []: 
+Number of slaves [0]: # this*OTS_key_height For tree height 10 (this*1024)
+Access type [0]: # enter 0 to allow transactions 1 for secure mining only
+Fee [0.0]: # how much fee to pay to broadcast this across network.
+```
 
 Once the slaves.json file is created, move it to the ~/.qrl folder and rename to payments.slaves.json file
 
 ```bash
-sudo mkdir /home/.qrl
-sudo mv slaves.json /home/.qrl/payment_slaves.json
+sudo mv slaves.json /home/$USER/.qrl/payment_slaves.json
 ```
 
-This will allow the pool the ability to send the payments out to miners and won't use all of the available OTS keys for the wallet. I generated a slaves file with 100 slaves, which took awhile. this will give me a factor of 1024\*100 signatures before I need to generate another slaves.json file and set it in the ~/.qrl directory.
+This will allow the pool the ability to send the payments out to miners and won't use all of the available OTS keys for the wallet. Generate a slaves file with 100 slaves, which will take awhile. This will give a factor of 1024\*100 signatures before the need to generate another slaves.json file and set it in the ~/.qrl directory.
 
-Make the proxy executable with 
-
-```bash
-sudo chmod +x ~/qrl/qrl/grpcProxy.py
-```
-
-run the proxy with the following:
+Run the proxy with the following:
 
 ```bash
 screen -R proxy
 python3.5 ~/qrl/qrl/grpcProxy.py
 ```
 
-You may want to daemonize this, or run this in a screen session. This will connect the gRPC QRL functions with the rpc functions the pool is looking for. the proxy will look for connections at 127.0.0.1:18081
-
-
+You may want to daemonize this, or run this in a screen session. This will connect the gRPC QRL functions with the RPC functions the pool is looking for. The proxy will look for connections at 127.0.0.1:18081
 
 ## Install Web Server
 
 You can serve the web site up on any typical web server. This guide is using the apache2 web server for the pool site.
 
-You should have a Domain name to point to the server and have setup the relative DNS entries. This is outside of the scope of this document. Once you have your DNS pointing at the correct place change the hostname of the server
+You should have a Domain name to point to the server and have setup the relative DNS entries. This is outside of the scope of this document. Once you have your DNS pointing at the correct place change the hostname of the server.
+
+The web server dose not have to be the pool server. In fact it is recommended to host these devices on separate PC's so you lessen the attack vector on the pool. A small VPS should work to host the static web files.
 
 ```bash
 sudo nano /etc/hostname
 ```
 
-Enter your hostname without the FQDN part
+Enter your hostname without the FQDN part;
 ```bash
 pool
 ```
 
-Now edit the /etc/hosts file
+Now edit the /etc/hosts file;
 ```bash
 sudo nano /etc/hosts
 ``` 
 
-here you will find a few lines, change the file from this:
+here you will find a few lines, change the file from this;
 
 ```bash
 127.0.0.1 localhost
@@ -493,12 +461,7 @@ ff02::2 ip6-allrouters
 
 ```
 
- to this with your details entered. 
-
-```bash  
- IP.ADD.RE.SS hostname.fqdn hostname
-``` 
-
+To this, replacing the xxx.xxx.xxx.xxx part with the public IP address of the web server; 
 ```bash
 127.0.0.1       localhost
 xxx.xxx.xxx.xxx   pool.theqrl.org  pool
@@ -511,13 +474,12 @@ ff02::2 ip6-allrouters
 
 ```
 
-Use the public IP address of your server in the hosts file.
-
 Find your IP by
 ```bash
 curl -4 icanhazip.com
 ```
-This will spit put your public IP
+
+This will spit put your public IP address.
 
 #### apache2
 
@@ -559,47 +521,42 @@ drwxr-xr-x 3 root root  4096 Mar 25 05:54 ..
 
 #### Configure apache2
 
-edit the default apache2 config
-
+Edit the default apache2 config;
 ```bash
 sudo nano /etc/apache2/apache2.conf
 ```
 
-Add the ServerName directive into the file somewhere
+Add the ServerName directive into the file somewhere;
 ```
 ServerName {YOUR-FQDN or IP address}
 ```
 
-Exit and edit the default sites config
-
+Exit and edit the default sites config;
 ```
 nano /etc/apache2/sites-available/000-default.conf
 ```
 
 
-Add ServerAlias and change the ServerName *not nessasary but helps connect sometimes*
+Add ServerAlias and change the ServerName;
 ```bash
 ServerName {FQDN or IP}
 ServerAlias *.{FQDN}
 ```
 
 
-restart apache2 to pickup changes
+Restart apache2 to pickup changes;
 ```
 sudo service apache2 restart
 ```
 
 If you see errors check the log files and Google for help.
 
-
-
-
-
-
-
 #### Create Website
 
-Copy the files found in the pool directory into the web root. This is assuming you are not hosting any other sites on the server you are using for the web front end.
+Copy the files found in the pool directory into the web root. 
+
+> This is assuming you are not hosting any other sites on the server you are using for the web front end. This will destroy any current web files.
+{: .info}
 
 ```bash
 # remove the web root contents
@@ -609,7 +566,7 @@ sudo rm -r /var/www/html/*
 sudo cp -r ~/QRL_pool/* /var/www/html/ 
 ```
 
-Change permissions to the webserver user
+Change permissions to the web server user;
 
 ```bash
 sudo chown www-data:www-data -R /var/www/html/
@@ -621,43 +578,90 @@ Now edit the config.js file found in the web root
 sudo nano /var/www/html/config.js
 ```
 
-Change the details to meet your needs
+Change the details to meet your needs.
+
 
 
 ## Secure The Server
 
+Being that this is running a mining pool and handling coins, we need to ensure the up-most security is used. Follow the latest industry standards for securing your server.
+
+> Do not use clear text passwords and ensure that ssh is as locked down as possible.
+{: .info}
+
+There are great guides and recomendations on the web. Please make this a priority!
+
 #### SSH Connections
 
-Edit the ssh config file:
+Ensure you have ssh key files inplace to connect without a password to the server. You should create a new key for each server you connect to, and never share the same key.
+
+On a local linux computer generate a key file with `ssh_keygen`
+
+Once you have a local priate and public key, copy over the public key to the server. This should go into the users `.ssh/authorized_keys` file. If this file is not there create it.
+
+```bash
+nano ~/.ssh/authorized_keys
+```
+
+Paste the public key into the terminal and save the file.
+
+
+##### Edit the ssh config file
 
 ```bash
 sudo nano /etc/ssh/sshd.conf
 ```
 
-change the following parameters
+Change the following parameters;
+
+```bash
+# What ports, IPs and protocols we listen for
+Port 22 # change if you want ssh on a different port
+
+PermitRootLogin no # disable root login
+
+PubkeyAuthentication yes # enable Pubkey auth
+
+PasswordAuthentication no # Disable password login
+```
 
 
+##### Restart SSH
 
-#### Firewall
+now that we ghave made changes to the file, restart sshd to pickup the changes.
 
-Using ufw enable openssh, Apache2, pool ports, API port, and disable any access to redis ports. 
+```bash
+sudo ssh restart
+```
 
-> **Note** You need to make sure and enable OpenSSH or the port you have configured for SSH connections.
+Now confirm you can still access the server by opening another ssh session to the server. This time you will have to use the key file you created.
+
+```bash
+ssh $USER@IPADDRESS -i /DIRECTORY/OF/KEYFILE.pem # use the private keyfile here
+```
+If you can connect, you are good to continue. If not troubleshoot why you cannot connect before you disconnect from the initial session.
+
+##### Firewall
+
+Using `ufw` enable openssh, Apache2, pool ports, API port, and disable any access to redis ports. 
+
+> **Note** You need to make sure and enable OpenSSH or the port you have configured for SSH connections so you don't lose connection.
 {: .info}
 
 ```bash
-# first, don't lock your self out
+# First, don't lock your self out.
 sudo ufw enable openssh
 
-# now block external redis connections
+# Now block external redis connections
 sudo ufw deny 6379
 sudo ufw deny 16379
 sudo ufw deny 26379
 
-# enable mining ports in the firewall
+# Enable mining ports in the firewall
 sudo ufw allow 3333
 sudo ufw allow 5555
 sudo ufw allow 7777
+sudo ufw allow 8888
 
 # Open the API port for web front end if hosting remotely
 sudo ufw allow 8117
@@ -672,27 +676,6 @@ sudo ufw enable
 sudo ufw status
 ```
 
-
-#### Let's Encrypt setup
-
-Follow the guide found at [certbot.eff.org](https://certbot.eff.org/lets-encrypt/ubuntuxenial-apache)
-
-Setup and configure the server to run https by default
-
-```bash
-# install ppa and package certbot
-sudo apt-get update
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:certbot/certbot
-sudo apt-get update
-sudo apt-get install python-certbot-apache
-
-# run certbot auto apache2 setup
-sudo certbot --apache
-```
-Enter default settings and agree to all of the terms and conditions.
-
-Now you have a secure web server for connections. 
 
 ## Start The Pool
 
@@ -711,10 +694,17 @@ You should see the pool connect, and when miners connect you will see addresses 
 
 ## Troubleshooting
 
+
+#### Pool Payouts
+
 Make sure you create a slaves.json file large enough to continue to payout. Once you run out you will have to create another slave.json file and move/rename it into the `/home/.qrl/` dir.
+
+If your pool is not paying out, it is probably an issue with the slaves.json file, or a mismatch in the address used in the settings. Go through all of the configurations again, and if you still have issues drop into the Discord chat for help.
+
+
 
 ## To-Do
 
 * Configure to run forever - CRON jobs and daemons
 * Harden server
-* .....
+* 
