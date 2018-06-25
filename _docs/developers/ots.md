@@ -20,14 +20,15 @@ The first post-quantum signature schemes considered for standardization are hash
 
 ### Important OTS Info
 
-The OTS index or the **One Time Signature** index is used when you sign a transaction onto the network. 
+The OTS index or the **One-Time Signature** index is used when you sign a transaction onto the network. 
 
 You are required to specify which OTS index to use from the wallet file you have created. Depending on the tree height you selected when setting up the wallet you will start with anywhere from 16 to 262,144 OTS indexes. 
 
 You may not re-use any OTS key index. The QRL blockchain will reject any duplicated OTS key use automatically. This is done by design. 
 
-* If all OTS index's are used funds that are in a wallet will not be able to transfer out of the wallet, and will be lost. 
-* There is nothing to do if all of the OTS indexes are used, you cannot sign a transaction.
+* If all OTS indexes are used, transactions cannot be signed.
+* This means that if funds are in a wallet where all the one-time signatures have been used you will not be able to transfer out of the wallet and their contents **will be lost**.
+* This applies for any tokens present in the wallet as well as Quanta
 
 It is recommended to track the use of the OTS key and transfer all remaining funds to a newly created wallet before all of the OTS keys are exhausted.
 
