@@ -52,14 +52,3 @@ python dice.py
 ```
 
 Follow the instructions rolling the dice the appropriate number of times and record the number rolled each time. This will create a truly random mnemonic phrase from the word-list found in the repository on github.
-
-
-## Code Example - embed
-
-We have an example CodePen up for you to try out if your curious. Browse to the [CodePen](https://codepen.io/fr1t2/full/pVrZab/) and give it a try
-
-> Example below is not working, but the link above does.
-{: .info}
-
-<iframe height='610' scrolling='no' title='Dice' src='//codepen.io/fr1t2/embed/pVrZab/?height=610&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/fr1t2/pen/pVrZab/'>Dice</a> by fr1t2 (<a href='https://codepen.io/fr1t2'>@fr1t2</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
