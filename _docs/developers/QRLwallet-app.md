@@ -4,13 +4,6 @@ categories: wallet
 tags: wallet
 ---
 
-{% comment %} 
-
-FIXME Finish this writeup with details from finished wallet
-
-{% endcomment %}
-
-
 
 This is the QRL wallet application developed by The QRL team, and hosted on wallet.theqrl.org
 
@@ -32,7 +25,7 @@ If you are using windows you will need to install a few extra packages.
 
 **Windows Only**
 * [Build Tools for Visual Studio 2017](https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2017)
-* [node-gyp](https://github.com/nodejs/node-gyp
+* [node-gyp](https://github.com/nodejs/node-gyp)
 
 
 #### Install Required
