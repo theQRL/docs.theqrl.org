@@ -14,7 +14,7 @@ The first post-quantum signature schemes considered for standardization are hash
 
 *The OTS key index is limited.* Once this index is used you will no longer be able to sign transactions. This can not be stressed enough! 
 
-> IF you use all of your OTS Key Index's with funds in the wallet, these funds will be lost.
+> If you use all of your OTS Key Indexes with funds in the wallet, these funds will be lost.
 {: .danger}
 
 
