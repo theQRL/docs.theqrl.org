@@ -15,15 +15,16 @@ Anyone can run a pool with some basic Linux knowledge and a will to google for t
 Here are the basic requirements for the pool. Depending on the amount of miners connected you may need to upgrade the servers to handle the load. 
 
 #### Hardware Requirements
-You will need a server to host the Pool, QRL Node, and Wallet files. You will also need to serve up some web files for miners to interact with the pool.The Web Front end server can be the same server *This guide will use a separate server for web serving.*
+You will need a server to host the Pool, QRL Node, and Wallet files. you will also need to serve up some web files for miners to interact with the pool.The Web Front end server can be the same server *This guide will use a separate server for web serving.*
 
 **Node Server**
 * 4GB RAM 
 * 2 Core 
 * Support for AES-NI
 * HDD large enough to support the blockchain over time ( > 120GB )
+* 64 bit Processor 
 
-This guide is using [Linode's 4GB](https://www.linode.com/pricing) server to run the pool and node on. There's also a 120GB drive mounted as the user `qrl` /home/qrl/ dir.
+This guide is using [Linode's 4GB](https://www.linode.com/pricing) server to run the pool and node on. There's also a 120GB drive mounted as the user `qrl` /home/qrl/ directory.
 For a guide on how to do this see [here](https://linode.com/docs/platform/how-to-use-block-storage-with-your-linode/)
 
 Feel free to use any hosting provider as long as the server meets the above requirements you should be OK.
@@ -34,27 +35,23 @@ Feel free to use any hosting provider as long as the server meets the above requ
 * python3.5 or greater is required
 * node 0.10.48
 
-
-
-
-
 ## Overview
 
 The basics of setting up a pool.
 
 - 0.) Setup, connect, update, and upgrade your server.
 - 1.) Install qrl on the server.
+    - a.) Connect and sync the blockchain
+    - b.) Open any needed ports for pool to work with node
 - 2.) Install Pool
     - a.) Dependencies, including node v0.10.48 using nvm
     - b.) Install Redis-server and configure
     - c.) Install Apache2 and configure web server
-
-
-
+- 3.) Run Proxy and start pool
 
 
 ## QRL Install
-Follow the instructions found [here]](https://docs.theqrl.org/mining/full-node/) to get the node started.
+Follow the instructions found [docs.theqrl.org/mining/full-node/](https://docs.theqrl.org/mining/full-node/) to get the node started.
 
 An abridged version can be found below
 
@@ -69,11 +66,11 @@ sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pk
 pip3 install -U qrl
 ```
 
-This will install qrl and create the ~/.qrl directory.
+This will install qrl and create the `~/.qrl` directory.
 
 ### Start QRL and Sync
 
-Now that you have qrl installed go ahead and start the node up, and sync the blockchain. Create a ~/.qrl/config.yml file and add any configuration settings you may need. Make sure the node is not trying to mine while you sync.
+Now that you have qrl installed go ahead and start the node up, and sync the blockchain. Create a `~/.qrl/`config.yml file and add any configuration settings yu may need. Make sure the node is not trying to mine while you sync.
 
 ```bash
 start_qrl --miningCreditWallet Q010900978071f5817ece4164123a5b83f80af957a9935876329bb1f015410e4542ed291ee7022f
@@ -171,7 +168,7 @@ sudo nano /etc/init.d/redis_6379
 
 Grab the slightly modified software found in [This Repository](https://github.com/cyyber/node-cryptonote-pool.git). 
 
-This is a fork form the popular *zone117x node-cryptonote-pool*. Some changes have been made to the source to allow for QRL mining. Please use Cyybers modified version.
+This is a fork form the popular *zone117x node-cryptonote-pool*. Some changes have been made to the source to allow for QRL mining. Please use the modified version.
 
 ```bash
 git clone https://github.com/cyyber/node-cryptonote-pool.git QRL_Pool
@@ -366,57 +363,35 @@ in order to run the proxy you will need to generate a slaves.json file. Give the
 
 To generate a slaves.json file you will need to be connected to an active and synced node. This can be a local node, as well as most of the peers shown in the peer list. You also need a wallet to use for the slaves file.
 
-
-You can see all of the options for generating the file using 
-
-```bash
-qrl -r slave_tx_generate --help
-```
-
 Assuming you have a synced node running on the local computer and a wallet.json file in the local directory you can simply enter:
 
 ```bash
-qrl slave_tx_generate
-
-Usage: qrl slave_tx_generate [OPTIONS]
-
-  Generates Slave Transaction for the wallet
-
-Options:
-  --src TEXT                  source address or index
-  --master TEXT               master QRL address
-  --number_of_slaves INTEGER  Number of slaves addresses
-  --access_type INTEGER       0 - All Permission, 1 - Only Mining Permission
-  --fee FLOAT                 fee (Quanta)
-  --pk INTEGER                public key (when local wallet is missing)
-  --otsidx INTEGER            OTS index (when local wallet is missing)
-  --help                      Show this message and exit.
-
+qrl -r slave_tx_generate
 ```
 
 To connect to a remote node, find an IP address of a peer and enter the following;
 
 ```bash
-qrl -r --host {ActiveNode Open To Port:9009}  --wallet_dir {Location of wallet.json} --otsidx {UNUSED OTS key} slave_tx_generate
+qrl -r --host {ActiveNode Open To Port:9009}  --wallet_dir {Location of wallet.json} slave_tx_generate
 ```
 
 This will ask you a few questions. 
 
 ```bash
-Src []: 0 # Which address to use in the wallet file. 0 is the first address.
+Src []: 0 # Wwhich address to use in the wallet file. 0 is the first address.
 Master []: 
 Number of slaves [0]: # this*OTS_key_height For tree height 10 (this*1024)
 Access type [0]: # enter 0 to allow transactions 1 for secure mining only
 Fee [0.0]: # how much fee to pay to broadcast this across network.
 ```
 
-Once the slaves.json file is created, move it to the ~/.qrl folder and rename to payments.slaves.json file
+Once the slaves.json file is created, move it to the `~/.qrl` folder and rename to `payments.slaves.json` file
 
 ```bash
 sudo mv slaves.json /home/$USER/.qrl/payment_slaves.json
 ```
 
-This will allow the pool the ability to send the payments out to miners and won't use all of the available OTS keys for the wallet. Generate a slaves file with 100 slaves, which will take awhile. This will give a factor of 1024\*100 signatures before the need to generate another slaves.json file and set it in the ~/.qrl directory.
+This will allow the pool the ability to send the payments out to miners and won't use all of the available OTS keys for the wallet. Generate a slaves file with 100 slaves, which will take awhile. This will give a factor of 1024\*100 signatures before the need to generate another slaves.json file and set it in the `~/.qrl` directory.
 
 Run the proxy with the following:
 
@@ -583,13 +558,10 @@ Change the details to meet your needs.
 
 
 ## Secure The Server
-
-Being that this is running a mining pool and handling coins, we need to ensure the up-most security is used. Follow the latest industry standards for securing your server.
+Being that this is running a mining pool and handling money, we need to ensure the up most security is used. Follow the latest industry standards for securing Ubuntu.
 
 > Do not use clear text passwords and ensure that ssh is as locked down as possible.
 {: .info}
-
-There are great guides and recomendations on the web. Please make this a priority!
 
 #### SSH Connections
 
@@ -694,17 +666,5 @@ You should see the pool connect, and when miners connect you will see addresses 
 
 ## Troubleshooting
 
-
-#### Pool Payouts
-
 Make sure you create a slaves.json file large enough to continue to payout. Once you run out you will have to create another slave.json file and move/rename it into the `/home/.qrl/` dir.
 
-If your pool is not paying out, it is probably an issue with the slaves.json file, or a mismatch in the address used in the settings. Go through all of the configurations again, and if you still have issues drop into the Discord chat for help.
-
-
-
-## To-Do
-
-* Configure to run forever - CRON jobs and daemons
-* Harden server
-* 

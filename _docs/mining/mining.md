@@ -56,32 +56,6 @@ Mining QRL using GPU's is possible utilizing a community run pool server working
 There are a ton of options to choose from out there. Make sure the software will mine Monero if you are having any issues. Use a QRL address and point the miner to a community pool.  
 
 
-## Pool Mining
-
-You can connect to a QRL Pool run by our community members. This will allow you to utilize almost any piece of hardware without the need to run a full node. 
-
-There are lightweight binaries and scripts that use the local processor or GPU to preform work for the pool . This pooled work then gets submitted to the network and the rewards are shared between the workers.
-
-Pool mining is possible using both CPU's and GPU's. The benefit of one over the other is debatable and outside this guides scope.
-
-Download a mining software package for your operating system and follow the software's documentation, only changing out the address with your QRL address.
-
-
-
-
-#### Pool 101
-
-
-A few things to know about QRL pools:
-
-* There is no **Official** QRL pool. The team will only run a *TestNet* pool if necessary for testing.
-* Most pools charge fee to use the service. This should go towards things like server costs and power consumption for the pool systems.
-* Pools can change the payout minimum amounts. Be sure to read the fine print and make sure you understand the rules.
-
-To connect to a pool you will need a QRL address that will collect the rewards of the pool mining. You will enter this as the user for the pool. You can also search the stats of your miner by entering this into the bottom of most mining pool sites.
-
-
-
 ## Mining Software
 
 | Software      | GUI or CLI | Arch | Windows     | Linux |  OSX   |  Links | Notes	|
@@ -93,62 +67,30 @@ To connect to a pool you will need a QRL address that will collect the rewards o
 
 
 > **Note** This list is not exhaustive, and is not a promotion or endorsement for a project. Any cryptonight mining software \*should work. *YMMV*
-
 {: .info}
 
-## Examples
-Here are some basic examples to get started. These are found in the config files or used to issue the mining software command in the command line.
+## Pool Mining
 
-| Software      | Command |
-| :------------:|:-------:|
-|   XMR-stak | minerd -a cryptonight -o stratum+tcp://mineqrl.com:3333 -u YOUR_WALLET_ADDRESS -p x |
-|   Cast XMR | minerd -a cryptonight -o stratum+tcp://mineqrl.com:3333 -u YOUR_WALLET_ADDRESS -p x  |
-|   CPUMiner | minerd -a cryptonight -o stratum+tcp://mineqrl.com:3333 -u YOUR_WALLET_ADDRESS -p x  |
-|   ccminer  | ccminer -o stratum+tcp://strat.qrlmining.com:3333 -u YOUR_WALLET_ADDRESS -p x |
+To get started pool mining, you will need to have an application that will utilize the processor or GPU of your computer. hen you will connect to a community run mining pool.
 
-
+> For more information see our guide at [docs.theqrl.org](/mining/pool-mining)
 
 ## Basic Principles
 
-ASIC (Application Specific Integrated Circuit)
-: An integrated circuit customized for a specific task, in our case hashing cryptographic signatures.
-<br>
-Blockchain
-: The public ledger of all transactions stored in a cryptographic way.
-<br>
-CPU Mining
-: Using the CPU of a computer to mine with.
-<br>
-Fork
-: A piece of code that, at some point in the code history, made significant changes or changed direction and a new project is born from the first.
-<br>
-Full Node
-: The main project software running on a PC fully synced with a local copy of the blockchain. This helps to support the network.
-<br>
-GPU Mining
-: Using a Graphic Processing Unit(s) to mine with.
-<br>
-Hash Rate (HR/s)
-: The amount of computational hashes a processor can process in a second.
-<br>
-Mining
-: The process that verifies transactions on the ledger or Blockchain, also the process in which new QRL are made and distributed into the world.
-<br>
-Mining Software
-: Software that is run on a local computer. Used to process hashes on the blockchain and stay in sync with current work.
-<br>
-Pool Software
-: Software that shares the work, and rewards from mining between all workers in the pool.
-<br>
-Pool Worker
-: The address or user name associated with the computer running the mining software.	
-<br>
-PoS (Proof of Stake)
-: Proof Of Stake.
-<br>
-PoW (Proof of Work)
-: Proof Of Work.
-<br>
-Stratum Server
-: Server using the stratum mining protocol to allow multiple miners to join together and increase hashrate.
-<br>
+
+| Term | Definition |
+|:-----|:-----------|
+| ASIC | (Application Specific Integrated Circuit) An integrated circuit customized for a specific task, in our case hashing cryptographic signatures. |
+| Blockchain | The public ledger of all transactions stored in a cryptographic way |
+| CPU Mining | Using the CPU of a computer to mine with. |
+| Fork | A piece of code that, at some point in the code history, made significant changes or changed direction and a new project is born from the first. |
+| Full Node | The main project software running on a PC fully synced with a local copy of the blockchain. This helps to support the network. |
+| GPU Mining | Using a Graphic Processing Unit(s) to mine with |
+| Hash Rate (HR/s) | The amount of computational hashes a processor can process in a second. |
+| Mining | The process that verifies transactions on the ledger or Blockchain, also the process in which new QRL are made and distributed into the world. |
+| Mining Software | Software that is run on a local computer. Used to process hashes on the blockchain and stay in sync with current work. |
+| Pool Software | Software that shares the work, and rewards from mining between all workers in the pool. |
+| Pool Worker | The address or user name associated with the computer running the mining software. |
+| PoS (Proof of Stake) | Proof Of Stake. A method of validating transactions on the network. |
+| PoW (Proof of Work) | Proof Of Work. A Method of validating transactions on the network. |
+| Stratum Server | Server using the stratum mining protocol to allow multiple miners to join together and increase hashrate. |
