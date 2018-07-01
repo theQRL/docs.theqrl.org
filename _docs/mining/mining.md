@@ -23,18 +23,19 @@ There are not too many requirements for mining QRL. Most current processors will
 
 #### QRL Mining basics
 
-QRL uses the Monero fork of [CryptoNight](http://cryptonite.info), a fork of the [CryptoNote](https://cryptonote.org/) protocol as the backbone to the mining process. Forking, forking, forking... 
+QRL uses the Monero7 algorithm allowing QRL to take advantage of the ASIC resistant features and benefits of CryptoNight and Monero. Since we are using this algorithm, we can share in the same ASIC resistant benefits that Monero promotes. 
 
-By using this algorithm allows QRL to take advantage of the ASIC resistant features and benefits of CryptoNight and Monero. Since we are using the Monero fork, we can share in the same ASIC resistant benefits that Monero promotes. (*Privacy features of Monero are specific to that project, and do not carry over to QRL.*)
-
-The QRL mining period will last until a stable PoS chain is ready and fully tested. After this happens a hard fork will occur switching the QRL blockchain over to a proof of stake model
-
-Any software that pool mines for XMR will work with QRL. You can find something that is compatible with your OS and setup following the guide found with the project you choose. There are too many potential configurations to list here. Please ask for help in the QRL Discord or in the Reddit forum if you need help. 
-
-> When configuring your software, set everything up to mine Monero, *instead* of using a Monero address, enter your *QRL* address into the "Worker" or "Address" field in the mining software.
+> Privacy features of Monero are specific to that project, and do not carry over to QRL.
 {: .info}
 
-QRL uses PQ secure encryption. No joke this stuff is the best there is right now. If you follow instructions, and don't compromise your private keys in any way your funds are safe from current processors ads well as advanced quantum computers that are on the horizon.
+The QRL mining period will last until a stable PoS chain is ready and fully tested. After this happens a hard fork will occur switching the QRL blockchain over to a proof of stake network *(POS)*
+
+Any software that pool mines for monero will work with QRL. You can find something that is compatible with your OS and setup following the guide found with the project you choose. Ask for help in the QRL Discord or in the Reddit forum if you need help. 
+
+> When configuring your software, set everything up to mine Monero7, *instead* of using a Monero address, enter your *QRL* address into the "Worker" or "Address" field in the mining software.
+{: .info}
+
+QRL uses PQ secure encryption. No joke this stuff is the best there is right now. If you follow instructions, and don't compromise your private keys in any way your funds are safe from current processors as well as advanced quantum computers that are on the horizon.
 
 
 ## CPU Mining
