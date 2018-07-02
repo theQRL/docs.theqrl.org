@@ -333,12 +333,12 @@ Here is a sample config file with comments:
 /* Coin daemon connection details. */
     "daemon": {
         "host": "127.0.0.1",
-        "port": 18081
+        "port": 18090
     },
 /* Wallet daemon connection details. */
     "wallet": {
         "host": "127.0.0.1",
-        "port": 18081
+        "port": 18090
     },
 /* Redis connection into. */
     "redis": {
@@ -352,7 +352,7 @@ Here is a sample config file with comments:
 
 ## grpcProxy
 
-You need to run a grpcProxy via python in order to connect the pool to the node. This is required since the QRL node uses [gRPC](https://grpc.io/) and runs on port 9000, the pool software runs [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) and is expecting to find the node at port 18081.
+You need to run a grpcProxy via python in order to connect the pool to the node. This is required since the QRL node uses [gRPC](https://grpc.io/) and runs on port 19000, the pool software runs [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) and is expecting to find the node at port 18090.
 
 
 To run the proxy you will need to get the sources from the github repo. You will find this piece of code in the repository at */src/qrl/grpcProxy.py*. Get the files [here](https://github.com/theQRL/QRL.git)
@@ -366,7 +366,7 @@ To generate a slaves.json file you will need to be connected to an active and sy
 Assuming you have a synced node running on the local computer and a wallet.json file in the local directory you can simply enter:
 
 ```bash
-qrl -r slave_tx_generate
+qrl slave_tx_generate
 ```
 
 To connect to a remote node, find an IP address of a peer and enter the following;
@@ -400,7 +400,7 @@ screen -R proxy
 python3.5 ~/qrl/qrl/grpcProxy.py
 ```
 
-You may want to daemonize this, or run this in a screen session. This will connect the gRPC QRL functions with the RPC functions the pool is looking for. The proxy will look for connections at 127.0.0.1:18081
+You may want to daemonize this, or run this in a screen session. This will connect the gRPC QRL functions with the RPC functions the pool is looking for. The proxy will look for connections at 127.0.0.1:18090
 
 ## Install Web Server
 
