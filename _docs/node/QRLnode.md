@@ -180,10 +180,12 @@ This will print all of the various options available.
 
 By default when the node is started it will **NOT** mine any coins. You will have to enable using a configuration file in the `~/.qrl` directory. 
 
-> If you want to mine using a QRL node, see the guide for [Mining QRL Solo](/mining/full-node) to get started.
-{: .info}
-
-
 The configuration file is where you will change any options you want QRL to observe. You can grab a copy of the file and details about all of the settings in our [Configuration Guide](/node/configuration/)
 
 The defaults can be used to run a QRL node, though you may need to change some of the directives for your use.
+
+
+## Mining QRL
+
+> If you want to mine using a QRL node, see the guide for [Mining QRL Solo](/mining/full-node) or the [pool guide](/mining/mining)to get started.
+{: .info}
