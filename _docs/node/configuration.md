@@ -58,8 +58,8 @@ Ephemeral messaging configuration details are shown below.
 |:------------|:---------------:|:--------------|
 |  enable_peer_discovery | True | Allows to discover new peers from the connected peers
  |
-| p2p_local_port | 9000 | Locally binded port at which node will listen for connection |
-| p2p_public_port | 9000 | Public port forwarding connections to server |
+| p2p_local_port | 19000 | Locally binded port at which node will listen for connection |
+| p2p_public_port | 19000 | Public port forwarding connections to server |
 | peer_rate_limit | 500 | Max Number of messages per minute per peer |
 | ban_minutes | 20 | Allows to ban a peer's IP who is breaking protocol |
 | monitor_connections_interval | 30 | Monitor connection every 30 seconds |
@@ -91,7 +91,7 @@ Ephemeral messaging configuration details are shown below.
 |:------------|:---------------:|:--------------|
 | admin_api_enabled | False |  |
 | admin_api_host | "127.0.0.1" |  |
-| admin_api_port | 9008 |  |
+| admin_api_port | 19008 |  |
 | admin_api_threads | 1 |  |
 | admin_api_max_concurrent_rpc | 100 |  |
 
@@ -103,7 +103,7 @@ Ephemeral messaging configuration details are shown below.
 |:------------|:---------------:|:--------------|
 | public_api_enabled | True |  |
 | public_api_host | "0.0.0.0" |  |
-| public_api_port | 9009 |  |
+| public_api_port | 19009 |  |
 | public_api_threads | 1 |  |
 | public_api_max_concurrent_rpc | 100 |  |
 
@@ -115,7 +115,7 @@ Ephemeral messaging configuration details are shown below.
 |:------------|:---------------:|:--------------|
 | mining_api_enabled | False |  |
 | mining_api_host | "127.0.0.1" |  |
-| mining_api_port | 9007 |  |
+| mining_api_port | 19007 |  |
 | mining_api_threads | 1 |  |
 | mining_api_max_concurrent_rpc | 100 |  |
 
@@ -157,8 +157,8 @@ Ephemeral messaging configuration details are shown below.
 #    P2P Configuration
 # ======================================
 # enable_peer_discovery: True  # Allows to discover new peers from the connected peers
-# p2p_local_port: 9000
-# p2p_public_port: 9000
+# p2p_local_port: 19000
+# p2p_public_port: 19000
 # peer_rate_limit: 500  # Max Number of messages per minute per peer
 # ban_minutes: 20              # Allows to ban a peer's IP who is breaking protocol
 # monitor_connections_interval: 30
@@ -185,7 +185,7 @@ Ephemeral messaging configuration details are shown below.
 # ======================================
 # admin_api_enabled: False
 # admin_api_host: "127.0.0.1"
-# admin_api_port: 9008
+# admin_api_port: 19008
 # admin_api_threads: 1
 # admin_api_max_concurrent_rpc: 100
 #
@@ -194,7 +194,7 @@ Ephemeral messaging configuration details are shown below.
 # ======================================
 # public_api_enabled: True
 # public_api_host: "0.0.0.0"
-# public_api_port: 9009
+# public_api_port: 19009
 # public_api_threads: 1
 # public_api_max_concurrent_rpc: 100
 #
@@ -203,7 +203,7 @@ Ephemeral messaging configuration details are shown below.
 # ======================================
 # mining_api_enabled: False
 # mining_api_host: "127.0.0.1"
-# mining_api_port: 9007
+# mining_api_port: 19007
 # mining_api_threads: 1
 # mining_api_max_concurrent_rpc: 100
 #
