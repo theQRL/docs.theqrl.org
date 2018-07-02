@@ -667,4 +667,3 @@ You should see the pool connect, and when miners connect you will see addresses 
 ## Troubleshooting
 
 Make sure you create a slaves.json file large enough to continue to payout. Once you run out you will have to create another slave.json file and move/rename it into the `/home/.qrl/` dir.
-

@@ -35,8 +35,11 @@ sudo apt update && sudo apt upgrade -y
 # Install Required dependencies
 sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
 
+# Make sure setuptools is the latest
+pip3 install -U setuptools
+
 # Install QRL
-sudo -H pip3 install -U qrl
+pip3 install -U qrl
 
 ```
 
@@ -177,10 +180,12 @@ This will print all of the various options available.
 
 By default when the node is started it will **NOT** mine any coins. You will have to enable using a configuration file in the `~/.qrl` directory. 
 
-> If you want to mine using a QRL node, see the guide for [Mining QRL Solo](/mining/full-node) to get started.
-{: .info}
-
-
 The configuration file is where you will change any options you want QRL to observe. You can grab a copy of the file and details about all of the settings in our [Configuration Guide](/node/configuration/)
 
 The defaults can be used to run a QRL node, though you may need to change some of the directives for your use.
+
+
+## Mining QRL
+
+> If you want to mine using a QRL node, see the guide for [Mining QRL Solo](/mining/full-node) or the [pool guide](/mining/mining)to get started.
+{: .info}
