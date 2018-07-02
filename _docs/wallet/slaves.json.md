@@ -21,20 +21,7 @@ To generate a slaves.json file you will need to be connected to an active and sy
 Assuming you have a synced node running on the local computer and a wallet.json file in the local directory you can simply enter:
 
 ```bash
-qrl -r slave_tx_generate
-```
-
-To connect to a remote node, find an IP address of a peer from your peer.qrl list:
-
-```bash
-cat ~/.qrl/data/peers.qrl
-```
-
-Now chose a peer that has an open port 9009 and construct your command
-
-
-```bash
-qrl -r --host {ActiveNode Open To Port:9009} slave_tx_generate
+qrl slave_tx_generate
 ```
 
 You will be asked a few questions. You can generate a maximum 100 slaves with a single master OTS key, which is used to sign the slaves.json file onto the network validating the keys.  
