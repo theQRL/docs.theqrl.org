@@ -39,9 +39,9 @@ sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pk
 pip3 install -U setuptools
 
 # Install QRL
-pip3 install -U qrl
-
+{{ layout.v.general.qrlinstall }}
 ```
+
 
 If things worked correctly you will now find the `start_qrl` package and the `qrl` package. Adding the `--help` flag to each will print the various function details.
 
