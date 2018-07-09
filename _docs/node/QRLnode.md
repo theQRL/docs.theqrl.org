@@ -39,7 +39,7 @@ sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pk
 pip3 install -U setuptools
 
 # Install QRL
-{{ layout.v.general.qrlinstall }}
+{{ layout.v.qrlCommands.qrlinstall }}
 ```
 
 

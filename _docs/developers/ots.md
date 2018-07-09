@@ -58,8 +58,8 @@ You may chose to create a address with more or less OTS keys. The only disadvant
 To aid in keeping track of the OTS keys used, QRL utilizes OTS Bitfield tracking. This allows a way to keep track of the first 4096 OTS keys and can determine where you are in the merkle tree based on previously used keys.
 
 There are a few oddities with the OTS keys. 
-* First the OTS bitfield will only automatically track every OTS keys usage up to position {{ layout.v.general.otskeys }}.
-* The first {{ layout.v.general.otskeys }} keys can be used in any order, jumping around here is OK. 
+* First the OTS bitfield will only automatically track every OTS keys usage up to position {{ layout.v.qrlConf.bitfield }}.
+* The first {{ layout.v.qrlConf.bitfield }} keys can be used in any order, jumping around here is OK. 
 * Once you have advanced past the bitfield limit, you must use the keys in ascending order, as the last valid OTS position is recorded with a counter. Beyond the bitfield limit if you skip ahead and miss an OTS key position you will not be able to return back below that position and make a valid transaction.
 
 | Keys | Info |
