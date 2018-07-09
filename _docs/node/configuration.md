@@ -75,22 +75,14 @@ Ephemeral messaging configuration details are shown below.
 
 List of available peers with open public API ports
 
-{{ layout.v.qrlConf.peer_list }}
-
-
---- 
-
-- 104.251.219.215
-- 104.251.219.145
-- 104.251.219.40
-- 104.237.3.185
-- 35.177.60.137
+- 35.178.79.137
+- 35.177.182.85
+- 18.130.119.29
+- 18.130.25.64
 
 ##### ntp_servers:
 
 List of NTP servers for the node to use
-
-{{ layout.v.qrlConf.ntp_servers }}
 
 - pool.ntp.org
 - ntp.ubuntu.com
