@@ -6,53 +6,53 @@ v:
   general:
         bitfield: 8192
         mining_thread_count: 0  
-		outgoing_message_expiry: 90 
-		lru_state_cache_size: 10
-		max_state_limit: 10
+        outgoing_message_expiry: 90 
+        lru_state_cache_size: 10
+        max_state_limit: 10
         mining_enabled: False
-		accept_ephemeral: True
-		enable_peer_discovery: True
+        accept_ephemeral: True
+        enable_peer_discovery: True
 ---
 
 <div class="wrapper docs docs-single">
-	<div class="grid w12">
-		<div class="w12">
-			<p>Head back to <a href="/">Documentation</a></p>
-			<h1>Documentation</h1>
+    <div class="grid w12">
+        <div class="w12">
+            <p>Head back to <a href="/">Documentation</a></p>
+            <h1>Documentation</h1>
 
-		  {% if page.title %}
-		    <h2 class="page-heading">{{ page.title }}</h2>
-		  {% endif %}
+          {% if page.title %}
+            <h2 class="page-heading">{{ page.title }}</h2>
+          {% endif %}
 
-		  <div class="grid no-padding docgrid">
-		  		<div class="w8 document-page">
-				  {{ content }}		  			
-		  		</div>
-		  		<div class="w4">
-		  			<div class="floatmenu">
-						<nav>
-						<ul id="stickymenu">
-						</ul>
-						</nav>
-						<p>Still stuck? There's help over on <a class="cta" href="https://discord.gg/zcGhKpy" target="_blank">Discord! <simple-svg data-icon="mdi-discord"></simple-svg></a></p>	
-		  			</div>
-		  		</div>
-		
-		  </div>
-		</div>		
-	</div>
+          <div class="grid no-padding docgrid">
+                  <div class="w8 document-page">
+                  {{ content }}                      
+                  </div>
+                  <div class="w4">
+                      <div class="floatmenu">
+                        <nav>
+                        <ul id="stickymenu">
+                        </ul>
+                        </nav>
+                        <p>Still stuck? There's help over on <a class="cta" href="https://discord.gg/zcGhKpy" target="_blank">Discord! <simple-svg data-icon="mdi-discord"></simple-svg></a></p>    
+                      </div>
+                  </div>
+        
+          </div>
+        </div>        
+    </div>
 </div>
 
 <script>
 $(function() {
 
-	$('.document-page h2, .document-page h3').each(function(el, i) {
-		var title = this.innerHTML;
+    $('.document-page h2, .document-page h3').each(function(el, i) {
+        var title = this.innerHTML;
 
-		$(this).html('<a href="#'+this.id+'">'+title + '</a>');
+        $(this).html('<a href="#'+this.id+'">'+title + '</a>');
 
-		$('#stickymenu').append('<li><a href="#'+this.id+'">'+title +'</a>');
-		$('#stickymenu').append('</li>');
-	});
+        $('#stickymenu').append('<li><a href="#'+this.id+'">'+title +'</a>');
+        $('#stickymenu').append('</li>');
+    });
 })
 </script>
