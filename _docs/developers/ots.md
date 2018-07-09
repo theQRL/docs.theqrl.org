@@ -65,7 +65,7 @@ There are a few oddities with the OTS keys.
 | Keys | Info |
 |:----:|:----:|
 |0 --> 8191 | Bitfield tracks the use. May be used in any order |
-| {{ layout.v.general.otskeys }} --> Last OTS | Must be used in ascending order - cannot return to sign below last OTS position |
+| {{ layout.v.qrlConf.bitfield }} --> Last OTS | Must be used in ascending order - cannot return to sign below last OTS position |
 
 
 

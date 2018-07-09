@@ -24,9 +24,9 @@ This section covers all of the required settings needed to setup and mine QRL on
 
 |  Directive  |  Default Value  |  Description  |
 |:------------|:---------------:|:--------------|
-| mining_enabled | False | Allows the QRL node to mine blocks on the network |
-| mining_address | '' | Address of the wallet to mine to (where mined coins wil go)
-| mining_thread_count | 0 | 0 to auto detect thread count based on CPU/GPU number of processors |
+| mining_enabled | {{ layout.v.qrlConf.mining_enabled }} | Allows the QRL node to mine blocks on the network |
+| mining_address | {{ layout.v.qrlConf.mining_address }} | Address of the wallet to mine to (where mined coins wil go)
+| mining_thread_count | {{ layout.v.qrlConf.mining_thread_count }} | 0 to auto detect thread count based on CPU/GPU number of processors |
 
 
 ###  Ephemeral Configuration
@@ -37,8 +37,8 @@ Ephemeral messaging configuration details are shown below.
 
 |  Directive  |  Default Value  |  Description  |
 |:------------|:---------------:|:--------------|
-| accept_ephemeral | True |  |
-| outgoing_message_expiry | 90  |  |
+| accept_ephemeral | {{ layout.v.qrlConf.accept_ephemeral }} |  |
+| outgoing_message_expiry | {{ layout.v.qrlConf.outgoing_message_expiary }}  |  |
 |  |  |  |
 
 
@@ -46,8 +46,8 @@ Ephemeral messaging configuration details are shown below.
 
 |  Directive  |  Default Value  |  Description  |
 |:------------|:---------------:|:--------------|
-| lru_state_cache_size | 10 |  |
-| max_state_limit | 10 |  |
+| lru_state_cache_size | {{ layout.v.qrlConf.lru_state_cache_size }} |  |
+| max_state_limit | {{ layout.v.qrlConf.max_state_limit }} |  |
 
 
 
@@ -56,22 +56,30 @@ Ephemeral messaging configuration details are shown below.
 
 |  Directive  |  Default Value  |  Description  |
 |:------------|:---------------:|:--------------|
-|  enable_peer_discovery | True | Allows to discover new peers from the connected peers
+|  enable_peer_discovery | {{ layout.v.qrlConf.enable_peer_discoverey }} | Allows to discover new peers from the connected peers
  |
-| p2p_local_port | 19000 | Locally binded port at which node will listen for connection |
-| p2p_public_port | 19000 | Public port forwarding connections to server |
-| peer_rate_limit | 500 | Max Number of messages per minute per peer |
-| ban_minutes | 20 | Allows to ban a peer's IP who is breaking protocol |
-| monitor_connections_interval | 30 | Monitor connection every 30 seconds |
-| max_peers_limi | 100 | Number of allowed peers |
-| chain_state_timeout | 180 | |
-| chain_state_broadcast_period | 30 | must be less than ping_timeout |
-| transaction_pool_size | 25000 |  |
-| pending_transaction_pool_size | 75000 | 1% of the pending_transaction_pool will be reserved for moving stale txn |
-| stale_transaction_threshold | 15 | 15 blocks |
+| p2p_local_port | {{ layout.v.qrlConf.p2p_local_port }} | Locally binded port at which node will listen for connection |
+| p2p_public_port | {{ layout.v.qrlConf.p2p_public_port }} | Public port forwarding connections to server |
+| peer_rate_limit | {{ layout.v.qrlConf.peer_rate_limit }} | Max Number of messages per minute per peer |
+| ban_minutes | {{ layout.v.qrlConf.ban_minutes }} | Allows to ban a peer's IP who is breaking protocol |
+| monitor_connections_interval | {{ layout.v.qrlConf.monitor_connections }} | Monitor connection every 30 seconds |
+| max_peers_limit | {{ layout.v.qrlConf.max_peer_limit }} | Number of allowed peers |
+| chain_state_timeout | {{ layout.v.qrlConf.chain_state_timeout }} | |
+| chain_state_broadcast_period | {{ layout.v.qrlConf.chain_state_timeout }} | must be less than ping_timeout |
+| transaction_pool_size | {{ layout.v.qrlConf.transaction_pool_size }} |  |
+| pending_transaction_pool_size | {{ layout.v.qrlConf.pending_transaction_pool_size }} | 1% of the pending_transaction_pool will be reserved for moving stale txn |
+| stale_transaction_threshold | {{ layout.v.qrlConf.stale_transaction_threshold }} | 15 blocks |
 
 
 ##### peer_list:
+
+List of available peers with open public API ports
+
+{{ layout.v.qrlConf.peer_list }}
+
+
+--- 
+
 - 104.251.219.215
 - 104.251.219.145
 - 104.251.219.40
@@ -79,6 +87,11 @@ Ephemeral messaging configuration details are shown below.
 - 35.177.60.137
 
 ##### ntp_servers:
+
+List of NTP servers for the node to use
+
+{{ layout.v.qrlConf.ntp_servers }}
+
 - pool.ntp.org
 - ntp.ubuntu.com
 
@@ -89,11 +102,11 @@ Ephemeral messaging configuration details are shown below.
 
 |  Directive  |  Default Value  |  Description  |
 |:------------|:---------------:|:--------------|
-| admin_api_enabled | False |  |
-| admin_api_host | "127.0.0.1" |  |
-| admin_api_port | 19008 |  |
-| admin_api_threads | 1 |  |
-| admin_api_max_concurrent_rpc | 100 |  |
+| admin_api_enabled | {{ layout.v.qrlConf.admin_api_enabled }} |  |
+| admin_api_host | {{ layout.v.qrlConf.admin_api_host }} |  |
+| admin_api_port | {{ layout.v.qrlConf.admin_api_port }} |  |
+| admin_api_threads | {{ layout.v.qrlConf.admin_api_threads }} |  |
+| admin_api_max_concurrent_rpc | {{ layout.v.qrlConf.admin_max_concurrent_rpc }} |  |
 
 
 
@@ -101,11 +114,11 @@ Ephemeral messaging configuration details are shown below.
 
 |  Directive  |  Default Value  |  Description  |
 |:------------|:---------------:|:--------------|
-| public_api_enabled | True |  |
-| public_api_host | "0.0.0.0" |  |
-| public_api_port | 19009 |  |
-| public_api_threads | 1 |  |
-| public_api_max_concurrent_rpc | 100 |  |
+| public_api_enabled | {{ layout.v.qrlConf.public_api_enabled }} |  |
+| public_api_host | {{ layout.v.qrlConf.public_api_host }} |  |
+| public_api_port | {{ layout.v.qrlConf.public_api_port }} |  |
+| public_api_threads | {{ layout.v.qrlConf.public_api_threads }} |  |
+| public_api_max_concurrent_rpc | {{ layout.v.qrlConf.public_api_concurrent_rpc }} |  |
 
 
 
@@ -113,11 +126,11 @@ Ephemeral messaging configuration details are shown below.
 
 |  Directive  |  Default Value  |  Description  |
 |:------------|:---------------:|:--------------|
-| mining_api_enabled | False |  |
-| mining_api_host | "127.0.0.1" |  |
-| mining_api_port | 19007 |  |
-| mining_api_threads | 1 |  |
-| mining_api_max_concurrent_rpc | 100 |  |
+| mining_api_enabled | {{ layout.v.qrlConf.mining_api_enabled }} |  |
+| mining_api_host | {{ layout.v.qrlConf.mining_api_host }} |  |
+| mining_api_port | {{ layout.v.qrlConf.mining_api_port }} |  |
+| mining_api_threads | {{ layout.v.qrlConf.mining_api_threads }} |  |
+| mining_api_max_concurrent_rpc | {{ layout.v.qrlConf.mining_api_max_concurrent_rpc }} |  |
 
 
 
@@ -125,10 +138,10 @@ Ephemeral messaging configuration details are shown below.
 
 |  Directive  |  Default Value  |  Description  |
 |:------------|:---------------:|:--------------|
-| grpc_proxy_host | "127.0.0.1" |  |
-| grpc_proxy_port | 18090 |  |
-| p2p_q_size | 1000 |  |
-| outgoing_message_expiry | 90 | Outgoing message expires after 90 seconds |
+| grpc_proxy_host | {{ layout.v.qrlConf.grpc_proxy_host }} |  |
+| grpc_proxy_port | {{ layout.v.qrlConf.grpc_proxy_port }} |  |
+| p2p_q_size | {{ layout.v.qrlConf.p2p_q_size }} |  |
+| outgoing_message_expiry | {{ layout.v.qrlConf.outgoing_message_expiry }} | Outgoing message expires after 90 seconds |
 
 
 
