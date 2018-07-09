@@ -1,17 +1,78 @@
 ---
 layout: default
 
-
 v:
-  general:
-        bitfield: 8192
-        mining_thread_count: 0  
-        outgoing_message_expiry: 90 
-        lru_state_cache_size: 10
-        max_state_limit: 10
-        mining_enabled: False
-        accept_ephemeral: True
-        enable_peer_discovery: True
+  qrlCommands:
+      qrlInstall: pip3 install \-U qrl
+      pubPort: qrl --port_pub   
+      walletDir: qrl --wallet_dir 
+      generateSlave: qrl slave_tx_generate 
+      qrlState: qrl state              
+      listTokens: qrl token_list         
+      txInspect: qrl tx_inspect         
+      txMessage: qrl tx_message         
+      txPush: qrl tx_push            
+      txToken: qrl tx_token            
+      txTransfer: qrl tx_transfer        
+      txTransferToken: qrl tx_transfertoken   
+      walletAdd: qrl wallet_add         
+      walletDecrypt: qrl wallet_decrypt
+      walletEncrypt: qrl wallet_encrypt
+      walletGenerate: qrl wallet_gen
+      walletLs: qrl wallet_ls          
+      walletRecover: qrl wallet_recover     
+      walletRemove: qrl wallet_rm          
+      walletSecret: qrl wallet_secret      
+
+   qrlConf:
+      bitfield: 8192
+      mining_enabled: False
+      mining_address: ''
+      mining_thread_count: 0  
+      accept_ephemeral: True
+      outgoing_message_expiry: 90 
+      lru_state_cache_size: 10
+      max_state_limit: 10
+      enable_peer_discovery: True
+      p2p_local_port: 19000
+      p2p_public_port: 19000
+      peer_rate_limit: 500  
+      ban_minutes: 20
+      monitor_connections_interval: 30
+      max_peers_limit: 100
+      chain_state_timeout: 180
+      chain_state_broadcast_period: 30
+      transaction_pool_size: 25000
+      pending_transaction_pool_size: 75000
+      stale_transaction_threshold: 15
+      admin_api_enabled: False
+      admin_api_host: "127.0.0.1"
+      admin_api_port: 19008
+      admin_api_threads: 1
+      admin_api_max_concurrent_rpc: 100
+      public_api_enabled: True
+      public_api_host: "0.0.0.0"
+      public_api_port: 19009
+      public_api_threads: 1
+      public_api_max_concurrent_rpc: 100
+      mining_api_enabled: False
+      mining_api_host: "127.0.0.1"
+      mining_api_port: 19007
+      mining_api_threads: 1
+      mining_api_max_concurrent_rpc: 100
+      grpc_proxy_host: "127.0.0.1"
+      grpc_proxy_port: 18090
+      p2p_q_size: 1000
+      outgoing_message_expiry: 90
+      peer_list: 
+        - 35.178.79.137
+        - 35.177.182.85
+        - 18.130.119.29
+        - 18.130.25.64
+      ntp_servers:
+         - pool.ntp.org
+         - ntp.ubuntu.com
+
 ---
 
 <div class="wrapper docs docs-single">
