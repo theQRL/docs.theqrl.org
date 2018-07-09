@@ -39,7 +39,6 @@ Ephemeral messaging configuration details are shown below.
 |:------------|:---------------:|:--------------|
 | accept_ephemeral | {{ layout.v.qrlConf.accept_ephemeral }} |  |
 | outgoing_message_expiry | {{ layout.v.qrlConf.outgoing_message_expiry }}  |  |
-|  |  |  |
 
 
 #### Cache Size
