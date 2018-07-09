@@ -38,7 +38,7 @@ Ephemeral messaging configuration details are shown below.
 |  Directive  |  Default Value  |  Description  |
 |:------------|:---------------:|:--------------|
 | accept_ephemeral | {{ layout.v.qrlConf.accept_ephemeral }} |  |
-| outgoing_message_expiry | {{ layout.v.qrlConf.outgoing_message_expiary }}  |  |
+| outgoing_message_expiry | {{ layout.v.qrlConf.outgoing_message_expiry }}  |  |
 |  |  |  |
 
 
@@ -56,14 +56,14 @@ Ephemeral messaging configuration details are shown below.
 
 |  Directive  |  Default Value  |  Description  |
 |:------------|:---------------:|:--------------|
-|  enable_peer_discovery | {{ layout.v.qrlConf.enable_peer_discoverey }} | Allows to discover new peers from the connected peers
+|  enable_peer_discovery | {{ layout.v.qrlConf.enable_peer_discovery }} | Allows to discover new peers from the connected peers
  |
 | p2p_local_port | {{ layout.v.qrlConf.p2p_local_port }} | Locally binded port at which node will listen for connection |
 | p2p_public_port | {{ layout.v.qrlConf.p2p_public_port }} | Public port forwarding connections to server |
 | peer_rate_limit | {{ layout.v.qrlConf.peer_rate_limit }} | Max Number of messages per minute per peer |
 | ban_minutes | {{ layout.v.qrlConf.ban_minutes }} | Allows to ban a peer's IP who is breaking protocol |
-| monitor_connections_interval | {{ layout.v.qrlConf.monitor_connections }} | Monitor connection every 30 seconds |
-| max_peers_limit | {{ layout.v.qrlConf.max_peer_limit }} | Number of allowed peers |
+| monitor_connections_interval | {{ layout.v.qrlConf.monitor_connections_interval }} | Monitor connection every 30 seconds |
+| max_peers_limit | {{ layout.v.qrlConf.max_peers_limit }} | Number of allowed peers |
 | chain_state_timeout | {{ layout.v.qrlConf.chain_state_timeout }} | |
 | chain_state_broadcast_period | {{ layout.v.qrlConf.chain_state_timeout }} | must be less than ping_timeout |
 | transaction_pool_size | {{ layout.v.qrlConf.transaction_pool_size }} |  |
