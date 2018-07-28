@@ -73,7 +73,7 @@ This will install qrl and create the `~/.qrl` directory.
 Now that you have qrl installed go ahead and start the node up, and sync the blockchain. Create a `~/.qrl/`config.yml file and add any configuration settings yu may need. Make sure the node is not trying to mine while you sync.
 
 ```bash
-start_qrl --miningCreditWallet Q010900978071f5817ece4164123a5b83f80af957a9935876329bb1f015410e4542ed291ee7022f
+start_qrl --miningAddress Q010900978071f5817ece4164123a5b83f80af957a9935876329bb1f015410e4542ed291ee7022f
 ```
 
 
@@ -380,8 +380,8 @@ This will ask you a few questions.
 ```bash
 Src []: 0 # Wwhich address to use in the wallet file. 0 is the first address.
 Master []: 
-Number of slaves [0]: # this*OTS_key_height For tree height 10 (this*1024)
-Access type [0]: # enter 0 to allow transactions 1 for secure mining only
+Number of slaves [0]: 100 # this*OTS_key_height For tree height 10 (this*1024)
+Access type [0]: 0 # enter 0
 Fee [0.0]: # how much fee to pay to broadcast this across network.
 ```
 
