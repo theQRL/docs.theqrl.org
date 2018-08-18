@@ -80,7 +80,7 @@ Now install all the required dependencies:
 Update:
 
 ```bash
-Update
+# Update
 dnf update 
 ```
 
@@ -190,5 +190,5 @@ The defaults can be used to run a QRL node, though you may need to change some o
 
 ## Mining QRL
 
-> If you want to mine using a QRL node, see the guide for [Mining QRL Solo](/mining/full-node) or the [pool guide](/mining/pool-mining)to get started.
+> If you want to mine using a QRL node, see the guide for [Mining QRL Solo](/mining/full-node) or the [pool guide](/mining/pool-mining) to get started.
 {: .info}

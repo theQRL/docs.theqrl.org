@@ -36,13 +36,13 @@ Create the config file and add these settings to the file if not already created
 nano {{ layout.v.qrlConf.confLocation }} 
 ```
 
-```txt
+```bash
 # ======================================
 #    Mining Configuration
 # ======================================
 # mining_enabled: False
 # mining_address: ‘’
-# mining_thread_count: 0  # 0 to auto detect thread count based on CPU/GPU number of processors
+# mining_thread_count: 0  # 0 auto detect thread count based on number of processors
 #
 ```
 
@@ -56,7 +56,7 @@ Once you have made your changes the file will look something like this.
 > Note the QRL address shown needs to be replaced, unless you want to donate some quanta!
 {: .info}
 
-```txt
+```bash
 # ======================================
 #    Mining Configuration
 # ======================================

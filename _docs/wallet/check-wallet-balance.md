@@ -25,3 +25,9 @@ This will show you the current balance and all transactions that have happened w
 At the bottom left there is a **meta** button. This will give fine grain details for the current wallet.
 
 ![QRL Wallet meta](/assets/explorer/explorerMeta.png)
+
+## QRL Command line
+
+Using a terminal with qrl installed you can simply enter `{{ layout.v.qrlCommands.walletLs }}` to get the balance
+
+for more info on installing QRL see the doc [here](/node/QRLnode)
