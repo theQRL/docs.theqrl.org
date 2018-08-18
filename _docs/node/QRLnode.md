@@ -33,6 +33,8 @@ Abridged instructions for installing QRL on Ubuntu:
 sudo apt update && sudo apt upgrade -y
 
 # Install Required dependencies
+{{ layout.v.qrlCommands.qrlRequirements }}
+
 sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
 
 # Make sure setuptools is the latest
