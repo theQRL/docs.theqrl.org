@@ -33,9 +33,7 @@ Abridged instructions for installing QRL on Ubuntu:
 sudo apt update && sudo apt upgrade -y
 
 # Install Required dependencies
-{{ layout.v.qrlCommands.qrlRequirements }}
-
-sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
+{{ layout.v.qrlCommands.qrlRequirementsUbuntu }}
 
 # Make sure setuptools is the latest
 pip3 install -U setuptools
@@ -45,7 +43,8 @@ pip3 install -U setuptools
 ```
 
 
-If things worked correctly you will now find the `start_qrl` package and the `qrl` package. Adding the `--help` flag to each will print the various function details.
+If things worked correctly you will now find the `{{ layout.v.qrlCommands.startQRL }}
+` package and the `qrl` package. Adding the `--help` flag to each will print the various function details.
 
 
 
@@ -71,7 +70,7 @@ Now install all the required dependencies:
 
 ```bash
 # Install the required packages for QRL
-sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
+{{ layout.v.qrlCommands.qrlRequirementsUbuntu }}
 ```
 
 ### Redhat/fedora
@@ -87,7 +86,7 @@ Dependencies:
 
 ```bash
 # Install required packages
-dnf install swig cmake gcc gcc-c++ redhat-rpm-config python3-devel python-devel hwloc-devel boost-devel
+{{ layout.v.qrlCommands.qrlRequirementsRedhat }}
 ```
 
 
@@ -144,7 +143,8 @@ pip3 install -U setupTools
 After this completes install QRL with:
 
 ```bash
-pip3 install -U qrl
+{{ layout.v.qrlCommands.qrlInstall }}
+
 ```
 This will install the QRL package and any required dependencies. 
 
@@ -156,13 +156,13 @@ Now that we have QRL installed we can `start_qrl` and begin syncing the node. Th
 
 
 ```bash
-start_qrl
+{{ layout.v.qrlCommands.startQRL }}
 ```
 
 This will print out the details of the running QRL processes. For a more verbose output you can pass the `-l` option with `DEBUG, INFO,WARNING,ERROR,CRITICAL` depending on the level of information you need.
 
 ```bash 
-start_qrl -l DEBUG
+{{ layout.v.qrlCommands.startQRL }} -l DEBUG
 ```
 
 The node will sync the entire blockchain to your computer, make sure you have enough space. after syncing the chain you will begin seeing blocks added. Congrats, your QRL node is working. 
@@ -173,7 +173,7 @@ The node will sync the entire blockchain to your computer, make sure you have en
 If you would like to see all of the options you can pass along the command line simply add `--help` to the end of the command above.
 
 ```bash
-start_qrl --help
+{{ layout.v.qrlCommands.startQRL }} --help
 ```
 
 This will print all of the various options available. 
