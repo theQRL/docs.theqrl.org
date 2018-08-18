@@ -35,7 +35,7 @@ There are some options that can be configured for the new wallet. The default wa
 To simply create the QRL wallet unencrypted and with a default tree height of 10 you can enter the following command:
 
 ```bash
-qrl wallet_gen
+{{ layout.v.qrlCommands.walletGenerate }} 
 ```
 
 This will create an open wallet file in your current working directory called `wallet.json`. This is an **unencrypted** wallet file. Anyone with access can use this to get your funds. Protect this file with your life
@@ -57,7 +57,7 @@ qrl wallet_gen --encrypt
 
 This will prompt you for a password, ensure the password is of sufficient length and complexity. Enter twice to confirm the password is correct and the wallet will be created.
 
-> Alternatively if you have already created  a wallet file in plain text, you can encrypt it still using the `wallet_encrypt` function.
+> Alternatively if you have already created  a wallet file in plain text, you can encrypt it still using the `{{ layout.v.qrlCommands.walletEncrypt }}` function.
 {: .info}
 
 With an encrypted wallet file you will be prompted to enter your password anytime you interact with the wallet.
@@ -83,7 +83,7 @@ You may chose to create a wallet with more or less OTS keys used to sign transac
 Building on the example from above, create an encrypted wallet with a tree height of 12
 
 ```bash
-qrl wallet_gen --height 12 --encrypt
+{{ layout.v.qrlCommands.walletGenerate }} --height 12 --encrypt
 ```
 
 This will create an AES encrypted wallet.json file with 4,096 OTS keys available to use (2^12 OTS Keys)
@@ -120,7 +120,7 @@ QRL can utilize multiple hash functions, depending on the setting used during th
 To select to a different hash function use the `--hash_function` option while generating a new wallet. The command below will create an encrypted wallet with a tree height of 10, using the `shake256` hash function.
 
 ```bash
-qrl wallet_gen --hash_function shake256 --encrypt
+{{ layout.v.qrlCommands.walletGenerate }}  --hash_function shake256 --encrypt
 ```
 
 you can see the hash function of the wallet file by using the `wallet_ls` option with a `-v` verbose flag. It will be printed at the end of the command.
@@ -141,9 +141,6 @@ Number  Address                                                                 
 This will also print the available qrl balance and the wallet address. 
 
 
-
-
-
 ## Private Keys
 
 Now that you have an encrypted QRL wallet file lets get the private key and mnemonic phrase from the wallet. 
@@ -157,7 +154,7 @@ This section will cover:
 In the same directory as your QRL wallet.json file enter the following command to print your private key information:
 
 ```bash 
-qrl wallet_secret
+{{ layout.v.qrlCommands.walletSecret }} 
 ```
 
 This will prompt you `wallet idx [0]:` this is asking which address to use in the wallet.json file. If you only have one address, simply leave default and hit enter.
@@ -195,7 +192,7 @@ If you have the wallet.json file still, simply copy it over to the new machine a
 To recover using the Mnemonic phrase use the `wallet_recover` command. By default the command will expect a hexseed:
 
 ```bash
-qrl wallet_recover 
+{{ layout.v.qrlCommands.walletRecover }} 
 ```
 
 You will be prompted for the hexseed you have saved. Ensure you enter it correctly. The wallet address will be printed and you will have a chance to save it. enter yes and your wallet will be recovered and saved into the directory you are currently in. 
@@ -204,17 +201,17 @@ You will be prompted for the hexseed you have saved. Ensure you enter it correct
 {: .warning}
 
 ```bash 
-qrl wallet_encrypt
+{{ layout.v.qrlCommands.walletEncrypt }} 
 ```
 
 Follow the prompt to encrypt the file. 
 
 ### Mnemonic Phrase
 
-To recover using the Mnemonic phrase use the `wallet_recover --seed-type` command:
+To recover using the Mnemonic phrase use the `{{ layout.v.qrlCommands.walletRecover }}  --seed-type` command:
 
 ```bash
-qrl wallet_recover --seed-type mnemonic
+{{ layout.v.qrlCommands.walletRecover }} --seed-type mnemonic
 ```
 
 You will be prompted for the mnemonic you have saved. Ensure you enter it correctly. The wallet address will be printed and you will have a chance to save it. enter yes and your wallet will be recovered and saved into the directory you are currently in.
@@ -224,15 +221,10 @@ You will be prompted for the mnemonic you have saved. Ensure you enter it correc
 {: .warning}
 
 ```bash 
-qrl wallet_encrypt
+{{ layout.v.qrlCommands.walletEncrypt }} 
 ```
 
 Follow the prompt to encrypt the file. 
-
-
-
-
-
 
 
 ## Send QRL
@@ -245,8 +237,9 @@ You will need to be in the same directory as your wallet.json file or specify wh
 Assuming you are in the same directory, enter the following:
 
 ```bash
-qrl tx_transfer
+{{ layout.v.qrlCommands.txTransfer }} 
 ```
+
 This command will prompt you for the following information:
 
 
@@ -292,14 +285,14 @@ Sometimes it can be nice to have more than one address in your wallet. You can a
 
 
 ```bash
-qrl wallet_add
+{{ layout.v.qrlCommands.walletAdd }}
 ```
 If your wallet is encrypted you will be prompted for your passphrase. This will increment the wallet_idx by one every time you enter this command. The default settings will create a wallet with tree height 10 and use hash function shake128. 
 
 If you require other settings you can enter them in the command line. The command below will create a wallet with tree height 18, using shake256 hash function. 
 
 ```bash
-qrl wallet_add --height 18 --hash_function shake256
+{{ layout.v.qrlCommands.walletAdd }} --height 18 --hash_function shake256
 
 The wallet is encrypted. Enter password: 
 
@@ -323,13 +316,13 @@ Number  Address                                                                 
 If you need to remove an old address from your wallet you can use the `wallet_rm` command. This will permanently remove the address. Without the private keys from the address you will not be able to recover this address. If you are not sure print the private keys and write them down **Before** you remove the address. 
 
 ```bash
-qrl wallet_secret --wallet-idx 2
+{{ layout.v.qrlCommands.walletSecret }} --wallet-idx 2
 ```
 
 To remove an address enter the following into the command line:
 
 ```bash 
-qrl wallet_rm
+{{ layout.v.qrlCommands.walletRemove }}
 ```
 
 If you know the idx of the address you can specify by using the `--wallet-idx` option. 
@@ -354,7 +347,7 @@ Number  Address                                                                 
 The process of sending QRL between addresses in the same wallet is exactly the same as above, you simply enter the second address.
 
 ```bash
-qrl tx_transfer --src 0 --master 0 --dst Q02090081f7e33cc535ca6ca54305f7d34cf2cd9620b1efcae657a76ca4c072902dfc4ed0f23a4a --amounts 5.25 --fee 0.01 --ots_key_index 2
+{{ layout.v.qrlCommands.txTransfer }} --src 0 --master 0 --dst Q02090081f7e33cc535ca6ca54305f7d34cf2cd9620b1efcae657a76ca4c072902dfc4ed0f23a4a --amounts 5.25 --fee 0.01 --ots_key_index 2
 ```
 
 After the transaction has propagated through the network you will see the balance in the newly created wallet with the `qrl wallet_ls` command.
@@ -364,7 +357,7 @@ After the transaction has propagated through the network you will see the balanc
 To view all available addresses in the wallet index use:
 
 ```bash
-qrl wallet_ls
+{{ layout.v.qrlCommands.walletLs }}
 
 Wallet at          : /home/ubuntu/QRL_TEST
 Number  Address                                                                            Balance      
@@ -375,11 +368,6 @@ Number  Address                                                                 
 ```
 The wallet_idx is the number to the left in the output of the terminal. 
 
-
-## Advanced Wallet
-
-> Coming Soon
-{: .info}
 
 
 ## CLI Help
@@ -433,7 +421,7 @@ Commands:
 You can browse even further into sub commands like:
 
 ```bash
-qrl tx_transfer --help
+{{ layout.v.qrlCommands.txTransfer }} --help
 
 Usage: qrl tx_transfer [OPTIONS]
 

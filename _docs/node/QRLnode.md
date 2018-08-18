@@ -6,7 +6,9 @@ tags: node
 
 Running a QRL node strengthens the network, supports the decentralization and further verifies transactions on the network. This is an essential function of the decentralized architecture QRL relies on.
 
-You can use the node to connect the explorer, wallet, and ephemeral messaging features to the gRPC QRL functions. This allows you to run a private secure node to communicate with the QRL blockchain. 
+This allows you to run a private secure node to communicate with the QRL blockchain. 
+
+You can use the node to connect the explorer, wallet, and ephemeral messaging features to the gRPC QRL functions. 
 
 > There are various options available for connecting to the API and setup options for the node can be configured through a user set configuration file.
 {: .info}
@@ -39,7 +41,7 @@ sudo apt update && sudo apt upgrade -y
 pip3 install -U setuptools
 
 # Install QRL
-{{ layout.v.qrlCommands.qrlinstall }}
+{{ layout.v.qrlCommands.qrlInstall }}
 ```
 
 
@@ -144,7 +146,6 @@ After this completes install QRL with:
 
 ```bash
 {{ layout.v.qrlCommands.qrlInstall }}
-
 ```
 This will install the QRL package and any required dependencies. 
 
@@ -180,7 +181,7 @@ This will print all of the various options available.
 
 ## Configuration 
 
-By default when the node is started it will **NOT** mine any coins. You will have to enable using a configuration file in the `~/.qrl` directory. 
+By default when the node is started it will **NOT** mine any coins. You will have to enable using a configuration file in the `{{ layout.v.qrlConf.qrlDir }}` directory. 
 
 The configuration file is where you will change any options you want QRL to observe. You can grab a copy of the file and details about all of the settings in our [Configuration Guide](/node/configuration/)
 
@@ -189,5 +190,5 @@ The defaults can be used to run a QRL node, though you may need to change some o
 
 ## Mining QRL
 
-> If you want to mine using a QRL node, see the guide for [Mining QRL Solo](/mining/full-node) or the [pool guide](/mining/mining)to get started.
+> If you want to mine using a QRL node, see the guide for [Mining QRL Solo](/mining/full-node) or the [pool guide](/mining/pool-mining)to get started.
 {: .info}
