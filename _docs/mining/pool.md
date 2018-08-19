@@ -57,10 +57,7 @@ This will install qrl and create  `{{ layout.v.qrlConf.qrlDir }}
 
 Now that you have qrl installed start the node, and sync the blockchain. 
 
-```bash
-{{ layout.v.qrlCommands.startQRL }}
-```
-
+Before we start the node though we need to create a configuration file to give the QRL node instructions on how to run.
 Create a `{{ layout.v.qrlConf.confLocation }}` file and add any configuration settings you may need. 
 
 At minimum you must have:
