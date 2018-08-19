@@ -11,6 +11,7 @@ To accommodate this, QRL uses a configuration file found in the root qrl directo
 > For a great guide on .yml file layouts see this [YAML to JSON Cheat sheet](https://medium.com/@kenichishibata/yaml-to-json-cheatsheet-c3ac3ef519b8)
 {: .info}
 
+Grab a copy of the file here [https://docs.theqrl.org/node/config.yml](https://docs.theqrl.org/node/config.yml). Also shown at the bottom of this page.
 
 ## Configuration Directives
 
