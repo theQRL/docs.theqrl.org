@@ -13,6 +13,7 @@ To accommodate this, QRL uses a configuration file found in the root qrl directo
 
 
 ## Configuration Directives
+
 Below are all of the options, with explanations. You will find the config file has some comments, we explain in more detail here.
 
 
@@ -140,82 +141,127 @@ List of NTP servers for the node to use
 ## Config.yml
 
 ```yaml
-
-# ======================================
-#    Mining Configuration
-# ======================================
+##  _____ _             ___  ____  _     
+## |_   _| |__   ___   / _ \|  _ \| |    
+##   | | | '_ \ / _ \ | | | | |_) | |    
+##   | | | | | |  __/ | |_| |  _ <| |___ 
+##   |_| |_| |_|\___|  \__\_\_| \_\_____|                                      
+##   ____             __ _         _____ _ _      
+##  / ___|___  _ __  / _(_) __ _  |  ___(_) | ___ 
+## | |   / _ \| '_ \| |_| |/ _` | | |_  | | |/ _ \
+## | |__| (_) | | | |  _| | (_| | |  _| | | |  __/
+##  \____\___/|_| |_|_| |_|\__, | |_|   |_|_|\___|
+##                         |___/                 
+##
+## This is the configuration file for qrl. It is typically found in the ~/.qrl/ directory
+## Default settings are shown below. 
+## All commands begin with single(#) Uncomment and adjust to suit your needs
+##
+##======================================
+##   Mining Configuration
+##======================================
 # mining_enabled: False
 # mining_address: ''
 # mining_thread_count: 0  # 0 to auto detect thread count based on CPU/GPU number of processors
 #
-# ======================================
-#    Ephemeral Configuration
-# ======================================
+##======================================
+##   Ephemeral Configuration
+##======================================
 # accept_ephemeral: True
-# outgoing_message_expiry: 90 
 # Cache Size
 # lru_state_cache_size: 10
 # max_state_limit: 10
-
-# ======================================
-#    P2P Configuration
-# ======================================
-# enable_peer_discovery: True  # Allows to discover new peers from the connected peers
-# p2p_local_port: 19000
-# p2p_public_port: 19000
-# peer_rate_limit: 500  # Max Number of messages per minute per peer
-# ban_minutes: 20              # Allows to ban a peer's IP who is breaking protocol
-# monitor_connections_interval: 30
-# max_peers_limit: 100  # Number of allowed peers
-# chain_state_timeout: 180
-# chain_state_broadcast_period: 30		# must be less than ping_timeout
-# transaction_pool_size: 25000
-# pending_transaction_pool_size: 75000
-# stale_transaction_threshold: 15		# 15 Blocks
 #
+##======================================
+##   PEER Configuration
+##======================================
+# max_redundant_connections: 5  # Number of connections allowed from nodes having same IP
+# enable_peer_discovery: True  # Allows to discover new peers from the connected peers
 # peer_list: 
 #  - 35.178.79.137
 #  - 35.177.182.85
 #  - 18.130.119.29
 #  - 18.130.25.64
-#
+# p2p_local_port: 19000
+# p2p_public_port: 19000
+# peer_rate_limit: 500  # Max Number of messages per minute per peer
+# p2p_q_size: 10000
+# outgoing_message_expiry: 90  # Outgoing message expires after 90 seconds
 # ntp_servers:
 #   - pool.ntp.org
 #   - ntp.ubuntu.com
+# ntp_refresh: 12 * 60 * 60  # 12 hours
+# ntp_request_timeout: 10  # 10 seconds ntp timeout
+# ban_minutes: 20              # Allows to ban a peer's IP who is breaking protocol
+# monitor_connections_interval: 30
+# max_peers_limit: 100  # Number of allowed peers
+# chain_state_timeout: 180
+# chain_state_broadcast_period: 30    # must be less than ping_timeout
+# transaction_minimum_fee: 1000000000
+# transaction_pool_size: 25000
+# pending_transaction_pool_size: 75000
+# pending_transaction_pool_reserve: 75
+# stale_transaction_threshold: 15   # 15 Blocks
+# _qrl_dir: "~/.qrl"
 #
-# ======================================
-#        ADMIN API CONFIGURATION
-# ======================================
+##======================================
+##       ADMIN API CONFIGURATION
+##======================================
 # admin_api_enabled: False
 # admin_api_host: "127.0.0.1"
 # admin_api_port: 19008
 # admin_api_threads: 1
 # admin_api_max_concurrent_rpc: 100
 #
-# ======================================
-#        PUBLIC API CONFIGURATION
-# ======================================
+##======================================
+##       PUBLIC API CONFIGURATION
+##======================================
 # public_api_enabled: True
 # public_api_host: "0.0.0.0"
 # public_api_port: 19009
 # public_api_threads: 1
 # public_api_max_concurrent_rpc: 100
 #
-# ======================================
-#        MINING API CONFIGURATION
-# ======================================
+##======================================
+##       MINING API CONFIGURATION
+##======================================
 # mining_api_enabled: False
 # mining_api_host: "127.0.0.1"
 # mining_api_port: 19007
 # mining_api_threads: 1
 # mining_api_max_concurrent_rpc: 100
 #
-# ======================================
-#        GRPC PROXY CONFIGURATION
-# ======================================
+##======================================
+##        DEBUG API CONFIGURATION
+##======================================
+# debug_api_enabled: False
+# debug_api_host: "127.0.0.1"
+# debug_api_port: 52134
+# debug_api_threads: 1
+# debug_api_max_concurrent_rpc: 100
+#
+##======================================
+##       GRPC PROXY CONFIGURATION
+##======================================
 # grpc_proxy_host: "127.0.0.1"
 # grpc_proxy_port: 18090
-# p2p_q_size: 1000
-# outgoing_message_expiry: 90  # Outgoing message expires after 90 seconds
+#
+##======================================
+##      WALLET DAEMON CONFIGURATION
+##======================================
+# public_api_server: "127.0.0.1:19009"
+# wallet_daemon_host: "127.0.0.1"
+# wallet_daemon_port: 18091
+#
+##======================================
+##        WALLET API CONFIGURATION
+##======================================
+# wallet_api_host: "127.0.0.1"
+# wallet_api_port: 19010
+# wallet_api_threads: 1
+# wallet_api_max_concurrent_rpc: 100
+#
+#
+
 
 ```
