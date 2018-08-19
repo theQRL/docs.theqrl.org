@@ -6,6 +6,66 @@ tags: developers
 
 
 
+Interfacing with the qrlWalletAPI is simple and straight forward. Follow the steps below to get started. This instruction set assumes you are installing on Ubuntu. 
+
+1. Install the QRL Node and sync
+  - This allows a secure connection to the network running on the local server
+  - Find information at [https://docs.theqrl.org/node/QRLnode/](https://docs.theqrl.org/node/QRLnode/)
+2. Run the QRL wallet daemon
+  - `qrl_walletd`
+3. Install [golang-go v1.8](https://golang.org/doc/install#tarball) or greater
+3. Clone walletd-rest-proxy from the repo hosted at [https://github.com/theQRL/walletd-rest-proxy](https://github.com/theQRL/walletd-rest-proxy)
+  - `go get github.com/theQRL/walletd-rest-proxy`
+5. Start the wallet-rest-proxy 
+  - This allows connection to the WalletDaemon
+6. Send commands using cURL and begin using the QRL!
+
+
+```bash
+# Install qrl node Ubuntu
+apt update && apt upgrade -y
+apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
+
+pip3 install -U setuptools
+pip3 install -U qrl
+
+
+# Run the wallet daemon
+qrl_walletd
+
+
+#Clone walletd-rest-proxy
+git clone https://github.com/theQRL/walletd-rest-proxy 
+
+# go get the walletd-rest-proxy
+go get github.com/theQRL/walletd-rest-proxy
+cd $GOPATH/src/github.com/theQRL/walletd-rest-proxy
+go build
+
+# Run the wallet-rest-proxy
+./walletd-rest-proxy -serverIPPort 127.0.0.1:5359 -walletServiceEndpoint 127.0.0.1:19010`
+
+
+# Alternate paramaters may be passed to the API
+curl -XPOST http://127.0.0.1:5359/api/{METHOD} -d '{"{PARAMATER1}":"{SETTING1}","{PARAMATER2}":"{SETTING2}"}'
+
+
+# Example adding an address to a wallet with height 18 and hash_function sha_256
+curl -XPOST http://127.0.0.1:5359/api/AddNewAddress -d '{"height":"18","hash_function":"sha2_256"}'
+```
+
+
+
+`serverIPPort` indicates the `IP:Port` at which REST API service will be provided. 
+
+`walletServiceEndpoint` indicates the `IP:Port` at which the WalletAPIService is running.
+
+If you have not changed the host and port at config.yml of QRL Node, then the above command should work fine.
+
+Alternative parameters may be entered by calling the `-d` flag and using the syntax shown. You may call multiple parameters separated by `,`
+
+
+
 ## AddNewAddress
 
 Adds new randomly generated address to the wallet.
