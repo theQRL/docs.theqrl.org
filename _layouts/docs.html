@@ -34,22 +34,29 @@ v:
        bitfield: 8192
        mining_enabled: False
        mining_address: ''
-       mining_thread_count: 0  
+       mining_thread_count: 0 
+       mining_pause: 0 
        accept_ephemeral: True
-       outgoing_message_expiry: 90 
-       lru_state_cache_size: 10
-       max_state_limit: 10
+       max_redundant_connections: 5
        enable_peer_discovery: True
        p2p_local_port: 19000
        p2p_public_port: 19000
        peer_rate_limit: 500  
+       p2p_q_size: 10000
+       outgoing_message_expiry: 90 
+       lru_state_cache_size: 10
+       ntp_refresh: 12 * 60 * 60
+       ntp_request_timeout: 10
        ban_minutes: 20
        monitor_connections_interval: 30
        max_peers_limit: 100
        chain_state_timeout: 180
        chain_state_broadcast_period: 30
+       transaction_minimum_fee: 100000
+       max_state_limit: 10
        transaction_pool_size: 25000
        pending_transaction_pool_size: 75000
+       pending_transaction_pool_reserve: 75
        stale_transaction_threshold: 15
        admin_api_enabled: False
        admin_api_host: "127.0.0.1"
@@ -66,10 +73,20 @@ v:
        mining_api_port: 19007
        mining_api_threads: 1
        mining_api_max_concurrent_rpc: 100
+       debug_api_enabled: False
+       debug_api_host: "127.0.0.1"
+       debug_api_port: 52134
+       debug_api_threads: 1
+       debug_api_max_concurrent_rpc: 100
        grpc_proxy_host: "127.0.0.1"
        grpc_proxy_port: 18090
-       p2p_q_size: 1000
-       outgoing_message_expiry: 90
+       public_api_server: "127.0.0.1:19009"
+       wallet_daemon_host: "127.0.0.1"
+       wallet_daemon_port: 18091
+       wallet_api_host: "127.0.0.1"
+       wallet_api_port: 19010
+       wallet_api_threads: 1
+       wallet_api_max_concurrent_rpc: 100
    Pool:
        poolGit: https://github.com/cyyber/node-cryptonote-pool.git
        poolDependencies: sudo apt-get install libssl-dev libboost-all-dev git screen 

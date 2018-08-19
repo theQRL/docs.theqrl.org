@@ -10,9 +10,11 @@
 ##  \____\___/|_| |_|_| |_|\__, | |_|   |_|_|\___|
 ##                         |___/                 
 ##
-## This is the configuration file for qrl. It is typically found in the ~/.qrl/ directory
+## This is the configuration file for qrl. 
+## It is typically found in the ~/.qrl/ directory
 ## Default settings are shown below. 
-## All commands begin with single(#) Uncomment and adjust to suit your needs
+## All commands begin with single(#) 
+## Uncomment and adjust to suit your needs
 ##
 ##======================================
 ##   Mining Configuration
@@ -119,4 +121,5 @@
 # wallet_api_max_concurrent_rpc: 100
 #
 #
+
 

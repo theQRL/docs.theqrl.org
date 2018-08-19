@@ -126,6 +126,15 @@ List of NTP servers for the node to use
 | mining_api_max_concurrent_rpc | {{ layout.v.qrlConf.mining_api_max_concurrent_rpc }} |  |
 
 
+### DEBUG API CONFIGURATION
+|  Directive  |  Default Value  |  Description  |
+|:------------|:---------------:|:--------------|
+| debug_api_enabled | {{ layout.v.qrlConf.debug_api_enabled }} | |
+| debug_api_host | {{ layout.v.qrlConf.debug_api_host }} | |
+| debug_api_port | {{ layout.v.qrlConf.debug_api_port }} | |
+| debug_api_threads | {{ layout.v.qrlConf.debug_api_threads }} | |
+| debug_api_max_concurrent_rpc | {{ layout.v.qrlConf.debug_api_max_concurrent_rpc }} | |
+
 
 ###  GRPC PROXY CONFIGURATION
 
@@ -137,6 +146,22 @@ List of NTP servers for the node to use
 | outgoing_message_expiry | {{ layout.v.qrlConf.outgoing_message_expiry }} | Outgoing message expires after 90 seconds |
 
 
+### WALLET DAEMON CONFIGURATION
+
+|  Directive  |  Default Value  |  Description  |
+|:------------|:---------------:|:--------------|
+| public_api_server | {{ layout.v.qrlConf.public_api_server }} | |
+| wallet_daemon_host | {{ layout.v.qrlConf.wallet_daemon_host }} | |
+| wallet_daemon_port | {{ layout.v.qrlConf.wallet_daemon_port }} | |
+
+### WALLET API CONFIGURATION
+
+|  Directive  |  Default Value  |  Description  |
+|:------------|:---------------:|:--------------|
+| wallet_api_host | {{ layout.v.qrlConf.wallet_api_host }} | |
+| wallet_api_port | {{ layout.v.qrlConf.wallet_api_port }} | |
+| wallet_api_threads | {{ layout.v.qrlConf.wallet_api_threads }}| |
+| wallet_api_max_concurrent_rpc | {{ layout.v.qrlConf.wallet_api_max_concurrent_rpc }} | |
 
 
 ## Config.yml
@@ -154,9 +179,11 @@ List of NTP servers for the node to use
 ##  \____\___/|_| |_|_| |_|\__, | |_|   |_|_|\___|
 ##                         |___/                 
 ##
-## This is the configuration file for qrl. It is typically found in the ~/.qrl/ directory
+## This is the configuration file for qrl. 
+## It is typically found in the ~/.qrl/ directory
 ## Default settings are shown below. 
-## All commands begin with single(#) Uncomment and adjust to suit your needs
+## All commands begin with single(#) 
+## Uncomment and adjust to suit your needs
 ##
 ##======================================
 ##   Mining Configuration
