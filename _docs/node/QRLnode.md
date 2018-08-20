@@ -6,7 +6,9 @@ tags: node
 
 Running a QRL node strengthens the network, supports the decentralization and further verifies transactions on the network. This is an essential function of the decentralized architecture QRL relies on.
 
-You can use the node to connect the explorer, wallet, and ephemeral messaging features to the gRPC QRL functions. This allows you to run a private secure node to communicate with the QRL blockchain. 
+This allows you to run a private secure node to communicate with the QRL blockchain. 
+
+You can use the node to connect the explorer, wallet, and ephemeral messaging features to the gRPC QRL functions. 
 
 > There are various options available for connecting to the API and setup options for the node can be configured through a user set configuration file.
 {: .info}
@@ -33,17 +35,18 @@ Abridged instructions for installing QRL on Ubuntu:
 sudo apt update && sudo apt upgrade -y
 
 # Install Required dependencies
-sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
+{{ layout.v.qrlCommands.qrlRequirementsUbuntu }}
 
 # Make sure setuptools is the latest
 pip3 install -U setuptools
 
 # Install QRL
-pip3 install -U qrl
-
+{{ layout.v.qrlCommands.qrlInstall }}
 ```
 
-If things worked correctly you will now find the `start_qrl` package and the `qrl` package. Adding the `--help` flag to each will print the various function details.
+
+If things worked correctly you will now find the `{{ layout.v.qrlCommands.startQRL }}
+` package and the `qrl` package. Adding the `--help` flag to each will print the various function details.
 
 
 
@@ -69,7 +72,7 @@ Now install all the required dependencies:
 
 ```bash
 # Install the required packages for QRL
-sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
+{{ layout.v.qrlCommands.qrlRequirementsUbuntu }}
 ```
 
 ### Redhat/fedora
@@ -77,7 +80,7 @@ sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pk
 Update:
 
 ```bash
-Update
+# Update
 dnf update 
 ```
 
@@ -85,7 +88,7 @@ Dependencies:
 
 ```bash
 # Install required packages
-dnf install swig cmake gcc gcc-c++ redhat-rpm-config python3-devel python-devel hwloc-devel boost-devel
+{{ layout.v.qrlCommands.qrlRequirementsRedhat }}
 ```
 
 
@@ -142,7 +145,7 @@ pip3 install -U setupTools
 After this completes install QRL with:
 
 ```bash
-pip3 install -U qrl
+{{ layout.v.qrlCommands.qrlInstall }}
 ```
 This will install the QRL package and any required dependencies. 
 
@@ -154,13 +157,13 @@ Now that we have QRL installed we can `start_qrl` and begin syncing the node. Th
 
 
 ```bash
-start_qrl
+{{ layout.v.qrlCommands.startQRL }}
 ```
 
 This will print out the details of the running QRL processes. For a more verbose output you can pass the `-l` option with `DEBUG, INFO,WARNING,ERROR,CRITICAL` depending on the level of information you need.
 
 ```bash 
-start_qrl -l DEBUG
+{{ layout.v.qrlCommands.startQRL }} -l DEBUG
 ```
 
 The node will sync the entire blockchain to your computer, make sure you have enough space. after syncing the chain you will begin seeing blocks added. Congrats, your QRL node is working. 
@@ -171,14 +174,14 @@ The node will sync the entire blockchain to your computer, make sure you have en
 If you would like to see all of the options you can pass along the command line simply add `--help` to the end of the command above.
 
 ```bash
-start_qrl --help
+{{ layout.v.qrlCommands.startQRL }} --help
 ```
 
 This will print all of the various options available. 
 
 ## Configuration 
 
-By default when the node is started it will **NOT** mine any coins. You will have to enable using a configuration file in the `~/.qrl` directory. 
+By default when the node is started it will **NOT** mine any coins. You will have to enable using a configuration file in the `{{ layout.v.qrlConf.qrlDir }}` directory. 
 
 The configuration file is where you will change any options you want QRL to observe. You can grab a copy of the file and details about all of the settings in our [Configuration Guide](/node/configuration/)
 
@@ -187,5 +190,5 @@ The defaults can be used to run a QRL node, though you may need to change some o
 
 ## Mining QRL
 
-> If you want to mine using a QRL node, see the guide for [Mining QRL Solo](/mining/full-node) or the [pool guide](/mining/mining)to get started.
+> If you want to mine using a QRL node, see the guide for [Mining QRL Solo](/mining/full-node) or the [pool guide](/mining/pool-mining) to get started.
 {: .info}

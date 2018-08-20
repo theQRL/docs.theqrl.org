@@ -20,12 +20,12 @@ __Requirements__
 While connected to the computer running qrl you can see the state of the node by entering `qrl state` into the command line. This will print out the blockheight of the local node as well as some other information. Check that this is the same height as the [QRL explorer](https://explorer.theqrl.org) shows. 
 
 
-Once fully synced you can start mining by editing the config file found in `~/.qrl/config.yml` enabling mining. 
+Once fully synced you can start mining by editing the config file found in `{{ layout.v.qrlConf.confLocation }}` enabling mining. 
 
 
 ## Configuration
 
-To begin mining you will need to create and edit a file located in the default QRL directory `~/.qrl/config.yml`. There are a ton of configurations and settings you can tweak, however for this guide we are only concerned with the mining settings. 
+To begin mining you will need to create and edit a file located in the default QRL directory `{{ layout.v.qrlConf.confLocation }}`. There are a ton of configurations and settings you can tweak, however for this guide we are only concerned with the mining settings. 
 
 > For a complete guide of the configuration settings, please see the [QRL Node Configurations](/node/configuration) guide.
 {: .info}
@@ -33,16 +33,16 @@ To begin mining you will need to create and edit a file located in the default Q
 Create the config file and add these settings to the file if not already created.
 
 ```bash
-nano ~/.qrl/config.yml
+nano {{ layout.v.qrlConf.confLocation }} 
 ```
 
-```txt
+```bash
 # ======================================
 #    Mining Configuration
 # ======================================
 # mining_enabled: False
 # mining_address: ‘’
-# mining_thread_count: 0  # 0 to auto detect thread count based on CPU/GPU number of processors
+# mining_thread_count: 0  # 0 auto detect thread count based on number of processors
 #
 ```
 
@@ -56,7 +56,7 @@ Once you have made your changes the file will look something like this.
 > Note the QRL address shown needs to be replaced, unless you want to donate some quanta!
 {: .info}
 
-```txt
+```bash
 # ======================================
 #    Mining Configuration
 # ======================================
@@ -71,7 +71,7 @@ Once you have made your changes the file will look something like this.
 Restart the qrl node to begin mining with the new changes.
 
 ```bash
-start_qrl
+{{ layout.v.qrlCommands.startQRL }} 
 ```
 
 Once the node re-syncs with the network and catches up it will begin mining the current blocks on the chain You will see the rewards in the wallet you have specified in the configuration file.
@@ -79,5 +79,5 @@ Once the node re-syncs with the network and catches up it will begin mining the 
 You can also enter the following to print the state of the node
 
 ```bash
-qrl state
+{{ layout.v.qrlCommands.qrlState }} 
 ```

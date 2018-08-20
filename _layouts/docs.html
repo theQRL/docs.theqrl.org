@@ -1,46 +1,136 @@
 ---
 layout: default
+
+
+v:
+   qrlCommands:
+       qrlInstall: pip3 install -U qrl
+       grpcProxy: qrl_grpc_proxy
+       startQRL: start_qrl
+       pubPort: qrl --port_pub   
+       walletDir: qrl --wallet_dir 
+       generateSlave: qrl slave_tx_generate 
+       qrlState: qrl state              
+       listTokens: qrl token_list         
+       txInspect: qrl tx_inspect         
+       txMessage: qrl tx_message         
+       txPush: qrl tx_push            
+       txToken: qrl tx_token            
+       txTransfer: qrl tx_transfer        
+       txTransferToken: qrl tx_transfertoken   
+       walletAdd: qrl wallet_add         
+       walletDecrypt: qrl wallet_decrypt
+       walletEncrypt: qrl wallet_encrypt
+       walletGenerate: qrl wallet_gen
+       walletLs: qrl wallet_ls          
+       walletRecover: qrl wallet_recover     
+       walletRemove: qrl wallet_rm          
+       walletSecret: qrl wallet_secret      
+       qrlRequirementsRedhat: dnf install swig cmake gcc gcc-c++ redhat-rpm-config python3-devel python-devel hwloc-devel boost-devel
+       qrlRequirementsUbuntu: sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
+   qrlConf:
+       qrlDir: ~/.qrl/
+       confLocation: ~/.qrl/config.yml
+       bitfield: 8192
+       mining_enabled: False
+       mining_address: ''
+       mining_thread_count: 0 
+       mining_pause: 0 
+       accept_ephemeral: True
+       max_redundant_connections: 5
+       enable_peer_discovery: True
+       p2p_local_port: 19000
+       p2p_public_port: 19000
+       peer_rate_limit: 500  
+       p2p_q_size: 10000
+       outgoing_message_expiry: 90 
+       lru_state_cache_size: 10
+       ntp_refresh: 12 * 60 * 60
+       ntp_request_timeout: 10
+       ban_minutes: 20
+       monitor_connections_interval: 30
+       max_peers_limit: 100
+       chain_state_timeout: 180
+       chain_state_broadcast_period: 30
+       transaction_minimum_fee: 100000
+       max_state_limit: 10
+       transaction_pool_size: 25000
+       pending_transaction_pool_size: 75000
+       pending_transaction_pool_reserve: 75
+       stale_transaction_threshold: 15
+       admin_api_enabled: False
+       admin_api_host: "127.0.0.1"
+       admin_api_port: 19008
+       admin_api_threads: 1
+       admin_api_max_concurrent_rpc: 100
+       public_api_enabled: True
+       public_api_host: "0.0.0.0"
+       public_api_port: 19009
+       public_api_threads: 1
+       public_api_max_concurrent_rpc: 100
+       mining_api_enabled: False
+       mining_api_host: "127.0.0.1"
+       mining_api_port: 19007
+       mining_api_threads: 1
+       mining_api_max_concurrent_rpc: 100
+       debug_api_enabled: False
+       debug_api_host: "127.0.0.1"
+       debug_api_port: 52134
+       debug_api_threads: 1
+       debug_api_max_concurrent_rpc: 100
+       grpc_proxy_host: "127.0.0.1"
+       grpc_proxy_port: 18090
+       public_api_server: "127.0.0.1:19009"
+       wallet_daemon_host: "127.0.0.1"
+       wallet_daemon_port: 18091
+       wallet_api_host: "127.0.0.1"
+       wallet_api_port: 19010
+       wallet_api_threads: 1
+       wallet_api_max_concurrent_rpc: 100
+   Pool:
+       poolGit: https://github.com/cyyber/node-cryptonote-pool.git
+       poolDependencies: sudo apt-get install libssl-dev libboost-all-dev git screen 
 ---
 
 <div class="wrapper docs docs-single">
-	<div class="grid w12">
-		<div class="w12">
-			<p>Head back to <a href="/">Documentation</a></p>
-			<h1>Documentation</h1>
+    <div class="grid w12">
+        <div class="w12">
+            <p>Head back to <a href="/">Documentation</a></p>
+            <h1>Documentation</h1>
 
-		  {% if page.title %}
-		    <h2 class="page-heading">{{ page.title }}</h2>
-		  {% endif %}
+          {% if page.title %}
+            <h2 class="page-heading">{{ page.title }}</h2>
+          {% endif %}
 
-		  <div class="grid no-padding docgrid">
-		  		<div class="w8 document-page">
-				  {{ content }}		  			
-		  		</div>
-		  		<div class="w4">
-		  			<div class="floatmenu">
-						<nav>
-						<ul id="stickymenu">
-						</ul>
-						</nav>
-						<p>Still stuck? There's help over on <a class="cta" href="https://discord.gg/zcGhKpy" target="_blank">Discord! <simple-svg data-icon="mdi-discord"></simple-svg></a></p>	
-		  			</div>
-		  		</div>
-		
-		  </div>
-		</div>		
-	</div>
+          <div class="grid no-padding docgrid">
+                  <div class="w8 document-page">
+                  {{ content }}                      
+                  </div>
+                  <div class="w4">
+                      <div class="floatmenu">
+                        <nav>
+                        <ul id="stickymenu">
+                        </ul>
+                        </nav>
+                        <p>Still stuck? There's help over on <a class="cta" href="https://discord.gg/zcGhKpy" target="_blank">Discord! <simple-svg data-icon="mdi-discord"></simple-svg></a></p>    
+                      </div>
+                  </div>
+        
+          </div>
+        </div>        
+    </div>
 </div>
 
 <script>
 $(function() {
 
-	$('.document-page h2, .document-page h3').each(function(el, i) {
-		var title = this.innerHTML;
+    $('.document-page h2, .document-page h3').each(function(el, i) {
+        var title = this.innerHTML;
 
-		$(this).html('<a href="#'+this.id+'">'+title + '</a>');
+        $(this).html('<a href="#'+this.id+'">'+title + '</a>');
 
-		$('#stickymenu').append('<li><a href="#'+this.id+'">'+title +'</a>');
-		$('#stickymenu').append('</li>');
-	});
+        $('#stickymenu').append('<li><a href="#'+this.id+'">'+title +'</a>');
+        $('#stickymenu').append('</li>');
+    });
 })
 </script>

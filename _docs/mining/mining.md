@@ -28,7 +28,6 @@ QRL uses the Monero7 algorithm allowing QRL to take advantage of the ASIC resist
 > Privacy features of Monero are specific to that project, and do not carry over to QRL.
 {: .info}
 
-The QRL mining period will last until a stable PoS chain is ready and fully tested. After this happens a hard fork will occur switching the QRL blockchain over to a proof of stake network *(POS)*
 
 Any software that pool mines for monero will work with QRL. You can find something that is compatible with your OS and setup following the guide found with the project you choose. Ask for help in the QRL Discord or in the Reddit forum if you need help. 
 
@@ -72,7 +71,7 @@ There are a ton of options to choose from out there. Make sure the software will
 
 ## Pool Mining
 
-To get started pool mining, you will need to have an application that will utilize the processor or GPU of your computer. hen you will connect to a community run mining pool.
+To get started pool mining, you will need to have an application that will utilize the processor or GPU of your computer. Then you will connect to a community run mining pool.
 
 > For more information see our guide at [docs.theqrl.org](/mining/pool-mining)
 
