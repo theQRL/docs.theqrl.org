@@ -81,7 +81,7 @@ curl -XPOST http://127.0.0.1:5359/api/AddNewAddress
 
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
-| height | UInt64 | Height of the newly generated XMSS tree |
+| height | String | Height of the newly generated XMSS tree |
 | hash_function | String | Hash function for XMSS. Possible values are shake128, shake256, sha2_256. |
 
 **Response**
@@ -244,7 +244,7 @@ curl -XPOST http://127.0.0.1:5359/api/GetWalletInfo
 | code | UInt32 | Error Code. Only appears if any exception is triggered. |
 | error | String | Error Message. Only appears if any exception is triggered. |
 | version | Uint32 | Wallet version number |
-| address\_count | Uint64 | Number of addresses into the wallet |
+| address\_count | String | Number of addresses into the wallet |
 | is\_encrypted | Boolean | True if wallet is already encryptedFalse if wallet is not encrypted |
 
 
@@ -273,11 +273,11 @@ curl -XPOST http://127.0.0.1:5359/api/RelayTransferTxn -d '
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
 | addresses\_to | String[] | List of receiver&#39;s address |
-| amounts | UInt64[] | List of amounts in Shor to be received by receiver. Must be in same order as of addresses\_to |
-| fee | UInt64 | Transaction Fee in Shor |
+| amounts | String[] | List of amounts in Shor to be received by receiver. Must be in same order as of addresses\_to |
+| fee | String | Transaction Fee in Shor |
 | master\_address | String | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
 | signer\_address | String | QRL Address signing the transaction. QRL Address must be already added into wallet. |
-| ots\_index | UInt64 | One Time Signature Index to be used to sign the transaction. |
+| ots\_index | String | One Time Signature Index to be used to sign the transaction. |
 
 **Response**
 
@@ -313,10 +313,10 @@ curl -XPOST http://127.0.0.1:5359/api/RelayMessageTxn -d '
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
 | message | String | String Message of maximum 80 bytes. |
-| fee | UInt64 | Transaction Fee in Shor |
+| fee | String | Transaction Fee in Shor |
 | master\_address | String | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
 | signer\_address | String | QRL Address signing the transaction. QRL Address must be already added into wallet. |
-| ots\_index | UInt64 | One Time Signature Index to be used to sign the transaction. |
+| ots\_index | String | One Time Signature Index to be used to sign the transaction. |
 
 
 
@@ -362,13 +362,13 @@ curl -XPOST http://127.0.0.1:5359/api/RelayTokenTxn -d '
 | symbol | String | Symbol of the token |
 | name | String | Name of the token |
 | owner | String | QRL Address of the token owner |
-| decimals | UInt64 | Maximum supported decimals |
+| decimals | String | Maximum supported decimals |
 | addresses | String[] | List of address to whom initial token will be assigned |
-| amounts | UInt64[] | List of amounts of token to be assigned to addresses. Must be in same order as of addresses |
-| fee | UInt64 | Transaction Fee in Shor |
+| amounts | String[] | List of amounts of token to be assigned to addresses. Must be in same order as of addresses |
+| fee | String | Transaction Fee in Shor |
 | master\_address | String | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
 | signer\_address | String | QRL Address signing the transaction. QRL Address must be already added into wallet. |
-| ots\_index | UInt64 | One Time Signature Index to be used to sign the transaction. |
+| ots\_index | String | One Time Signature Index to be used to sign the transaction. |
 
 
 
@@ -411,11 +411,11 @@ curl -XPOST http://127.0.0.1:5359/api/RelayTransferTokenTxn -d '
 | --- | --- | --- |
 | token\_txhash | String | Token transaction hash is the transaction hash by which the token has been created. This is used to uniquely identify each created token in QRL network. |
 | addresses\_to | String[] | List of receiver&#39;s address |
-| amounts | UInt64[] | List of Amounts to be received by receiver. Must be in same order as of addresses\_to |
-| fee | UInt64 | Transaction Fee in Shor |
+| amounts | String[] | List of Amounts to be received by receiver. Must be in same order as of addresses\_to |
+| fee | String | Transaction Fee in Shor |
 | master\_address | String | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
 | signer\_address | String | QRL Address signing the transaction. QRL Address must be already added into wallet. |
-| ots\_index | UInt64 | One Time Signature Index to be used to sign the transaction. |
+| ots\_index | String | One Time Signature Index to be used to sign the transaction. |
 
 
 
@@ -454,11 +454,11 @@ curl -XPOST http://127.0.0.1:5359/api/RelaySlaveTxn -d '
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
 | slave\_pks | Bytes[] | List of Base64 encoded Public Keys which are allowed to act as slave |
-| access\_types | UInt64[] | Current supported access\_type is 0 |
-| fee | UInt64 | Transaction Fee in Shor |
+| access\_types | String[] | Current supported access\_type is 0 |
+| fee | String | Transaction Fee in Shor |
 | master\_address | String | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
 | signer\_address | String | QRL Address signing the transaction. QRL Address must be already added into wallet. |
-| ots\_index | UInt64 | One Time Signature Index to be used to sign the transaction. |
+| ots\_index | String | One Time Signature Index to be used to sign the transaction. |
 
 
 
@@ -634,7 +634,7 @@ curl -XPOST http://127.0.0.1:5359/api/GetTransactionsByAddress -d '
 | code | UInt32 | Error Code. Only appears if any exception is triggered. |
 | error | String | Error Message. Only appears if any exception is triggered. |
 | mini_transactions | MiniTransaction[] | List of MiniTransations which includes, transaction_hash, amount and out.|
-| balance | Uint64 | Total balance |
+| balance | String | Total balance |
 
 
 
@@ -655,7 +655,7 @@ curl -XPOST http://127.0.0.1:5359/api/GetTransaction -d '
 **Response**
 
 ```
-{"tx":{"master_addr":"Q0000000000000000000000000000000000000000000000000000000000000000","nonce":"551","transaction_hash":"931c33d9fe1900d3f6093a951ce04e9da31380cdd7bf1f6e23c58c2c8eecdfbc","coinbase":{"addr_to":"Q0106001d34628da087339ddd650a843e131fa4a3f3b107e9b6222d609f6dad3860b4798cc5b361","amount":"6656741376"}},"confirmations":"167"}
+{"tx":{"master_addr":"Q0000000000000000000000000000000000000000000000000000000000000000","nonce":"551","transaction_hash":"931c33d9fe1900d3f6093a951ce04e9da31380cdd7bf1f6e23c58c2c8eecdfbc","coinbase":{"addr_to":"Q0106001d34628da087339ddd650a843e131fa4a3f3b107e9b6222d609f6dad3860b4798cc5b361","amount":"6656741376"}},"confirmations":"2498","block_number":"550","block_header_hash":"1a57bee559af234a157b0429e2d2e3b7b3013ae5a52fd092eeeb22201c000000"}
 ```
 
 **Request**
@@ -673,7 +673,9 @@ curl -XPOST http://127.0.0.1:5359/api/GetTransaction -d '
 | code | UInt32 | Error Code. Only appears if any exception is triggered. |
 | error | String | Error Message. Only appears if any exception is triggered. |
 | tx | Transaction | Transaction Details |
-| confirmations | Uint64 | The number of confirmations if any |
+| confirmations | String | The number of confirmations if any |
+| block_number | String | Block number at which transaction was accepted, if any|
+| block_header_hash | String | Header hash of the block at which transaction was accepted, if any|
 
 
 
@@ -708,7 +710,7 @@ curl -XPOST http://127.0.0.1:5359/api/GetBalance -d '
 | --- | --- | --- |
 | code | UInt32 | Error Code. Only appears if any exception is triggered. |
 | error | String | Error Message. Only appears if any exception is triggered. |
-| balance | UInt64 | Balance in Shor |
+| balance | String | Balance in Shor |
 
 
 
@@ -746,7 +748,7 @@ curl -XPOST http://127.0.0.1:5359/api/GetOTS -d '
 | code | UInt32 | Error Code. Only appears if any exception is triggered. |
 | error | String | Error Message. Only appears if any exception is triggered. |
 | ots\_bitfield | byte[][] | Ots bitfield data. Each 0 bit represent the ots key index is unused, while 1 indicates the ots key index has been used. |
-| next\_unused\_ots\_index | UInt64 | Next Unused OTS Index |
+| next\_unused\_ots\_index | String | Next Unused OTS Index |
 
 
 
@@ -771,7 +773,7 @@ curl -XPOST http://127.0.0.1:5359/api/GetHeight
 | --- | --- | --- |
 | code | UInt32 | Error Code. Only appears if any exception is triggered. |
 | error | String | Error Message. Only appears if any exception is triggered. |
-| height | UInt64 | Current Height of the blockchain |
+| height | String | Current Height of the blockchain |
 
 ## GetBlock
 
@@ -831,7 +833,7 @@ curl -XPOST http://127.0.0.1:5359/api/GetBlockByNumber -d '
 
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
-| block\_number | UInt64 | Block Number |
+| block\_number | String | Block Number |
 
 **Response**
 
