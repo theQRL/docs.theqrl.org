@@ -81,7 +81,7 @@ curl -XPOST http://127.0.0.1:5359/api/AddNewAddress
 
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
-| height | String | Height of the newly generated XMSS tree |
+| height | UInt64 | Height of the newly generated XMSS tree |
 | hash_function | String | Hash function for XMSS. Possible values are shake128, shake256, sha2_256. |
 
 **Response**
@@ -273,11 +273,11 @@ curl -XPOST http://127.0.0.1:5359/api/RelayTransferTxn -d '
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
 | addresses\_to | String[] | List of receiver&#39;s address |
-| amounts | String[] | List of amounts in Shor to be received by receiver. Must be in same order as of addresses\_to |
-| fee | String | Transaction Fee in Shor |
+| amounts | UInt64[] | List of amounts in Shor to be received by receiver. Must be in same order as of addresses\_to |
+| fee | UInt64 | Transaction Fee in Shor |
 | master\_address | String | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
 | signer\_address | String | QRL Address signing the transaction. QRL Address must be already added into wallet. |
-| ots\_index | String | One Time Signature Index to be used to sign the transaction. |
+| ots\_index | UInt64 | One Time Signature Index to be used to sign the transaction. |
 
 **Response**
 
@@ -313,10 +313,10 @@ curl -XPOST http://127.0.0.1:5359/api/RelayMessageTxn -d '
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
 | message | String | String Message of maximum 80 bytes. |
-| fee | String | Transaction Fee in Shor |
+| fee | UInt64 | Transaction Fee in Shor |
 | master\_address | String | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
 | signer\_address | String | QRL Address signing the transaction. QRL Address must be already added into wallet. |
-| ots\_index | String | One Time Signature Index to be used to sign the transaction. |
+| ots\_index | UInt64 | One Time Signature Index to be used to sign the transaction. |
 
 
 
@@ -362,13 +362,13 @@ curl -XPOST http://127.0.0.1:5359/api/RelayTokenTxn -d '
 | symbol | String | Symbol of the token |
 | name | String | Name of the token |
 | owner | String | QRL Address of the token owner |
-| decimals | String | Maximum supported decimals |
+| decimals | UInt64 | Maximum supported decimals |
 | addresses | String[] | List of address to whom initial token will be assigned |
-| amounts | String[] | List of amounts of token to be assigned to addresses. Must be in same order as of addresses |
-| fee | String | Transaction Fee in Shor |
+| amounts | UInt64[] | List of amounts of token to be assigned to addresses. Must be in same order as of addresses |
+| fee | UInt64 | Transaction Fee in Shor |
 | master\_address | String | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
 | signer\_address | String | QRL Address signing the transaction. QRL Address must be already added into wallet. |
-| ots\_index | String | One Time Signature Index to be used to sign the transaction. |
+| ots\_index | UInt64 | One Time Signature Index to be used to sign the transaction. |
 
 
 
@@ -411,11 +411,11 @@ curl -XPOST http://127.0.0.1:5359/api/RelayTransferTokenTxn -d '
 | --- | --- | --- |
 | token\_txhash | String | Token transaction hash is the transaction hash by which the token has been created. This is used to uniquely identify each created token in QRL network. |
 | addresses\_to | String[] | List of receiver&#39;s address |
-| amounts | String[] | List of Amounts to be received by receiver. Must be in same order as of addresses\_to |
-| fee | String | Transaction Fee in Shor |
+| amounts | UInt64[] | List of Amounts to be received by receiver. Must be in same order as of addresses\_to |
+| fee | UInt64 | Transaction Fee in Shor |
 | master\_address | String | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
 | signer\_address | String | QRL Address signing the transaction. QRL Address must be already added into wallet. |
-| ots\_index | String | One Time Signature Index to be used to sign the transaction. |
+| ots\_index | UInt64 | One Time Signature Index to be used to sign the transaction. |
 
 
 
@@ -454,11 +454,11 @@ curl -XPOST http://127.0.0.1:5359/api/RelaySlaveTxn -d '
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
 | slave\_pks | Bytes[] | List of Base64 encoded Public Keys which are allowed to act as slave |
-| access\_types | String[] | Current supported access\_type is 0 |
-| fee | String | Transaction Fee in Shor |
+| access\_types | UInt64[] | Current supported access\_type is 0 |
+| fee | UInt64 | Transaction Fee in Shor |
 | master\_address | String | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
 | signer\_address | String | QRL Address signing the transaction. QRL Address must be already added into wallet. |
-| ots\_index | String | One Time Signature Index to be used to sign the transaction. |
+| ots\_index | UInt64 | One Time Signature Index to be used to sign the transaction. |
 
 
 
@@ -833,7 +833,7 @@ curl -XPOST http://127.0.0.1:5359/api/GetBlockByNumber -d '
 
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
-| block\_number | String | Block Number |
+| block\_number | UInt64 | Block Number |
 
 **Response**
 
