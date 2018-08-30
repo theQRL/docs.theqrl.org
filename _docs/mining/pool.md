@@ -31,7 +31,7 @@ Running a mining pool is not something that should be taken lightly. You need to
 * This guide uses Ubuntu 16.04
 * python 3.5 or greater is required
 * node 0.10.48
-* [node-cryptonote-pool fork]({{ layout.v.pool.poolGit }})
+* [node-cryptonote-pool fork]( {{ layout.v.pool.poolGit }} )
 
 ## QRL Install
 
