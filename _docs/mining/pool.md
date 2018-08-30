@@ -85,7 +85,7 @@ Verify the local node blockheight matches the [block explorer](https://explorer.
 ## Pool Install
 
 
-To install the pool follow the instruction in the [GitHub Repository]({{ layout.v.pool.poolGit }})
+To install the pool follow the instruction in the [GitHub Repository](https://github.com/cyyber/node-cryptonote-pool.git)
 
 
 #### Dependencies
@@ -94,7 +94,7 @@ To install the pool follow the instruction in the [GitHub Repository]({{ layout.
 * nvm
 * Node V 0.10.48
 * Redis-server
-* Node-Cryptonote-Pool Found [Here]({{ layout.v.pool.poolGit }})
+* Node-Cryptonote-Pool Found [Here](https://github.com/cyyber/node-cryptonote-pool.git)
    * This is a fork form the popular *zone117x node-cryptonote-pool*
 
 
