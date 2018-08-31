@@ -31,7 +31,7 @@ Running a mining pool is not something that should be taken lightly. You need to
 * This guide uses Ubuntu 16.04
 * python 3.5 or greater is required
 * node 0.10.48
-* [node-cryptonote-pool fork](https://github.com/cyyber/node-cryptonote-pool.git)
+* [node-cryptonote-pool fork](https://github.com/theQRL/node-cryptonote-pool.git)
 
 ## QRL Install
 
@@ -85,7 +85,7 @@ Verify the local node blockheight matches the [block explorer](https://explorer.
 ## Pool Install
 
 
-To install the pool follow the instruction in the [GitHub Repository](https://github.com/cyyber/node-cryptonote-pool.git)
+To install the pool follow the instruction in the [GitHub Repository](https://github.com/theQRL/node-cryptonote-pool.git)
 
 
 #### Dependencies
@@ -94,7 +94,7 @@ To install the pool follow the instruction in the [GitHub Repository](https://gi
 * nvm
 * Node V 0.10.48
 * Redis-server
-* Node-Cryptonote-Pool Found [Here](https://github.com/cyyber/node-cryptonote-pool.git)
+* Node-Cryptonote-Pool Found [Here](https://github.com/theQRL/node-cryptonote-pool.git)
    * This is a fork form the popular *zone117x node-cryptonote-pool*
 
 
