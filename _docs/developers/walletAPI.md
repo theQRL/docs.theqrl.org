@@ -148,7 +148,7 @@ List all addresses into the wallet.
 
 **Request**
 ```
-curl -XPOST http://127.0.0.1:5359/api/ListAddresses
+curl -XGET http://127.0.0.1:5359/api/ListAddresses
 ```
 **Response**
 ```
@@ -240,7 +240,7 @@ Get wallet information.
 
 **Request**
 ```
-curl -XPOST http://127.0.0.1:5359/api/GetWalletInfo
+curl -XGET http://127.0.0.1:5359/api/GetWalletInfo
 ```
 **Response**
 ```
@@ -906,7 +906,7 @@ Locks the wallet and removes the passphrase from the memory of wallet daemon.
 **Request**
 
 ```
-curl -XPOST http://127.0.0.1:5359/api/LockWallet
+curl -XGET http://127.0.0.1:5359/api/LockWallet
 ```
 
 **Response**
@@ -1188,7 +1188,7 @@ Get current blockchain height.
 **Request**
 
 ```
-curl -XPOST http://127.0.0.1:5359/api/GetHeight
+curl -XGET http://127.0.0.1:5359/api/GetHeight
 ```
 **Response**
 ```
@@ -1438,7 +1438,7 @@ Get QRL node information.
 **Request**
 
 ```
-curl -XPOST http://127.0.0.1:5359/api/GetNodeInfo
+curl -XGET http://127.0.0.1:5359/api/GetNodeInfo
 ```
 
 **Response**
