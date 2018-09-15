@@ -1446,8 +1446,8 @@ curl -XGET http://127.0.0.1:5359/api/GetNodeInfo
 ```
 {
   "version": "1.1.4",
-  "num_connections": 1,
-  "num_known_peers": 5,
+  "num_connections": "1",
+  "num_known_peers": "5",
   "uptime": "1748",
   "block_height": "18098",
   "block_last_hash": "8f1e7bc73fab84421351219b8d5dd0d279479b426aa0eae7274c8843284f1e70",
@@ -1462,8 +1462,8 @@ curl -XGET http://127.0.0.1:5359/api/GetNodeInfo
 | code | UInt32 | Error Code. Only appears if any exception is triggered. |
 | error | String | Error Message. Only appears if any exception is triggered. |
 | version | String | Node version |
-| num_connections | UInt32 | Number of connections to Node |
-| num_known_peers | UInt32 | Number of known peers |
+| num_connections | String | Number of connections to Node |
+| num_known_peers | String | Number of known peers |
 | uptime | String | Node Uptime in seconds |
 | block_height | String | Current block height |
 | block_last_hash | String | Block headerhash for last block |
