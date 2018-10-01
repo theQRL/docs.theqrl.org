@@ -13,7 +13,7 @@ peer_list: []
 
 
 ##### Description:
-<br />
+
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
 | genesis_difficulty | UInt64 | Initial difficulty to mine the block. The lower the value the easier it will be to mine the first block. |
@@ -32,7 +32,7 @@ start_qrl --miningAddress Q010800dd14a340e6daf28d4dab9e42a534177db5bf06ef1bb3004
 
 
 ##### Description:
-<br />
+
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
 | miningAddress | String | Any valid QRL address on which mining rewards will be credited. |
