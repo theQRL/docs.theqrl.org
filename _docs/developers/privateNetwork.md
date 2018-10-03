@@ -21,7 +21,7 @@ peer_list: []
 ```
 
 
-##### Description:
+#### Description:
 
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
@@ -33,14 +33,14 @@ peer_list: []
 **Note:** If you previously ran QRL mainnet on the same node then you need to delete `~/.qrl/data/`
 
 
-### 2. Running QRL Node
+## Running QRL Node
 
 ```
 start_qrl --miningAddress Q010800dd14a340e6daf28d4dab9e42a534177db5bf06ef1bb300452f606a17331bacca9453aac1 --mockGetMeasurement 1000000000
 ```
 
 
-##### Description:
+#### Description:
 
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
