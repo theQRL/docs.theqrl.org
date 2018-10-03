@@ -4,7 +4,7 @@ categories: developers
 tags: developers
 ---
 
-Setting up a QRL private network will allow a developer the ability to test out transacting on the QRL network without the risk of testing with real QRL. This is intedned to help the development and advancement of external systems.
+Setting up a QRL private network will allow a developer the ability to test out transacting on the QRL network without the risk of testing with real QRL. This is intendned to help the development and advancement of external systems.
 
 
 This documentation assumes that you have already followed the [QRL node installation instructions](https://docs.theqrl.org/node/QRLnode/)
