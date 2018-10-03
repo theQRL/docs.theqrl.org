@@ -1,9 +1,18 @@
-# Setting up a QRL private network
-This documentation assumes that you have already followed the QRL node installation instructions as mentioned in this link  https://docs.theqrl.org/node/QRLnode/
+---
+title: QRL Private Network
+categories: developers
+tags: developers
+---
 
-### 1. Configuring config.yml
+Setting up a QRL private network will allow a developer the ability to test out transacting on the QRL network without the risk of testing with real QRL. This is intedned to help the development and advancement of external systems.
 
-In order to run private chain, you need to create ~/.qrl/config.yml with following content
+
+This documentation assumes that you have already followed the [QRL node installation instructions](https://docs.theqrl.org/node/QRLnode/)
+
+
+## Configuring config.yml
+
+In order to run a private chain, you need to create `~/.qrl/config.yml` with following content at minimum. See 
 
 ```
 genesis_difficulty: 500
@@ -21,7 +30,7 @@ peer_list: []
 | peer_list | String[] | List of strings containing "ip:port". It overrides the default peer list. |
 
 
-**Note:** If you previously ran QRL mainnet on the same node then you need to delete ~/.qrl/data/
+**Note:** If you previously ran QRL mainnet on the same node then you need to delete `~/.qrl/data/`
 
 
 ### 2. Running QRL Node
@@ -36,5 +45,5 @@ start_qrl --miningAddress Q010800dd14a340e6daf28d4dab9e42a534177db5bf06ef1bb3004
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
 | miningAddress | String | Any valid QRL address on which mining rewards will be credited. |
-| mockGetMeasurement | Uint64 | A higher mockGetMeasurement eases it for the hardware to mine the blocks. It simply makes the difficulty constant. The value 1000000000 is enough to mine using a very low end hardware. |
+| mockGetMeasurement | Uint64 | A higher mockGetMeasurement eases it for the hardware to mine the blocks. It simply makes the difficulty constant. The value 1000000000 is enough to mine using very low end hardware. |
 
