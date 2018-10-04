@@ -4,7 +4,7 @@ categories: developers
 tags: developers
 ---
 
-Setting up a QRL private network will allow a developer the ability to test out transacting on the QRL network without the risk of testing with real QRL. This is intended to help the development and advancement of external systems.
+Setting up a private QRL network allows a developer to test making QRL transactions without placing funds at risk or relying on external infrastructure. This is intended to help the development and advancement of external systems.
 
 
 This documentation assumes that you have already followed the [QRL node installation instructions](https://docs.theqrl.org/node/QRLnode/)
@@ -14,7 +14,7 @@ This documentation assumes that you have already followed the [QRL node installa
 
 In order to run a private chain, you need to create `~/.qrl/config.yml` with following content at minimum. See 
 
-```
+```yml
 genesis_difficulty: 500
 mining_enabled: True
 peer_list: []
@@ -35,7 +35,7 @@ peer_list: []
 
 ## Running QRL Node
 
-```
+```bash
 start_qrl --miningAddress Q010800dd14a340e6daf28d4dab9e42a534177db5bf06ef1bb300452f606a17331bacca9453aac1 --mockGetMeasurement 1000000000
 ```
 
