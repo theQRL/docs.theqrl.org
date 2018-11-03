@@ -43,7 +43,7 @@ cd $GOPATH/src/github.com/theQRL/walletd-rest-proxy
 go build
 
 # Run the wallet-rest-proxy
-./walletd-rest-proxy -serverIPPort 127.0.0.1:5359 -walletServiceEndpoint 127.0.0.1:19010`
+./walletd-rest-proxy -serverIPPort 127.0.0.1:5359 -walletServiceEndpoint 127.0.0.1:19010
 
 
 # Alternate paramaters may be passed to the API
