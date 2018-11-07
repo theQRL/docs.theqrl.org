@@ -6,15 +6,11 @@ tags: node
 
 This guide will explain the installation and configuration of a TestNet node running on the latest QRL codebase.
 
-> There is no value associated with the Testnet QRL, It's only used for testing. 
-{: .info}
 
 Interacting with the QRL network while developing can present some complications, especially when dealing with live currency. There are situations where having a TestNet to interact with is beneficial.
 
-
-> Never use a QRL address on both networks! OTS keys should never be re-used.  
-{: .danger}
-
+> There is no value associated with the Testnet QRL, It's only used for testing. 
+{: .info}
 
 ## Testnet Installation
 
@@ -92,6 +88,9 @@ The TestNet node will sync the entire blockchain to your computer, make sure you
 A TestNet node will operate exactly the same as the MainNstet node will, and all commands are the same. The command line interface is still accessed through calls to the `qrl` program. 
 
 We have a ton of information on the usage of the node, wallet creation, and various API's in our main Documentation. All of this information applies to a TestNet node as well.
+
+> Never use a QRL address on both networks! OTS keys should never be re-used.  
+{: .danger}
 
 You will need to generate a new TestNet wallet. It is important to note that you should never use a wallet or address on both networks. Due to the way OTS keys work, the address could be compromised if the OTS key is exposed more than once on the blockchain.
 
