@@ -70,8 +70,11 @@ genesis_difficulty: 5000
 
 The QRL node needs to know some information from the genesis of the blockchain. For a MainNet node, this information is installed by default. For a TestNet node you have to pass this to the node in a properly placed `genesis.yml` file.  This file lives in the same directory as the config.yml file.
 
-Due to the size of this file, we have included it at the [end of this document](#Full_genesis.yml_File). You can grab a copy of this from the QRL docs page at [https://docs.theqrl.org/node/genesis.yml](https://docs.theqrl.org/node/genesis.yml) or with `wget https://docs.theqrl.org/node/genesis.yml`
+Due to the size of this file, we have included it at the [end of this document](#Full_genesis.yml_File). You can grab a copy of this from the QRL docs page at [https://docs.theqrl.org/node/genesis.yml](https://docs.theqrl.org/node/genesis.yml) or with 
 
+```bash
+wget https://docs.theqrl.org/node/genesis.yml
+```
 
 #### Start The QRL Node
 
@@ -92,7 +95,7 @@ We have a ton of information on the usage of the node, wallet creation, and vari
 > Never use a QRL address on both networks! OTS keys should never be re-used.  
 {: .danger}
 
-You will need to generate a new TestNet wallet. It is important to note that you should never use a wallet or address on both networks. Due to the way OTS keys work, the address could be compromised if the OTS key is exposed more than once on the blockchain.
+You will need to generate a new TestNet wallet. Due to the way OTS keys work, the address has more likelihood to be compromised if the OTS key is exposed more than once on the blockchain.
 
 ## Mining TestNet
 
@@ -101,6 +104,16 @@ We encourage people to set their nodes on TestNet to allow mining. This is a gre
 - Please note that most virtual private server providers dis-allow mining operations on shared resources. This may end up in a ban from the 3rd party system. 
 - There is no need for mining pools and GPU mining on the testnet, save that hash power for the real network. 
 - TestNet QRL is not traded, and is not worth any real value. *This is only a test...*
+
+#### Enable Mining
+
+To enable mining on your TestNet node, simply add the following to the `~/.qrl/config.yml` file and restart the node to pickup the changes.
+
+```bash
+mining_enabled: True
+mining_address: ‘TESTNET_QRL_ADDRESS_HERE’
+mining_thread_count: 0 
+```
 
 If you are in need of some QRL for testing on the TestNet, head over to the faucet and enter your TestNet address. You can find the link below. You will also find a link to the testnet wallet below, in case you need one of those too. 
 
