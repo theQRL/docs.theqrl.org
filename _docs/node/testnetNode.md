@@ -70,10 +70,10 @@ genesis_difficulty: 5000
 
 The QRL node needs to know some information from the genesis of the blockchain. For a MainNet node, this information is installed by default. For a TestNet node you have to pass this to the node in a properly placed `genesis.yml` file.  This file lives in the same directory as the config.yml file.
 
-Due to the size of this file, we have included it at the [end of this document](#full-genesisyml-file). You can grab a copy of this from the QRL docs page at [https://docs.theqrl.org/node/genesis.yml](https://docs.theqrl.org/node/genesis.yml) or with 
+Due to the size of this file, we have included it at the [end of this document](#full-genesisyml-file). You can grab a copy of this from the  bottom of this page, from the QRL docs page at [https://docs.theqrl.org/node/genesis.yml](https://docs.theqrl.org/node/genesis.yml) or with 
 
 ```bash
-wget https://docs.theqrl.org/node/genesis.yml
+wget -O ~/.qrl/genesis.yml https://docs.theqrl.org/node/genesis.yml
 ```
 
 #### Start The QRL Node
