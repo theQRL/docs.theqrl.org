@@ -6,12 +6,14 @@ tags: node
 
 This guide will explain the installation and configuration of a TestNet node running on the latest QRL codebase.
 
+> There is no value associated with the Testnet QRL, It's only used for testing. 
+{: .info}
+
 Interacting with the QRL network while developing can present some complications, especially when dealing with live currency. There are situations where having a TestNet to interact with is beneficial.
 
 
-> There is no value associated with the Testnet QRL, It's only used for testing. Addresses, wallets and QRL coins are not valid between the two networks. Never use a QRL address on both networks as OTS keys should never be re-used.
+> Never use a QRL address on both networks! OTS keys should never be re-used.  
 {: .danger}
-
 
 
 ## Testnet Installation
