@@ -126,8 +126,6 @@ Some helpful links for the TestNet network. Since this is a completely separate 
 - [testnet-faucet.qrl.tips](https://testnet-faucet.qrl.tips)
 - [QRL-Nightly-Testnet-Chain](https://github.com/fr1t2/QRL-Nightly-Testnet-Chain)
 
-*The last one is an easy way to get some TestNet coins, pays out 100 at a time*
-
 
 ## Full Genesis.yml File
 
