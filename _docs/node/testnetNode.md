@@ -64,6 +64,7 @@ peer_list: [ "18.130.83.207", "35.176.41.49", "18.130.187.220", "35.176.33.242" 
 genesis_prev_headerhash: 'Dein Name is Testnet'
 genesis_timestamp: 1529321348
 genesis_difficulty: 5000
+db_name: 'testnet-state'
 ```
 
 #### Genesis.yml File
