@@ -18,9 +18,11 @@ Using the QRL command line utility we will show you how to:
 	* Create QRT (Tokens)
 	* Send QRT's
 	
-> You will need a working installation of QRL in order to use the CLI. Follow the guide to setup a [QRL node](#FIXME) first.
+
+> It is recommended that you have a local working installation of QRL in order to use the CLI. It's also possible to connect to a remote node that has allowed external connections. Use the `--host {REMOTE_IP_ADDRESS}` flag on the CLI to connect. 
 {: .info}
 
+Follow the guide to setup a [QRL node](/node/QRLnode) if you haven't already. This is much more secure, and reliable way to interact with the QRL network.
 
 ## Create a Wallet
 
