@@ -1136,6 +1136,34 @@ curl -XPOST http://127.0.0.1:5359/api/GetBalance -d '
 
 
 
+## GetTotalBalance
+
+Get sum of balances of all the QRL addresses in Wallet.
+
+**Request**
+
+```
+curl -XGET http://127.0.0.1:5359/api/GetTotalBalance
+```
+
+**Response**
+
+```
+{
+  "balance": "6000000000000"
+}
+```
+
+**Response**
+
+| **Parameter** | **Type** | **Description** |
+| --- | --- | --- |
+| code | UInt32 | Error Code. Only appears if any exception is triggered. |
+| error | String | Error Message. Only appears if any exception is triggered. |
+| balance | String | Total Balance in Shor |
+
+
+
 ## GetOTS
 
 Get OTS bitfield and next unused OTS key index for a given QRL address.
