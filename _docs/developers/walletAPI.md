@@ -4,8 +4,6 @@ categories: developers
 tags: developers
 ---
 
-
-
 Interfacing with the qrlWalletAPI is simple and straight forward. Follow the steps below to get started. This instruction set assumes you are installing on Ubuntu. 
 
 1. Install the QRL Node and sync
@@ -48,6 +46,12 @@ curl -XPOST http://127.0.0.1:5359/api/{METHOD} -d '{"{PARAMATER1}":"{SETTING1}",
 
 # Example adding an address to a wallet with height 18 and hash_function sha_256
 curl -XPOST http://127.0.0.1:5359/api/AddNewAddress -d '{"height":"18","hash_function":"sha2_256"}'
+
+
+# Update the wallet-rest-proxy
+cd $GOPATH/src/github.com/theQRL/walletd-rest-proxy
+go get -u github.com/theQRL/walletd-rest-proxy
+go build
 ```
 
 
