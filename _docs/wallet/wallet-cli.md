@@ -54,7 +54,7 @@ Upon creation the wallet address (Public Key) is printed to the CLI. Save it som
 To utilize the encryption features of the CLI wallet you need to pass the `--encrypt` flag to the above command to wrap some security around your wallet file. This will create an **AES** encrypted wallet file.
 
 ```bash
-qrl wallet_gen --encrypt
+{{ layout.v.qrlCommands.walletGenerate }} --encrypt
 ```
 
 This will prompt you for a password, ensure the password is of sufficient length and complexity. Enter twice to confirm the password is correct and the wallet will be created.
@@ -128,7 +128,7 @@ To select to a different hash function use the `--hash_function` option while ge
 you can see the hash function of the wallet file by using the `wallet_ls` option with a `-v` verbose flag. It will be printed at the end of the command.
 
 ```bash
-qrl -v wallet_ls
+{{ layout.v.qrlCommands.walletLsVer }}
 ```
 
 
@@ -258,7 +258,7 @@ This command will prompt you for the following information:
 You can enter these options either in the command or by answering the prompt. Here is an example qrl transaction sending 5.5QRL to another QRL address giving all of the relevant information to the command line.
 
 ```bash
-qrl -r tx_transfer --src 0 --master 0 --dst Q010500317ce502123c0de6711fd4ea6833ea360e95cb40af71944eea38da90bfb5d83740d01e50 --amounts 5.25 --fee 0.01 --ots_key_index 1
+{{ layout.v.qrlCommands.txTransfer }} --src 0 --master 0 --dst Q010500317ce502123c0de6711fd4ea6833ea360e95cb40af71944eea38da90bfb5d83740d01e50 --amounts 5.25 --fee 0.01 --ots_key_index 1
 ```
 If your wallet.json file is encrypted enter your passphrase when prompted.
 
@@ -384,30 +384,24 @@ Usage: qrl [OPTIONS] COMMAND [ARGS]...
   QRL Command Line Interface
 
 Options:
-  -r, --remote        connect to remote node
   -v, --verbose       verbose output whenever possible
   --host TEXT         remote host address             [127.0.0.1]
-  --port_pub INTEGER  remote port number (public api) [9009]
-  --port_adm INTEGER  remote port number (admin api)  [9009]* will change
+  --port_pub INTEGER  remote port number (public api) [19009]
   --wallet_dir TEXT   local wallet dir
   --json              output in json
   --version           Show the version and exit.
   --help              Show this message and exit.
 
 Commands:
-  collect            Collects and returns the list of encrypted...
-  send_eph_message   Creates & Push Ephemeral Message :param ctx:...
   slave_tx_generate  Generates Slave Transaction for the wallet
   state              Shows Information about a Nodes State
-  token_list         Create Token Transaction, that results into...
+  token_list         Fetch the list of tokens owned by an address.
   tx_inspect         Inspected a transaction blob
-  tx_latticepk       Create Lattice Public Keys Transaction
-  tx_prepare         Request a tx blob (unsigned) to transfer from...
-  tx_push
-  tx_sign            Sign a tx blob
+  tx_message         Message Transaction
+  tx_push            Sends a signed transaction blob to a node
   tx_token           Create Token Transaction, that results into...
-  tx_transfer        Transfer coins from src to dst
-  tx_transfertoken   Create Token Transaction, that results into...
+  tx_transfer        Transfer coins from src to dsts
+  tx_transfertoken   Create Transfer Token Transaction, which...
   wallet_add         Adds an address or generates a new wallet...
   wallet_decrypt
   wallet_encrypt
@@ -415,9 +409,7 @@ Commands:
   wallet_ls          Lists available wallets
   wallet_recover     Recovers a wallet from a hexseed or mnemonic...
   wallet_rm          Removes an address from the wallet using the...
-  wallet_secret      Provides the mnemonic/hexseed of the given..
-
-
+  wallet_secret      Provides the mnemonic/hexseed of the given...
 ```
 
 You can browse even further into sub commands like:
@@ -427,14 +419,15 @@ You can browse even further into sub commands like:
 
 Usage: qrl tx_transfer [OPTIONS]
 
-  Transfer coins from src to dst
+  Transfer coins from src to dsts
 
 Options:
   --src TEXT               signer QRL address
   --master TEXT            master QRL address
-  --dst TEXT               List of destination addresses
+  --dsts TEXT              List of destination addresses
   --amounts TEXT           List of amounts to transfer (Quanta)
   --fee DECIMAL            fee in Quanta
-  --ots_key_index INTEGER  OTS key Index
+  --ots_key_index INTEGER  OTS key Index (1..XMSS num signatures)
   --help                   Show this message and exit.
+
 ```
