@@ -127,6 +127,7 @@ List of NTP servers for the node to use
 
 
 ### DEBUG API CONFIGURATION
+
 |  Directive  |  Default Value  |  Description  |
 |:------------|:---------------:|:--------------|
 | debug_api_enabled | {{ layout.v.qrlConf.debug_api_enabled }} | |
@@ -167,17 +168,7 @@ List of NTP servers for the node to use
 ## Config.yml
 
 ```yaml
-##  _____ _             ___  ____  _     
-## |_   _| |__   ___   / _ \|  _ \| |    
-##   | | | '_ \ / _ \ | | | | |_) | |    
-##   | | | | | |  __/ | |_| |  _ <| |___ 
-##   |_| |_| |_|\___|  \__\_\_| \_\_____|                                      
-##   ____             __ _         _____ _ _      
-##  / ___|___  _ __  / _(_) __ _  |  ___(_) | ___ 
-## | |   / _ \| '_ \| |_| |/ _` | | |_  | | |/ _ \
-## | |__| (_) | | | |  _| | (_| | |  _| | | |  __/
-##  \____\___/|_| |_|_| |_|\__, | |_|   |_|_|\___|
-##                         |___/                 
+## qrl conf.yml file
 ##
 ## This is the configuration file for qrl. 
 ## It is typically found in the ~/.qrl/ directory
@@ -277,7 +268,8 @@ List of NTP servers for the node to use
 ##======================================
 ##      WALLET DAEMON CONFIGURATION
 ##======================================
-# public_api_server: "127.0.0.1:19009"
+# wallet_daemon_server: "127.0.0.1"
+# wallet_daemon_Port: 19009
 # wallet_daemon_host: "127.0.0.1"
 # wallet_daemon_port: 18091
 #
