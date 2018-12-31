@@ -236,7 +236,7 @@ List of NTP servers for the node to use
 ##       PUBLIC API CONFIGURATION
 ##======================================
 # public_api_enabled: True
-# public_api_host: "0.0.0.0"
+# public_api_host: "127.0.0.1"
 # public_api_port: 19009
 # public_api_threads: 1
 # public_api_max_concurrent_rpc: 100
