@@ -268,7 +268,7 @@ List of NTP servers for the node to use
 ##======================================
 ##      WALLET DAEMON CONFIGURATION
 ##======================================
-# public_api_server: "127.0.0.1:9009"
+# public_api_server: "127.0.0.1:19009"
 # wallet_daemon_host: "127.0.0.1"
 # wallet_daemon_port: 18091
 # number_of_slaves: 3
