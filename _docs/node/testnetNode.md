@@ -98,6 +98,23 @@ We have a ton of information on the usage of the node, wallet creation, and vari
 
 You will need to generate a new TestNet wallet. Due to the way OTS keys work, the address has more likelihood to be compromised if the OTS key is exposed more than once on the blockchain.
 
+
+## Updating TestNet Nodes
+
+If you are running a TestNet node you will need to keep up to date as we reset testnet periodically. Each time the network is updated you will need to refresh some files and restart the node. Look for messages from the QRL team in the team chat on Discord for updates to testnet.
+
+Updating is simple. 
+
+1. Stop the node
+2. Update QRL
+3. Remove the `~/.qrl/data` directory
+4. Rewrite the `~/.qrl/genesis.yml` file with new details
+5. Update the `~/.qrl/config.yml` file with new instruction
+6. Restart the node using `start_qrl`
+
+
+This should start syncing the testnet network to your computer. Verify that the details match what you expect issuing the `qrl state` command. The blockheight and network_id should be updated with the latest details.
+
 ## Mining TestNet
 
 We encourage people to set their nodes on TestNet to allow mining. This is a great way to earn some test QRL and helps the *small* network validate transactions and propagate blocks more efficiently. 
