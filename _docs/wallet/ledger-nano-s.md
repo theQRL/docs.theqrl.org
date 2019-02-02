@@ -147,7 +147,7 @@ You will see all of the transactions the address has as well as the balance of q
 
 ## Manually Set the XMSS Index on your Ledger Nano S device
 
-In the event you loose your Ledger Nano S device, or simply need to initialising or maintain the state of a second Ledger Nano S device, you can manually set the XMSS Index state on your Ledger Nano S device.
+In the event you lose your Ledger Nano S device, or simply need to initialise or maintain the state of a second Ledger Nano S device, you can manually set the XMSS Index state on your Ledger Nano S device.
 
 > **NOTE** If you are a Firefox user, ensure you have enabled **u2f** before proceeding. [Enabling U2F support in Mozilla Firefox](https://support.yubico.com/support/solutions/articles/15000017511-enabling-u2f-support-in-mozilla-firefox)
 {: .info}
