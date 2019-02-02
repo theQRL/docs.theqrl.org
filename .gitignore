@@ -6,5 +6,5 @@ Gemfile.lock
 .working/
 To-Do.md
 node_modules/
-
 \.idea/
+.DS_Store
