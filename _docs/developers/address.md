@@ -63,11 +63,11 @@ The address descriptor determines the address format, signature scheme, hash fun
 
 ### Format: SHA256_2X
 
-| Name | Bytes         | Count  |      Description      |
-|------| ------------- |:------:|-----------------------| 
-| DESC | 0 .. 2        |   3    | Address Descriptor    |
-| HASH | 3 .. 35       |  32    | SHA2-256(DESC+PK)      |
-| VERH | 36 .. 40      |   4    | SHA2-256(HASH) (only last 4 bytes)   |
+| Name | Bytes         | Count  |        Description        |
+|------| ------------- |:------:|---------------------------| 
+| DESC | 0 .. 2        |   3    | Address Descriptor        |
+| HASH | 3 .. 35       |  32    | SHA2-256(DESC+PK)          |
+| VERH | 36 .. 40      |   4    | SHA2-256(DESC+HASH) (only last 4 bytes)       |
 
 - `PK` (64 bytes) is public key
 - `ePK` (67 bytes) is the extended public key, i.e. DESC+PK
