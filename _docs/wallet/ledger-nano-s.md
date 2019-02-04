@@ -79,9 +79,12 @@ To initialise your Ledger Nano S device for use with the QRL App, follow these i
 
 ## Receive QRL
 
-Simply give someone your QRL address and they can send you coins. You don't need to have the wallet opened in order to receive QRL.
+You should **always** verify the address shown in the [QRL Web Wallet](https://wallet.theqrl.org/) matches the address shown on your Ledger Nano S device. To confirm your address, click the **Click to Verify** button on the receive tab of the wallet. Your QRL address will appear on your computer, and on your Ledger Nano S device.
 
-Click the receive tab in the wallet and you will see your wallet address and QR code. Send this to whomever you are receiving coins from.
+Once you've confirmed your address on both devices, you can send your QRL address to whomever you are receiving coins from.
+
+> **NOTE** In the event you find the addresses do not match, you should immediately reach out to the QRL Team to report the issue. This could occur in the event a malicious actor has taken control of the QRL Web Wallet.
+{: .info}
 
 ![QRL Receive](/assets/wallet/web/ledger-nano-s/receive.png)
 
