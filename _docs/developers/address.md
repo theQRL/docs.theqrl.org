@@ -1,8 +1,10 @@
 ---
 title: QRL Address Structure
 categories: developers
+description: The QRL Address Structue technical documentation
 tags: developers
 ---
+
 A QRL address is designed to be extensible and supports a wide range of formats.
 
 The first three bytes of any address (descriptor) encode information to describe the format type, signature scheme, etc. At the moment, only one address format is supported: SHA256_2X

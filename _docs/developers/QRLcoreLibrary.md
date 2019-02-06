@@ -1,6 +1,7 @@
 ---
 title: QRL Core Library
 categories: developers
+description: The QRL technical documentation.
 tags: developers
 ---
 

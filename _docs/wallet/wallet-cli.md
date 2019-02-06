@@ -1,6 +1,7 @@
 ---
 title: Create Wallet From CLI
 categories: wallet
+description: The QRL Wallet documentation
 tags: wallet
 ---
 

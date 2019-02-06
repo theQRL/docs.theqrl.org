@@ -1,6 +1,7 @@
 ---
 title: Mining with a QRL Node
 categories: mining
+description: The QRL Mining documentation
 tags: mining
 ---
 

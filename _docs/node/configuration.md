@@ -1,6 +1,7 @@
 ---
 title: QRL Node Configuration
 categories: node
+description: The QRL Node Configuration documentation
 tags: node
 ---
 

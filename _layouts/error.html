@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<div class="wrapper docs docs-single">
+    <div class="grid w12">
+        <div class="w12">
+          {% if page.title %}
+            <h1 class="page-heading">{{ page.title }}</h2>
+          {% endif %}
+
+          <div class="grid no-padding docgrid">
+                  <div class="w9 document-page">
+                  {{ content }}                      
+                  </div>
+          </div>
+        </div>        
+    </div>
+</div>

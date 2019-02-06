@@ -1,6 +1,7 @@
 ---
 title: Setup a QRL Pool
 categories: mining
+description: The QRL Mining documentation
 tags: mining
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: OTS Key Index
 categories: developers
+description: The QRL technical documentation - One Time Keys.
 tags: developers
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: QRL Token Migration
 categories: Token Swap
+description: The QRL Token Migration documentation
 tags: Token Swap
 ---
 ![QRL Token Migration Flowchart](/assets/tokenswap/swap/migration_flowchart_improved.png)
