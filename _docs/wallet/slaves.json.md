@@ -1,6 +1,7 @@
 ---
 title: Slaves.json
 categories: wallet
+description: The QRL Wallet documentation
 tags: wallet
 ---
 

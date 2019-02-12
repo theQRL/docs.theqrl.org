@@ -1,6 +1,7 @@
 ---
 title: QRL Private Network
 categories: developers
+description: The QRL technical documentation.
 tags: developers
 ---
 

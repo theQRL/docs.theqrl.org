@@ -1,6 +1,7 @@
 ---
 title: Ledger Nano S Usage
 categories: wallet
+description: The QRL Ledger Nano-S Wallet documentation
 tags: [wallet, ledger, nano]
 ---
 

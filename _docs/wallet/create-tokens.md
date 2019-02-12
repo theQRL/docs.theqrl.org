@@ -1,6 +1,7 @@
 ---
 title: Create Tokens
 categories: wallet
+description: The QRL Wallet documentation
 tags: tokens
 ---
 

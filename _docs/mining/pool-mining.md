@@ -1,6 +1,7 @@
 ---
 title: Pool Mining QRL 
 categories: mining
+description: The QRL Pool Mining documentation
 tags: mining
 ---
 

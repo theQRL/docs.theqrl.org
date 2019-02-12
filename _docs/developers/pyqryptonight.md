@@ -1,6 +1,7 @@
 ---
 title: Qryptonight
 categories: developers
+description: The QRL technical documentation.
 tags: developers
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Mining QRL Quick Start
 categories: mining
+description: The QRL Mining documentation
 tags: mining
 ---
 

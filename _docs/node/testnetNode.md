@@ -1,6 +1,7 @@
 ---
 title: QRL Testnet Node
 categories: node
+description: The QRL Testnet Node documentation
 tags: node
 ---
 

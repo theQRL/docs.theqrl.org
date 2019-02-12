@@ -1,6 +1,7 @@
 ---
 title: QRL Protocol Documentation
 categories: developer
+description: Technical documentation for the QRLproto used in the Quantum Resistant Ledger
 tags: api
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Create QRL Mnemonic From Dice
 categories: wallet
+description: The QRL Wallet documentation
 tags: wallet
 ---
 

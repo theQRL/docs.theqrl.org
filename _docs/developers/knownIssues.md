@@ -1,6 +1,7 @@
 ---
 title: Known Issues
 categories: developers
+description: The QRL Known issues.
 tags: developers
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Cold Wallet Setup
 categories: wallet
+description: The QRL Wallet documentation
 tags: wallet
 ---
 
