@@ -21,6 +21,7 @@ You can run QRL on most operating systems, though Ubuntu 16.04 is recommended.
 {: .info}
 
 - Support for AES-NI
+- Support for avx2 (Used by keccak library for hashing functions)
 - HDD with enough storage for the blockchain as it grows
 - Reliable network connection 
 - Python3.6
