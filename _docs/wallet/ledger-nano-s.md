@@ -38,9 +38,6 @@ The [QRL Web Wallet](https://wallet.theqrl.org/) will provide ample warnings you
 
 ## Installing the QRL Ledger Nano S Application
 
-> **NOTE** As the QRL Ledger Nano S application is currently in the process of being reviewed, you will not be able to find it on the Ledger Live Manager App Catalog as described below. If you would like to experiment with the QRL Ledger Nano S app, you can find our source code available on Github in the [ledger-qrl](https://github.com/theQRL/ledger-qrl) and [ledger-qrl-app](https://github.com/theQRL/ledger-qrl-app) repositories.
-{: .info}
-
 Using the [Ledger Live](https://www.ledger.com/pages/ledger-live) application, follow these instructions:
 
 1. Open the **Manager** in Ledger Live
