@@ -41,12 +41,15 @@ img {
 /* Elements */
 // Call-to-action
 a.cta {
-	background-color:#dc255d;
+	background-color:$quantum_burst;
 	padding:10px 20px;
 	color:#FFF;
 	text-decoration: none;
 	box-shadow: $shadow;
 	display: inline-block;
+	&:hover {
+		background-color: $quantum_hover;
+	}
 }
 
 .slideshow {

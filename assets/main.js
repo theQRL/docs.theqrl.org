@@ -1,5 +1,19 @@
 
-$(document).ready(function() {
+$(function() {
+    $('.document-page h2, .document-page h3').each(function(el, i) {
+        var title = this.innerHTML;
+
+        // If id already doesn't exist, make one.
+        if(!this.id) {
+          this.id=title.toLowerCase().replace(/[^a-z0-9]+/g,'-');
+        }
+
+        $(this).html('<a href="#'+this.id+'">'+title + '</a>');
+
+        $('#stickymenu').append('<li><a href="#'+this.id+'">'+title +'</a>');
+        $('#stickymenu').append('</li>');
+    });
+
     function hasTouch() {
         return 'ontouchstart' in document.documentElement
                || navigator.maxTouchPoints > 0
@@ -49,18 +63,4 @@ $(document).ready(function() {
         }
       });
     });
-    document
-  .querySelector('.js-change-theme')
-  .addEventListener('click', () => {
-    const body = document.querySelector('body');
-  
-    if (body.classList.contains('t--light')) {
-      body.classList.remove('t--light');
-      body.classList.add('t--dark');
-    }
-    else {
-      body.classList.remove('t--dark');
-      body.classList.add('t--light');
-    }
-  });
 });

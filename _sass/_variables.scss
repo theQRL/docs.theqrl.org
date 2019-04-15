@@ -9,11 +9,13 @@ $screen-lg-min: 992px;
 $screen-xl-min: 1200px;
 
 /* Style */
-$heading_font: 'Quicksand';
+$heading_font: 'Roboto';
 $body_font: 'Roboto', Verdana, sans-serif;
 
 $quantum_burst:#dc255d;
 $quantum_sky:#4A90E2;
+$quantum_burst:$quantum_sky;
+$quantum_hover: darken($quantum_burst, 20%);
 $quantum_deep: #0A0724;
 $quantum_warning: #FF3E3E;
 
