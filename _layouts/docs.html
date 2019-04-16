@@ -120,17 +120,3 @@ v:
         </div>        
     </div>
 </div>
-
-<script>
-$(function() {
-
-    $('.document-page h2, .document-page h3').each(function(el, i) {
-        var title = this.innerHTML;
-
-        $(this).html('<a href="#'+this.id+'">'+title + '</a>');
-
-        $('#stickymenu').append('<li><a href="#'+this.id+'">'+title +'</a>');
-        $('#stickymenu').append('</li>');
-    });
-})
-</script>
