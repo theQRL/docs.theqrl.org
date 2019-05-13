@@ -56,7 +56,7 @@ You may chose to create a address with more or less OTS keys. The only disadvant
 
 ## OTS Bitfield Tracking
 
-To aid in keeping track of the OTS keys used, QRL utilizes OTS Bitfield tracking. This allows a way to keep track of the first 4096 OTS keys and can determine where you are in the merkle tree based on previously used keys.
+To aid in keeping track of the OTS keys used, QRL utilizes OTS Bitfield tracking. This allows a way to keep track of the first 8192 OTS keys and can determine where you are in the merkle tree based on previously used keys.
 
 There are a few oddities with the OTS keys. 
 * First the OTS bitfield will only automatically track every OTS keys usage up to position {{ layout.v.qrlConf.bitfield }}.
@@ -68,7 +68,17 @@ There are a few oddities with the OTS keys.
 |0 --> 8191 | Bitfield tracks the use. May be used in any order |
 | {{ layout.v.qrlConf.bitfield }} --> Last OTS | Must be used in ascending order - cannot return to sign below last OTS position |
 
+## Checking Used OTS
 
+The QRL Explorer provides a visual representation of the OTS Bitfield for any wallet. This can be found by looking up your address in the explorer, and browsing to the OTS Tracker tab. 
+
+![OTS Tracker Tab](/assets/explorer/otsTrackerTab.png)
+
+This tab will show all of the OTS keys that have been used in red and available keys in green.
+
+This is a visual representation of the bitfield that is tracked by the nodes and used by both the wallet and the explorer.
+
+![OTS Tracker Tab](/assets/explorer/OTStracker.png)
 
 ## Merkle tree signature schemes
 
