@@ -5,13 +5,17 @@ description: The QRL Known issues.
 tags: developers
 ---
 
-There are a few known issues we have come across due to the software upstream of QRL. While we strive to overcome programmatically any issues, sometimes there are situations where limitations exist outside of the QRL scope. This document is intended to clear up any issues seen when installing and running The QRL software. 
+There are a few known issues we have come across due to the shared software ecosystem upstream of QRL. While we strive to overcome programmatically any issues, sometimes there are situations where limitations exist outside of the QRL scope. This document is intended to clear up any issues seen when installing and running The QRL software. 
 
-It should be made clear that these are not "Bugs" and there is very little we can do to mitigate these limitations. We strive to work through and provide secure, audited code in all of the official channels we operate.
+Individual components of our open source work have issues tracked on Github, and those which are important enough to need a wider audience than the developer community are documented here. 
+
+We strive to work through and provide secure, audited code in all of the official channels we operate.
 
 ## Ledger Nano
 
-The QRL has developed and integrated QRL's XMSS address scheme into the Ledger Nano S and have successfully launched an app with the oversight of the Ledger developers. There are a few small bugs related to the browsers and the interaction that happens with the ledger and the browser.
+The QRL has developed and integrated QRL's XMSS address scheme into the Ledger Nano S and have successfully launched an app with the oversight of the Ledger developers. As with any evolving ecosystem, there are growing pains to be worked through. 
+
+We are in the process of implementing updates to our Ledger Javascript library to make use of the updates recently released by Ledger to the software development kit.
 
 > If you come across something not working as you would expect please report it to the team in a github issue. [theQRL Ledger GitHub](https://github.com/theQRL/ledger-qrl/issues)
 {: .info}
