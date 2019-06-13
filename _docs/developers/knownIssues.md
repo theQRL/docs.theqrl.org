@@ -5,12 +5,47 @@ description: The QRL Known issues.
 tags: developers
 ---
 
-There are a few known issues we have come across due to the software upstream of QRL. While we strive to overcome programmatically any issues, sometimes there are situations where limitations exist outside of the QRL scope. This document is intended to clear up any issues seen when installing and running The QRL software. 
+There are a few known issues we have come across due to the shared software ecosystem upstream of QRL. While we strive to overcome programmatically any issues, sometimes there are situations where limitations exist outside of the QRL scope. This document is intended to clear up any issues seen when installing and running The QRL software. 
 
-It should be made clear that these are not "Bugs" and there is very little we can do to mitigate these limitations. We strive to work through and provide secure, audited code in any of the official channels we operate.
+Individual components of our open source work have issues tracked on Github, and those which are important enough to need a wider audience than the developer community are documented here. 
 
+We strive to work through and provide secure, audited code in all of the official channels we operate.
 
+## Ledger Nano
 
+The QRL has developed and integrated QRL's XMSS address scheme into the Ledger Nano S and have successfully launched an app with the oversight of the Ledger developers. As with any evolving ecosystem, there are growing pains to be worked through. 
+
+We are in the process of implementing updates to our Ledger Javascript library to make use of the updates recently released by Ledger to the software development kit.
+
+> If you come across something not working as you would expect please report it to the team in a github issue. [theQRL Ledger GitHub](https://github.com/theQRL/ledger-qrl/issues)
+{: .info}
+
+### Known Issues
+
+| Github Issue Number | Issue Name | Description | Impact |
+|--------------|------------|-------------|--------| 
+| NONE | U2F Timeout  |  The browser will timeout with a "U2F Timeout" warning when attempting to transfer QRL from a Ledger, showing a consumed OTS key on the device. | Sending funds will not succeed as expected, and the OTS counter on the Ledger will become out of sync |
+
+#### U2F Timeout
+
+Ledger devices have been using the U2F protocol for easy and cryptographically secure second factor mechanism with the web browser since 2016. Lately, U2F timeouts have been enforced by browser applications more aggressively — which you may have noticed if you’ve ever experienced a “U2F timeout” warning. 
+
+**The Error -**
+
+While attempting to transfer or sign a TX on the network, the browser will attempt unsuccessfully to sent the signed TX to the blockchain. This will eventually fail and show a failed message in the wallet screen. 
+
+Additionally there will be an error message shown in the developer tools of the browser. indicating a "U2F Timeout" has occurred.
+
+**Mitigation -**
+
+Previously, we’ve recommended using another browser or playing browser bingo, switching to a browser that will still function with the U2F requirements of the Ledger. 
+
+The new current recommended action is to use our desktop wallets, which can be found on the [front page of our website](https://theqrl.org/) and our [github releases page](https://github.com/theQRL/qrl-wallet/releases/latest).
+
+You can read more about the development of U2F tunnel transport for Ledger devices in their blog [Windows 10 Update: Sunsetting U2F tunnel transport for Ledger devices](https://www.ledger.com/2019/05/17/windows-10-update-sunsetting-u2f-tunnel-transport-for-ledger-devices/).
+
+> If you have attempted to send a TX with your ledger device connected to a Chrome, Brave, Opera, or Firefox browser and are showing and erroneous OTS key, you can reset the ledger device OTS key count. See the tools section of your opened wallet using the desktop application. **Make Sure you have not used any keys successfully prior to resetting the ledger** 
+{: .info}
 
 
 ## QRL Node - Python
@@ -30,7 +65,7 @@ The chart below lists all of the known issues that have been reported to date.
 | [1611](https://github.com/theQRL/QRL/issues/1611) | Too many open files | When the known_peers file grows too large, Linux throws an issue | Minor - The node will continue through the issues keeping to the limits set and will take a bit longer to startup. |
 
 
-### Segmentation Fault
+#### Segmentation Fault
 
 Updating a QRL node, sometimes you run into this error upon  python completing the command `pip3 install -U qrl`. The node does in fact update, however due to the Twisted module used throws this error. 
 
@@ -44,7 +79,7 @@ You can immediately run `start_qrl` and you will find that the node has in fact 
 
 
 
-### Too Many Open Files
+#### Too Many Open Files
 
 
 This issue comes up when the `~/.qrl/data/known_peers.json` file contains too many peers. This limitation comes from the default Linux kernel configuration. If you increase the `ulimit` open file size you will no longer see the issue. There are security implications to allowing additional open files and the default is recommended. 
