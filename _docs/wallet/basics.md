@@ -39,7 +39,7 @@ The easiest way to generate a QRL wallet is by using the online wallet found her
 
  Keys stay in the memory space of the XMSS object, which is destroyed the moment you close the wallet, browser window, or desktop application.
 
-#### Create a New Wallet
+## Create a New Wallet
 
 Enter a strong password into the password field. The password must be at least 8 characters in length, and must contain at least 1 number and 1 letter
 
