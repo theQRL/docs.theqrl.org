@@ -118,6 +118,9 @@ tags: Token Swap
 
 
           document.querySelectorAll('#days').forEach(function(n) {
+            if(days<0) {
+              days=0
+            }
             n.textContent = (days);
             if(days<10) {
               document.getElementById("first").remove();

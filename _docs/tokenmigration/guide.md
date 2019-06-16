@@ -4,6 +4,14 @@ categories: Token Swap
 description: The QRL Token Migration documentation
 tags: Token Swap
 ---
+
+<meta http-equiv="refresh" content="5;URL='/tokenmigration/newguide'" />
+
+> This is the old migration guide and is no longer applicable! 
+>
+> Head over to our [New Guide](/tokenmigration/newguide) (will be redirected in 5 seconds)
+{: .danger}
+
 ![QRL Token Migration Flowchart](/assets/tokenswap/swap/migration_flowchart_improved.png)
 
 Token Migration marks the first step in launching our main QRL network. The token migration process will run through Mainnet allowing everyone the chance to migrate their tokens. 

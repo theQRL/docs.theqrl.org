@@ -3,6 +3,13 @@ title: Video Guide
 layout: docs.video
 ---
 
+<meta http-equiv="refresh" content="5;URL='/tokenmigration/newguide'" />
+
+> This is the old migration guide and is no longer applicable! 
+>
+> Head over to our [New Guide](/tokenmigration/newguide) (will be redirected in 5 seconds)
+{: .danger}
+
 >
 {:.ytvideo}
 {:data-video="3YxjMZGxm7A"}
