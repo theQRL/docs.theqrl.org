@@ -92,7 +92,7 @@ A solution is to extend the signature scheme to incorporate more than one valid 
 
 The general idea behind a merkle tree is an inverted tree composed of parent nodes computed by hashing the concatenation of child sibling nodes upwards in layers to the root. 
 
-The existence of any node or leaf can be cryptographically proven by computing the root. A merkle tree is formed from n base leaves and has height to merkle root, *h (n = 2h)* - starting from the leaf hashes *(layer 0)* and counting upwards with each layer of nodes. 
+The existence of any node or leaf can be cryptographically proven by computing the root. A merkle tree is formed from n base leaves and has height to merkle root, *h (n = 2<sup>h</sup>)* - starting from the leaf hashes *(layer 0)* and counting upwards with each layer of nodes. 
 
 Each leaf node is created in our hypothetical ledger use-case by hashing a randomly pre-generated OTS public key. From the image above it can be seen that the node above each pair of leaf hashes is itself formed by hashing a concatenation of the child hashes.
 
