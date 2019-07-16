@@ -39,6 +39,10 @@ sudo apt update && sudo apt upgrade -y
 # Install Required dependencies
 {{ layout.v.qrlCommands.qrlRequirementsUbuntu }}
 
+## Install CMAKE version 3.10.3 manually
+{{ layout.v.qrlCommands.cmakeInstall }}
+
+
 # Make sure setuptools is the latest
 pip3 install -U setuptools
 
@@ -77,6 +81,13 @@ Now install all the required dependencies:
 {{ layout.v.qrlCommands.qrlRequirementsUbuntu }}
 ```
 
+QRL requires `cmake v3.10.3` to be installed. Ubuntu repositories will install an incompatible version. Please install manually as shown below. If you already have `cmake` installed, please uninstall first.
+
+```bash
+# Install the required packages for QRL
+{{ layout.v.qrlCommands.cmakeInstall }}
+```
+
 ### Redhat/fedora
 
 Update:
@@ -92,6 +103,10 @@ Dependencies:
 # Install required packages
 {{ layout.v.qrlCommands.qrlRequirementsRedhat }}
 ```
+
+You will need to install `cmake v3.10.3` manually.
+
+[Please follow the guide from the cmake documentation](https://cmake.org/install/)
 
 
 ### MacOS
@@ -110,9 +125,12 @@ Having Issues? Please follow the instructions found at the brew main page: [http
 ```bash
 # Update brew
 brew update
-brew install cmake python3 swig boost hwloc
+brew install python3 swig boost hwloc
 ```
 
+You will need to install `cmake v3.10.3` manually.
+
+[Please follow the guide from the cmake documantation](https://cmake.org/install/)
 
 ### Windows 10
 

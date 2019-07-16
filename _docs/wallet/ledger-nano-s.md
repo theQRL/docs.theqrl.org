@@ -129,7 +129,7 @@ Using the [Ledger Live](https://www.ledger.com/pages/ledger-live) application, f
 	- An installation window will appear, and your device will display **Processing...**
 	- The QRL App installation has completed on your Ledger Nano S
 
-## Initialising the QRL App
+## Initializing the QRL App
 
 Before you can use the QRL Ledger Nano S App, it must first be initialised. The initialisation process will generate an XMSS tree on your Ledger Nano S device, which is a unique aspect of the QRL Network's signature scheme. This process only has to be completed once on your Ledger Nano S device. Please allow up to 45 minutes for this process to complete for each tree. 
 
