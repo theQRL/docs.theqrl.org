@@ -138,7 +138,7 @@ To initialize your Ledger Nano S device for use with the QRL App, follow these i
 1. Make sure your Ledger Nano S device is **Connected** and **Unlocked**.
 2. Open the **QRL app** on your Ledger Nano S
 3. Your Ledger Nano S device will show **QRL (Tree 1) not ready**. 
-4. Scroll down and press both buttons on the **Init Device** menu option.
+4. Scroll down and press both buttons on the **Init Tree** menu option.
 5. Your Ledger Nano S device will show **QRL (Tree 1) keygen: 001/256**. This will slowly progress until all 256 keys have been generated.
 6. When this process has completed, your Ledger Nano S device will show **QRL (Tree 1) READY rem:256** - indicating your device has finished generating tree 1 OTS keys, and you have 256 OTS Keys remaining in this Tree.
 7. Scroll down in the menu and chose **Switch Tree** with both buttons. You will now see **QRL (Tree 2) Not Ready**
