@@ -28,7 +28,8 @@ v:
        walletRemove: qrl wallet_rm          
        walletSecret: qrl wallet_secret      
        qrlRequirementsRedhat: dnf install swig cmake gcc gcc-c++ redhat-rpm-config python3-devel python-devel hwloc-devel boost-devel
-       qrlRequirementsUbuntu: sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential cmake pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
+       qrlRequirementsUbuntu: sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev
+       cmakeInstall: cd /opt && sudo wget https://github.com/Kitware/CMake/releases/download/v3.10.3/cmake-3.10.3.tar.gz && sudo tar zxvf cmake-3.10.3.tar.gz && cd cmake-3.10.3/ && sudo ./configure && sudo make -j2 && echo -e '## Adding cmake version 3.10.3\nPATH=$PATH:/opt/cmake-3.10.3/bin' >> ~/.bashrc && source ~/.bashrc
    qrlConf:
        qrlDir: ~/.qrl/
        confLocation: ~/.qrl/config.yml
