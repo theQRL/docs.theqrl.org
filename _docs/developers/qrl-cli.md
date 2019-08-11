@@ -16,25 +16,67 @@ QRL CLI functions
 ![In action](/assets/developers/render1563726016790.gif)
 
 <!-- toc -->
+* [Install](#install)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+
+# Install
+
+## Requirements
+
+Requires node and npm to be installed.
+
+## Node Install
+
+Install the qrl-cli via `npm`
+
+```bash
+
+npm install -g @theqrl/cli
+
+```
+
+## Build from sources
+
+
+To build form sources, grab the repo at:
+
+```bash
+git clone https://github.com/theQRL/qrl-cli.git
+
+cd qrl-cli
+
+npm install
+
+#./bin/run {COMMAND}
+./bin/run status
+```
+
+---
+
 # Usage
+
 <!-- usage -->
-```sh-session
-$ npm install -g @theqrl/cli
-$ qrl-cli COMMAND
+
+```bash
+
+qrl-cli COMMAND
 running command...
-$ qrl-cli (-v|--version|version)
+qrl-cli (-v|--version|version)
 @theqrl/cli/1.3.0 linux-x64 node-v12.3.1
-$ qrl-cli --help [COMMAND]
+
+qrl-cli --help [COMMAND]
 USAGE
-  $ qrl-cli COMMAND
+  qrl-cli COMMAND
 ...
 ```
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
+
 * [`qrl-cli balance ADDRESS`](#qrl-cli-balance-address)
 * [`qrl-cli create-wallet`](#qrl-cli-create-wallet)
 * [`qrl-cli help [COMMAND]`](#qrl-cli-help-command)
@@ -47,7 +89,7 @@ USAGE
 
 Get a wallet balance from the network
 
-```
+```bash
 USAGE
   $ qrl-cli balance ADDRESS
 
@@ -71,7 +113,7 @@ _See code: [src/commands/balance.js](https://github.com/theqrl/qrl-cli/blob/v1.3
 
 Create a QRL address
 
-```
+```bash
 USAGE
   $ qrl-cli create-wallet
 
@@ -94,7 +136,7 @@ _See code: [src/commands/create-wallet.js](https://github.com/theqrl/qrl-cli/blo
 
 display help for qrl-cli
 
-```
+```bash
 USAGE
   $ qrl-cli help [COMMAND]
 
@@ -111,7 +153,7 @@ _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.0
 
 Get a address's OTS state from the network
 
-```
+```bash
 USAGE
   $ qrl-cli ots ADDRESS
 
@@ -135,7 +177,7 @@ _See code: [src/commands/ots.js](https://github.com/theqrl/qrl-cli/blob/v1.3.0/s
 
 Displays a QR code of the QRL address to receive a transaction
 
-```
+```bash
 USAGE
   $ qrl-cli receive ADDRESS
 
@@ -156,7 +198,7 @@ _See code: [src/commands/receive.js](https://github.com/theqrl/qrl-cli/blob/v1.3
 
 Gets the network status
 
-```
+```bash
 USAGE
   $ qrl-cli status
 
@@ -176,7 +218,7 @@ _See code: [src/commands/status.js](https://github.com/theqrl/qrl-cli/blob/v1.3.
 
 Validate a QRL address
 
-```
+```bash
 USAGE
   $ qrl-cli validate ADDRESS
 
