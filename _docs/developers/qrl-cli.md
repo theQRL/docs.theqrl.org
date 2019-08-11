@@ -5,13 +5,14 @@ description: The QRL CLI Technical Documentation
 tags: developers, cli
 ---
 
-QRL CLI functions
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/@theqrl/cli.svg)](https://npmjs.org/package/@theqrl/cli)
 [![CircleCI](https://circleci.com/gh/theQRL/qrl-cli.svg?style=svg)](https://circleci.com/gh/theQRL/qrl-cli)
 [![codecov](https://codecov.io/gh/theQRL/qrl-cli/branch/master/graph/badge.svg)](https://codecov.io/gh/theQRL/qrl-cli)
 [![License](https://img.shields.io/npm/l/@theqrl/cli.svg)](https://github.com/theqrl/qrl-cli/blob/master/package.json)
+
+QRL CLI 
 
 ![In action](/assets/developers/render1563726016790.gif)
 
@@ -21,13 +22,13 @@ QRL CLI functions
 * [Commands](#commands)
 <!-- tocstop -->
 
-# Install
+## Install
 
-## Requirements
+### Requirements
 
 Requires node and npm to be installed.
 
-## Node Install
+### Node Install
 
 Install the qrl-cli via `npm`
 
@@ -37,7 +38,7 @@ npm install -g @theqrl/cli
 
 ```
 
-## Build from sources
+### Build from sources
 
 
 To build form sources, grab the repo at:
@@ -55,7 +56,7 @@ npm install
 
 ---
 
-# Usage
+## Usage
 
 <!-- usage -->
 
@@ -73,7 +74,7 @@ USAGE
 ```
 <!-- usagestop -->
 
-# Commands
+## Commands
 
 <!-- commands -->
 
@@ -85,7 +86,7 @@ USAGE
 * [`qrl-cli status`](#qrl-cli-status)
 * [`qrl-cli validate ADDRESS`](#qrl-cli-validate-address)
 
-## `qrl-cli balance ADDRESS`
+### `qrl-cli balance ADDRESS`
 
 Get a wallet balance from the network
 
@@ -109,7 +110,7 @@ DESCRIPTION
 
 _See code: [src/commands/balance.js](https://github.com/theqrl/qrl-cli/blob/v1.3.0/src/commands/balance.js)_
 
-## `qrl-cli create-wallet`
+### `qrl-cli create-wallet`
 
 Create a QRL address
 
@@ -132,7 +133,7 @@ DESCRIPTION
 
 _See code: [src/commands/create-wallet.js](https://github.com/theqrl/qrl-cli/blob/v1.3.0/src/commands/create-wallet.js)_
 
-## `qrl-cli help [COMMAND]`
+### `qrl-cli help [COMMAND]`
 
 display help for qrl-cli
 
@@ -149,7 +150,7 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.0/src/commands/help.ts)_
 
-## `qrl-cli ots ADDRESS`
+### `qrl-cli ots ADDRESS`
 
 Get a address's OTS state from the network
 
@@ -173,7 +174,7 @@ DESCRIPTION
 
 _See code: [src/commands/ots.js](https://github.com/theqrl/qrl-cli/blob/v1.3.0/src/commands/ots.js)_
 
-## `qrl-cli receive ADDRESS`
+### `qrl-cli receive ADDRESS`
 
 Displays a QR code of the QRL address to receive a transaction
 
@@ -194,7 +195,7 @@ DESCRIPTION
 
 _See code: [src/commands/receive.js](https://github.com/theqrl/qrl-cli/blob/v1.3.0/src/commands/receive.js)_
 
-## `qrl-cli status`
+### `qrl-cli status`
 
 Gets the network status
 
@@ -214,7 +215,7 @@ DESCRIPTION
 
 _See code: [src/commands/status.js](https://github.com/theqrl/qrl-cli/blob/v1.3.0/src/commands/status.js)_
 
-## `qrl-cli validate ADDRESS`
+### `qrl-cli validate ADDRESS`
 
 Validate a QRL address
 
