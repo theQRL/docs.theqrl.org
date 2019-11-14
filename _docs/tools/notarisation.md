@@ -34,7 +34,7 @@ You may wish to enter some additional text for the message transaction, notarisa
 
 You may tweak the rest of the settings, however typically the default is just fine. Select **Notarise Document** at the bottom of the screen to proceed.
 
-![NotariseScreen](/assets/tools/notarize.png)
+![NotariseScreen](/assets/tools/notarise/notarize.png)
 
 #### Confirm and Send
 
