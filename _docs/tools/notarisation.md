@@ -1,8 +1,8 @@
 ---
-title: QRL Document Notarization
+title: QRL Document Notarisation
 categories: QRL TOols
-description: The QRL Document Notarization Technical Documentation
-tags: Notarization, Developers, Wallet, Tools
+description: The QRL Document Notarisation Technical Documentation
+tags: Notarisation, Developers, Wallet, Tools
 ---
 
 Using the  Message Transactions function on the QRL network, you can now notarise a document, embedding the hash forever in the chain. This function is available in the wallet and takes any document of file you load, hashes the file using sha256, signs the message containing your hash and sends it into the chain. 
@@ -12,9 +12,9 @@ Now anytime you want to verify the integrity of the document, you simply pass it
 > This function will not load the file to the blockchain, and is not a file storage service. Simply the sha256 hash is loaded, allowing future verification of the document to occur, proving it has not been modified in any way.
 {: .info}
 
-## Notarizing a Document
+## Notarising a Document
 
-The process is simple to get started notarizing documents. Using your QRL wallet, you will sign a message and broadcast the transaction onto the network.
+The process is simple to get started notarising documents. Using your QRL wallet, you will sign a message and broadcast the transaction onto the network.
 
 ### Create a Wallet
 
@@ -68,7 +68,7 @@ Browse to the explorer and search the TX hash in the search bar. This will bring
 
 #### Upload to Verify
 
-With the TX hash pulled up, browse to the file you wish to verify and click the **"Verify Norarisation"** button in the explorer. THis will rehash the document, and verify that they match. If they are the same you will see something similar to below.
+With the TX hash pulled up, browse to the file you wish to verify and click the **"Verify Notarisation"** button in the explorer. THis will rehash the document, and verify that they match. If they are the same you will see something similar to below.
 
  
 ![Explorer Verification Screen](/assets/tools/notarise/verifyNotariseExplorer3_small.png) 
