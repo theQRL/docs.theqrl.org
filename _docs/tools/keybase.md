@@ -34,9 +34,9 @@ The easiest way to achieve this is using the new Keybase tools section of the QR
 Tools icon in the wallet sidebar
 
 
-![tools bar](/assets/tools/keybase/tools_Bar.png)
+![Tools bar](/assets/tools/keybase/tools_bar.png)
 
-![tools bar](/assets/tools/keybase/AddKeybaseTx.png)
+![Add Keybase TX](/assets/tools/keybase/AddKeybaseTx.png)
 
 
 Enter your keybase username, paste the Keybase signature hash into the box, and click *Create Keybase Transaction*. When the transaction is complete, you’ll see confirmation:
