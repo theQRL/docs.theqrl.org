@@ -32,7 +32,7 @@ Follow the [Official Docker Instructions](https://docs.docker.com/install/) to g
 With a working Docker install pull the latest [qrl-node from Docker Hub](https://hub.docker.com/r/qrledger/qrl-docker)
 
 ```bash
-docker pull qrledger/qrl-docker
+docker pull qrledger/qrl-docker:bionic
 ```
 
 ### Start qrl-node
