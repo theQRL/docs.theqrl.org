@@ -42,7 +42,7 @@ nano {{ layout.v.qrlConf.confLocation }}
 #    Mining Configuration
 # ======================================
 # mining_enabled: False
-# mining_address: ‘’
+# mining_address: ''
 # mining_thread_count: 0  # 0 auto detect thread count based on number of processors
 #
 ```
