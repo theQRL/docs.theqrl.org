@@ -42,7 +42,6 @@ sudo apt update && sudo apt upgrade -y
 ## Install CMAKE version 3.10.3 manually
 {{ layout.v.qrlCommands.cmakeInstall }}
 
-
 # Make sure setuptools is the latest
 pip3 install -U setuptools
 
@@ -198,6 +197,38 @@ If you would like to see all of the options you can pass along the command line 
 ```
 
 This will print all of the various options available. 
+
+```bash
+usage: start_qrl [-h] [--mining_thread_count MINING_THREAD_COUNT] [--quiet]
+                 [--qrldir QRL_DIR] [--no-colors]
+                 [-l {DEBUG,INFO,WARNING,ERROR,CRITICAL}]
+                 [--network-type {mainnet,testnet}]
+                 [--miningAddress MINING_ADDRESS]
+                 [--mockGetMeasurement MEASUREMENT] [--debug] [--mocknet]
+
+QRL node
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --mining_thread_count MINING_THREAD_COUNT, -m MINING_THREAD_COUNT
+                        Number of threads for mining
+  --quiet, -q           Avoid writing data to the console
+  --qrldir QRL_DIR, -d QRL_DIR
+                        Use a different directory for node data/configuration
+  --no-colors           Disables color output
+  -l {DEBUG,INFO,WARNING,ERROR,CRITICAL}, --loglevel {DEBUG,INFO,WARNING,ERROR,CRITICAL}
+                        Set the logging level
+  --network-type {mainnet,testnet}
+                        Runs QRL Testnet Node
+  --miningAddress MINING_ADDRESS
+                        QRL Wallet address on which mining reward has to be
+                        credited.
+  --mockGetMeasurement MEASUREMENT
+                        Warning: Only for integration test, to mock
+                        get_measurement
+  --debug               Enables fault handler
+  --mocknet             Enables default mocknet settings
+```
 
 ## Configuration 
 

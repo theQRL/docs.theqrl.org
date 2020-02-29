@@ -151,9 +151,6 @@ nav a {
 		@include md {
 			grid-column: span 6;			
 		}
-		@include lg {
-			grid-column: span 4;
-		}
 	}
 }
 

@@ -5,8 +5,10 @@ layout: default
 v:
    qrlCommands:
        qrlInstall: pip3 install -U qrl
+       qrlTestnetInstall: pip3 install -U qrl==0.2.0
        grpcProxy: qrl_grpc_proxy
        startQRL: start_qrl
+       startTestNetQRL: start_qrl --network-type testnet
        pubPort: qrl --port_pub   
        walletDir: qrl --wallet_dir 
        generateSlave: qrl slave_tx_generate 
@@ -32,6 +34,7 @@ v:
        cmakeInstall: cd /opt && sudo wget https://github.com/Kitware/CMake/releases/download/v3.10.3/cmake-3.10.3.tar.gz && sudo tar zxvf cmake-3.10.3.tar.gz && cd cmake-3.10.3/ && sudo ./configure && sudo make -j2 && echo -e '## Adding cmake version 3.10.3\nPATH=$PATH:/opt/cmake-3.10.3/bin' >> ~/.bashrc && source ~/.bashrc
    qrlConf:
        qrlDir: ~/.qrl/
+       qrlTestnetDir: ~/.qrl-testnet
        confLocation: ~/.qrl/config.yml
        bitfield: 8192
        mining_enabled: False
