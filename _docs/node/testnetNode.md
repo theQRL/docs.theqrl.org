@@ -132,7 +132,7 @@ To enable mining on your Testnet node, simply add the following to the `~/.qrl/c
 
 ```bash
 mining_enabled: True
-mining_address: ‘TESTNET_QRL_ADDRESS_HERE’
+mining_address: 'TESTNET_QRL_ADDRESS_HERE'
 mining_thread_count: 0 
 ```
 
@@ -142,7 +142,12 @@ If you are in need of some QRL for testing on the TestNet, head over to the fauc
 
 Some helpful links for the Testnet network. Since this is a completely separate blockchain, we need to use the testnet wallet and block explorer.
 
-- [testnet-wallet.theqrl.org](https://testnet-wallet.theqrl.org)
+**Wallet**
+
+- **At present** use wallet.theqrl.org with *testnet selected*
+- **After the hard fork trigger in testnet** (blockheight 10 500) the new wallet features will launch on testnet-wallet.theqrl.org
+
+**Other links**
 - [testnet-explorer.theqrl.org](https://testnet-explorer.theqrl.org)
 - [testnet-faucet.qrl.tips](https://testnet-faucet.qrl.tips)
 
