@@ -58,7 +58,7 @@ sudo apt update && sudo apt upgrade -y
 pip3 install -U setuptools
 
 # Install QRL
-{{ layout.v.qrlCommands.qrlInstall }}
+{{ layout.v.qrlCommands.qrlTestnetInstall }}
 ```
 
 > Once this is complete you can check the status of the QRL install by passing the `qrl --version` command. It should print the latest version that matches the [Github Repo](https://github.com/theqrl/qrl)
