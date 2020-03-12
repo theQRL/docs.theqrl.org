@@ -1,66 +1,49 @@
 ---
-title: Setup a QRL Pool
-categories: mining
-description: The QRL Mining documentation
-tags: mining
+title: QRL Pool Setup
+categories: mining, pool, developers
+description: The QRL Pool Setup
+tags: mining, pool setup, developers
 ---
 
+QRL uses the RandomX protocol and can be mined collectively using a centralized pool server and a collection of computers running mining software. 
 
+This guide will walk through the steps required to get a pool up and running using [Our GithHub Fork](https://github.com/cyyber/cryptonote-nodejs-pool/) of the popular cryptonote-nodejs-pool software. This fork has been modified to run the QRL blockchain. You can use this as a basis for integrating QRL into your Pool or hosting your own private pool. 
 
-To fully utilize the benefits of multiple devices or GPU mining rigs, one can setup a stratum pool and use multiple machines to mine as the same device, effectively raising the hashrate of the mining efforts and increasing the odds of finding blocks. 
+It is assumed that the appropriate security measures have been taken to secure the server hosting this pool software. Please follow best practice and keep software up to date.
 
-Running a pool will also increase the redundancy and decentralization of the blockchain. A mining pool is required to run a full QRL node, syncing and verifying transactions on the network by default.
-
-Running a mining pool is not something that should be taken lightly. You need to have a good understanding of multiple complex administration and security practices. This is not something that an amateur should attempt or be run from a home.
-
- If you need help, reach out to the community in the discord chat or on Reddit.
+> Running a mining pool is not something that should be taken lightly. You need to have a good understanding of multiple complex administration and security practices. 
+{: .info}
 
 ## Requirements
 
 #### Hardware
 
 * minimum 4GB RAM 
-* 2 Core 
+* 2 Core CPU
 * Support for AES-NI 
-* HDD large enough to support the blockchain over time ( > 120GB )
+* Support for avx2 
 * 64 bit Processor 
 * high bandwidth network connection
 * Dedicated IP address
 
 #### Software and OS
 
-* This guide uses Ubuntu 16.04
-* python 3.5 or greater is required
-* node 0.10.48
-* [node-cryptonote-pool fork](https://github.com/theQRL/node-cryptonote-pool.git)
+* This guide uses Ubuntu 18.04LTS
+* python 3.6
+* All required dependencies specified in the [Pool software](https://github.com/cyyber/cryptonote-nodejs-pool/) repo
 
 ## QRL Install
 
 Follow the instructions found [docs.theqrl.org/node/QRLnode/](https://docs.theqrl.org/node/QRLnode/) to get the node started.
 
-An abridged version can be found below
-
-```bash
-# update
-sudo apt-get update && sudo apt-get upgrade -y
-
-# Dependencies
-{{ layout.v.qrlCommands.qrlRequirementsUbuntu }}
-
-# Install the qrl Package.
-{{ layout.v.qrlCommands.qrlInstall }}
-```
-
-This will install qrl and create  `{{ layout.v.qrlConf.qrlDir }}
-`
-
 ### Start QRL and Sync
 
-Before you start the node you need to create a configuration file to give the QRL node instructions on how to run.
+Create a configuration file to give the QRL node instructions on how to run. By default the QRL node will look in `{{ layout.v.qrlConf.qrlDir }}` You may need to create this directory if you have not started the node. 
 
-Create a `{{ layout.v.qrlConf.confLocation }}` file and add any configuration settings you may need. 
+> Note if you are running a testnet node, you will find the active qrl configuration at `{{ layout.v.qrlConf.TestnetConfLocation }}`
+{: .info}
 
-At minimum you must have:
+Create a `{{ layout.v.qrlConf.confLocation }}` file and add these minimum configuration settings.
 
 ```yml
 mining_enabled: False
@@ -69,7 +52,7 @@ mining_api_enabled: True
 public_api_enabled: True
 ```
 
-Then you can start the node and begin syncing the blockchain.
+Make sure to restart the node to pickup the changes.
 
 ```bash
 {{ layout.v.qrlCommands.startQRL }}
@@ -81,41 +64,40 @@ Check the state of the qrl node with
 {{ layout.v.qrlCommands.qrlState }}
 ```
 
-Verify the local node blockheight matches the [block explorer](https://explorer.theqrl.org)
-
-## Pool Install
-
-
-To install the pool follow the instruction in the [GitHub Repository](https://github.com/theQRL/node-cryptonote-pool.git)
-
-
-#### Dependencies
-
-* NodeJS
-* nvm
-* Node V 0.10.48
-* Redis-server
-* Node-Cryptonote-Pool Found [Here](https://github.com/theQRL/node-cryptonote-pool.git)
-   * This is a fork form the popular *zone117x node-cryptonote-pool*
-
+Verify the local node blockheight matches the [block explorer](https://explorer.theqrl.org). This may take some time.
 
 ## grpcProxy
 
+The QRL requires a bridge between the RPC and gRPC that QRL utilizes. The proxy handles the communication between the pool and the QRL node.
 
-Run the `{{ layout.v.qrlCommands.grpcProxy }}` to bridge the gap between RPC to gRPC. 
+To use the proxy you must have a slaves.json file named `payment.slaves.json` in your `{{ layout.v.qrlConf.qrlDir }}`. To generate this file first you need a QRL wallet.
 
-This is required since the QRL node uses [gRPC](https://grpc.io/) and runs on port 19000, the pool software runs [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) and is expecting to find the node at port 18090. This needs to run for hte pool to connect to the node and function.
+### QRL CLI Wallet
 
+Generate a new QRL wallet.
 
-#### Slaves.json File
+```bash
+# Creates a QRL wallet
+qrl wallet_gen --height 12 --hash_function shake128 --encrypt
+```
 
-In order to run the `{{ layout.v.qrlCommands.grpcProxy }}` you will need to generate a `slaves.json` file renamed as `payment_slaves.json`   
+The cli will ask for an encryption password to encrypt the file. This password will be required every time this wallet is needed, typically to generate a new slave tree in the distant future.
 
-Follow the guide found [Here](/wallet/slaves.json) to generate a slaves.json file
+### QRL payment.slaves.json
 
-This will allow the pool the ability to send the payments out to miners and allows more OTS keys to be used for the wallet. 
+Now that you have an encrypted QRL Wallet.json file you can create a slave tree file. This file is a new set of [One Time Signatures *(OTS)*](https://docs.theqrl.org/developers/ots/) that the pool will use to send transactions. See more on the XMSS slave trees in our [Documentation](https://docs.theqrl.org/wallet/slaves.json/)
 
-Generate a slaves file with 100 slaves, which will take awhile. This will give a factor of 1024\*100 signatures before the need to generate another slaves.json file and set it in the `{{ layout.v.qrlConf.qrlDir }}` directory.
+To generate a slave file from the wallet we just created, run the following command. This will create the slaves tree and broadcast a transaction onto the QRL network, allowing the set of slaves to be used.
+
+```bash
+qrl slave_tx_generate --src 0 --master 0 --number_of_slaves 100 --access_type 0 --fee .001
+```
+
+This will create a new file called slaves.json in the same directory you are in. This transaction will require a small fee to broadcast to the network. Make sure you have enough funds to cover the fee.
+
+Move the file to the `slaves.json` freshly created into the `{{ layout.v.qrlConf.qrlDir }}` and rename to `payment.slaves.json`
+
+### Start the QRL_gRPC_Proxy
 
 Run the proxy with the following:
 
@@ -123,188 +105,357 @@ Run the proxy with the following:
 {{ layout.v.qrlCommands.grpcProxy }}
 ```
 
+> Note: if you are running testnet, start the proxy with `--network-type testnet` to use the default testnet directory `{{ layout.v.qrlConf.qrlTestnetDir }} `. You will need to move the payments.slaves.json file to this directory as well.
+
+#### Ports 
+
+Check to see that you have open ports for the pool to communicate on using `netstat`
+
+```bash 
+netstat -tulnp
+```
+
+This will print all of the open ports on the server. Ensure ports `18090, 19007, 19009` are open and available for the pool.
+
+
+## Pool Install
+
+To install the pool follow the instructions in the [GitHub Repository](https://github.com/cyyber/cryptonote-nodejs-pool/#cryptonote-nodejs-pool). This will guide you through the dependencies and various steps to getting the pool software installed. 
+
+Please use the configuration found at the end of these docs to connect to the QRL node and wallet. this file lives at the root of the pool directory as `config.json`
+
+
 ## Install Web Server
 
-You will need a web server setup somewhere pointed at the pool API port. See the README.md in the pool github for instructions on setting up the web front end.
+You will need a web server setup somewhere pointed at the pool API port. See the README.md in the pool Github for instructions on setting up the web front end. There is an additional configuration file needed to host the web server. 
 
+Most importantly, ensure the port is available to the web server and you can reach the address or IP externally. 
 
+* `var api = "http://pool.FQDN_OR_IP:8117";`
 
-## Secure The Server
-
-Being that this is running a mining pool and handling money, you need to ensure the up most security is used. Follow the latest industry standards for securing Ubuntu.
-
-> Do not use clear text passwords and ensure that ssh is as locked down as possible.
-{: .info}
 
 ## Start The Pool
 
-With the QRL node fully synced and running, slaves.json file in the correct place, {{ layout.v.qrlConf.confLocation }} file correctly filled out, redis-server running,  and the qrl_grpc_proxy running, you can start the pool.
+With the QRL node fully synced and running, slaves.json file in the correct place, {{ layout.v.qrlConf.confLocation }} file correctly filled out, and the qrl_grpc_proxy running, you can start the pool.
 
+from the root pool directory, run
 
-Enjoy
+```bash
+node init.js
+```
 
+Enjoy.
 
 ## Pool Config File
 
-Copy the `config_example.json` file to `config.json` then overview each options and change any to match your preferred setup. 
+Copy the `/config_examples/qrl.json` file found in the repository to `/config.json` and overview each option. Change any to match your preferred setup however pay attention to the following few configurations, as they are important. 
 
-> *Do not copy the file shown below, use the one in your local directory*
-{: .warning}
+* "poolAddress": "Q01060019b0f4ce8ea82e71a5fc60851541db7e515d2585247c70533487cc89c50f6dddb8a4f386",
+* "daemon": { "host": "127.0.0.1", "port": 18090 },
+* "wallet": { "host": "127.0.0.1", "port": 18090 },
 
-
-```bash
+```json
 {
-/* Used for storage in redis so multiple coins can share the same redis instance. */
-    "coin": "quantum resistant ledger",
-
-/* Used for front-end display */
+    "poolHost": "pool.FQDN_or_IPADDRESS",
+    "coin": "quantum_resistant_ledger",
     "symbol": "QRL",
+    "hardForkHeight": 1000000,
+    "coinUnits": 1000000000,
+    "coinDecimalPlaces": 9,
+    "coinDifficultyTarget": 60,
+
+    "daemonType": "default",
+    "cnAlgorithm": "randomx",
+    "cnVariant": 0,
+    "cnBlobType": 0,
+    "includeHeight": true,
+    "isRandomX": true,
 
     "logging": {
         "files": {
-
-/* Specifies the level of log output verbosity. This level and anything more severe will be logged. Options are: info, warn, or error. */
             "level": "info",
-
-/* Directory where to write log files. */
             "directory": "logs",
-
-/* How often (in seconds) to append/flush data to the log files. */      
             "flushInterval": 5
         },
         "console": {
             "level": "info",
-
-/* Gives console output useful colors. If you direct that output to a log file then disable this feature to avoid nasty characters in the file. */
             "colors": true
         }
     },
 
-/* Modular Pool Server */
     "poolServer": {
         "enabled": true,
-
-/* Set to "auto" by default which will spawn one process/fork/worker for each CPU core in your system. Each of these workers will run a separate instance of your pool(s), and the kernel will load balance miners using these forks. Optionally, the 'forks' field can be a number for how many forks will be spawned. */        
         "clusterForks": "auto",
-
-/* Address where block rewards go, and miner payments come from. */
-        "poolAddress": "Q01060036ea9340ab68df7f8a3c4c4e9a1d3fd30c3dcd0492f1ae2eb07fc2b15ef4c72216d9c5a5",
-
-        "extraNonce": false,
-
-/* Poll RPC daemons for new blocks every this many milliseconds. */
+        "poolAddress": "Q01060019b0f4ce8ea82e71a5fc60851541db7e515d2585247c70533487cc89c50f6dddb8a4f386",
+        "intAddressPrefix": null,
         "blockRefreshInterval": 1000,
-
-/* How many seconds until we consider a miner disconnected. */
-       "minerTimeout": 900,
-
+        "minerTimeout": 900,
+        "sslCert": "./cert.pem",
+        "sslKey": "./privkey.pem",
+        "sslCA": "./chain.pem",
         "ports": [
             {
-                "port": 3333, //Port for mining apps to connect to
-                "difficulty": 100, //Initial difficulty miners are set to
-                "desc": "Low end hardware" //Description of port
+                "port": 3333,
+                "difficulty": 5000,
+                "desc": "Low end hardware"
             },
             {
-                "port": 5555,
-                "difficulty": 2000,
+                "port": 4444,
+                "difficulty": 15000,
                 "desc": "Mid range hardware"
             },
             {
-                "port": 7777,
-                "difficulty": 10000,
+                "port": 5555,
+                "difficulty": 25000,
                 "desc": "High end hardware"
             },
             {
+                "port": 7777,
+                "difficulty": 500000,
+                "desc": "Cloud-mining / NiceHash"
+            },
+            {
                 "port": 8888,
-                "difficulty": 10000,
+                "difficulty": 25000,
                 "desc": "Hidden port",
                 "hidden": true
+            },
+            {
+                "port": 9999,
+                "difficulty": 20000,
+                "desc": "SSL connection",
+                "ssl": true
             }
         ],
-
-/* Variable difficulty is a feature that will automatically adjust difficulty for individual miners based on their hashrate in order to lower networking and CPU
-       overhead. */        
         "varDiff": {
-            "minDiff": 2, //Minimum difficulty
-            "maxDiff": 100000,
-            "targetTime": 100, //Try to get 1 share per this many seconds
-            "retargetTime": 30, //Check to see if we should retarget every this many seconds
-            "variancePercent": 30, //Allow time to vary this % from target without retargeting
-            "maxJump": 100 //Limit diff percent increase/decrease in a single retargetting
+            "minDiff": 100,
+            "maxDiff": 100000000,
+            "targetTime": 120,
+            "retargetTime": 60,
+            "variancePercent": 30,
+            "maxJump": 100
         },
-
-/* Feature to trust share difficulties from miners which can significantly reduce CPU load. */
+        "paymentId": {
+            "addressSeparator": "+"
+        },
+        "fixedDiff": {
+            "enabled": true,
+            "addressSeparator": "."
+        },
         "shareTrust": {
             "enabled": true,
-            "min": 10, //Minimum percent probability for share hashing
-            "stepDown": 3, //Increase trust probability % this much with each valid share
-            "threshold": 10, //Amount of valid shares required before trusting begins
-            "penalty": 30 //Upon breaking trust require this many valid share before trusting
+            "min": 10,
+            "stepDown": 3,
+            "threshold": 10,
+            "penalty": 30
         },
-
-/* If under low-diff share attack we can ban their IP to reduce system/network load. */
         "banning": {
             "enabled": true,
-            "time": 600, //How many seconds to ban worker for
-            "invalidPercent": 25, //What percent of invalid shares triggers ban
-            "checkThreshold": 30 //Perform check when this many shares have been submitted
+            "time": 600,
+            "invalidPercent": 25,
+            "checkThreshold": 30
         },
-
- /* [Warning: several reports of this feature being broken. Proposed fix needs to be tested.] Slush Mining is a reward calculation technique which disincentivizes pool hopping and rewards 'loyal' miners by valuing younger shares higher than older shares. Remember adjusting the weight! More about it here: https://mining.bitcoin.cz/help/#!/manual/rewards */        
         "slushMining": {
-            "enabled": false, //Enables slush mining. Recommended for pools catering to professional miners
-            "weight": 300, //Defines how fast the score assigned to a share declines in time. The value should roughly be equivalent to the average round duration in seconds divided by 8. When deviating by too much numbers may get too high for JS.
-            "blockTime": 60, 
-            "lastBlockCheckRate": 1 //How often the pool checks the timestamp of the last block. Lower numbers increase load but raise precision of the share value
-        }
+            "enabled": false,
+            "weight": 300,
+            "blockTime": 60,
+            "lastBlockCheckRate": 1
+         }
     },
 
-/* Module that sends payments to miners according to their submitted shares. */
     "payments": {
         "enabled": true,
-        "interval": 600, /how often to run in seconds
-        "maxAddresses": 50, //split up payments if sending to more than this many addresses
-        "mixin": 3, //number of transactions yours is indistinguishable from
-        "transferFee": 500000000, //fee to pay for each transaction
-        "minPayment": 100000000000, //miner balance required before sending payment
-        "denomination": 100000000000 //truncate to this precision and store remainder
+        "interval": 1800,
+        "maxAddresses": 50,
+        "mixin": 7,
+        "priority": 0,
+        "transferFee": 1000000,
+        "dynamicTransferFee": true,
+        "minerPayFee" : true,
+        "minPayment": 1000000000,
+        "maxPayment": null,
+        "maxTransactionAmount": 0,
+        "denomination": 10000000000
     },
 
- /* Module that monitors the submitted block maturities and manages rounds. Confirmed blocks mark the end of a round where workers balances are increased in proportion to their shares. */
     "blockUnlocker": {
         "enabled": true,
-        "interval": 30, //how often to check block statuses in seconds
-        "depth": 50, /* Block depth required for a block to unlocked/mature. Found in daemon source as
-       the variable CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW */
-        "poolFee": 0.8, //0.8% pool fee (2% total fee total including donations)
-        "devDonation": 0.0,
-        "coreDevDonation": 0.0
+        "interval": 30,
+        "depth": 60,
+        "poolFee": 0.8,
+        "devDonation": 0.2,
+        "networkFee": 0.0
     },
-/* AJAX API used for front-end website. */
+
     "api": {
-        "enabled": true, 
-        "hashrateWindow": 600, //how many second worth of shares used to estimate hash rate
-        "updateInterval": 5, //gather stats and broadcast every this many seconds
-        "port": 8117, 
-        "blocks": 30, //amount of blocks to send at a time
-        "payments": 30, //amount of payments to send at a time
-        "password": "your_password" //password required for admin stats
+        "enabled": true,
+        "hashrateWindow": 600,
+        "updateInterval": 5,
+        "bindIp": "0.0.0.0",
+        "port": 8117,
+        "blocks": 30,
+        "payments": 30,
+        "password": "j$73Mds&ABUELID*$Fir7Tz!!0TllGt",
+        "ssl": false,
+        "sslPort": 8119,
+        "sslCert": "./cert.pem",
+        "sslKey": "./privkey.pem",
+        "sslCA": "./chain.pem",
+        "trustProxyIP": true
     },
-/* Coin daemon connection details. */
+
     "daemon": {
         "host": "127.0.0.1",
         "port": 18090
     },
-/* Wallet daemon connection details. */
+
     "wallet": {
         "host": "127.0.0.1",
         "port": 18090
     },
-/* Redis connection into. */
+
     "redis": {
         "host": "127.0.0.1",
         "port": 6379,
-        "auth": null //If set, client will run redis auth command on connect. Use for remote db
+        "auth": null,
+        "db": 0,
+        "cleanupInterval": 15
+    },
+
+    "notifications": {
+        "emailTemplate": "email_templates/default.txt",
+        "emailSubject": {
+            "emailAdded": "Your email was registered",
+            "workerConnected": "Worker %WORKER_NAME% connected",
+            "workerTimeout": "Worker %WORKER_NAME% stopped hashing",
+            "workerBanned": "Worker %WORKER_NAME% banned",
+            "blockFound": "Block %HEIGHT% found !",
+            "blockUnlocked": "Block %HEIGHT% unlocked !",
+            "blockOrphaned": "Block %HEIGHT% orphaned !",
+            "payment": "We sent you a payment !"
+        },
+        "emailMessage": {
+            "emailAdded": "Your email has been registered to receive pool notifications.",
+            "workerConnected": "Your worker %WORKER_NAME% for address %MINER% is now connected from ip %IP%.",
+            "workerTimeout": "Your worker %WORKER_NAME% for address %MINER% has stopped submitting hashes on %LAST_HASH%.",
+            "workerBanned": "Your worker %WORKER_NAME% for address %MINER% has been banned.",
+            "blockFound": "Block found at height %HEIGHT% by miner %MINER% on %TIME%. Waiting maturity.",
+            "blockUnlocked": "Block mined at height %HEIGHT% with %REWARD% and %EFFORT% effort on %TIME%.",
+            "blockOrphaned": "Block orphaned at height %HEIGHT% :(",
+            "payment": "A payment of %AMOUNT% has been sent to %ADDRESS% wallet."
+        },
+        "telegramMessage": {
+            "workerConnected": "Your worker _%WORKER_NAME%_ for address _%MINER%_ is now connected from ip _%IP%_.",
+            "workerTimeout": "Your worker _%WORKER_NAME%_ for address _%MINER%_ has stopped submitting hashes on _%LAST_HASH%_.",
+            "workerBanned": "Your worker _%WORKER_NAME%_ for address _%MINER%_ has been banned.",
+            "blockFound": "*Block found at height* _%HEIGHT%_ *by miner* _%MINER%_*! Waiting maturity.*",
+            "blockUnlocked": "*Block mined at height* _%HEIGHT%_ *with* _%REWARD%_ *and* _%EFFORT%_ *effort on* _%TIME%_*.*",
+            "blockOrphaned": "*Block orphaned at height* _%HEIGHT%_ *:(*",
+            "payment": "A payment of _%AMOUNT%_ has been sent."
+        }
+    },
+
+    "email": {
+        "enabled": false,
+        "fromAddress": "your@email.com",
+        "transport": "sendmail",
+        "sendmail": {
+            "path": "/usr/sbin/sendmail"
+        },
+        "smtp": {
+            "host": "smtp.example.com",
+            "port": 587,
+            "secure": false,
+            "auth": {
+                "user": "username",
+                "pass": "password"
+            },
+            "tls": {
+                "rejectUnauthorized": false
+            }
+        },
+        "mailgun": {
+            "key": "your-private-key",
+            "domain": "mg.yourdomain"
+        }
+    },
+
+    "telegram": {
+        "enabled": false,
+        "botName": "",
+        "token": "",
+        "channel": "",
+        "channelStats": {
+            "enabled": false,
+            "interval": 30
+        },
+        "botCommands": {
+            "stats": "/stats",
+            "report": "/report",
+            "notify": "/notify",
+            "blocks": "/blocks"
+        }
+    },
+    "charts": {
+        "pool": {
+            "hashrate": {
+                "enabled": true,
+                "updateInterval": 60,
+                "stepInterval": 1800,
+                "maximumPeriod": 86400
+            },
+            "miners": {
+                "enabled": true,
+                "updateInterval": 60,
+                "stepInterval": 1800,
+                "maximumPeriod": 86400
+            },
+            "workers": {
+                "enabled": true,
+                "updateInterval": 60,
+                "stepInterval": 1800,
+                "maximumPeriod": 86400
+            },
+            "difficulty": {
+                "enabled": true,
+                "updateInterval": 1800,
+                "stepInterval": 10800,
+                "maximumPeriod": 604800
+            },
+            "price": {
+                "enabled": true,
+                "updateInterval": 1800,
+                "stepInterval": 10800,
+                "maximumPeriod": 604800
+            },
+            "profit": {
+                "enabled": true,
+                "updateInterval": 1800,
+                "stepInterval": 10800,
+                "maximumPeriod": 604800
+            }
+        },
+        "user": {
+            "hashrate": {
+                "enabled": true,
+                "updateInterval": 180,
+                "stepInterval": 1800,
+                "maximumPeriod": 86400
+            },
+            "worker_hashrate": {
+                "enabled": true,
+                "updateInterval": 60,
+                "stepInterval": 60,
+                "maximumPeriod": 86400
+            },
+            "payments": {
+                "enabled": true
+            }
+        },
+        "blocks": {
+            "enabled": true,
+            "days": 30
+        }
     }
 }
 ```
