@@ -24,6 +24,8 @@ To clarify, if you're someone who's holding QRL in a wallet, whether that's a ha
 
 If you're running your own node, you'll want to perform an update when we do a release of the next hardfork but before the next hardfork date. 
 
+The latest code will automatically switch over to the new mining algorithm and new features at blockheight 942375. At that point in the chain all new features will be live and old instances of the node will be rejected. Update nodes prior to this blockheight.
+
 There's no need to download the whole blockchain again during this process however there is a revalidation of the state that will take place. This revalidation may take anywhere from 5 to 7 hours to complete. While the revalidation process is underway the node will be unresponsive. 
 
 > There is some downtime to upgrade the node however we have minimized the impact as much as possible. Please allow for this time when updating a node to the latest.
