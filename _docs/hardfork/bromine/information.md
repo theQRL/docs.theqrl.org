@@ -24,7 +24,12 @@ To clarify, if you're someone who's holding QRL in a wallet, whether that's a ha
 
 If you're running your own node, you'll want to perform an update when we do a release of the next hardfork but before the next hardfork date. 
 
-There's no need to download the whole blockchain again during this process.
+The latest code will automatically switch over to the new mining algorithm and new features at blockheight 942375. At that point in the chain all new features will be live and old instances of the node will be rejected. Update nodes prior to this blockheight.
+
+There's no need to download the whole blockchain again during this process however there is a revalidation of the state that will take place. This revalidation may take anywhere from 5 to 7 hours to complete. While the revalidation process is underway the node will be unresponsive. 
+
+> There is some downtime to upgrade the node however we have minimized the impact as much as possible. Please allow for this time when updating a node to the latest.
+{: .info}
 
 **Update: Using pip**
 
@@ -67,9 +72,35 @@ You'll need to get acquainted with the Hardware required to mine randomX and sel
 
 You can find more information on this at [pool mining](/mining/pool-mining).
 
-## Exchange operators / nodes
+## Exchange operators
 
-The instructions for exchanges are the same for those running a node! See the section for those running a node.
+#### 1. Stop QRL walletd-rest-proxy
+
+Stop the QRL wallet daemon REST proxy
+
+#### 2. Kill the QRL wallet daemon process
+
+
+#### 3. Stop the Node
+
+Either Ctrl-C or kill the process
+
+#### 4. Update the Node
+
+The following command will upgrade the QRL node:
+
+``pip3 install qrl --upgrade``
+
+
+#### 5. Start the upgraded Node
+
+**Please note it will take around 6 to 7 hours to finish the state migration process.**
+
+Once it has been finished proceed to further steps.
+
+#### 6. Start Wallet Daemon process
+
+#### 7. Start walletd-rest-proxy
 
 ## For those with Quanta who want to take advantage of multisignature transactions
 

@@ -159,7 +159,7 @@ Copy the `/config_examples/qrl.json` file found in the repository to `/config.js
     "poolHost": "pool.FQDN_or_IPADDRESS",
     "coin": "quantum_resistant_ledger",
     "symbol": "QRL",
-    "hardForkHeight": 1000000,
+    "hardForkHeight": 942375,
     "coinUnits": 1000000000,
     "coinDecimalPlaces": 9,
     "coinDifficultyTarget": 60,
