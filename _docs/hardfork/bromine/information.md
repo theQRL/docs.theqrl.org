@@ -72,9 +72,35 @@ You'll need to get acquainted with the Hardware required to mine randomX and sel
 
 You can find more information on this at [pool mining](/mining/pool-mining).
 
-## Exchange operators / nodes
+## Exchange operators
 
-The instructions for exchanges are the same for those running a node! See the section for those running a node.
+#### 1. Stop QRL walletd-rest-proxy
+
+Stop the QRL wallet daemon REST proxy
+
+#### 2. Kill the QRL wallet daemon process
+
+
+#### 3. Stop the Node
+
+Either Ctrl-C or kill the process
+
+#### 4. Update the Node
+
+The following command will upgrade the QRL node:
+
+``pip3 install qrl --upgrade``
+
+
+#### 5. Start the upgraded Node
+
+**Please note it will take around 6 to 7 hours to finish the state migration process.**
+
+Once it has been finished proceed to further steps.
+
+#### 6. Start Wallet Daemon process
+
+#### 7. Start walletd-rest-proxy
 
 ## For those with Quanta who want to take advantage of multisignature transactions
 
