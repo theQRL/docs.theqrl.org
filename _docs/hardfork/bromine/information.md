@@ -24,7 +24,10 @@ To clarify, if you're someone who's holding QRL in a wallet, whether that's a ha
 
 If you're running your own node, you'll want to perform an update when we do a release of the next hardfork but before the next hardfork date. 
 
-There's no need to download the whole blockchain again during this process.
+There's no need to download the whole blockchain again during this process however there is a revalidation of the state that will take place. This revalidation may take anywhere from 5 to 7 hours to complete. While the revalidation process is underway the node will be unresponsive. 
+
+> There is some downtime to upgrade the node however we have minimized the impact as much as possible. Please allow for this time when updating a node to the latest.
+{: .info}
 
 **Update: Using pip**
 
