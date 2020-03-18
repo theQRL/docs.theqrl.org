@@ -1,0 +1,139 @@
+
+QRL Address: <input type="text" id="address" placeholder="QRL Address">
+
+<div id="pools"></div>
+
+<script>
+    function shuffle(a) {
+      for (let i = a.length - 1; i > 0; i--) {
+         const j = Math.floor(Math.random() * (i + 1));
+         [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    var pools = [
+        {
+            "name":"QRL Testnet Pool",
+            "hardfork": false,
+            "testnet": true,
+            "address":"http://136.244.104.146/",
+            "poolurl":"136.244.104.146:4444",
+            "blurb":"QRL testnet pool setup as a demonstration for pool operators as well as for the general public to test their client configuration."
+        },
+        {
+            "name":"miningocean",
+            "hardfork": true,
+            "testnet": false,
+            "address":"https://qrl.miningocean.org/",
+            "poolurl":"qrl.miningocean.org:5555",
+            "poolconfig":"https://qrl.miningocean.com/getting_started",
+            "blurb":"Comfortable & Reliable Quantum Resistant Ledger QRL Mining pool, run by first-class professionals. Adaptive DDOS Protection. Advanced support. World class service at a low 0.2% fee. Our qrl pool keeps your rig hashrate safe and secure! Join us to contribute to the decentralization of the network!"
+        },
+        {
+            "name":"herominers",
+            "hardfork": true,
+            "testnet": false,
+            "address":"https://qrl.herominers.com",
+            "poolurl":"qrl.herominers.com:10371",
+            "poolconfig":"https://qrl.herominers.com/#getting-started",
+            "blurb":"HeroMiners CryptoNight Mining Pools. Features: Score and PROP Payment System, Pool and SOLO Mining, Per Rig Stats, TLS Ports, Exchange Wallet Support."
+        },
+        {
+            "name":"minilaro",
+            "hardfork": true,
+            "testnet": false,
+            "address":"https://minilaro.computer-pig.net",
+            "poolurl":null,
+            "blurb":"Minilaro is a mining pool from longstanding discord user happysmash27"
+        },
+        {
+            "name":"leafpool",
+            "hardfork": true,
+            "testnet": false,
+            "address":"https://www.leafpool.com/",
+            "poolurl":"qrl-us-east.leafpool.com:4444",
+            "poolconfig":"https://ryo.leafpool.com/getting-started",
+            "blurb":"Leafpool is a mining pool that deals in a wide variety of mining algorithms such as BeamHashII, Sha3, Cryptonight-turtle-light, Cryptonight-GPU, and soon to be RandomX"
+        },
+        {
+            "name":"mine2gether",
+            "hardfork": true,
+            "testnet": false,
+            "address":"https://mine2gether.com",
+            "poolurl":null,
+            "poolconfig":"https://qrl.mine2gether.com/#getting_started",
+            "blurb":"Mine2gether is a mining pool which has primarily dealt with cryptonight-v7 cryptocurrencies, and soon to be RandomX as well."
+        },
+        {
+          "name":"qrlmining",
+          "hardfork": true,
+          "testnet": false,
+          "address":"https://pool.qrlmining.com",
+          "poolurl":null
+        }
+    ];
+
+    var address = '[INSERT QRL ADDRESS HERE]';
+
+
+
+    $('#address').on('keypress keyup', function(){
+      $('.temp').remove();
+
+      address = $(this).val();
+
+      loadPools();
+    });
+
+
+    function loadPools() {
+      for (let pool in pools) {
+        poolfunction(pools[pool]);
+      }
+    }
+
+    function poolfunction(pool) {
+      $("#pools").append("<h3 class='temp'>"+pool.name+"</h3>");
+
+      $("#pools").append("<p class='temp'><strong>Website</strong>: <a href='"+pool.address+"'>"+pool.address+"</a></p>");
+
+      if(pool.poolconfig) {
+
+        $("#pools").append("<p class='temp'><strong>Pool Configuration: </strong>: <a href='"+pool.poolconfig+"'>"+pool.poolconfig+"</a></p>");
+      }
+      $("#pools").append("<p class='temp'><strong>Upcoming hardfork support?</strong> "+pool.hardfork+"</p>");
+      $("#pools").append("<p class='temp'><strong>Currently running testnet?</strong> "+pool.testnet+"</p>");        
+
+      if(pool.blurb) {
+        $("#pools").append("<p class='temp'><strong>Note from the pool: </strong>"+pool.blurb+"</p>");
+      }
+
+      if(pool.poolurl!==null) {
+      var xmrig = `{\n\t"algo":"rx/0",\n\t"url":"${pool.poolurl}",\n\t"user":"${address}",\n\t"pass":"x",\n\t"keepalive":"true",\n\t"enabled":"true",\n\t"variant": -1,\n\t"tls": false,\n\t"tls-fingerprint": null\n}`;
+      
+
+      var xmrig_cmd = `-o ${pool.poolurl} -u "${address}" -k --algo "rx/0"`;
+       $("#pools").append("<strong class='temp'>XMRIG config.json</strong><pre class='temp'>"+xmrig+"</pre>");
+       $("#pools").append("<strong class='temp'>Windows</strong><pre class='temp'>xmrig.exe "+xmrig_cmd+"</pre>");
+       $("#pools").append("<strong class='temp'>Linux</strong><pre class='temp'>./xmrig "+xmrig_cmd+"</pre>");
+       $("#pools").append("<strong class='temp'>OSX</strong><pre class='temp'>./xmrig "+xmrig_cmd+"</pre>");
+      } else {
+        $("#pools").append("<strong class='temp'>There's currently no suggested pool configuration at this moment.</strong>");
+      }
+    }
+
+
+
+    // Shuffle array
+    shuffle(pools);
+
+    loadPools();
+
+    setTimeout((function() {
+      if(window.location.hash) {
+        window.location.hash = window.location.hash;
+      }
+    }), 100);
+</script>
+
