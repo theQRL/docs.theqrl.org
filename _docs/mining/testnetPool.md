@@ -56,7 +56,7 @@ mining_api_enabled: True
 public_api_enabled: True
 ```
 
-In the end your configuration file should read something close to this. *The peer details and heasderhash will change over time*:
+In the end your configuration file should read something close to this. *The peer details and heasderhash will change over time as the network is reset*:
 
 ```yml
 peer_list: [ "18.130.83.207", "35.176.41.49", "18.130.187.220", "35.176.33.242" ]
@@ -115,7 +115,7 @@ qrl slave_tx_generate --src 0 --master 0 --number_of_slaves 100 --access_type 0 
 
 This will create a new file called slaves.json in the same directory you are in, sign the message and send onto the network. This transaction will require a small fee to broadcast to the network. Make sure you have enough funds to cover the fee. If needed visit the [testnet faucet](https://testnet-faucet.qrl.tips/) for funds to make this transaction.
 
-Move the `slaves.json` file to the `{{ layout.v.qrlConf.qrlTestnetDir }}` and rename to `payment.slaves.json`
+Move the `slaves.json` file to the `{{ layout.v.qrlConf.qrlTestnetDir }}` directory and rename to `payment.slaves.json`
 
 ### Start the QRL_gRPC_Proxy
 
