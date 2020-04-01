@@ -109,8 +109,8 @@ Each time the network is updated you will need to refresh some files and restart
 1. Stop the node
 2. Update QRL `pip3 install -U qrl`
 3. Remove the `~/.qrl-testnet/data` directory
-4. Remove the `~/.qrl/genesis.yml` file 
-5. Remove the `~/.qrl/config.yml` file 
+4. Remove the `~/.qrl-testnet/genesis.yml` file 
+5. Remove the `~/.qrl-testnet/config.yml` file 
 6. Restart the node using `{{ layout.v.qrlCommands.startTestNetQRL }}`
 
 
@@ -142,12 +142,7 @@ If you are in need of some QRL for testing on the TestNet, head over to the fauc
 
 Some helpful links for the Testnet network. Since this is a completely separate blockchain, we need to use the testnet wallet and block explorer.
 
-**Wallet**
-
-- **At present** use wallet.theqrl.org with *testnet selected*
-- **After the hard fork trigger in testnet** (blockheight 10 500) the new wallet features will launch on testnet-wallet.theqrl.org
-
-**Other links**
+- [testnet-wallet.theqrl.org](https://testnet-wallet.theqrl.org)
 - [testnet-explorer.theqrl.org](https://testnet-explorer.theqrl.org)
 - [testnet-faucet.qrl.tips](https://testnet-faucet.qrl.tips)
 
