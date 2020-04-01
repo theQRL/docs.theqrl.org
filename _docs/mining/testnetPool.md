@@ -88,7 +88,7 @@ Verify the local node blockheight matches the [testnet block explorer](https://t
 
 The QRL requires a bridge between the RPC and gRPC that QRL utilizes. The proxy handles the communication between the pool and the QRL node.
 
-To use the proxy you must have a slaves.json file named `payment_slaves.json` in your `{{ layout.v.qrlConf.qrlTestnetDir }}`. To generate this file first you need a QRL wallet.
+To use the proxy you must have a slaves.json file named `payment_slaves.json` in your `{{ layout.v.qrlConf.qrlTestnetDir }}` directory. To generate this file first you need a QRL wallet.
 
 ### QRL CLI Wallet
 
