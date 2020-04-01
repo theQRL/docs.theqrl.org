@@ -5,8 +5,9 @@ layout: default
 v:
    qrlCommands:
        qrlInstall: pip3 install -U qrl
-       qrlTestnetInstall: pip3 install -U qrl==0.2.0
+       qrlTestnetInstall: pip3 install -U qrl
        grpcProxy: qrl_grpc_proxy
+       grpcTestnetProxy: qrl_grpc_proxy --network-type=testnet
        startQRL: start_qrl
        startTestNetQRL: start_qrl --network-type testnet
        pubPort: qrl --port_pub   
@@ -36,6 +37,7 @@ v:
        qrlDir: ~/.qrl/
        qrlTestnetDir: ~/.qrl-testnet
        confLocation: ~/.qrl/config.yml
+       testnetConfLocation: ~/.qrl-testnet/config.yml
        bitfield: 8192
        mining_enabled: False
        mining_address: ''
