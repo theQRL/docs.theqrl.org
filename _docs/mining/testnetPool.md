@@ -115,7 +115,7 @@ qrl slave_tx_generate --src 0 --master 0 --number_of_slaves 100 --access_type 0 
 
 This will create a new file called slaves.json in the same directory you are in, sign the message and send onto the network. This transaction will require a small fee to broadcast to the network. Make sure you have enough funds to cover the fee. If needed visit the [testnet faucet](https://testnet-faucet.qrl.tips/) for funds to make this transaction.
 
-Move the `slaves.json` file to the `{{ layout.v.qrlConf.qrlTestnetDir }}` directory and rename to `payment.slaves.json`
+Move the `slaves.json` file to the `{{ layout.v.qrlConf.qrlTestnetDir }}` directory and rename to `payment_slaves.json`
 
 ### Start the QRL_gRPC_Proxy
 
