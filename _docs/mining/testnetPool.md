@@ -157,10 +157,13 @@ Most importantly, ensure the port is available to the web server and you can rea
 
 Copy the `/config_examples/qrl.json` file found in the repository to `/config.json` and overview each option. Change any to match your preferred setup however pay attention to the following few configurations, as they are important. 
 
-* "poolAddress": "Q01060019b0f4ce8ea82e71a5fc60851541db7e515d2585247c70533487cc89c50f6dddb8a4f386",
-* "daemon": { "host": "127.0.0.1", "port": 18090 },
-* "wallet": { "host": "127.0.0.1", "port": 18090 },
-
+```json
+{
+ "poolAddress": "Q01060019b0f4ce8ea82e71a5fc60851541db7e515d2585247c70533487cc89c50f6dddb8a4f386",
+ "daemon": { "host": "127.0.0.1", "port": 18090 },
+ "wallet": { "host": "127.0.0.1", "port": 18090 }
+}
+```
 ## Start The Pool
 
 With the QRL node fully synced and running, slaves.json file in the correct place, {{ layout.v.qrlConf.confLocation }} file correctly filled out, and the qrl_grpc_proxy running, you can start the pool.
