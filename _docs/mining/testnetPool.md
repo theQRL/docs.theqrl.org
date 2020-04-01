@@ -183,7 +183,7 @@ Enjoy.
     "poolHost": "pool.FQDN_or_IPADDRESS",
     "coin": "quantum_resistant_ledger",
     "symbol": "QRL",
-    "hardForkHeight": 942375,
+    "hardForkHeight": 10500,
     "coinUnits": 1000000000,
     "coinDecimalPlaces": 9,
     "coinDifficultyTarget": 60,
