@@ -1,13 +1,13 @@
 ---
-title: QRL Pool Setup
-categories: mining, pool, developers
-description: The QRL Pool Setup
+title: QRL Testnet Pool Setup
+categories: mining, pool, developers, testnet
+description: The QRL Testnet Pool Setup
 tags: mining, pool setup, developers
 ---
 
 QRL uses the RandomX protocol and can be mined collectively using a centralized pool server and a collection of computers running mining software. 
 
-This guide will walk through the steps required to get a pool up and running using [Our GithHub Fork](https://github.com/cyyber/cryptonote-nodejs-pool/) of the popular cryptonote-nodejs-pool software. This fork has been modified to run the QRL blockchain. You can use this as a basis for integrating QRL into your Pool or hosting your own private pool. 
+This guide will walk through the steps required to get a **Testnet** pool up and running using [Our GithHub Fork](https://github.com/cyyber/cryptonote-nodejs-pool/) of the popular cryptonote-nodejs-pool software. This fork has been modified to run the QRL blockchain. You can use this as a basis for integrating QRL into your Pool or hosting your own private pool. 
 
 It is assumed that the appropriate security measures have been taken to secure the server hosting this pool software. Please follow best practice and keep software up to date.
 
@@ -34,18 +34,36 @@ It is assumed that the appropriate security measures have been taken to secure t
 
 ## QRL Install
 
-Follow the instructions found [docs.theqrl.org/node/QRLnode/](https://docs.theqrl.org/node/QRLnode/) to get the node started.
+Follow the instructions found [docs.theqrl.org/node/QRLnode/](https://docs.theqrl.org/node/testnetNode/) to get the testnet node started. 
+
+> Make sure to issue the `{{ layout.v.qrlCommands.startTestNetQRL }}` to start the testnet node. 
+{: .info}
 
 ### Start QRL and Sync
 
-Create a configuration file to give the QRL node instructions on how to run. By default the QRL node will look in `{{ layout.v.qrlConf.qrlDir }}` You may need to create this directory if you have not started the node. 
+Edit or create the configuration file to give the QRL testnet node instructions on how to run. By default the node will look in `{{ layout.v.qrlConf.qrlTestNetDir }}` 
 
-> Note if you are running a testnet node, you will find the active qrl configuration at `{{ layout.v.qrlConf.testnetConfLocation }}`
-{: .info}
+You may need to create this directory if you have not started the testnet node previously. 
 
-Create a `{{ layout.v.qrlConf.confLocation }}` file and add these minimum configuration settings.
+The active qrl testnet configuration will be found at `{{ layout.v.qrlConf.testnetConfLocation }}`
+
+Ensure these minimum configuration settings are set along with the rest of the testnet configuration.
 
 ```yml
+mining_enabled: False
+enable_peer_discovery: True
+mining_api_enabled: True
+public_api_enabled: True
+```
+
+In the end your configuration file should read something close to this. *The peer details and heasderhash will change over time as the network is reset*:
+
+```yml
+peer_list: [ "18.130.83.207", "35.176.41.49", "18.130.187.220", "35.176.33.242" ]
+genesis_prev_headerhash: 'The Testnet Genesis'
+genesis_timestamp: 1530004179
+genesis_difficulty: 5000
+db_name: 'testnet-state'
 mining_enabled: False
 enable_peer_discovery: True
 mining_api_enabled: True
@@ -55,7 +73,7 @@ public_api_enabled: True
 Make sure to restart the node to pickup the changes.
 
 ```bash
-{{ layout.v.qrlCommands.startQRL }}
+{{ layout.v.qrlCommands.startTestNetQRL }}
 ```
 
 Check the state of the qrl node with 
@@ -64,13 +82,13 @@ Check the state of the qrl node with
 {{ layout.v.qrlCommands.qrlState }}
 ```
 
-Verify the local node blockheight matches the [block explorer](https://explorer.theqrl.org). This may take some time.
+Verify the local node blockheight matches the [testnet block explorer](https://testnet-explorer.theqrl.org). This may take some time to sync fully.
 
 ## grpcProxy
 
 The QRL requires a bridge between the RPC and gRPC that QRL utilizes. The proxy handles the communication between the pool and the QRL node.
 
-To use the proxy you must have a slaves.json file named `payment.slaves.json` in your `{{ layout.v.qrlConf.qrlDir }}`. To generate this file first you need a QRL wallet.
+To use the proxy you must have a slaves.json file named `payment.slaves.json` in your `{{ layout.v.qrlConf.qrlTestnetDir }}`. To generate this file first you need a QRL wallet.
 
 ### QRL CLI Wallet
 
@@ -83,32 +101,31 @@ qrl wallet_gen --height 12 --hash_function shake128 --encrypt
 
 The cli will ask for an encryption password to encrypt the file. This password will be required every time this wallet is needed, typically to generate a new slave tree in the distant future. **DO not lose this password**
 
-
 There now is a `wallet.json` file in the local directory the command was issued in. Backup this file to a secure location for future use if needed. This is the new pool wallet. Now generate slave trees to use for sending payments through the pools automated system. 
 
 ### QRL payment.slaves.json
 
 With the encrypted QRL Wallet.json file can create a slave tree file. This file contains a new set of [One Time Signatures *(OTS)*](https://docs.theqrl.org/developers/ots/) generated from the main address that the pool will use to send transactions. See more on the XMSS slave trees in our [Documentation](https://docs.theqrl.org/wallet/slaves.json/)
 
-To generate a slave file from the wallet, run the following command. This will create the slaves tree and broadcast a signed transaction with the slave tree public keys onto the QRL network, allowing the set of slaves to be used.
+To generate a slave file from the wallet we just created, run the following command. This will create the slaves tree and broadcast a transaction onto the QRL network, allowing the set of slaves to be used.
 
 ```bash
 qrl slave_tx_generate --src 0 --master 0 --number_of_slaves 100 --access_type 0 --fee .001
 ```
 
-This will create a new file called slaves.json in the same directory you are in, sign the message and send onto the network. This transaction will require a small fee to broadcast to the network. Make sure you have enough funds to cover the fee. 
+This will create a new file called slaves.json in the same directory you are in, sign the message and send onto the network. This transaction will require a small fee to broadcast to the network. Make sure you have enough funds to cover the fee. If needed visit the [testnet faucet](https://testnet-faucet.qrl.tips/) for funds to make this transaction.
 
-Move the `slaves.json` file to the `{{ layout.v.qrlConf.qrlDir }}` directory and rename to `payment.slaves.json`
+Move the `slaves.json` file to the `{{ layout.v.qrlConf.qrlTestnetDir }}` directory and rename to `payment.slaves.json`
 
 ### Start the QRL_gRPC_Proxy
 
 Run the proxy with the following:
 
 ```bash
-{{ layout.v.qrlCommands.grpcProxy }}
+{{ layout.v.qrlCommands.grpcTestnetProxy }}
 ```
 
-> Note: if you are running testnet, start the proxy with `--network-type testnet` to use the default testnet directory `{{ layout.v.qrlConf.qrlTestnetDir }} `. You will need to move the payments.slaves.json file to this directory as well.
+> Note: This wll use the default testnet directory `{{ layout.v.qrlConf.qrlTestnetDir }} `.
 
 #### Ports 
 
@@ -136,6 +153,13 @@ Most importantly, ensure the port is available to the web server and you can rea
 
 * `var api = "http://pool.FQDN_OR_IP:8117";`
 
+## Pool Config File
+
+Copy the `/config_examples/qrl.json` file found in the repository to `/config.json` and overview each option. Change any to match your preferred setup however pay attention to the following few configurations, as they are important. 
+
+* "poolAddress": "Q01060019b0f4ce8ea82e71a5fc60851541db7e515d2585247c70533487cc89c50f6dddb8a4f386",
+* "daemon": { "host": "127.0.0.1", "port": 18090 },
+* "wallet": { "host": "127.0.0.1", "port": 18090 },
 
 ## Start The Pool
 
@@ -149,13 +173,7 @@ node init.js
 
 Enjoy.
 
-## Pool Config File
-
-Copy the `/config_examples/qrl.json` file found in the repository to `/config.json` and overview each option. Change any to match your preferred setup however pay attention to the following few configurations, as they are important. 
-
-* "poolAddress": "Q01060019b0f4ce8ea82e71a5fc60851541db7e515d2585247c70533487cc89c50f6dddb8a4f386",
-* "daemon": { "host": "127.0.0.1", "port": 18090 },
-* "wallet": { "host": "127.0.0.1", "port": 18090 },
+## Example Pool Config File
 
 ```json
 {
