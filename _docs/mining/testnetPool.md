@@ -88,7 +88,7 @@ Verify the local node blockheight matches the [testnet block explorer](https://t
 
 The QRL requires a bridge between the RPC and gRPC that QRL utilizes. The proxy handles the communication between the pool and the QRL node.
 
-To use the proxy you must have a slaves.json file named `payment.slaves.json` in your `{{ layout.v.qrlConf.qrlTestnetDir }}`. To generate this file first you need a QRL wallet.
+To use the proxy you must have a slaves.json file named `payment_slaves.json` in your `{{ layout.v.qrlConf.qrlTestnetDir }}`. To generate this file first you need a QRL wallet.
 
 ### QRL CLI Wallet
 
@@ -103,7 +103,7 @@ The cli will ask for an encryption password to encrypt the file. This password w
 
 There now is a `wallet.json` file in the local directory the command was issued in. Backup this file to a secure location for future use if needed. This is the new pool wallet. Now generate slave trees to use for sending payments through the pools automated system. 
 
-### QRL payment.slaves.json
+### QRL payment_slaves.json
 
 With the encrypted QRL Wallet.json file can create a slave tree file. This file contains a new set of [One Time Signatures *(OTS)*](https://docs.theqrl.org/developers/ots/) generated from the main address that the pool will use to send transactions. See more on the XMSS slave trees in our [Documentation](https://docs.theqrl.org/wallet/slaves.json/)
 
