@@ -1,0 +1,46 @@
+- name: miningocean
+  hardfork: true
+  testnet: false
+  address: "https://qrl.miningocean.org/"
+  poolurl: "qrl.miningocean.org:5555"
+  poolconfig: https://qrl.miningocean.org/getting_started
+  blurb: "Comfortable & Reliable Quantum Resistant Ledger QRL Mining pool, run by first-class professionals. Adaptive DDOS Protection. Advanced support. World class service at a low 0.2% fee. Our qrl pool keeps your rig hashrate safe and secure! Join us to contribute to the decentralization of the network!"
+
+- name: herominers
+  hardfork: true
+  testnet: false
+  address: https://qrl.herominers.com
+  poolurl: qrl.herominers.com:10371
+  poolconfig: https://qrl.herominers.com/#getting-started
+  blurb: "HeroMiners CryptoNight Mining Pools. Features: Score and PROP Payment System, Pool and SOLO Mining, Per Rig Stats, TLS Ports, Exchange Wallet Support."
+
+- name: minilaro
+  hardfork: true
+  testnet: false
+  address: https://minilaro.computer-pig.net
+  poolurl: null
+  blurb: "Minilaro is a mining pool from longstanding discord user happysmash27"
+
+- name: leafpool
+  hardfork: true
+  testnet: false
+  address: https://qrl.leafpool.com/
+  poolurl: qrl-us.leafpool.com:4444
+  poolconfig: https://qrl.leafpool.com/getting-started
+  blurb: "Leafpool is a mining pool that deals in a wide variety of mining algorithms such as BeamHashII, Sha3, Cryptonight-turtle-light, Cryptonight-GPU, and soon to be RandomX"
+
+- name: mine2gether
+  hardfork: true
+  testnet: false
+  address: https://mine2gether.com
+  poolurl: null
+  poolconfig: https://qrl.mine2gether.com/#getting_started
+  blurb: "Mine2gether is a mining pool which has primarily dealt with cryptonight-v7 cryptocurrencies, and soon to be RandomX as well."
+
+- name: qrlmining
+  hardfork: true
+  testnet: false
+  address: https://pool.qrlmining.com
+  poolurl: pool.qrlmining.com:5555
+  poolconfig: http://pool.qrlmining.com/#getting_started
+  blurb: "QRLmining is back for RandomX. Happy hashing."
