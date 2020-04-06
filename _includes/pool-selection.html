@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
 QRL Address: <input type="text" id="address" placeholder="QRL Address">
 
@@ -15,6 +16,7 @@ QRL Address: <input type="text" id="address" placeholder="QRL Address">
     var pools = [];
 
     {% for pool in site.data.pools %}
+    {% if pool.enabled != false %}
     pools.push(
       {
         "name": "{{ pool.name }}",
@@ -22,18 +24,22 @@ QRL Address: <input type="text" id="address" placeholder="QRL Address">
         "testnet": {{ pool.testnet }},
         "poolurl": "{{ pool.poolurl }}",
         "poolconfig": "{{ pool.poolconfig }}",
-        "blurb": "{{ pool.blurb }}"
+        "blurb": "{{ pool.blurb }}",
+        "address": "{{ pool.address }}",
+        "specialuser":"{{ pool.specialuser }}"
       }
-    );{% endfor %}
+    );{% endif %}{% endfor %}
 
-    var address = '[INSERT QRL ADDRESS HERE]';
+    var qrladdress = '[INSERT QRL ADDRESS HERE]';
 
 
 
     $('#address').on('keypress keyup', function(){
       $('.temp').remove();
 
-      address = $(this).val();
+      qrladdress = $(this).val();
+      Cookies.set('address', qrladdress);
+
 
       loadPools();
     });
@@ -41,45 +47,51 @@ QRL Address: <input type="text" id="address" placeholder="QRL Address">
 
     function loadPools() {
       for (let pool in pools) {
-        poolfunction(pools[pool]);
+        printpool(pools[pool]);
       }
     }
 
-    function poolfunction(pool) {
+    function printpool(pool) {
+      pooladdress = qrladdress;
+
+      if(pool.specialuser) {
+        pooladdress = pool.specialuser;
+      }
       $("#pools").append("<h3 class='temp'>"+pool.name+"</h3>");
 
       $("#pools").append("<p class='temp'><strong>Website</strong>: <a href='"+pool.address+"'>"+pool.address+"</a></p>");
 
       if(pool.poolconfig) {
-
         $("#pools").append("<p class='temp'><strong>Pool Configuration: </strong>: <a href='"+pool.poolconfig+"'>"+pool.poolconfig+"</a></p>");
       }
       $("#pools").append("<p class='temp'><strong>Upcoming hardfork support?</strong> "+pool.hardfork+"</p>");
-      $("#pools").append("<p class='temp'><strong>Currently running testnet?</strong> "+pool.testnet+"</p>");        
+      // $("#pools").append("<p class='temp'><strong>Currently running testnet?</strong> "+pool.testnet+"</p>");        
 
       if(pool.blurb) {
         $("#pools").append("<p class='temp'><strong>Note from the pool: </strong>"+pool.blurb+"</p>");
       }
 
       if(pool.poolurl!==null) {
-      var xmrig = `{\n\t"algo":"rx/0",\n\t"url":"${pool.poolurl}",\n\t"user":"${address}",\n\t"pass":"x",\n\t"keepalive":"true",\n\t"enabled":"true",\n\t"variant": -1,\n\t"tls": false,\n\t"tls-fingerprint": null\n}`;
+      var xmrig = `{ "autosave": true, "cpu": true, "opencl": false, "cuda": false, "retries": 2, "retry-pause":2,
+    "pools":[{\n\t"algo":"rx/0",\n\t"url":"${pool.poolurl}",\n\t"user":"${pooladdress}",\n\t"pass":"x",\n\t"keepalive":"true",\n\t"enabled":"true",\n\t"variant": -1,\n\t"tls": false,\n\t"tls-fingerprint": null\n},{\n\t"algo":"cn/1",\n\t"url":"${pool.poolurl}",\n\t"user":"${pooladdress}",\n\t"pass":"x",\n\t"keepalive":"true",\n\t"enabled":"true",\n\t"variant": -1,\n\t"tls": false,\n\t"tls-fingerprint": null\n}]\n}`;
       
 
-      var xmrig_cmd = `-o ${pool.poolurl} -u "${address}" -k --algo "rx/0"`;
-       $("#pools").append("<strong class='temp'>XMRIG config.json</strong><pre class='temp'>"+xmrig+"</pre>");
-       $("#pools").append("<strong class='temp'>Windows</strong><pre class='temp'>xmrig.exe "+xmrig_cmd+"</pre>");
-       $("#pools").append("<strong class='temp'>Linux</strong><pre class='temp'>./xmrig "+xmrig_cmd+"</pre>");
-       $("#pools").append("<strong class='temp'>OSX</strong><pre class='temp'>./xmrig "+xmrig_cmd+"</pre>");
+      var xmrig_cmd = `-o ${pool.poolurl} -u "${pooladdress}" -k --algo "rx/0"`;
+       $("#pools").append("<strong class='temp'>XMRIG config.json</strong><p>Replace config.json with the contents below:</p><pre class='temp'>"+xmrig+"</pre>");
+       // $("#pools").append("<strong class='temp'>Windows</strong><pre class='temp'>xmrig.exe "+xmrig_cmd+"</pre>");
+       // $("#pools").append("<strong class='temp'>Linux</strong><pre class='temp'>./xmrig "+xmrig_cmd+"</pre>");
+       // $("#pools").append("<strong class='temp'>OSX</strong><pre class='temp'>./xmrig "+xmrig_cmd+"</pre>");
       } else {
         $("#pools").append("<strong class='temp'>There's currently no suggested pool configuration at this moment.</strong>");
       }
     }
 
 
-
-    // Shuffle array
+    // Shuffle pools list.
     shuffle(pools);
 
+    $('#address').val(Cookies.get('address'));
+    qrladdress=Cookies.get('address');
     loadPools();
 
     setTimeout((function() {
