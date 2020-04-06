@@ -5,6 +5,8 @@ description: The QRL Mining documentation
 tags: mining
 ---
 
+> **Note:** Already have everything setup? For a list of pools. Head over to our [Mining Pools](/mining/pools) page for more information.
+{: .info}
 
 So you want to mine QRL? This is the place to start. This guide will cover the basics to mining while staying out of the weeds as they say.
 
@@ -24,15 +26,11 @@ There are not too many requirements for mining QRL. Most current processors will
 
 #### QRL Mining basics
 
-QRL uses the Monero7 algorithm allowing QRL to take advantage of the ASIC resistant features and benefits of CryptoNight and Monero. Since we are using this algorithm, we can share in the same ASIC resistant benefits that Monero promotes. 
-
-> Privacy features of Monero are specific to that project, and do not carry over to QRL.
-{: .info}
-
+QRL uses the RandomX algorithm allowing QRL to take advantage of its ASIC resistant features and benefits. This is the same algorithm that Monero currently uses.
 
 Any software that pool mines for monero will work with QRL. You can find something that is compatible with your OS and setup following the guide found with the project you choose. Ask for help in the QRL Discord or in the Reddit forum if you need help. 
 
-> When configuring your software, set everything up to mine Monero7, *instead* of using a Monero address, enter your *QRL* address into the "Worker" or "Address" field in the mining software.
+> When configuring your software, set everything up to mine "rx/0", *instead* of using a Monero address, enter your *QRL* address into the "Worker" or "Address" field in the mining software.
 {: .info}
 
 QRL uses PQ secure encryption. No joke this stuff is the best there is right now. If you follow instructions, and don't compromise your private keys in any way your funds are safe from current processors as well as advanced quantum computers that are on the horizon.
@@ -45,14 +43,14 @@ CPU mining utilizes a users PC CPU(s) to calculate the cryptographic equation an
 There are two ways to get started mining on a CPU:
 
 * Run a [Full QRL Node](/mining/full-node) on your computer
-* Use cryptonight mining software and connect to a pool
+* Use randomx mining software and connect to a pool
 
 As a general rule, you will have a better chance at finding blocks using a pool. Solo mining strengthens the QRL network by running a synced node, verifying transactions on the network.  Either way you decide to go, over time your block rewards should even out.
 
 
 ## GPU Mining
 
-Mining QRL using GPU's is possible utilizing a community run pool server working with other miners to pool the hashrate submitted to find solutions. You will need cryptonight mining software compatible with the latest Monero fork that will use the GPU(s) of your mining rig to compute the hashing functions.
+Mining QRL using GPU's is possible utilizing a community run pool server working with other miners to pool the hashrate submitted to find solutions. You will need randomx mining software compatible with the latest Monero fork that will use the GPU(s) of your mining rig to compute the hashing functions.
 
 There are a ton of options to choose from out there. Make sure the software will mine Monero if you are having any issues. Use a QRL address and point the miner to a community pool.  
 
@@ -61,13 +59,11 @@ There are a ton of options to choose from out there. Make sure the software will
 
 | Software      | GUI or CLI | Arch | Windows     | Linux |  OSX   |  Links | Notes	|
 |:-------------:|:--:|:-----:|:-----------:|:-----:|:------:|:------:|:-------:|
-|   XMR-stak    | CLI	|	CPU, GPU (Nvidia & AMD) |  YES     |  YES     |  YES      | [Github](https://github.com/fireice-uk/xmr-stak/releases) | guided start, Open Source, TLS support, HTML statistics page, JSON API	|
-|   Cast XMR    | CLI 	|	GPU (Nvidia & AMD) |    YES  |  NO   |  NO    | [gandalph3000.com](http://www.gandalph3000.com/cast_xmr/cast-xmr-optimized-cryptonight-miner-for-rx-vega/) | 	|
-|   CPUMiner | CLI |	CPU  |    YES     |  YES   |  YES   | [GitHub](https://github.com/tpruvot/cpuminer-multi) | 	|
-|   ccminer (forked by tsiv)   | 	|	CUDA (Nvidia) |  YES       |  YES   |   YES   | [Github](https://github.com/tsiv/ccminer-cryptonight) | 	|
+|   xmrig   | CLI	|	CPU, GPU (Nvidia & AMD) |  YES     |  YES     |  YES      | [Github](https://github.com/xmrig/xmrig) | guided start, Open Source, TLS support, HTML statistics page, JSON API	|
 
 
-> **Note** This list is not exhaustive, and is not a promotion or endorsement for a project. Any cryptonight mining software \*should work. *YMMV*
+
+> **Note** This list is not exhaustive, and is not a promotion or endorsement for a project. Any randomx mining software \*should work. *YMMV*
 {: .info}
 
 ## Pool Mining
