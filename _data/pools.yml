@@ -17,6 +17,7 @@
 - name: minilaro
   hardfork: true
   testnet: false
+  enabled: false
   address: https://minilaro.computer-pig.net
   poolurl: null
   blurb: "Minilaro is a mining pool from longstanding discord user happysmash27"
@@ -34,13 +35,30 @@
   testnet: false
   address: https://mine2gether.com
   poolurl: null
+  enabled: false
   poolconfig: https://qrl.mine2gether.com/#getting_started
   blurb: "Mine2gether is a mining pool which has primarily dealt with cryptonight-v7 cryptocurrencies, and soon to be RandomX as well."
 
 - name: qrlmining
   hardfork: true
   testnet: false
+  enabled: false
   address: https://pool.qrlmining.com
   poolurl: pool.qrlmining.com:5555
   poolconfig: http://pool.qrlmining.com/#getting_started
   blurb: "QRLmining is back for RandomX. Happy hashing."
+
+- name: fastpool
+  hardfork: true
+  testnet: false
+  address: "https://fastpool.xyz/qrl/"
+  poolurl: "fastpool.xyz:10108"
+  poolconfig: "https://fastpool.xyz/qrl/#getting_started"
+
+- name: dxpool
+  hardfork: true
+  testnet: false
+  address: "https://dxpool.com"
+  specialuser: "[Your DxPool account name]"
+  poolurl: "qrl.ss.dxpool.com:6888"
+  poolconfig: "https://www.dxpool.com/help/en/qrl-mining-tutorial"
