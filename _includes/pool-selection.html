@@ -26,7 +26,8 @@ QRL Address: <input type="text" id="address" placeholder="QRL Address">
         "poolconfig": "{{ pool.poolconfig }}",
         "blurb": "{{ pool.blurb }}",
         "address": "{{ pool.address }}",
-        "specialuser":"{{ pool.specialuser }}"
+        "specialuser":"{{ pool.specialuser }}",
+        "pass": "{{ pool.pass }}"
       }
     );{% endif %}{% endfor %}
 
@@ -67,13 +68,18 @@ QRL Address: <input type="text" id="address" placeholder="QRL Address">
       $("#pools").append("<p class='temp'><strong>Upcoming hardfork support?</strong> "+pool.hardfork+"</p>");
       // $("#pools").append("<p class='temp'><strong>Currently running testnet?</strong> "+pool.testnet+"</p>");        
 
+      var poolpass = "x"
+      if(pool.pass) {
+        poolpass = pool.pass;
+      }
+
       if(pool.blurb) {
         $("#pools").append("<p class='temp'><strong>Note from the pool: </strong>"+pool.blurb+"</p>");
       }
 
       if(pool.poolurl!==null) {
       var xmrig = `{ "autosave": true, "cpu": true, "opencl": false, "cuda": false, "retries": 2, "retry-pause":2,
-    "pools":[{\n\t"algo":"rx/0",\n\t"url":"${pool.poolurl}",\n\t"user":"${pooladdress}",\n\t"pass":"x",\n\t"keepalive":"true",\n\t"enabled":"true",\n\t"variant": -1,\n\t"tls": false,\n\t"tls-fingerprint": null\n},{\n\t"algo":"cn/1",\n\t"url":"${pool.poolurl}",\n\t"user":"${pooladdress}",\n\t"pass":"x",\n\t"keepalive":"true",\n\t"enabled":"true",\n\t"variant": -1,\n\t"tls": false,\n\t"tls-fingerprint": null\n}]\n}`;
+    "pools":[{\n\t"algo":"rx/0",\n\t"url":"${pool.poolurl}",\n\t"user":"${pooladdress}",\n\t"pass":"${poolpass}",\n\t"keepalive":"true",\n\t"enabled":"true",\n\t"variant": -1,\n\t"tls": false,\n\t"tls-fingerprint": null\n},{\n\t"algo":"cn/1",\n\t"url":"${pool.poolurl}",\n\t"user":"${pooladdress}",\n\t"pass":"${poolpass}",\n\t"keepalive":"true",\n\t"enabled":"true",\n\t"variant": -1,\n\t"tls": false,\n\t"tls-fingerprint": null\n}]\n}`;
       
 
       var xmrig_cmd = `-o ${pool.poolurl} -u "${pooladdress}" -k --algo "rx/0"`;
