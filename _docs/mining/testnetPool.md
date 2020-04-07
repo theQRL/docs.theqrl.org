@@ -59,7 +59,7 @@ public_api_enabled: True
 In the end your configuration file should read something close to this. *The peer details and heasderhash will change over time as the network is reset*:
 
 ```yml
-peer_list: [ "18.130.83.207", "35.176.41.49", "18.130.187.220", "35.176.33.242" ]
+peer_list: [ "18.130.83.207", "209.250.246.234", "136.244.104.146", "95.179.154.132" ]
 genesis_prev_headerhash: 'The Testnet Genesis'
 genesis_timestamp: 1530004179
 genesis_difficulty: 5000
@@ -110,7 +110,7 @@ With the encrypted QRL Wallet.json file can create a slave tree file. This file 
 To generate a slave file from the wallet we just created, run the following command. This will create the slaves tree and broadcast a transaction onto the QRL network, allowing the set of slaves to be used.
 
 ```bash
-qrl slave_tx_generate --src 0 --master 0 --number_of_slaves 100 --access_type 0 --fee .001
+qrl slave_tx_generate --src 0 --master '' --number_of_slaves 100 --access_type 0 --fee .001
 ```
 
 This will create a new file called slaves.json in the same directory you are in, sign the message and send onto the network. This transaction will require a small fee to broadcast to the network. Make sure you have enough funds to cover the fee. If needed visit the [testnet faucet](https://testnet-faucet.qrl.tips/) for funds to make this transaction.

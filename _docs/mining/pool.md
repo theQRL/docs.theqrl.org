@@ -93,7 +93,7 @@ With the encrypted QRL Wallet.json file can create a slave tree file. This file 
 To generate a slave file from the wallet, run the following command. This will create the slaves tree and broadcast a signed transaction with the slave tree public keys onto the QRL network, allowing the set of slaves to be used.
 
 ```bash
-qrl slave_tx_generate --src 0 --master 0 --number_of_slaves 100 --access_type 0 --fee .001
+qrl slave_tx_generate --src 0 --master '' --number_of_slaves 100 --access_type 0 --fee .001
 ```
 
 This will create a new file called slaves.json in the same directory you are in, sign the message and send onto the network. This transaction will require a small fee to broadcast to the network. Make sure you have enough funds to cover the fee. 
