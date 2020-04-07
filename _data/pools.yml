@@ -14,14 +14,6 @@
   poolconfig: https://qrl.herominers.com/#getting-started
   blurb: "HeroMiners CryptoNight Mining Pools. Features: Score and PROP Payment System, Pool and SOLO Mining, Per Rig Stats, TLS Ports, Exchange Wallet Support."
 
-- name: minilaro
-  hardfork: true
-  testnet: false
-  enabled: false
-  address: https://minilaro.computer-pig.net
-  poolurl: null
-  blurb: "Minilaro is a mining pool from longstanding discord user happysmash27"
-
 - name: leafpool
   hardfork: true
   testnet: false
@@ -29,6 +21,45 @@
   poolurl: qrl-us.leafpool.com:4444
   poolconfig: https://qrl.leafpool.com/getting-started
   blurb: "Leafpool is a mining pool that deals in a wide variety of mining algorithms such as BeamHashII, Sha3, Cryptonight-turtle-light, Cryptonight-GPU, and soon to be RandomX"
+
+- name: fastpool
+  hardfork: true
+  testnet: false
+  address: "https://fastpool.xyz/qrl/"
+  poolurl: "fastpool.xyz:10108"
+  poolconfig: "https://fastpool.xyz/qrl/#getting_started"
+
+- name: dxpool
+  hardfork: true
+  testnet: false
+  address: "https://dxpool.com"
+  specialuser: "[Your DxPool account name]"
+  poolurl: "qrl.ss.dxpool.com:6888"
+  poolconfig: "https://www.dxpool.com/help/en/qrl-mining-tutorial"
+
+- name: "GNTL Mining"
+  hardfork: true
+  testnet: false
+  address: "https://qrl.pool.gntl.co.uk/"
+  poolurl: "qrl.pool.gntl.co.uk:4444"
+
+- name: "miner.tokyo"
+  hardfork: true
+  testnet: false
+  enabled: false
+  address: "https://miner.tokyo/"
+  poolurl: "us.miner.tokyo:[port]"
+  pass: "c=QRL"
+  blurb: "Highly optimized mining difficulty tuning algorithm. This is especially true for Nicehash users!"
+
+
+- name: minilaro
+  hardfork: true
+  testnet: false
+  enabled: false
+  address: https://minilaro.computer-pig.net
+  poolurl: null
+  blurb: "Minilaro is a mining pool from longstanding discord user happysmash27"
 
 - name: mine2gether
   hardfork: true
@@ -47,18 +78,3 @@
   poolurl: pool.qrlmining.com:5555
   poolconfig: http://pool.qrlmining.com/#getting_started
   blurb: "QRLmining is back for RandomX. Happy hashing."
-
-- name: fastpool
-  hardfork: true
-  testnet: false
-  address: "https://fastpool.xyz/qrl/"
-  poolurl: "fastpool.xyz:10108"
-  poolconfig: "https://fastpool.xyz/qrl/#getting_started"
-
-- name: dxpool
-  hardfork: true
-  testnet: false
-  address: "https://dxpool.com"
-  specialuser: "[Your DxPool account name]"
-  poolurl: "qrl.ss.dxpool.com:6888"
-  poolconfig: "https://www.dxpool.com/help/en/qrl-mining-tutorial"
