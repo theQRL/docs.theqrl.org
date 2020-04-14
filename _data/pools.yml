@@ -49,6 +49,12 @@
   address: "https://qrl.fungibly.xyz/"
   poolurl: "qrl.fungibly.xyz:4444"
 
+- name: "NewPool Cool"
+  hardfork: true
+  testnet: false
+  address: "https://qrl.newpool.cool/"
+  poolurl: "qrl.newpool.cool:4444"
+
 - name: "miner.tokyo"
   hardfork: true
   testnet: false
