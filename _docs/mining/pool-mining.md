@@ -11,7 +11,7 @@ In order to mine QRL using a PC without syncing the entire blockchain you can co
 
 There are lightweight binaries and scripts that use the local processor or GPU to perform work for the pool. This pooled work then gets submitted to the network and the rewards are shared between the workers.
 
-> QRL Uses the Monero v7 cryptonight algorithm to validate work on the QRL network. This allows QRL the same ASIC resistant benefits as Monero along with the added Quantum Resistant features.
+> QRL Uses the RandomX (rx/0) algorithm to validate work on the QRL network. More information can be found here: https://github.com/tevador/RandomX
 {: .info}
 
 ## Pool 101
@@ -42,10 +42,10 @@ There are quite a few mining software packages out there available for windows, 
 
 | Software      | GUI or CLI | Arch | Windows     | Linux |  OSX   |  Links | Notes	|
 |:-------------:|:--:|:-----:|:-----------:|:-----:|:------:|:------:|:-------:|
-|   XMR-stak    | CLI	|	CPU, GPU (Nvidia & AMD) |  YES     |  YES     |  YES      | [Github](https://github.com/fireice-uk/xmr-stak/releases) | guided start, Open Source, TLS support, HTML statistics page, JSON API	|
+|   xmrig   | CLI	|	CPU, GPU (Nvidia & AMD) |  YES     |  YES     |  YES      | [Github](https://github.com/xmrig/xmrig) | guided start, Open Source, TLS support, HTML statistics page, JSON API	|
 
 
-> **Note** This list is not exhaustive, and is not a promotion or endorsement for a project. Any cryptonight mining software \*should work. *YMMV*
+> **Note** This list is not exhaustive, and is not a promotion or endorsement for a project. Any RandomX mining software \*should work. *YMMV*
 
 
 
