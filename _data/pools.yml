@@ -43,6 +43,18 @@
   address: "https://qrl.pool.gntl.co.uk/"
   poolurl: "qrl.pool.gntl.co.uk:4444"
 
+- name: "minergalaxy"
+  hardfork: true
+  testnet: false
+  address: "http://minergalaxy.com/QRL/"
+  poolurl: "144.91.117.156:4444"
+
+- name: "miningpool fun"
+  hardfork: true
+  testnet: true
+  address: "https://qrl.miningpool.fun/"
+  poolurl: "qrl.miningpool.fun:4441"
+
 - name: "Fungibly"
   hardfork: true
   testnet: false
