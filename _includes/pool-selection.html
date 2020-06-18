@@ -27,7 +27,8 @@ QRL Address: <input type="text" id="address" placeholder="QRL Address">
         "blurb": "{{ pool.blurb }}",
         "address": "{{ pool.address }}",
         "specialuser":"{{ pool.specialuser }}",
-        "pass": "{{ pool.pass }}"
+        "pass": "{{ pool.pass }}",
+        "tls":"{{ pool.tls }}"
       }
     );{% endif %}{% endfor %}
 
@@ -47,6 +48,11 @@ QRL Address: <input type="text" id="address" placeholder="QRL Address">
     function printpool(pool) {
       pooladdress = qrladdress;
 
+      if(pool.tls) {
+        pooltls="true";
+      } else {
+        pooltls="false";
+      }
       if(pool.specialuser) {
         pooladdress = pool.specialuser;
       }
@@ -57,7 +63,7 @@ QRL Address: <input type="text" id="address" placeholder="QRL Address">
       if(pool.poolconfig) {
         $("#pools").append("<p class='temp'><strong>Pool Configuration: </strong>: <a href='"+pool.poolconfig+"'>"+pool.poolconfig+"</a></p>");
       }
-      $("#pools").append("<p class='temp'><strong>Upcoming hardfork support?</strong> "+pool.hardfork+"</p>");
+      // $("#pools").append("<p class='temp'><strong>Upcoming hardfork support?</strong> "+pool.hardfork+"</p>");
       // $("#pools").append("<p class='temp'><strong>Currently running testnet?</strong> "+pool.testnet+"</p>");        
 
       var poolpass = "x";
@@ -71,7 +77,7 @@ QRL Address: <input type="text" id="address" placeholder="QRL Address">
 
       if(pool.poolurl!==null) {
       var xmrig = `{ "autosave": true, "cpu": true, "opencl": false, "cuda": false, "retries": 2, "retry-pause":2,
-    "pools":[{\n\t"algo":"rx/0",\n\t"url":"${pool.poolurl}",\n\t"user":"${pooladdress}",\n\t"pass":"${poolpass}",\n\t"keepalive":"true",\n\t"enabled":"true",\n\t"variant": -1,\n\t"tls": false,\n\t"tls-fingerprint": null\n}]\n}`;
+    "pools":[{\n\t"algo":"rx/0",\n\t"url":"${pool.poolurl}",\n\t"user":"${pooladdress}",\n\t"pass":"${poolpass}",\n\t"keepalive":"true",\n\t"enabled":"true",\n\t"variant": -1,\n\t"tls":"${pooltls}",\n\t"tls-fingerprint": null\n}]\n}`;
       
 
       var xmrig_cmd = `-o ${pool.poolurl} -u "${pooladdress}" -k --algo "rx/0"`;
