@@ -41,7 +41,8 @@
   hardfork: true
   testnet: false
   address: "https://qrl.pool.gntl.co.uk/"
-  poolurl: "qrl.pool.gntl.co.uk:4444"
+  poolurl: "qrl.pool.gntl.co.uk:10011"
+  tls: true
 
 - name: "minergalaxy"
   hardfork: true
@@ -55,17 +56,23 @@
   address: "https://qrl.miningpool.fun/"
   poolurl: "qrl.miningpool.fun:4441"
 
-- name: "Fungibly"
+- name: "Pacificpool"
   hardfork: true
   testnet: false
-  address: "https://qrl.fungibly.xyz/"
-  poolurl: "qrl.fungibly.xyz:4444"
+  address: "https://qrl.pacificpool.ws/"
+  poolurl: "qrl.pacificpool.ws:4444"
 
 - name: "NewPool Cool"
   hardfork: true
   testnet: false
-  address: "https://qrl.newpool.cool/"
+  address: "http://qrl.newpool.cool/"
   poolurl: "qrl.newpool.cool:4444"
+
+- name: "my2coins"
+  hardfork: true
+  testnet: false
+  address: "https://cryptopool.my2coins.com/"
+  poolurl: "cryptopool.my2coins.com:3444"
 
 - name: "miner.tokyo"
   hardfork: true
