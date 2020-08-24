@@ -83,6 +83,13 @@
   pass: "c=QRL"
   blurb: "Highly optimized mining difficulty tuning algorithm. This is especially true for Nicehash users!"
 
+- name: Project Quorletha
+  hardfork: true
+  testnet: false
+  enabled: true
+  poolurl: "quorletha.cp3o.com:4444"
+  address: https://quorletha.cp3o.com/
+  blurb: "Project Quorletha is a QRL mining pool created by cp3o, LLC."
 
 - name: minilaro
   hardfork: true
