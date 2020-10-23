@@ -15,7 +15,7 @@ You can use the node to connect the explorer, wallet, and ephemeral messaging fe
 {: .info}
 
 
-### Requirements
+## Requirements
 
 You can run QRL on most operating systems, though Ubuntu 16.04 is recommended.
 {: .info}
@@ -28,7 +28,7 @@ You can run QRL on most operating systems, though Ubuntu 16.04 is recommended.
 - 64 bit processor
 
 
-### tl;dr
+## tl;dr
 
 Abridged instructions for installing QRL on Ubuntu:
 
@@ -51,7 +51,6 @@ If things worked correctly you will now find the `{{ layout.v.qrlCommands.startQ
 ` package and the `qrl` package. Adding the `--help` flag to each will print the various function details.
 
 
-
 ## Getting Started
 
 
@@ -61,7 +60,9 @@ __Update and Dependencies__
 
 You will need to start with a fully updated system. You will also need a few additional packages depending on your setup. See the correct section for your OS and install all of the requirements.
 
-### Ubuntu
+## Ubuntu
+
+### Install Ubuntu Node
 
 Update your system ensuring you have the latest packages:
 
@@ -75,9 +76,39 @@ Now install all the required dependencies:
 ```bash
 # Install the required packages for QRL
 {{ layout.v.qrlCommands.qrlRequirementsUbuntu }}
+pip3 install -U setuptools
 ```
 
-### Redhat/fedora
+Start the QRL ndoe
+
+```bash
+start_qrl
+```
+
+### Update Ubuntu Node
+
+First, stop your node with ctrl+c.
+
+Then double check you have the required dependencies installed
+
+```bash
+{{ layout.v.qrlCommands.qrlRequirementsUbuntu }}
+pip3 install -U setuptools
+```
+
+After that, update your node with pip3
+
+```bash
+pip3 install -U qrl
+```
+
+When you're done updating, don't forget to start your node again!
+
+```bash
+start_qrl
+```
+
+## Redhat/fedora
 
 Update:
 
