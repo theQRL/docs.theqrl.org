@@ -20,6 +20,33 @@ $quantum_deep: #0A0724;
 $quantum_warning: #FF3E3E;
 
 
+
+
+
+/* Layout */
+$grid: 12;
+$grid_margin: 1em;
+$grid_maxwidth: 1300px;
+
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+/* Style */
+$heading_font: "Alte DIN 1451 Mittelschrift",sans-serif;
+$body_font: "Source Sans Pro",sans-serif;
+
+$quantum_burst: #FFA729; // changed - yellow
+$quantum_sky: #4AAFFF; // changed - blue
+$quantum_burst: $quantum_sky;
+$quantum_hover: darken($quantum_burst, 20%);
+$quantum_deep: #0a1720;
+$quantum_warning: #0a1720;
+
+
+
+
 $shadow:0px 3px 10px rgba(0, 0, 0, 0.3);
 
 /*  */

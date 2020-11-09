@@ -3,7 +3,7 @@ body {
 	font-family: $body_font;
 	position:relative;
 	background:
-		url('/assets/particles/dots-topright.png') no-repeat top -20px right -10px;
+	url('/assets/particles/newtopright.png') no-repeat top -400px right -400px;
 }
 .overflow {
 	position:relative;
@@ -265,7 +265,7 @@ nav a {
 
 			&:hover:before {
 				display:block;
-				content: url('https://icons.simplesvg.com/mdi-link-variant.svg?color=%23626262&height=18');
+				content: url('https://icons.simplesvg.com/mdi-link-variant.svg?color=%23FFA729&height=18');
 				vertical-align: -0.125em;
 				height:18px; width:18px;
 				position:absolute;
@@ -274,7 +274,7 @@ nav a {
 
 			}
 			&:hover:before {
-				content: url('https://icons.simplesvg.com/mdi-link-variant.svg?color=%23dc255d&height=18');				
+				content: url('https://icons.simplesvg.com/mdi-link-variant.svg?color=%23FFA729&height=18');				
 			}
 		}
 
@@ -478,7 +478,7 @@ nav a {
 	.footer-logo img {
 		color:#FFF;
 		fill:#FFF;
-		max-width: 35px;
+		max-width: 125px;
 	}
 
 	@include md-max {
