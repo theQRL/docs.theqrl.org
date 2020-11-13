@@ -41,7 +41,7 @@
 						right:15px;
 					}
 					display:block;
-					content: url('https://icons.simplesvg.com/ion-ios-arrow-down.svg?color=%23FF0000&height=16');
+					content: url('https://icons.simplesvg.com/ion-ios-arrow-down.svg?color=%23FFA729&height=16');
 					vertical-align: -0.125em;
 					width:18px; height:18px;
 					transition: all 0.3s;
@@ -149,7 +149,7 @@
 						padding-left: 5px;
 						&:after {
 							content:'' !important;
-							background: url('https://icons.simplesvg.com/ion-ios-arrow-down.svg?color=%23dc255d&height=16') no-repeat center center / contain;
+							background: url('https://icons.simplesvg.com/ion-ios-arrow-down.svg?color=%23FFA729&height=16') no-repeat center center / contain;
 							height:18px;
 							top:23px !important;
 							right:5px !important;
@@ -347,7 +347,7 @@
 	}
 	nav > ul > li {
 		a {
-			font-family: 'Roboto';
+
 			background-color:#F3F3F3;
 			text-decoration: none;
 			color: #111;
