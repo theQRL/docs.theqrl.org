@@ -1,5 +1,5 @@
 body {
-	font-weight: 300;
+	font-weight: 400;
 	font-family: $body_font;
 	position:relative;
 	background:
@@ -7,7 +7,7 @@ body {
 }
 .overflow {
 	position:relative;
-	// overflow-x:hidden;
+	overflow-x:hidden;
 }
 .grid > div {
 	padding:10px;
