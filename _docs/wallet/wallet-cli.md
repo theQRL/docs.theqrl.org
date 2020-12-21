@@ -80,7 +80,7 @@ You may chose to create a wallet with more or less OTS keys used to sign transac
 | 18 |  262,144 | 
 
 
-> If needed you can create an additional `slaves.json` file with up to 100 slave OTS keys allowing for additional TX's using the same QRL address. For more information please see the [Slaves.json documentation](/wallet/slaves.json)
+> If needed a `slaves.json` file can be created with up to 100 slave OTS keys allowing for additional TX's using the same QRL address. For more information please see the [Slaves.json documentation](/wallet/slaves.json)
 
 
 Building on the example from above, create an encrypted wallet with a tree height of 12
@@ -249,7 +249,7 @@ This command will prompt you for the following information:
 | Options | Data Format | Description |
 |:--------|:------------|:------------|
 | src | TEXT | signer QRL address |
-| master | TEXT | master QRL address |
+| master | TEXT | master QRL address (for slave tx) |
 | dst | TEXT | List of destination addresses |
 | amounts | TEXT | List of amounts to transfer (Quanta) |
 | fee | DECIMAL | fee in Quanta |
@@ -259,7 +259,7 @@ This command will prompt you for the following information:
 You can enter these options either in the command or by answering the prompt. Here is an example qrl transaction sending 5.5QRL to another QRL address giving all of the relevant information to the command line.
 
 ```bash
-{{ layout.v.qrlCommands.txTransfer }} --src 0 --master 0 --dst Q010500317ce502123c0de6711fd4ea6833ea360e95cb40af71944eea38da90bfb5d83740d01e50 --amounts 5.25 --fee 0.01 --ots_key_index 1
+{{ layout.v.qrlCommands.txTransfer }} --src 0 --dst Q010500317ce502123c0de6711fd4ea6833ea360e95cb40af71944eea38da90bfb5d83740d01e50 --amounts 5.25 --fee 0.01 --ots_key_index 1
 ```
 If your wallet.json file is encrypted enter your passphrase when prompted.
 
@@ -347,10 +347,10 @@ Number  Address                                                                 
 
 #### Transfer QRL Between Addresses
 
-The process of sending QRL between addresses in the same wallet is exactly the same as above, you simply enter the second address.
+The process of sending QRL between addresses in the same wallet is exactly the same as above, you simply enter the second address. While the addresses may be in the same wallet, they are independent XMSS trees and require a transaction to send between.
 
 ```bash
-{{ layout.v.qrlCommands.txTransfer }} --src 0 --master 0 --dst Q02090081f7e33cc535ca6ca54305f7d34cf2cd9620b1efcae657a76ca4c072902dfc4ed0f23a4a --amounts 5.25 --fee 0.01 --ots_key_index 2
+{{ layout.v.qrlCommands.txTransfer }} --src 0 --dst Q02090081f7e33cc535ca6ca54305f7d34cf2cd9620b1efcae657a76ca4c072902dfc4ed0f23a4a --amounts 5.25 --fee 0.01 --ots_key_index 2
 ```
 
 After the transaction has propagated through the network you will see the balance in the newly created wallet with the `qrl wallet_ls` command.
@@ -375,7 +375,7 @@ The wallet_idx is the number to the left in the output of the terminal.
 
 ## CLI Help
 
-All command line options hav a help file available to assist in the use of the command. Simply add the `--help` option to the end of any command to see the help.
+All command line options have a help file available to assist in the use of the command. Simply add the `--help` option to the end of any command to see the help.
 
 ```bash
 qrl --help
@@ -394,23 +394,26 @@ Options:
   --help              Show this message and exit.
 
 Commands:
-  slave_tx_generate  Generates Slave Transaction for the wallet
-  state              Shows Information about a Nodes State
-  token_list         Fetch the list of tokens owned by an address.
-  tx_inspect         Inspected a transaction blob
-  tx_message         Message Transaction
-  tx_push            Sends a signed transaction blob to a node
-  tx_token           Create Token Transaction, that results into...
-  tx_transfer        Transfer coins from src to dsts
-  tx_transfertoken   Create Transfer Token Transaction, which...
-  wallet_add         Adds an address or generates a new wallet...
+  slave_tx_generate    Generates Slave Transaction for the wallet
+  state                Shows Information about a Node\'s State
+  token_list           Fetch the list of tokens owned by an address.
+  tx_inspect           Inspected a transaction blob
+  tx_message           Message Transaction
+  tx_multi_sig_create  Creates Multi Sig Create Transaction, that...
+  tx_multi_sig_spend   Transfer coins from src to dsts
+  tx_push              Sends a signed transaction blob to a node
+  tx_token             Create Token Transaction, that results into...
+  tx_transfer          Transfer coins from src to dsts
+  tx_transfertoken     Create Transfer Token Transaction, which...
+  wallet_add           Adds an address or generates a new wallet...
   wallet_decrypt
   wallet_encrypt
-  wallet_gen         Generates a new wallet with one address
-  wallet_ls          Lists available wallets
-  wallet_recover     Recovers a wallet from a hexseed or mnemonic...
-  wallet_rm          Removes an address from the wallet using the...
-  wallet_secret      Provides the mnemonic/hexseed of the given...
+  wallet_gen           Generates a new wallet with one address
+  wallet_ls            Lists available wallets
+  wallet_recover       Recovers a wallet from a hexseed or mnemonic...
+  wallet_rm            Removes an address from the wallet using the...
+  wallet_secret        Provides the mnemonic/hexseed of the given...
+
 ```
 
 You can browse even further into sub commands like:
@@ -427,6 +430,7 @@ Options:
   --master TEXT            master QRL address
   --dsts TEXT              List of destination addresses
   --amounts TEXT           List of amounts to transfer (Quanta)
+  --message_data TEXT      Message (Optional)
   --fee DECIMAL            fee in Quanta
   --ots_key_index INTEGER  OTS key Index (1..XMSS num signatures)
   --help                   Show this message and exit.
