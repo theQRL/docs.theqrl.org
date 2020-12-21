@@ -394,23 +394,26 @@ Options:
   --help              Show this message and exit.
 
 Commands:
-  slave_tx_generate  Generates Slave Transaction for the wallet
-  state              Shows Information about a Nodes State
-  token_list         Fetch the list of tokens owned by an address.
-  tx_inspect         Inspected a transaction blob
-  tx_message         Message Transaction
-  tx_push            Sends a signed transaction blob to a node
-  tx_token           Create Token Transaction, that results into...
-  tx_transfer        Transfer coins from src to dsts
-  tx_transfertoken   Create Transfer Token Transaction, which...
-  wallet_add         Adds an address or generates a new wallet...
+  slave_tx_generate    Generates Slave Transaction for the wallet
+  state                Shows Information about a Node\'s State
+  token_list           Fetch the list of tokens owned by an address.
+  tx_inspect           Inspected a transaction blob
+  tx_message           Message Transaction
+  tx_multi_sig_create  Creates Multi Sig Create Transaction, that...
+  tx_multi_sig_spend   Transfer coins from src to dsts
+  tx_push              Sends a signed transaction blob to a node
+  tx_token             Create Token Transaction, that results into...
+  tx_transfer          Transfer coins from src to dsts
+  tx_transfertoken     Create Transfer Token Transaction, which...
+  wallet_add           Adds an address or generates a new wallet...
   wallet_decrypt
   wallet_encrypt
-  wallet_gen         Generates a new wallet with one address
-  wallet_ls          Lists available wallets
-  wallet_recover     Recovers a wallet from a hexseed or mnemonic...
-  wallet_rm          Removes an address from the wallet using the...
-  wallet_secret      Provides the mnemonic/hexseed of the given...
+  wallet_gen           Generates a new wallet with one address
+  wallet_ls            Lists available wallets
+  wallet_recover       Recovers a wallet from a hexseed or mnemonic...
+  wallet_rm            Removes an address from the wallet using the...
+  wallet_secret        Provides the mnemonic/hexseed of the given...
+
 ```
 
 You can browse even further into sub commands like:
@@ -427,6 +430,7 @@ Options:
   --master TEXT            master QRL address
   --dsts TEXT              List of destination addresses
   --amounts TEXT           List of amounts to transfer (Quanta)
+  --message_data TEXT      Message (Optional)
   --fee DECIMAL            fee in Quanta
   --ots_key_index INTEGER  OTS key Index (1..XMSS num signatures)
   --help                   Show this message and exit.
