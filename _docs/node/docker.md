@@ -43,11 +43,11 @@ Now with the latest image loaded create the container and start the QRL node.
 docker run -d --restart always --name qrl-node qrledger/qrl-docker:bionic 
 ```
 
-Explination of these commands
+Explanation of these commands
 
 - **docker run -d** *Starts the container in a daemon process*
 - **- -restart always** *This ensures the node will restart upon a reboot*
-- **--name qrl-node** *gives the container a name to run that ypu will know*
+- **--name qrl-node** *gives the container a name to run that you will know*
 - **qrledger/qrl-docker:bionic** *Defines the image to build the container from*
 
 This should start a new container named **qrl-node** and begin the node syncing the blockchain. This process takes some time to become fully synced as the chain is downloaded from peer nodes. 
