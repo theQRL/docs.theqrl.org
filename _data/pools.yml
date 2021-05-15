@@ -116,3 +116,12 @@
   poolurl: pool.qrlmining.com:5555
   poolconfig: http://pool.qrlmining.com/#getting_started
   blurb: "QRLmining is back for RandomX. Happy hashing."
+  
+- name: Volt-Mine
+  hardfork: true
+  testnet: false
+  address: https://qrl.volt-mine.com
+  poolurl: eu-qrl.volt-mine.com:3333
+  poolconfig: https://qrl.volt-mine.com/getting-started
+  blurb: "Volt-Mine mining pool . Key Points: PPLNS Payment System, 1% pool fee, fast payout”
+
