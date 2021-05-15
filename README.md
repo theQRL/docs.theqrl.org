@@ -14,13 +14,22 @@ This Github project is hosted at [https://docs.theqrl.org](https://docs.theqrl.o
 If you have good information to add to the documentation, please submit a PR.
 Anything from a typo to creating a complete write-up, the project and community will be better for it.
 
+- - -
 
-* * * 
+## Building these docs
 
-# Installation
+Install [rvm](https://rvm.io)
 
-For instructions on how to install a node, please refer to [Install Node](https://docs.theqrl.org/mining/full-node/) 
-We also recommend exploring our [Documentation](https://docs.theqrl.org/) 
+```bash
+
+rvm install "ruby-2.5.0"
+rvm use ruby-2.5.0
+bundle install
+gem install jekyll
+bash _scripts/build.sh
+```
+
+If the site builds without errors, check out the ```_site``` folder in a browser.
 
 # More information
 
