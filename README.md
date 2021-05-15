@@ -29,7 +29,7 @@ gem install jekyll
 bash _scripts/build.sh
 ```
 
-If the site builds without errors, check out the ```_site``` folder in a browser.
+If the site builds without errors, check out the ```_site``` folder in a browser with a local server, e.g. ```http-server _site/``` if http-server is globally installed ```npm i -g http-server```
 
 # More information
 
