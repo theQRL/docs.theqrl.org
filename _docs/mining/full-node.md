@@ -62,7 +62,7 @@ Once you have made your changes the file will look something like this.
 #    Mining Configuration
 # ======================================
  mining_enabled: True
- mining_address: ‘Q02090081f7e33cc535ca6ca54305f7d34cf2cd9620b1efcae657a76ca4c072902dfc4ed0f23a4a’
+ mining_address: 'Q02090081f7e33cc535ca6ca54305f7d34cf2cd9620b1efcae657a76ca4c072902dfc4ed0f23a4a'
  mining_thread_count: 0  # 0 to auto detect thread count based on CPU/GPU number of processors
 #
 ```
