@@ -22,8 +22,8 @@ Install [rvm](https://rvm.io)
 
 ```bash
 
-rvm install "ruby-2.5.0"
-rvm use ruby-2.5.0
+rvm install "ruby-2.7.2"
+rvm use ruby-2.7.2
 bundle install
 gem install jekyll
 bash _scripts/build.sh
