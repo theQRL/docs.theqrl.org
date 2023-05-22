@@ -8,10 +8,9 @@
 		"stylefix": "stylelint 'style.css' --fix"
 	},
 	"devDependencies": {
+		"angled-edges": "^2.0.0",
 		"autoprefixer": "^7.1.1",
 		"browserslist": "^2.1.5",
-		"node-sass": "^4.7.2",
-		"angled-edges": "^2.0.0",
 		"postcss-cli": "^4.1.0",
 		"stylelint": "^7.12.0"
 	},
@@ -21,5 +20,9 @@
 	},
 	"browserslist": [
 		"last 2 versions"
-	]
+	],
+	"dependencies": {
+		"sass": "^1.62.1",
+		"sass-loader": "^13.3.0"
+	}
 }
