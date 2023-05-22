@@ -17,7 +17,7 @@ You can use the node to connect the explorer, wallet, and ephemeral messaging fe
 
 ## Requirements
 
-You can run QRL on most operating systems, though Ubuntu 16.04 is recommended.
+You can run QRL on most operating systems, though Ubuntu 18.04 is recommended.
 {: .info}
 
 - Support for AES-NI
@@ -41,6 +41,10 @@ sudo apt update && sudo apt upgrade -y
 
 # Make sure setuptools is the latest
 pip3 install -U setuptools
+
+# Install latest service identity package
+pip3 install service-identity==21.1.0
+
 
 # Install QRL
 {{ layout.v.qrlCommands.qrlInstall }}
@@ -77,6 +81,7 @@ Now install all the required dependencies:
 # Install the required packages for QRL
 {{ layout.v.qrlCommands.qrlRequirementsUbuntu }}
 pip3 install -U setuptools
+pip3 install service-identity==21.1.0
 ```
 
 Start the QRL ndoe
