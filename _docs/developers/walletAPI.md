@@ -13,9 +13,9 @@ Interfacing with the qrlWalletAPI is simple and straight forward. Follow the ste
 2. Run the QRL wallet daemon
   - `qrl_walletd`
 3. Install [golang-go v1.8](https://golang.org/doc/install#tarball) or greater
-3. Clone walletd-rest-proxy from the repo hosted at [https://github.com/theQRL/walletd-rest-proxy](https://github.com/theQRL/walletd-rest-proxy)
-  - `go get github.com/theQRL/walletd-rest-proxy`
-5. Start the wallet-rest-proxy 
+3. Install walletd-rest-proxy from the repo hosted at [https://github.com/theQRL/walletd-rest-proxy](https://github.com/theQRL/walletd-rest-proxy)
+  - `go install github.com/theQRL/walletd-rest-proxy@latest`
+5. Start the wallet-rest-proxy installed in $GOPATH/bin 
   - This allows connection to the WalletDaemon
 6. Send commands using cURL and begin using the QRL!
 
