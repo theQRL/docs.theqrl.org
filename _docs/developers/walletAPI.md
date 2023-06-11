@@ -1001,7 +1001,7 @@ curl -XPOST http://127.0.0.1:5359/api/ChangePassphrase -d '
 
 ## GetTransactionsByAddress
 
-Get transactions hash and  other details for a given address.
+Get transactions hash and other details for a given address. It outputs all the transactions for the given address at once.
 
 **Request**
 
@@ -1036,6 +1036,62 @@ curl -XPOST http://127.0.0.1:5359/api/GetTransactionsByAddress -d '
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
 | address | String | QRL address |
+
+
+
+**Response**
+
+| **Parameter** | **Type** | **Description** |
+| --- | --- | --- |
+| code | UInt32 | Error Code. Only appears if any exception is triggered. |
+| error | String | Error Message. Only appears if any exception is triggered. |
+| mini_transactions | MiniTransaction[] | List of MiniTransations which includes, transaction_hash, amount and out.|
+| balance | String | Total balance |
+
+
+
+
+## GetPaginatedTransactionsByAddress
+
+Get transactions hash and other details for a given address. It outputs only the transactions in the given page for the address. The output transactions are in the descending order such that the latest transactions always appear in the first page and the oldest transactions are in the last page.
+
+**Request**
+
+```
+curl -XPOST http://127.0.0.1:5359/api/GetPaginatedTransactionsByAddress -d '
+{
+  "address": "Q010500c66bf9e74721c58fd76dc945ac7c35a2e290c6653cc5e4a4fba762cf1254602437bf156e"
+  "item_per_page": 10,
+  "page_number": 1
+}'
+```
+
+**Response**
+
+```
+{
+  "mini_transactions":[
+    {
+      "transaction_hash":"27d27c36a85f012ec8b906fd3d38de7bc2ec0f01a1dc2cab3bea1b71868dde61",
+      "amount":"100000"
+    },
+    {
+      "transaction_hash":"aad2ba0626c7f1bcf47ea19342bfb888df19e875fcf86b80279be2a9ebdaeb0b",
+      "out":true,
+      "amount":"12"
+    }
+  ],
+  "balance":"99988"
+}
+```
+
+**Request**
+
+| **Parameter** | **Type** | **Description**                                   |
+|---------------|----------|---------------------------------------------------|
+| address       | String   | QRL address                                       |
+| item_per_page | UInt64   | Maximum number of transactions expected per page. |
+| page_number   | UInt64   | Page number value starts from 1.                  |
 
 
 
