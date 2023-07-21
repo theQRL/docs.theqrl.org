@@ -17,6 +17,7 @@ gem "rouge"
 gem 'jekyll-analytics'
 gem 'jekyll-sitemap'
 gem 'jekyll-seo-tag'
+gem 'sass-embedded', "1.54"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
