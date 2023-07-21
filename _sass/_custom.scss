@@ -127,7 +127,44 @@ nav a {
 	}
 }
 
+.wrapper.redirect {
+	padding:0;
+	text-align: center;
+	background-color: #0F031C;
+	color:#FFF;
 
+	a {
+		position: relative;
+		// display: block;
+		height: 48px;
+		line-height: 48px;
+		font-size: 14px;
+		padding: 5px 40px 5px 10px;
+		border-radius: 5px;
+		text-transform: uppercase;
+		background-color: $quantum_hover;
+		color:#FFF;
+		white-space: nowrap;
+	}
+	a:hover {
+		background-color:$quantum_sky;
+	}
+	a::before {
+		content: '';
+		display: block;
+		width: 21px;
+		height: 14px;
+		background-image: url("https://www.theqrl.org/img/icons/arrow-1-w.svg");
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: transform .3s ease-in-out;
+	}
+}
 
 .grid.support {
 	svg {
