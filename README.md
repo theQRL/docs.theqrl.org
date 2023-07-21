@@ -21,13 +21,20 @@ Anything from a typo to creating a complete write-up, the project and community 
 Install [rvm](https://rvm.io)
 
 ```bash
-
 rvm install "ruby-2.7.2"
 rvm use ruby-2.7.2
 bundle install
 gem install jekyll
 bash _scripts/build.sh
 ```
+
+### Notes on building for Fedora 38
+
+```bash
+rvm pkg install openssl
+rvm install ruby-2.7.2 --with-openssl-dir=$HOME/.rvm/usr
+```
+
 
 If the site builds without errors, check out the ```_site``` folder in a browser with a local server, e.g. ```http-server _site/``` if http-server is globally installed ```npm i -g http-server```
 
