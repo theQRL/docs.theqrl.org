@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> This is the legacy version see https://github.com/theQRL/documentation for the updated version of the QRL documentation
+
+
 # QRL Documentation Page
 
 > Quantum Resistant Ledger
